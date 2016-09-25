@@ -8,4 +8,7 @@ Subpath.initEnum({
   TAXONOMIES: {
     value: 'taxonomies',
   },
+  VENUES: {
+    value: 'venues',
+  },
 });
