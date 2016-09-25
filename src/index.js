@@ -2,7 +2,7 @@
 
 import rp from 'request-promise';
 
-import GenreQuery from './data/request/query/GenreQuery';
+import BaseQuery from './data/request/query/BaseQuery';
 import Subpath from './data/request/Subpath';
 
 let baseUri = 'https://api.seatgeek.com/2/';
@@ -12,12 +12,21 @@ export default class Client {
   constructor() {}
 
   static getGenres(per_page=100, page=1) {
-    let query = new GenreQuery({
+    let query = new BaseQuery({
       per_page: per_page,
       page: page
     });
 
     return Client.fetch(query, Subpath.GENRES.value);
+  }
+
+  static getTaxonomies(per_page=100, page=1) {
+    let query = new BaseQuery({
+      per_page: per_page,
+      page: page,
+    });
+
+    return Client.fetch(query, Subpath.TAXONOMIES.value);
   }
 
   static buildRequest(query, subpath) {
