@@ -14,5 +14,10 @@ describe('Test Client', function() {
   it('tests taxonomies fetch', function() {
     return Client.getTaxonomies(100)
                  .then(response => expect(response.taxonomies.length).to.equal(exampleTaxonomies.taxonomies.length));
-  })
+  });
+
+  it('tests venues fetch', function() {
+    return Client.getVenues('Boston')
+                 .then(response => console.log(response));
+  });
 });
