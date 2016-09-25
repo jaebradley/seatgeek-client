@@ -7,7 +7,7 @@ const options = {
   page: 1
 };
 
-export default class GenreQuery extends Record(options) {
+export default class BaseQuery extends Record(options) {
   buildQueryParameters() {
     return {
       per_page: this.per_page,
