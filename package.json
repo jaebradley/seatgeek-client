@@ -17,7 +17,7 @@
     "immutable": "^3.8.1",
     "request": "latest",
     "request-promise": "^4.0.2",
-    "es6-enum": "^1.0.3"
+    "enumify": "^1.0.4"
   },
   "devDependencies": {
     "chai": "3.5.0",

@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 import {Map} from 'immutable';
 
-import GenreQuery from '../src/data/query/GenreQuery';
+import GenreQuery from '../src/data/request/query/GenreQuery';
 
 describe('Instantiate Genre Query', function() {
   it('Tests default genre query', function() {
