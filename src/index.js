@@ -32,27 +32,6 @@ export default class Client {
 
   static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
                    postalCode=undefined, queryString=undefined, perPage=100, page=1) {
-
-    if ((typeof cityName !== 'undefined') && (typeof cityName !== 'string')) {
-      throw 'cityName must be a string value';
-    }
-
-    if ((typeof stateCode !== 'undefined') && (typeof stateCode !== 'string') && stateCode.length != 2) {
-      throw 'stateCode must be a string of length 2';
-    }
-
-    if ((typeof countryCode !== 'undefined') && (typeof countryCode !== 'string') && countryCode.length != 2) {
-      throw 'countryCode must be a string of length 2';
-    }
-
-    if ((typeof postalCode !== 'undefined') && (typeof postalCode !== 'string')) {
-      throw 'postalCode must be a string value';
-    }
-
-    if ((typeof queryString !== 'undefined') && (typeof queryString !== 'string')) {
-      throw 'queryString must be a string value';
-    }
-
     let query = new VenueQuery({
       perPage: perPage,
       page: page,
