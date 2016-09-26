@@ -2,6 +2,7 @@
 
 import rp from 'request-promise';
 
+import Unit from './data/Unit';
 import BaseQuery from './data/request/query/BaseQuery';
 import VenueQuery from './data/request/query/VenueQuery';
 import Subpath from './data/request/Subpath';
@@ -12,29 +13,22 @@ let headers = { 'User-Agent': 'Request-Promise' };
 export default class Client {
   constructor() {}
 
-  static getGenres(per_page=100, page=1) {
-    let query = new BaseQuery({
-      per_page: per_page,
-      page: page
-    });
-
-    return Client.fetch(query, Subpath.GENRES.value);
+  static getGenres(perPage=100, page=1) {
+    return Client.fetch(Client.buildPageParameters(perPage, page),
+                        Subpath.GENRES.value);
   }
 
-  static getTaxonomies(per_page=100, page=1) {
-    let query = new BaseQuery({
-      per_page: per_page,
-      page: page,
-    });
-
-    return Client.fetch(query, Subpath.TAXONOMIES.value);
+  static getTaxonomies(perPage=100, page=1) {
+    return Client.fetch(Client.buildPageParameters(perPage, page),
+                        Subpath.TAXONOMIES.value);
   }
 
   static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
-                   postalCode=undefined, queryString=undefined, perPage=100, page=1) {
+                   postalCode=undefined, queryString=undefined, geoIp=false,
+                   latitude=undefined, longitude=undefined, address=undefined,
+                   range=10, units='mi', perPage=100, page=1) {
+
     let query = new VenueQuery({
-      perPage: perPage,
-      page: page,
       cityName: cityName,
       stateCode: stateCode,
       countryCode: countryCode,
@@ -42,20 +36,51 @@ export default class Client {
       queryString: queryString,
     });
 
-    return Client.fetch(query, Subpath.VENUES.value);
+    let parameters = Client.buildPageParameters(perPage, page);
+    Object.assign(parameters,
+                  Client.buildGeolocationParameters(geoIp, latitude, longitude),
+                  query.buildQueryParameters());
+
+    return Client.fetch(parameters, Subpath.VENUES.value);
   }
 
-  static buildRequest(query, subpath) {
+  static buildPageParameters(perPage=100, page=1) {
+    return {
+      per_page: perPage,
+      page: page,
+    };
+  }
+
+  static buildGeolocationParameters(geoIp=false, latitude=undefined,
+    longitude=undefined) {
+      if (geoIp) {
+        latitude = undefined;
+        longitude = undefined;
+      }
+
+      if (((typeof latitude === 'undefined') && (typeof longitude !== 'undefined'))
+        || ((typeof latitude !== 'undefined') && (typeof longitude === 'undefined'))) {
+          throw 'latitude and longitude must both be defined';
+      }
+
+      return {
+        geoIp: geoIp,
+        latitude: latitude,
+        longitude: longitude,
+      };
+    }
+
+  static buildRequest(parameters, subpath) {
     return {
       uri: baseUri + subpath,
-      qs: query.buildQueryParameters(),
+      qs: parameters,
       headers: headers,
       json: true
     }
   }
 
-  static fetch(query, subpath) {
-    return rp(Client.buildRequest(query, subpath))
+  static fetch(parameters, subpath) {
+    return rp(Client.buildRequest(parameters, subpath))
       .then(response => response)
       .catch(err => console.log(err));
   }

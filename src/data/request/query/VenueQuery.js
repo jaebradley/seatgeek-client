@@ -3,8 +3,6 @@
 import {Record} from 'immutable';
 
 let options = {
-  perPage: 100,
-  page: 1,
   cityName: undefined,
   stateCode: undefined,
   countryCode: undefined,
@@ -35,8 +33,6 @@ export default class VenueQuery extends Record(options) {
     }
 
     return {
-      per_page: this.perPage,
-      page: this.page,
       city: this.cityName,
       state: this.stateCode,
       country: this.countryCode,
