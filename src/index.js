@@ -24,7 +24,7 @@ export default class Client {
   }
 
   static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
-                   postalCode=undefined, queryString=undefined, geoIp=false,
+                   postalCode=undefined, queryString=undefined, geoIp=true,
                    latitude=undefined, longitude=undefined, address=undefined,
                    range=10, units='mi', perPage=100, page=1) {
 
@@ -36,12 +36,12 @@ export default class Client {
       queryString: queryString,
     });
 
-    let parameters = Client.buildPageParameters(perPage, page);
-    Object.assign(parameters,
+    let queryParameters = query.buildQueryParameters();
+    Object.assign(queryParameters,
                   Client.buildGeolocationParameters(geoIp, latitude, longitude),
-                  query.buildQueryParameters());
+                  Client.buildPageParameters(perPage, page));
 
-    return Client.fetch(parameters, Subpath.VENUES.value);
+    return Client.fetch(queryParameters, Subpath.VENUES.value);
   }
 
   static buildPageParameters(perPage=100, page=1) {
@@ -51,8 +51,7 @@ export default class Client {
     };
   }
 
-  static buildGeolocationParameters(geoIp=false, latitude=undefined,
-    longitude=undefined) {
+  static buildGeolocationParameters(geoIp, latitude, longitude) {
       if (geoIp) {
         latitude = undefined;
         longitude = undefined;
