@@ -36,15 +36,19 @@ export default class Client {
       queryString: queryString,
     });
 
+    return Client.fetch(Client.buildQueryParameters(query, geoIp, latitude, longitude, perPage, page),
+                        Subpath.VENUES.value);
+  }
+
+  static buildQueryParameters(query, geoIp, latitude, longitude, perPage, page) {
     let queryParameters = query.buildQueryParameters();
     Object.assign(queryParameters,
                   Client.buildGeolocationParameters(geoIp, latitude, longitude),
                   Client.buildPageParameters(perPage, page));
-
-    return Client.fetch(queryParameters, Subpath.VENUES.value);
+    return queryParameters;
   }
 
-  static buildPageParameters(perPage=100, page=1) {
+  static buildPageParameters(perPage, page) {
     return {
       per_page: perPage,
       page: page,
