@@ -26,7 +26,7 @@ export default class Client {
   static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
                    postalCode=undefined, queryString=undefined, geoIp=true,
                    latitude=undefined, longitude=undefined, address=undefined,
-                   range=10, units='mi', perPage=100, page=1) {
+                   range=10, unit=Unit.MILE, perPage=100, page=1) {
 
     let query = new VenueQuery({
       cityName: cityName,
@@ -55,7 +55,7 @@ export default class Client {
     };
   }
 
-  static buildGeolocationParameters(geoIp, latitude, longitude) {
+  static buildGeolocationParameters(geoIp, latitude, longitude, range, unit) {
       if (geoIp) {
         latitude = undefined;
         longitude = undefined;
@@ -70,6 +70,7 @@ export default class Client {
         geoIp: geoIp,
         latitude: latitude,
         longitude: longitude,
+        range: str(range) + unit.value,
       };
     }
 
