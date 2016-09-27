@@ -22,6 +22,19 @@ export default class Client {
                         Subpath.TAXONOMIES.value);
   }
 
+  static getPerformers(ids=[], slug=undefined, primaryGenres=[], otherGenres=[],
+                       taxonomies=[], perPage=100, page=1) {
+    let query = new PerformerQuery({
+      ids: ids,
+      slug: slug,
+      primaryGenres: primaryGenres,
+      otherGenres: otherGenres,
+      taxonomies: taxonomies
+    });
+    return Client.fetch(Client.buildQueryParameters(query, perPage, page),
+                        Subpath.PERFORMERS.value);
+  }
+
   static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
                    postalCode=undefined, queryString=undefined, geoIp=true,
                    latitude=undefined, longitude=undefined, address=undefined,
@@ -35,11 +48,14 @@ export default class Client {
       queryString: queryString,
     });
 
-    return Client.fetch(Client.buildQueryParameters(query, geoIp, latitude, longitude, perPage, page, range, unit),
+    return Client.fetch(Client.buildQueryParameters(query, perPage, page, geoIp, latitude, longitude, range, unit),
                         Subpath.VENUES.value);
   }
 
-  static buildQueryParameters(query, geoIp, latitude, longitude, perPage, page, range, unit) {
+  static buildQueryParameters(query, perPage, page, geoIp=undefined,
+                              latitude=undefined, longitude=undefined,
+                              range=undefined, unit=undefined) {
+
     let queryParameters = query.buildQueryParameters();
     Object.assign(queryParameters,
                   Client.buildGeolocationParameters(geoIp, latitude, longitude, range, unit),
