@@ -49,7 +49,7 @@ describe('Test Venue Query', function() {
       postalCode: undefined,
       queryString: undefined,
     });
-    expect(incorrectCityNameQuery.buildQueryParameters()).to.throw();
+    expect(() => incorrectCityNameQuery.buildQueryParameters()).to.throw();
   });
 
   it('tests state code query parameter building', function() {
@@ -76,7 +76,7 @@ describe('Test Venue Query', function() {
       postalCode: undefined,
       queryString: undefined,
     });
-    expect(incorrectStateCodeQuery.buildQueryParameters()).to.throw();
+    expect(() => incorrectStateCodeQuery.buildQueryParameters()).to.throw(Error);
 
     let tooLongStateCodeQuery = new VenueQuery({
       cityName: undefined,
@@ -85,7 +85,7 @@ describe('Test Venue Query', function() {
       postalCode: undefined,
       queryString: undefined,
     });
-    expect(tooLongStateCodeQuery.buildQueryParameters()).to.throw();
+    expect(() => tooLongStateCodeQuery.buildQueryParameters()).to.throw(Error);
   });
 
   it('tests country code query parameter building', function() {
@@ -112,7 +112,7 @@ describe('Test Venue Query', function() {
       postalCode: undefined,
       queryString: undefined,
     });
-    expect(invalidTypeCountryCode.buildQueryParameters()).to.throw();
+    expect(() => invalidTypeCountryCode.buildQueryParameters()).to.throw(Error);
 
     let tooLongCountryCode = new VenueQuery({
       cityName: undefined,
@@ -121,7 +121,7 @@ describe('Test Venue Query', function() {
       postalCode: undefined,
       queryString: undefined,
     });
-    expect(tooLongCountryCode.buildQueryParameters()).to.throw();
+    expect(() => tooLongCountryCode.buildQueryParameters()).to.throw(Error);
   });
 
   it('tests postal code query parameter building', function() {
@@ -148,7 +148,7 @@ describe('Test Venue Query', function() {
       postalCode: 12345,
       queryString: undefined,
     });
-    expect(invalidTypeQuery.buildQueryParameters()).to.throw();
+    expect(() => invalidTypeQuery.buildQueryParameters()).to.throw(Error);
   });
 
   it('tests query string query parameter building', function() {
@@ -175,6 +175,6 @@ describe('Test Venue Query', function() {
       postalCode: undefined,
       queryString: 1,
     });
-    expect(invalidTypeQuery.buildQueryParameters()).to.throw();
+    expect(() => invalidTypeQuery.buildQueryParameters()).to.throw(Error);
   });
 });

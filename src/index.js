@@ -3,7 +3,6 @@
 import rp from 'request-promise';
 
 import Unit from './data/Unit';
-import BaseQuery from './data/request/query/BaseQuery';
 import VenueQuery from './data/request/query/VenueQuery';
 import Subpath from './data/request/Subpath';
 
@@ -36,14 +35,14 @@ export default class Client {
       queryString: queryString,
     });
 
-    return Client.fetch(Client.buildQueryParameters(query, geoIp, latitude, longitude, perPage, page),
+    return Client.fetch(Client.buildQueryParameters(query, geoIp, latitude, longitude, perPage, page, range, unit),
                         Subpath.VENUES.value);
   }
 
-  static buildQueryParameters(query, geoIp, latitude, longitude, perPage, page) {
+  static buildQueryParameters(query, geoIp, latitude, longitude, perPage, page, range, unit) {
     let queryParameters = query.buildQueryParameters();
     Object.assign(queryParameters,
-                  Client.buildGeolocationParameters(geoIp, latitude, longitude),
+                  Client.buildGeolocationParameters(geoIp, latitude, longitude, range, unit),
                   Client.buildPageParameters(perPage, page));
     return queryParameters;
   }
@@ -68,9 +67,9 @@ export default class Client {
 
       return {
         geoIp: geoIp,
-        latitude: latitude,
-        longitude: longitude,
-        range: str(range) + unit.value,
+        lat: latitude,
+        lon: longitude,
+        range: String(range) + unit.value,
       };
     }
 
