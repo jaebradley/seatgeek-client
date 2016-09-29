@@ -2,18 +2,9 @@
 
 import {expect} from 'chai';
 
-import VenueQuery from '../src/data/request/query/VenueQuery';
+import QueryParameterBuilder from '../src/data/request/query/QueryParameterBuilder';
 
-describe('Test Venue Query', function() {
-  let defaultQuery = new VenueQuery();
-  it('tests venue query default instantiation', function() {
-    expect(defaultQuery.cityName).to.be.an('undefined');
-    expect(defaultQuery.stateCode).to.be.an('undefined');
-    expect(defaultQuery.countryCode).to.be.an('undefined');
-    expect(defaultQuery.postalCode).to.be.an('undefined');
-    expect(defaultQuery.queryString).to.be.an('undefined');
-  });
-
+describe('Test Query Parameter Builder', function() {
   it('tests default query parameter building', function() {
     let defaultExpectedQueryParameters = {
       city: undefined,
@@ -22,17 +13,17 @@ describe('Test Venue Query', function() {
       postal_code: undefined,
       q: undefined,
     };
-    expect(defaultQuery.buildQueryParameters()).to.eql(defaultExpectedQueryParameters);
+    expect(QueryParameterBuilder.buildPlaceParameters(undefined, undefined, undefined, undefined, undefined, undefined)).to.eql(defaultExpectedQueryParameters);
   });
 
   it('tests city name query parameter building', function() {
-    let cityNameQuery = new VenueQuery({
+    let cityNameQuery = {
       cityName: 'Boston',
       stateCode: undefined,
       countryCode: undefined,
       postalCode: undefined,
       queryString: undefined,
-    });
+    };
     let cityNameQueryExpectedParameters = {
       city: 'Boston',
       state: undefined,
@@ -40,26 +31,26 @@ describe('Test Venue Query', function() {
       postal_code: undefined,
       q: undefined,
     };
-    expect(cityNameQuery.buildQueryParameters()).to.eql(cityNameQueryExpectedParameters);
+    expect(QueryParameterBuilder.buildPlaceParameters(cityNameQuery)).to.eql(cityNameQueryExpectedParameters);
 
-    let incorrectCityNameQuery = new VenueQuery({
+    let incorrectCityNameQuery = {
       cityName: 1,
       stateCode: undefined,
       countryCode: undefined,
       postalCode: undefined,
       queryString: undefined,
-    });
-    expect(() => incorrectCityNameQuery.buildQueryParameters()).to.throw();
+    };
+    expect(() => QueryParameterBuilder.buildPlaceParameters(incorrectCityNameQuery)).to.throw();
   });
 
   it('tests state code query parameter building', function() {
-    let stateCodeQuery = new VenueQuery({
+    let stateCodeQuery = {
       cityName: undefined,
       stateCode: 'MA',
       countryCode: undefined,
       postalCode: undefined,
       queryString: undefined,
-    });
+    };
     let stateCodeQueryExpectedParameters = {
       city: undefined,
       state: 'MA',
@@ -67,35 +58,35 @@ describe('Test Venue Query', function() {
       postal_code: undefined,
       q: undefined,
     };
-    expect(stateCodeQuery.buildQueryParameters()).to.eql(stateCodeQueryExpectedParameters);
+    expect(QueryParameterBuilder.buildPlaceParameters(stateCodeQuery)).to.eql(stateCodeQueryExpectedParameters);
 
-    let incorrectStateCodeQuery = new VenueQuery({
+    let incorrectStateCodeQuery = {
       cityName: undefined,
       stateCode: 1,
       countryCode: undefined,
       postalCode: undefined,
       queryString: undefined,
-    });
-    expect(() => incorrectStateCodeQuery.buildQueryParameters()).to.throw(Error);
+    };
+    expect(() => QueryParameterBuilder.buildPlaceParameters()).to.throw(Error);
 
-    let tooLongStateCodeQuery = new VenueQuery({
+    let tooLongStateCodeQuery = {
       cityName: undefined,
       stateCode: 'MASSACHUSETTS',
       countryCode: undefined,
       postalCode: undefined,
       queryString: undefined,
-    });
-    expect(() => tooLongStateCodeQuery.buildQueryParameters()).to.throw(Error);
+    };
+    expect(() => QueryParameterBuilder.buildPlaceParameters()).to.throw(Error);
   });
 
   it('tests country code query parameter building', function() {
-    let countryCodeQuery = new VenueQuery({
+    let countryCodeQuery = {
       cityName: undefined,
       stateCode: undefined,
       countryCode: 'US',
       postalCode: undefined,
       queryString: undefined,
-    });
+    };
     let countryCodeQueryExpectedQueryParameters = {
       city: undefined,
       state: undefined,
@@ -103,35 +94,35 @@ describe('Test Venue Query', function() {
       postal_code: undefined,
       q: undefined,
     };
-    expect(countryCodeQuery.buildQueryParameters()).to.eql(countryCodeQueryExpectedQueryParameters);
+    expect(QueryParameterBuilder.buildPlaceParameters()).to.eql(countryCodeQueryExpectedQueryParameters);
 
-    let invalidTypeCountryCode = new VenueQuery({
+    let invalidTypeCountryCode = {
       cityName: undefined,
       stateCode: undefined,
       countryCode: 1234,
       postalCode: undefined,
       queryString: undefined,
-    });
-    expect(() => invalidTypeCountryCode.buildQueryParameters()).to.throw(Error);
+    };
+    expect(() => QueryParameterBuilder.buildPlaceParameters()).to.throw(Error);
 
-    let tooLongCountryCode = new VenueQuery({
+    let tooLongCountryCode = {
       cityName: undefined,
       stateCode: undefined,
       countryCode: 'JAEBAEBAE',
       postalCode: undefined,
       queryString: undefined,
-    });
-    expect(() => tooLongCountryCode.buildQueryParameters()).to.throw(Error);
+    };
+    expect(() => QueryParameterBuilder.buildPlaceParameters()).to.throw(Error);
   });
 
   it('tests postal code query parameter building', function() {
-    let validQuery = new VenueQuery({
+    let validQuery = {
       cityName: undefined,
       stateCode: undefined,
       countryCode: undefined,
       postalCode: '12345',
       queryString: undefined,
-    });
+    };
     let validQueryExpectedQueryParameters = {
       city: undefined,
       state: undefined,
@@ -139,26 +130,26 @@ describe('Test Venue Query', function() {
       postal_code: '12345',
       q: undefined,
     };
-    expect(validQuery.buildQueryParameters()).to.eql(validQueryExpectedQueryParameters);
+    expect(QueryParameterBuilder.buildPlaceParameters()).to.eql(validQueryExpectedQueryParameters);
 
-    let invalidTypeQuery = new VenueQuery({
+    let invalidTypeQuery = {
       cityName: undefined,
       stateCode: undefined,
       countryCode: undefined,
       postalCode: 12345,
       queryString: undefined,
-    });
-    expect(() => invalidTypeQuery.buildQueryParameters()).to.throw(Error);
+    };
+    expect(() => QueryParameterBuilder.buildPlaceParameters()).to.throw(Error);
   });
 
   it('tests query string query parameter building', function() {
-    let validQuery = new VenueQuery({
+    let validQuery = {
       cityName: undefined,
       stateCode: undefined,
       countryCode: undefined,
       postalCode: undefined,
       queryString: 'hi bae jadley',
-    });
+    };
     let validQueryExpectedQueryParameters = {
       city: undefined,
       state: undefined,
@@ -166,15 +157,35 @@ describe('Test Venue Query', function() {
       postal_code: undefined,
       q: 'hi bae jadley',
     };
-    expect(validQuery.buildQueryParameters()).to.eql(validQueryExpectedQueryParameters);
+    expect(QueryParameterBuilder.buildPlaceParameters()).to.eql(validQueryExpectedQueryParameters);
 
-    let invalidTypeQuery = new VenueQuery({
+    let invalidTypeQuery = {
       cityName: undefined,
       stateCode: undefined,
       countryCode: undefined,
       postalCode: undefined,
       queryString: 1,
-    });
-    expect(() => invalidTypeQuery.buildQueryParameters()).to.throw(Error);
+    };
+    expect(() => QueryParameterBuilder.buildPlaceParameters()).to.throw(Error);
+  });
+
+  it('tests expected page parameter building', function() {
+    let perPage = 100;
+    let page = 200;
+    let expectedPageParameters = {
+      per_page: 100,
+      page: 200,
+    };
+
+    expect(QueryParameterBuilder.buildPageParameters(perPage, page)).to.eql(expectedPageParameters);
+  });
+
+  it('tests exceptional page parameter building', function() {
+    expect(() => QueryParameterBuilder.buildPageParameters('jaebradley', 1)).to.throw(Error);
+    expect(() => QueryParameterBuilder.buildPageParameters(1, 'jaebradley')).to.throw(Error);
+  });
+
+  it('tests geolocation parameters', function() {
+
   });
 });

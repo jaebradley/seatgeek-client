@@ -1,5 +1,7 @@
 'use es6';
 
+import Unit from '../../Unit';
+
 export default class QueryParameterBuilder{
 
   static buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
@@ -39,6 +41,14 @@ export default class QueryParameterBuilder{
   }
 
   static buildPageParameters(perPage, page) {
+    if (typeof perPage !== 'number') {
+      throw new Error('perPage must be a number');
+    }
+
+    if (typeof page !== 'number') {
+      throw new Error('page must be a number');
+    }
+
     return {
       per_page: perPage,
       page: page,
@@ -46,6 +56,10 @@ export default class QueryParameterBuilder{
   }
 
   static buildGeolocationParameters(geoIp, latitude, longitude, range, unit) {
+    if (typeof geoIp !== 'boolean') {
+      throw new Error('geoIp must be a boolean');
+    }
+
     if (geoIp) {
       latitude = undefined;
       longitude = undefined;
@@ -53,7 +67,23 @@ export default class QueryParameterBuilder{
 
     if (((typeof latitude === 'undefined') && (typeof longitude !== 'undefined'))
       || ((typeof latitude !== 'undefined') && (typeof longitude === 'undefined'))) {
-        throw 'latitude and longitude must both be defined';
+        throw new Error('latitude and longitude must both be defined');
+    }
+
+    if ((typeof latitude !== 'undefined') && (typeof latitude !== 'number')) {
+      throw new Error('defined latitude must have a numeric value');
+    }
+
+    if ((typeof longitude !== 'undefined') && (typeof longitude !== 'number')) {
+      throw new Error('defined longitude must have a numeric value');
+    }
+
+    if (typeof range !== 'number') {
+      throw new Error('range must have a numeric value');
+    }
+
+    if (typeof unit !== 'unit') {
+      throw new Error('unit must be a Unit value');
     }
 
     return {
