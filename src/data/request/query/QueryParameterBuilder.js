@@ -60,21 +60,11 @@ export default class QueryParameterBuilder{
       throw new Error('geoIp must be a boolean');
     }
 
-    if (geoIp) {
-      latitude = undefined;
-      longitude = undefined;
-    }
-
-    if (((typeof latitude === 'undefined') && (typeof longitude !== 'undefined'))
-      || ((typeof latitude !== 'undefined') && (typeof longitude === 'undefined'))) {
-        throw new Error('latitude and longitude must both be defined');
-    }
-
-    if ((typeof latitude !== 'undefined') && (typeof latitude !== 'number')) {
+    if (typeof latitude !== 'number') {
       throw new Error('defined latitude must have a numeric value');
     }
 
-    if ((typeof longitude !== 'undefined') && (typeof longitude !== 'number')) {
+    if (typeof longitude !== 'number') {
       throw new Error('defined longitude must have a numeric value');
     }
 
