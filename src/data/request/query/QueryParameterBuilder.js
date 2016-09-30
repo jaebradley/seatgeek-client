@@ -23,7 +23,30 @@ export default class QueryParameterBuilder{
   }
 
   static buildPerformerAttributeParameters(ids, slug, primaryGenres, otherGenres, taxonomies) {
+    if (!(ids instanceof Array)) {
+      throw new Error('ids must be an Array');
+    }
+
+    if ((typeof slug !== 'undefined') && (typeof slug !== 'string')) {
+      throw new Error('defined slug must be String');
+    }
+
+    if (!(primaryGenres instanceof Array)) {
+      throw new Error('primaryGenres must be an Array');
+    }
+
+    if (!(otherGenres instanceof Array)) {
+      throw new Error('otherGenres must be an Array');
+    }
+
+    if (!(taxonomies instanceof Array)) {
+      throw new Error('taxonomies must be an Array');
+    }
+
     let primaryGenreSlugs = [];
+    for (i = 0; i < primaryGenres.length; i++) {
+
+    }
     primaryGenres.forEach(genre => primaryGenreSlugs.push(genre.value));
 
     let otherGenreSlugs = [];
