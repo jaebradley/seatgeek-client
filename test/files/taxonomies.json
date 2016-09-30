@@ -1,7 +1,7 @@
 {
   "meta": {
     "per_page": 100,
-    "total": 51,
+    "total": 61,
     "page": 1,
     "geolocation": null
   },
@@ -9,8 +9,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 11098,
-        "event_count": 1129
+        "performer_count": 11114,
+        "event_count": 1102
       },
       "name": "Sports",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/league-of-legends-9ca243/161231/huge.jpg",
@@ -78,7 +78,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 44,
-        "event_count": 348
+        "event_count": 276
       },
       "name": "MLB Baseball",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chicago-cubs-657b52/11/huge.jpg",
@@ -111,68 +111,102 @@
     {
       "is_visible": true,
       "stats": {
+        "performer_count": 298,
+        "event_count": 51
+      },
+      "name": "NCAA Baseball",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-7266ae/10529/huge.jpg",
+      "slug": "ncaa_baseball",
+      "parent_id": 1010000,
+      "images": {
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-d4678e/10529/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-7266ae/10529/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-b30e70/10529/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-1e19ea/10529/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-5f3c23/10529/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-16d5ed/10529/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-cc704b/10529/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-e3ca76/10529/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-8ee40b/10529/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-20c26c/10529/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-27d550/10529/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-1b535d/10529/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-486c7b/10529/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-88b26f/10529/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-5655b1/10529/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-9aab99/10529/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-4d0e24/10529/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-52fc5d/10529/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-c63fb6/10529/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/college-world-series-cdfc0f/10529/ipad_header.jpg"
+      },
+      "id": 1010200
+    },
+    {
+      "is_visible": true,
+      "stats": {
         "performer_count": 302,
         "event_count": 0
       },
       "name": "Minor League Baseball",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-a8fbcc/9315/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-5b4f2a/9930/huge.jpg",
       "slug": "minor_league_baseball",
       "parent_id": 1010000,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-be3529/9315/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-a8fbcc/9315/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-5165c1/9315/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-6efed5/9315/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-0112d1/9315/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-ea6510/9315/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-c5e205/9315/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-c2a717/9315/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-c175c8/9315/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-3f55ef/9315/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-1b8195/9315/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-5f0c26/9315/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-e85f0f/9315/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-088319/9315/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-2e1dfa/9315/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-36c191/9315/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-135803/9315/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-92899d/9315/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-35d660/9315/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tacoma-rainiers-756822/9315/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-daac49/9930/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-5b4f2a/9930/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-3c5a52/9930/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-0d9087/9930/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-e36759/9930/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-a26df5/9930/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-24cedb/9930/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-dc8e33/9930/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-64f978/9930/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-072966/9930/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-c03d94/9930/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-210d5a/9930/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-a4abd9/9930/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-7e5573/9930/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-e72007/9930/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-9f71bf/9930/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-cba15a/9930/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-eb96df/9930/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-b45761/9930/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/san-jose-giants-1c3a67/9930/ipad_header.jpg"
       },
       "id": 1010300
     },
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 1479,
-        "event_count": 61
+        "performer_count": 1480,
+        "event_count": 56
       },
       "name": "Football",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-af1898/10768/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-6aedf4/10756/huge.jpg",
       "slug": "football",
       "parent_id": 1000000,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-55f58e/10768/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-af1898/10768/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-0e15b8/10768/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-16a9ff/10768/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-9b61c6/10768/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-3dbcf4/10768/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-b152c7/10768/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-f1e8d7/10768/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-955885/10768/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-24dead/10768/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-411bbb/10768/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-098e2d/10768/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-a8aa69/10768/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-3f6388/10768/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-ccb02a/10768/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-e5c691/10768/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-7ae321/10768/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-02ae77/10768/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-e72797/10768/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/toronto-argonauts-c2ab1a/10768/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-5b29b9/10756/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-6aedf4/10756/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-719099/10756/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-6ff0cd/10756/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-bd8592/10756/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-cad42d/10756/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-f3a9bf/10756/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-3ae2dc/10756/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-217211/10756/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-76f1da/10756/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-c870d8/10756/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-97d7a9/10756/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-c064f7/10756/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-c6dda9/10756/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-64a8ac/10756/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-6843df/10756/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-49c854/10756/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-f5424f/10756/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-5950d2/10756/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bc-lions-be926d/10756/ipad_header.jpg"
       },
       "id": 1020000
     },
@@ -180,7 +214,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 56,
-        "event_count": 241
+        "event_count": 226
       },
       "name": "NFL Football",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/dallas-cowboys-b1c333/2066/huge.jpg",
@@ -214,7 +248,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 532,
-        "event_count": 1375
+        "event_count": 1233
       },
       "name": "College Football",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/michigan-wolverines-football-ac489f/5549/huge.jpg",
@@ -247,8 +281,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 1414,
-        "event_count": 141
+        "performer_count": 1416,
+        "event_count": 147
       },
       "name": "Basketball",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/marquette-golden-eagles-basketball-451444/4041/huge.jpg",
@@ -282,7 +316,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 49,
-        "event_count": 1322
+        "event_count": 1321
       },
       "name": "NBA Basketball",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-knicks-bcf9eb/2090/huge.jpg",
@@ -315,76 +349,110 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 1164,
-        "event_count": 1760
+        "performer_count": 1169,
+        "event_count": 1909
       },
       "name": "College Basketball",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-d0a4b4/4002/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-838123/279378/huge.jpg",
       "slug": "ncaa_basketball",
       "parent_id": 1030000,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-0f9145/4002/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-d0a4b4/4002/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-e9e90d/4002/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-e5a0e9/4002/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-ea63aa/4002/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-239ed2/4002/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-d1877a/4002/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-612a19/4002/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-608915/4002/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-f5bb2f/4002/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-6af083/4002/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-82bbf9/4002/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-c433c3/4002/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-3491fb/4002/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-8d993e/4002/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-0621ed/4002/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-507a4d/4002/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-394870/4002/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-333d2a/4002/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/duke-blue-devils-basketball-2b206f/4002/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-cd542b/279378/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-838123/279378/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-81aa5f/279378/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-814300/279378/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-ef9dd8/279378/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-1b4c89/279378/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-34283b/279378/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-f23506/279378/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-ac4c08/279378/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-7f5fdb/279378/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-4e6601/279378/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-6cc335/279378/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-a20065/279378/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-5bbb76/279378/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-20516b/279378/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-275f92/279378/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-f65c56/279378/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-05e660/279378/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-5cd24c/279378/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cbs-sports-classic-4b792d/279378/ipad_header.jpg"
       },
       "id": 1030200
     },
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 763,
-        "event_count": 1381
+        "performer_count": 766,
+        "event_count": 2387
       },
       "name": "College Women's Basketball",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-466173/261373/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-65d64f/9604/huge.jpg",
       "slug": "ncaa_womens_basketball",
       "parent_id": 1030000,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-ac4190/261373/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-466173/261373/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-5f2526/261373/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-7b32ab/261373/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-8f71d6/261373/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-1b00e9/261373/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-5b034f/261373/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-55734e/261373/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-784783/261373/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-21d13a/261373/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-d998b8/261373/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-7aab6a/261373/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-d9f868/261373/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-596434/261373/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-ef585a/261373/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-2c7429/261373/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-a6f191/261373/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-f9252e/261373/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-a928f1/261373/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hall-of-fame-classic-997313/261373/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-c88361/9604/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-65d64f/9604/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-ef8a49/9604/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-85d7e7/9604/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-f97f7f/9604/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-bdf10d/9604/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-2a8a1e/9604/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-a7fffd/9604/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-ea888c/9604/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-6b5ffd/9604/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-7a0d31/9604/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-08d21f/9604/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-89c222/9604/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-f9b2db/9604/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-437662/9604/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-156481/9604/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-c58dcd/9604/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-d9351e/9604/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-72e1bf/9604/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/st-john-s-red-storm-womens-basketball-1d9e93/9604/ipad_header.jpg"
       },
       "id": 1030300
     },
     {
       "is_visible": true,
       "stats": {
+        "performer_count": 16,
+        "event_count": 4
+      },
+      "name": "WNBA Basketball",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-b0426a/10715/huge.jpg",
+      "slug": "wnba",
+      "parent_id": 1030000,
+      "images": {
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-61454c/10715/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-b0426a/10715/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-2ec0f7/10715/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-c2fcf5/10715/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-08366b/10715/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-3dc97a/10715/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-f040cc/10715/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-390e9d/10715/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-590567/10715/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-7e4af9/10715/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-90938c/10715/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-70ece5/10715/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-c07210/10715/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-ef5aa9/10715/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-5f8a53/10715/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-528191/10715/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-8d95aa/10715/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-460f20/10715/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-d4db8e/10715/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/minnesota-lynx-4fb14b/10715/ipad_header.jpg"
+      },
+      "id": 1030400
+    },
+    {
+      "is_visible": true,
+      "stats": {
         "performer_count": 17,
-        "event_count": 19
+        "event_count": 31
       },
       "name": "NBA D-League",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/austin-spurs-2aa1f9/13024/huge.jpg",
@@ -417,8 +485,42 @@
     {
       "is_visible": true,
       "stats": {
+        "performer_count": 614,
+        "event_count": 1282
+      },
+      "name": "Hockey",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-b59f12/12974/huge.jpg",
+      "slug": "hockey",
+      "parent_id": 1000000,
+      "images": {
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-3e042e/12974/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-b59f12/12974/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-0b71cb/12974/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-8b6834/12974/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-9e1f93/12974/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-f96f31/12974/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-ba882d/12974/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-ec9c3d/12974/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-6aafb1/12974/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-79839f/12974/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-6193db/12974/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-5679d5/12974/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-e8f8d4/12974/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-95a508/12974/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-49323a/12974/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-d8ffe7/12974/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-aa0577/12974/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-2748eb/12974/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-9e1ef9/12974/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/windsor-spitfires-ad87c6/12974/ipad_header.jpg"
+      },
+      "id": 1040000
+    },
+    {
+      "is_visible": true,
+      "stats": {
         "performer_count": 60,
-        "event_count": 1340
+        "event_count": 1309
       },
       "name": "NHL Hockey",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-rangers-3b2664/2120/huge.jpg",
@@ -452,33 +554,33 @@
       "is_visible": true,
       "stats": {
         "performer_count": 121,
-        "event_count": 540
+        "event_count": 554
       },
       "name": "College Hockey",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-aac36c/9804/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-9f6686/16490/huge.jpg",
       "slug": "ncaa_hockey",
       "parent_id": 1040000,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-176e1e/9804/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-aac36c/9804/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-c071f7/9804/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-9095b2/9804/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-839c6b/9804/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-7509c7/9804/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-d3da26/9804/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-426976/9804/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-cbed73/9804/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-ffcf08/9804/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-c84e6c/9804/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-d89637/9804/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-360ced/9804/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-adf551/9804/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-be7c6f/9804/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-3cacac/9804/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-8c62dc/9804/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-ea89c4/9804/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-6cbb6f/9804/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/north-dakota-fighting-sioux-hockey-c979f3/9804/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-1b29f1/16490/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-9f6686/16490/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-14e7fe/16490/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-8b7137/16490/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-8fcaa6/16490/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-5a2bb6/16490/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-d10c1e/16490/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-062531/16490/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-e94130/16490/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-eb700c/16490/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-d00c16/16490/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-14b710/16490/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-45f0dd/16490/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-b8ad66/16490/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-c341a0/16490/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-ac83e1/16490/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-1e8bf9/16490/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-caa175/16490/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-0f16cd/16490/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ncaa-mens-frozen-four-22c5c3/16490/ipad_header.jpg"
       },
       "id": 1040200
     },
@@ -486,33 +588,33 @@
       "is_visible": true,
       "stats": {
         "performer_count": 101,
-        "event_count": 1551
+        "event_count": 1599
       },
       "name": "Minor League Hockey",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-091215/9303/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-baf01f/9336/huge.jpg",
       "slug": "minor_league_hockey",
       "parent_id": 1040000,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-4311a9/9303/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-091215/9303/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-bd0c7f/9303/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-18d441/9303/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-469947/9303/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-2b3fce/9303/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-f248db/9303/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-ca1843/9303/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-c2338c/9303/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-93709a/9303/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-19f95c/9303/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-70cb4c/9303/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-d317b4/9303/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-d18bfe/9303/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-42023e/9303/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-1de89b/9303/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-d185f9/9303/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-33ceaf/9303/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-717200/9303/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ontario-reign-770dee/9303/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-30a7e8/9336/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-baf01f/9336/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-4b75ad/9336/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-2eee5b/9336/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-b95cc0/9336/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-78f730/9336/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-703c87/9336/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-72ab05/9336/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-6ad77e/9336/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-71a595/9336/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-066917/9336/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-8b0251/9336/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-a65262/9336/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-684bd8/9336/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-f9973d/9336/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-617367/9336/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-cde33e/9336/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-0ec86c/9336/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-efeaec/9336/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/lehigh-valley-phantoms-44688f/9336/ipad_header.jpg"
       },
       "id": 1040300
     },
@@ -520,7 +622,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 1544,
-        "event_count": 426
+        "event_count": 430
       },
       "name": "Soccer",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/club-america-bd4d0c/10147/huge.jpg",
@@ -551,6 +653,40 @@
       "id": 1050000
     },
     {
+      "is_visible": true,
+      "stats": {
+        "performer_count": 37,
+        "event_count": 41
+      },
+      "name": "MLS Soccer",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-d5ecdf/5866/huge.jpg",
+      "slug": "mls",
+      "parent_id": 1050000,
+      "images": {
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-272a56/5866/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-d5ecdf/5866/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-85b325/5866/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-b173a6/5866/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-73343e/5866/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-d86271/5866/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-87755d/5866/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-58ffb3/5866/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-e5b080/5866/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-6e4438/5866/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-b2e44b/5866/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-ad03ab/5866/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-ca980c/5866/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-91d293/5866/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-bbb30a/5866/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-7bd826/5866/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-47806c/5866/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-e6e56d/5866/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-221efd/5866/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-red-bulls-5d9046/5866/ipad_header.jpg"
+      },
+      "id": 1050100
+    },
+    {
       "is_visible": false,
       "stats": {
         "performer_count": 7,
@@ -567,33 +703,33 @@
       "is_visible": true,
       "stats": {
         "performer_count": 115,
-        "event_count": 334
+        "event_count": 331
       },
       "name": "European Soccer",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-4d8eee/14652/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-6882d6/10079/huge.jpg",
       "slug": "european_soccer",
       "parent_id": 1050000,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-d42155/14652/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-4d8eee/14652/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-8f2699/14652/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-6bab55/14652/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-65906b/14652/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-feb390/14652/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-00a9db/14652/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-316dce/14652/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-ec1c61/14652/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-a2a8ae/14652/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-46565a/14652/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-0e8e9c/14652/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-bfa191/14652/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-76c108/14652/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-f59f7a/14652/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-0ce1f8/14652/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-40cae8/14652/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-e414d4/14652/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-3bb133/14652/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/chelsea-fc-33d7fc/14652/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-0e5b28/10079/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-6882d6/10079/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-42ac66/10079/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-964e69/10079/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-6178e7/10079/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-52f88f/10079/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-ce1d3f/10079/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-554ac5/10079/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-00c7f2/10079/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-691522/10079/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-ff19ac/10079/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-f3070f/10079/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-6a2967/10079/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-c18edb/10079/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-ff734f/10079/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-b5e650/10079/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-81d778/10079/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-684501/10079/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-f35049/10079/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/everton-fc-1d8c4e/10079/ipad_header.jpg"
       },
       "id": 1050300
     },
@@ -601,7 +737,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 60,
-        "event_count": 5
+        "event_count": 6
       },
       "name": "International Soccer",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/mexico-national-soccer-team-eecf31/9714/huge.jpg",
@@ -635,7 +771,7 @@
       "is_visible": false,
       "stats": {
         "performer_count": 11,
-        "event_count": 1
+        "event_count": 2
       },
       "name": "2014 World Cup",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/world-cup-soccer-f5987b/10400/huge.jpg",
@@ -669,7 +805,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 447,
-        "event_count": 158
+        "event_count": 170
       },
       "name": "Auto Racing",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/monster-energy-cup-313faa/12089/huge.jpg",
@@ -703,33 +839,33 @@
       "is_visible": true,
       "stats": {
         "performer_count": 148,
-        "event_count": 40
+        "event_count": 37
       },
       "name": "NASCAR",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-e71574/14894/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-0c7d28/5819/huge.jpg",
       "slug": "nascar",
       "parent_id": 1060000,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-038356/14894/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-e71574/14894/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-7ee904/14894/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-a4fc6c/14894/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-a6b65d/14894/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-9fd259/14894/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-6a1cd1/14894/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-ea2bd0/14894/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-f7b12b/14894/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-3ce0da/14894/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-ddd78e/14894/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-dfca88/14894/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-8535b6/14894/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-52dc54/14894/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-583a27/14894/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-402c58/14894/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-69f0c0/14894/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-937917/14894/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-aa9e59/14894/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/charlotte-motor-speedway-events-796692/14894/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-c92512/5819/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-0c7d28/5819/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-09daca/5819/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-4fc52a/5819/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-cbe6a1/5819/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-8f21e5/5819/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-8ddbf4/5819/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-79de58/5819/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-6eb92a/5819/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-3a8d0f/5819/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-718a67/5819/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-7807a0/5819/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-5520ea/5819/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-42c29f/5819/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-fe8f6e/5819/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-bb52b9/5819/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-05abd9/5819/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-7a721a/5819/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-7d3e9f/5819/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/nextera-energy-resources-250-82d7e9/5819/ipad_header.jpg"
       },
       "id": 1060100
     },
@@ -737,33 +873,33 @@
       "is_visible": true,
       "stats": {
         "performer_count": 62,
-        "event_count": 61
+        "event_count": 60
       },
       "name": "NASCAR Sprint Cup Series",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-781973/5806/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-30ef7e/5778/huge.jpg",
       "slug": "nascar_sprintcup",
       "parent_id": 1060100,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-922313/5806/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-781973/5806/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-96e212/5806/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-a4a893/5806/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-323523/5806/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-d961e5/5806/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-c04fb2/5806/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-2c57fa/5806/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-96081d/5806/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-05565b/5806/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-ca01d6/5806/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-77fabc/5806/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-9e2224/5806/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-ac833f/5806/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-586ea7/5806/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-7660d7/5806/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-a9b8ff/5806/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-a27c01/5806/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-7facb1/5806/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/sylvania-300-8271c0/5806/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-f0e9be/5778/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-30ef7e/5778/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-0f6e21/5778/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-60e160/5778/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-9552fa/5778/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-eb6dd2/5778/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-67d035/5778/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-7368a0/5778/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-16c783/5778/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-29a431/5778/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-371e51/5778/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-3cbf2b/5778/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-535f9f/5778/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-3a30bc/5778/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-25cdf1/5778/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-fcfbb1/5778/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-c9d7ef/5778/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-2db34b/5778/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-e74209/5778/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/aaa-400-2ceeed/5778/ipad_header.jpg"
       },
       "id": 1060101
     },
@@ -800,6 +936,40 @@
         "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/o-reilly-auto-parts-300-944408/5849/ipad_header.jpg"
       },
       "id": 1060102
+    },
+    {
+      "is_visible": true,
+      "stats": {
+        "performer_count": 31,
+        "event_count": 3
+      },
+      "name": "Indycar",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-f54ac6/270260/huge.jpg",
+      "slug": "indycar",
+      "parent_id": 1060000,
+      "images": {
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-8f45a5/270260/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-f54ac6/270260/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-11b8bc/270260/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-31bb55/270260/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-9e8f02/270260/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-97bd29/270260/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-df4445/270260/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-3773cb/270260/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-03b772/270260/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-249ca6/270260/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-c2c179/270260/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-291e5d/270260/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-3265e3/270260/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-f13ea6/270260/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-4f936b/270260/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-d7661d/270260/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-f1b4f2/270260/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-184731/270260/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-f3f5db/270260/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/indianapolis-500-13-c86f23/270260/ipad_header.jpg"
+      },
+      "id": 1060200
     },
     {
       "is_visible": false,
@@ -907,7 +1077,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 757,
-        "event_count": 40
+        "event_count": 35
       },
       "name": "Golf",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/rr-donnelley-founders-cup-f49396/9374/huge.jpg",
@@ -941,7 +1111,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 81,
-        "event_count": 100
+        "event_count": 109
       },
       "name": "PGA Golf",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ryder-cup-44f678/5737/huge.jpg",
@@ -1008,8 +1178,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 557,
-        "event_count": 20
+        "performer_count": 558,
+        "event_count": 17
       },
       "name": "Fighting",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bellator-fighting-championships-91be86/6847/huge.jpg",
@@ -1042,7 +1212,7 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 450,
+        "performer_count": 451,
         "event_count": 42
       },
       "name": "Boxing",
@@ -1076,8 +1246,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 425,
-        "event_count": 61
+        "performer_count": 426,
+        "event_count": 59
       },
       "name": "MMA",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ufc-5aa297/5895/huge.jpg",
@@ -1111,7 +1281,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 240,
-        "event_count": 65
+        "event_count": 60
       },
       "name": "Wrestling",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/pro-wrestling-live-e992df/10856/huge.jpg",
@@ -1145,7 +1315,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 47,
-        "event_count": 100
+        "event_count": 96
       },
       "name": "WWE",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/wwe-raw-3bc0e6/283663/huge.jpg",
@@ -1176,6 +1346,40 @@
       "id": 1080301
     },
     {
+      "is_visible": true,
+      "stats": {
+        "performer_count": 299,
+        "event_count": 179
+      },
+      "name": "Tennis",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-46ba1b/5706/huge.jpg",
+      "slug": "tennis",
+      "parent_id": 1000000,
+      "images": {
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-148538/5706/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-46ba1b/5706/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-1a1b55/5706/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-d6cf35/5706/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-6e4de5/5706/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-cc5163/5706/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-3f69b4/5706/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-5d464f/5706/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-d978f7/5706/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-49a13f/5706/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-dcde32/5706/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-e1a321/5706/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-a0cb9f/5706/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-384736/5706/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-50e206/5706/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-6b800c/5706/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-39b3de/5706/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-ae05f2/5706/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-bd885c/5706/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bnp-paribas-open-768e42/5706/ipad_header.jpg"
+      },
+      "id": 1090000
+    },
+    {
       "is_visible": false,
       "stats": {
         "performer_count": 11,
@@ -1192,33 +1396,33 @@
       "is_visible": true,
       "stats": {
         "performer_count": 214,
-        "event_count": 73
+        "event_count": 71
       },
       "name": "Horse Racing",
-      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-83ad12/10823/huge.jpg",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-00261b/10846/huge.jpg",
       "slug": "horse_racing",
       "parent_id": 1100000,
       "images": {
-        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-0cd214/10823/500_700.jpg",
-        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-83ad12/10823/huge.jpg",
-        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-83e77a/10823/fb_100x72.jpg",
-        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-6c3b52/10823/criteo_170_235.jpg",
-        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-b850f2/10823/mongo.jpg",
-        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-72cb7f/10823/800x320.jpg",
-        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-c7c7ec/10823/fb_600_315.jpg",
-        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-1522ad/10823/ipad_mini_explore.jpg",
-        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-fca91c/10823/criteo_130_160.jpg",
-        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-4d484a/10823/criteo_400_300.jpg",
-        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-2f7910/10823/criteo_205_100.jpg",
-        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-068a78/10823/1200x627.jpg",
-        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-6f599e/10823/square_mid.jpg",
-        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-eeee59/10823/triggit_fb_ad.jpg",
-        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-3f974f/10823/ipad_event_modal.jpg",
-        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-67ad6c/10823/1200x525.jpg",
-        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-b926fb/10823/136x136.jpg",
-        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-cf0c8c/10823/banner.jpg",
-        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-1513f6/10823/block.jpg",
-        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/kentucky-derby-hotels-014c1c/10823/ipad_header.jpg"
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-a319e6/10846/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-00261b/10846/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-a5b31a/10846/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-9dc4a1/10846/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-1ca5c9/10846/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-01398e/10846/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-6c1d03/10846/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-9e0ec3/10846/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-17e794/10846/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-324a0c/10846/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-b0246b/10846/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-e9bce2/10846/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-930939/10846/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-d19b38/10846/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-9c7890/10846/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-77f102/10846/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-b3e076/10846/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-05fe74/10846/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-4d24d6/10846/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/breeders-cup-348f3f/10846/ipad_header.jpg"
       },
       "id": 1100100
     },
@@ -1226,7 +1430,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 282,
-        "event_count": 308
+        "event_count": 299
       },
       "name": "Rodeo",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/national-black-rodeo-finals-ac571f/10781/huge.jpg",
@@ -1259,8 +1463,42 @@
     {
       "is_visible": true,
       "stats": {
+        "performer_count": 15,
+        "event_count": 9
+      },
+      "name": "Extreme Sports",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-fe5ed0/10713/huge.jpg",
+      "slug": "extreme_sports",
+      "parent_id": 1000000,
+      "images": {
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-221473/10713/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-fe5ed0/10713/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-392627/10713/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-21ac0f/10713/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-ce3eb6/10713/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-a2b297/10713/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-6701a1/10713/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-a9a723/10713/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-03c377/10713/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-19dcbc/10713/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-ffea4e/10713/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-797ab6/10713/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-19418c/10713/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-ddb460/10713/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-99dbb2/10713/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-947bf8/10713/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-6627b4/10713/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-ab0d3f/10713/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-3f3bef/10713/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/espn-x-games-1bcf20/10713/ipad_header.jpg"
+      },
+      "id": 1110000
+    },
+    {
+      "is_visible": true,
+      "stats": {
         "performer_count": 80,
-        "event_count": 47
+        "event_count": 45
       },
       "name": "Olympic Sports",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/att-american-cup-gymnastics-f1b66a/58669/huge.jpg",
@@ -1293,8 +1531,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 427903,
-        "event_count": 66693
+        "performer_count": 428026,
+        "event_count": 64660
       },
       "name": "Concert",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/adele-55ee01/141/huge.jpg",
@@ -1328,7 +1566,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 21027,
-        "event_count": 2479
+        "event_count": 2337
       },
       "name": "Music Festival",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/austin-city-limits-festival-3150e5/2268/huge.jpg",
@@ -1361,8 +1599,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 16674,
-        "event_count": 17380
+        "performer_count": 16700,
+        "event_count": 16860
       },
       "name": "Theater",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/comic-con-c5ea53/14470/huge.jpg",
@@ -1395,8 +1633,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 3824,
-        "event_count": 2531
+        "performer_count": 3834,
+        "event_count": 2496
       },
       "name": "Classical",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/andrea-bocelli-555f77/5276/huge.jpg",
@@ -1429,8 +1667,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 644,
-        "event_count": 1319
+        "performer_count": 647,
+        "event_count": 1317
       },
       "name": "Classical Opera",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/das-rheingold-c0ddf0/5334/huge.jpg",
@@ -1463,8 +1701,42 @@
     {
       "is_visible": true,
       "stats": {
+        "performer_count": 104,
+        "event_count": 95
+      },
+      "name": "Classical Vocal",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-8a6dfc/5270/huge.jpg",
+      "slug": "classical_vocal",
+      "parent_id": 3010000,
+      "images": {
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-3ea6f5/5270/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-8a6dfc/5270/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-c9024d/5270/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-a5d9dd/5270/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-21834c/5270/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-24c96c/5270/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-5c2e3c/5270/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-dcd955/5270/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-135a58/5270/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-f9626d/5270/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-6da7fa/5270/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-b83cd1/5270/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-ed2856/5270/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-54a39d/5270/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-ceb756/5270/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-daaafa/5270/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-ea0ecd/5270/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-568825/5270/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-62de0f/5270/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/handels-messiah-5e8906/5270/ipad_header.jpg"
+      },
+      "id": 3010200
+    },
+    {
+      "is_visible": true,
+      "stats": {
         "performer_count": 449,
-        "event_count": 2104
+        "event_count": 2078
       },
       "name": "Classical Orchestral",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/ennio-morricone-b966d8/14525/huge.jpg",
@@ -1498,7 +1770,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 45,
-        "event_count": 2455
+        "event_count": 2353
       },
       "name": "Cirque Du Soleil",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/cirque-du-soleil-michael-jackson-one-13d9a3/8066/huge.jpg",
@@ -1531,8 +1803,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 1181,
-        "event_count": 29214
+        "performer_count": 1183,
+        "event_count": 29088
       },
       "name": "Broadway Show",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/hamilton-cddf5c/97669/huge.jpg",
@@ -1563,10 +1835,44 @@
       "id": 3030000
     },
     {
+      "is_visible": true,
+      "stats": {
+        "performer_count": 9296,
+        "event_count": 11443
+      },
+      "name": "Comedy",
+      "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-e0a045/12028/huge.jpg",
+      "slug": "comedy",
+      "parent_id": 3000000,
+      "images": {
+        "500_700": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-ef7dfe/12028/500_700.jpg",
+        "huge": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-e0a045/12028/huge.jpg",
+        "fb_100x72": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-31b1b2/12028/fb_100x72.jpg",
+        "criteo_170_235": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-ff418f/12028/criteo_170_235.jpg",
+        "mongo": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-889345/12028/mongo.jpg",
+        "800x320": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-5eee33/12028/800x320.jpg",
+        "fb_600_315": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-72f82a/12028/fb_600_315.jpg",
+        "ipad_mini_explore": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-c74c09/12028/ipad_mini_explore.jpg",
+        "criteo_130_160": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-b3cbe0/12028/criteo_130_160.jpg",
+        "criteo_400_300": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-61daf3/12028/criteo_400_300.jpg",
+        "criteo_205_100": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-bf0f72/12028/criteo_205_100.jpg",
+        "1200x627": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-da867a/12028/1200x627.jpg",
+        "square_mid": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-c8ef57/12028/square_mid.jpg",
+        "triggit_fb_ad": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-0ff916/12028/triggit_fb_ad.jpg",
+        "ipad_event_modal": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-958ca3/12028/ipad_event_modal.jpg",
+        "1200x525": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-bfb852/12028/1200x525.jpg",
+        "136x136": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-aaa39e/12028/136x136.jpg",
+        "banner": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-fab494/12028/banner.jpg",
+        "block": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-559d0a/12028/block.jpg",
+        "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/amy-schumer-96090a/12028/ipad_header.jpg"
+      },
+      "id": 3040000
+    },
+    {
       "is_visible": false,
       "stats": {
-        "performer_count": 1633,
-        "event_count": 5399
+        "performer_count": 1634,
+        "event_count": 5215
       },
       "name": "Family Entertainment",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/westminster-kennel-club-dog-show-ab13f0/8273/huge.jpg",
@@ -1599,8 +1905,8 @@
     {
       "is_visible": true,
       "stats": {
-        "performer_count": 3700,
-        "event_count": 6611
+        "performer_count": 3705,
+        "event_count": 6422
       },
       "name": "Dance Show",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/bolshoi-ballet-1ac12d/9779/huge.jpg",
@@ -1647,7 +1953,7 @@
       "is_visible": true,
       "stats": {
         "performer_count": 38,
-        "event_count": 109
+        "event_count": 108
       },
       "name": "Literary",
       "image": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/dalai-lama-d2eb5d/8257/huge.jpg",
@@ -1676,6 +1982,19 @@
         "ipad_header": "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/dalai-lama-11f8ab/8257/ipad_header.jpg"
       },
       "id": 3080000
+    },
+    {
+      "is_visible": false,
+      "stats": {
+        "performer_count": 0,
+        "event_count": 0
+      },
+      "name": "Circus",
+      "image": null,
+      "slug": "circus",
+      "parent_id": 3000000,
+      "images": {},
+      "id": 3090000
     }
   ]
 }

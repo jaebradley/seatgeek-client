@@ -20,6 +20,11 @@ Taxonomy.initEnum({
     id: 1010100,
     parent_id: 1010000,
   },
+  NCAA_BASEBALL: {
+    slug: 'ncaa_baseball',
+    id: 1010200,
+    parent_id: 1010000,
+  },
   MINOR_LEAGUE_BASEBALL: {
     slug: 'minor_league_baseball',
     id: 1010300,
@@ -60,10 +65,20 @@ Taxonomy.initEnum({
     id: 1030300,
     parent_id: 1030000,
   },
+  WNBA_BASKETBALL: {
+    slug: 'wnba',
+    id: 1030400,
+    parent_id: 1030000,
+  },
   NBA_DLEAGUE: {
     slug: 'nba_dleague',
     id: 1030500,
     parent_id: 1030000,
+  },
+  HOCKEY: {
+    slug: 'hockey',
+    id: 1040000,
+    parent_id: 1000000,
   },
   NHL_HOCKEY: {
     slug: 'nhl',
@@ -84,6 +99,16 @@ Taxonomy.initEnum({
     slug: 'soccer',
     id: 1050000,
     parent_id: 1000000,
+  },
+  MLS_SOCCER: {
+    slug: 'mls',
+    id: 1050100,
+    parent_id: 1050000,
+  },
+  COLLEGE_SOCCER: {
+    slug: 'ncaa_soccer',
+    id: 1050200,
+    parent_id: 1050000,
   },
   EUROPEAN_SOCCER: {
     slug: 'european_soccer',
@@ -119,6 +144,11 @@ Taxonomy.initEnum({
     slug: 'nascar_nationwide',
     id: 1060102,
     parent_id: 1060100,
+  },
+  INDYCAR: {
+    slug: 'indycar',
+    id: 1060200,
+    parent_id: 1060000,
   },
   F1_RACING: {
     slug: 'f1',
@@ -175,6 +205,11 @@ Taxonomy.initEnum({
     id: 1080301,
     parent_id: 1080300,
   },
+  TENNIS: {
+    slug: 'tennis',
+    id: 1090000,
+    parent_id: 1000000,
+  },
   ANIMAL_SPORTS: {
     slug: 'animal_sports',
     id: 1100000,
@@ -189,6 +224,11 @@ Taxonomy.initEnum({
     slug: 'rodeo',
     id: 1100200,
     parent_id: 1100000,
+  },
+  EXTREME_SPORTS: {
+    slug: 'extreme_sports',
+    id: 1110000,
+    parent_id: 1000000,
   },
   OLYMPIC_SPORTS: {
     slug: 'olympic_sports',
@@ -220,6 +260,11 @@ Taxonomy.initEnum({
     id: 3010100,
     parent_id: 3010000,
   },
+  CLASSICAL_VOCAL: {
+    slug: 'classical_vocal',
+    id: 3010200,
+    parent_id: 3010000,
+  },
   CLASSICAL_ORCHESTRAL: {
     slug: 'classical_orchestral_instrumental',
     id: 3010300,
@@ -233,6 +278,11 @@ Taxonomy.initEnum({
   BROADWAY_SHOW: {
     slug: 'broadway_tickets_national',
     id: 3030000,
+    parent_id: 3000000,
+  },
+  COMEDY: {
+    slug: 'comedy',
+    id: 3040000,
     parent_id: 3000000,
   },
   FAMILY_ENTERTAINMENT: {
@@ -253,6 +303,11 @@ Taxonomy.initEnum({
   LITERARY: {
     slug: 'literary',
     id: 3080000,
+    parent_id: 3000000,
+  },
+  CIRCUS: {
+    slug: 'circus',
+    id: 3090000,
     parent_id: 3000000,
   },
 });

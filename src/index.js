@@ -3,7 +3,7 @@
 import rp from 'request-promise';
 
 import Unit from './data/Unit';
-import VenueQuery from './data/request/query/VenueQuery';
+import QueryParameterBuilder from './data/request/query/QueryParameterBuilder';
 import Subpath from './data/request/Subpath';
 
 let baseUri = 'https://api.seatgeek.com/2/';
@@ -13,25 +13,18 @@ export default class Client {
   constructor() {}
 
   static getGenres(perPage=100, page=1) {
-    return Client.fetch(Client.buildPageParameters(perPage, page),
+    return Client.fetch(QueryParameterBuilder.buildPageParameters(perPage, page),
                         Subpath.GENRES.value);
   }
 
   static getTaxonomies(perPage=100, page=1) {
-    return Client.fetch(Client.buildPageParameters(perPage, page),
+    return Client.fetch(QueryParameterBuilder.buildPageParameters(perPage, page),
                         Subpath.TAXONOMIES.value);
   }
 
   static getPerformers(ids=[], slug=undefined, primaryGenres=[], otherGenres=[],
                        taxonomies=[], perPage=100, page=1) {
-    let query = new PerformerQuery({
-      ids: ids,
-      slug: slug,
-      primaryGenres: primaryGenres,
-      otherGenres: otherGenres,
-      taxonomies: taxonomies
-    });
-    return Client.fetch(Client.buildQueryParameters(query, perPage, page),
+    return Client.fetch(QueryParameterBuilder.buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, perPage, page),
                         Subpath.PERFORMERS.value);
   }
 
@@ -40,54 +33,9 @@ export default class Client {
                    latitude=undefined, longitude=undefined, address=undefined,
                    range=10, unit=Unit.MILE, perPage=100, page=1) {
 
-    let query = new VenueQuery({
-      cityName: cityName,
-      stateCode: stateCode,
-      countryCode: countryCode,
-      postalCode: postalCode,
-      queryString: queryString,
-    });
-
-    return Client.fetch(Client.buildQueryParameters(query, perPage, page, geoIp, latitude, longitude, range, unit),
+    return Client.fetch(QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode, queryString, geoIp, latitude, longitude, address, range, unit, perPage, page),
                         Subpath.VENUES.value);
   }
-
-  static buildQueryParameters(query, perPage, page, geoIp=undefined,
-                              latitude=undefined, longitude=undefined,
-                              range=undefined, unit=undefined) {
-
-    let queryParameters = query.buildQueryParameters();
-    Object.assign(queryParameters,
-                  Client.buildGeolocationParameters(geoIp, latitude, longitude, range, unit),
-                  Client.buildPageParameters(perPage, page));
-    return queryParameters;
-  }
-
-  static buildPageParameters(perPage, page) {
-    return {
-      per_page: perPage,
-      page: page,
-    };
-  }
-
-  static buildGeolocationParameters(geoIp, latitude, longitude, range, unit) {
-      if (geoIp) {
-        latitude = undefined;
-        longitude = undefined;
-      }
-
-      if (((typeof latitude === 'undefined') && (typeof longitude !== 'undefined'))
-        || ((typeof latitude !== 'undefined') && (typeof longitude === 'undefined'))) {
-          throw 'latitude and longitude must both be defined';
-      }
-
-      return {
-        geoIp: geoIp,
-        lat: latitude,
-        lon: longitude,
-        range: String(range) + unit.value,
-      };
-    }
 
   static buildRequest(parameters, subpath) {
     return {
