@@ -8,9 +8,17 @@ Genre.initEnum({
     slug: "country",
     id: 450,
   },
+  POP: {
+    slug: 'pop',
+    id: 453,
+  },
   ROCK: {
     slug: "rock",
     id: 456,
+  },
+  ALTERNATIVE: {
+    slug: 'alternative',
+    id: 457,
   },
   INDIE: {
     slug: "indie",
@@ -35,6 +43,10 @@ Genre.initEnum({
   JAZZ: {
     slug: "jazz",
     id: 468,
+  },
+  REGGAE: {
+    slug: 'reggae',
+    id: 469,
   },
   CLASSIC_ROCK: {
     slug: "classic-rock",
@@ -72,4 +84,8 @@ Genre.initEnum({
     slug: "classical",
     id: 747,
   },
+  TECHNO: {
+    slug: "techno",
+    id: 976,
+  }
 });

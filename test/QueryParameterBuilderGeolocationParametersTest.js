@@ -9,7 +9,7 @@ describe('Test Query Parameter Builder', function() {
   let defaultLatitude = 12.34;
   let defaultLongitude = 56.78;
   let defaultRange = 10;
-  let defaultUnit = Unit.MILES;
+  let defaultUnit = Unit.MILE;
   let defaultRangeString = String(defaultRange) + defaultUnit.value;
 
   it('tests expected behavior when geoIp set to true', function() {
@@ -20,24 +20,24 @@ describe('Test Query Parameter Builder', function() {
       lon: defaultLongitude,
       range: defaultRangeString,
     };
-    expect(QueryParameterBuilder.buildGeolocationParameters(trueGeoIp, defaultLatitude, defaultLongitude, defaultRange, defaultUnit)
+    expect(QueryParameterBuilder.buildGeolocationParameters(trueGeoIp, defaultLatitude, defaultLongitude, defaultRange, defaultUnit))
       .to.eql(expectedTrueGeoIpParameters);
   });
 
   it('tests exceptional behavior', function() {
-    expect(() => QueryParameterBuilder.buildGeolocationParameters(1, defaultLatitude, defaultLongitude, defaultRange, defaultUnit)
+    expect(() => QueryParameterBuilder.buildGeolocationParameters(1, defaultLatitude, defaultLongitude, defaultRange, defaultUnit))
       .to.throw(Error);
 
-    expect(() => QueryParameterBuilder.buildGeolocationParameters(true, undefined, defaultLongitude, defaultRange, defaultUnit)
+    expect(() => QueryParameterBuilder.buildGeolocationParameters(true, undefined, defaultLongitude, defaultRange, defaultUnit))
       .to.throw(Error);
 
-    expect(() => QueryParameterBuilder.buildGeolocationParameters(true, defaultLatitude, undefined, defaultRange, defaultUnit)
+    expect(() => QueryParameterBuilder.buildGeolocationParameters(true, defaultLatitude, undefined, defaultRange, defaultUnit))
       .to.throw(Error);
 
-    expect(() => QueryParameterBuilder.buildGeolocationParameters(true, defaultLatitude, defaultLongitude, "foo", defaultUnit)
+    expect(() => QueryParameterBuilder.buildGeolocationParameters(true, defaultLatitude, defaultLongitude, "foo", defaultUnit))
       .to.throw(Error);
 
-    expect(() => QueryParameterBuilder.buildGeolocationParameters(true, defaultLatitude, defaultLongitude, defaultRange, "bar")
+    expect(() => QueryParameterBuilder.buildGeolocationParameters(true, defaultLatitude, defaultLongitude, defaultRange, "bar"))
       .to.throw(Error);
   });
 });

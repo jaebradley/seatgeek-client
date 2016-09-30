@@ -8,7 +8,7 @@ export default class QueryParameterBuilder{
                                    queryString, geoIp, latitude, longitude,
                                    address, range, unit, perPage, page) {
     let queryParameters = QueryParameterBuilder.buildGeolocationParameters(geoIp, latitude, longitude, range, unit);
-    Objects.assign(queryParameters,
+    Object.assign(queryParameters,
                    QueryParameterBuilder.buildPlaceParameters(cityName, stateCode, countryCode, postalCode, queryString),
                    QueryParameterBuilder.buildPageParameters(perPage, page));
 
@@ -17,7 +17,7 @@ export default class QueryParameterBuilder{
 
   static buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, perPage, page) {
     let queryParameters = QueryParameterBuilder.buildPerformerAttributeParameters(ids, slug, primaryGenres, otherGenres, taxonomies);
-    Objects.assign(queryParameters, QueryParameterBuilder.buildPageParameters(perPage, page));
+    Object.assign(queryParameters, QueryParameterBuilder.buildPageParameters(perPage, page));
 
     return queryParameters;
   }
@@ -60,11 +60,16 @@ export default class QueryParameterBuilder{
       throw new Error('geoIp must be a boolean');
     }
 
-    if (typeof latitude !== 'number') {
+    if (((typeof latitude !== 'undefined') && (typeof longitude === 'undefined'))
+        || ((typeof latitude === 'undefined') && (typeof longitude !== 'undefined'))) {
+      throw new Error('both latitude and longitude need to be defined or undefined');
+    }
+
+    if ((typeof latitude !== 'undefined') && (typeof latitude !== 'number')) {
       throw new Error('defined latitude must have a numeric value');
     }
 
-    if (typeof longitude !== 'number') {
+    if ((typeof latitude !== 'undefined') && (typeof longitude !== 'number')) {
       throw new Error('defined longitude must have a numeric value');
     }
 
@@ -72,7 +77,7 @@ export default class QueryParameterBuilder{
       throw new Error('range must have a numeric value');
     }
 
-    if (typeof unit !== 'unit') {
+    if (!(unit instanceof Unit)) {
       throw new Error('unit must be a Unit value');
     }
 
