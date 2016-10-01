@@ -2,8 +2,8 @@
 
 import {Enum} from 'enumify';
 
-export default class FilterOperator extends Enum {};
-FilterOperator.initEnum({
+export default class Operator extends Enum {};
+Operator.initEnum({
   GREATER_THAN: {
     value: 'gt',
   },
@@ -16,4 +16,4 @@ FilterOperator.initEnum({
   LESS_THAN_OR_EQUAL_TO: {
     value: 'lte',
   },
-})
+});
