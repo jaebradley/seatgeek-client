@@ -16,4 +16,10 @@ FilterOption.initEnum({
   HIGEST_PRICE: {
     value: 'highest_price',
   },
+  DATETIME_LOCAL: {
+    value: 'datetime_local',
+  },
+  DATETIME_UTC: {
+    value: 'datetime_utc',
+  },
 });
