@@ -44,7 +44,7 @@ export default class QueryParameterBuilder{
     if (!(taxonomies instanceof Array)) {
       throw new Error('taxonomies must be an Array');
     }
-    
+
     return {
       'id': ids,
       'taxonomies.id': QueryParameterBuilder.buildTaxonomyIds(taxonomies),
