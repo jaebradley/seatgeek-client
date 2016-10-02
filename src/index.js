@@ -36,21 +36,26 @@ export default class Client {
   }
 
   static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
-                   postalCode=undefined, queryString=undefined, geoIp=true,
+                   postalCode=undefined, queryString=undefined, useIpAddress=true,
                    latitude=undefined, longitude=undefined, range=10, unit=Unit.MILE,
                    perPage=100, page=1) {
 
-    return Client.fetch(QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode, queryString, geoIp, latitude, longitude, range, unit, perPage, page),
-                        Subpath.VENUES.value);
+    let parameters = QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
+                                                                     queryString, useIpAddress, latitude, longitude,
+                                                                     range, unit, perPage, page);
+    return Client.fetch(parameters, Subpath.VENUES.value);
   }
 
   static getEvents(taxonomies=[], performerSlugs=[], venueIds=[], cityName=undefined,
                    stateCode=undefined, countryCode=undefined, postalCode=undefined,
                    queryString=undefined, geoIp=true, latitude=undefined, longitude=undefined,
                    range=10, unit=Unit.MILE, sortOption=SortOption.SCORE, sortDirection=SortDirection.DESCENDING,
-                   filterOption=FilterOption.LISTING_COUNT, operator=Operator.GREATER_THAN_OR_EQUAL_TO, filterValue=0, perPage=100, page=1) {
-   return Client.fetch(QueryParameterBuilder.buildEventsQueryParameters(taxonomies, performerSlugs, venueIds, cityName, stateCode, countryCode, postalCode, geoIp, latitude, longitude, range, unit, sortOption, sortDirection, filterOption, operator, filterValue, perPage, page),
-                      Subpath.EVENTS.value);
+                   filterQueries=[], perPage=100, page=1) {
+   let parameters = QueryParameterBuilder.buildEventsQueryParameters(taxonomies, performerSlugs, venueIds, cityName,
+                                                                     stateCode, countryCode, postalCode, geoIp, latitude,
+                                                                     longitude, range, unit, sortOption, sortDirection,
+                                                                     filterQueries, perPage, page);
+   return Client.fetch(parameters, Subpath.EVENTS.value);
  }
 
   static buildRequest(parameters, subpath) {

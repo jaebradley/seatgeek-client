@@ -40,9 +40,9 @@ export default class QueryParameterBuilder{
   }
 
   static buildEventsQueryParameters(taxonomies, performerSlugs, venueIds, cityName,
-    stateCode, countryCode, postalCode, useIpAddress, latitude,
-    longitude, range, unit, sortOption, sortDirection,
-    filterOption, operator, filterValue, perPage, page) {
+                                    stateCode, countryCode, postalCode, useIpAddress,
+                                    latitude, longitude, range, unit, sortOption,
+                                    sortDirection, filterQueries, perPage, page) {
 
     if (!(performerSlugs instanceof Array)) {
       throw new Error('performerSlugs must be an Array');
@@ -61,16 +61,15 @@ export default class QueryParameterBuilder{
 
     let eventVenueLocationQuery = new EventVenueLocationQuery(venueIds, cityName, stateCode, countryCode, postalCode);
     let sortQuery = new SortQuery(sortOption, sortDirection);
-    let filterQuery = new FilterQuery(filterOption, operator, filterValue);
     let geolocationQuery = new GeolocationQuery(useIpAddress, latitude, longitude, range, unit);
     let paginationQuery = new PaginationQuery(perPage, page);
 
     Object.assign(queryParameters,
-      sortQuery.buildQueryParameters(),
-      filterQuery.buildQueryParameters(),
-      eventVenueLocationQuery.buildQueryParameters(),
-      geolocationQuery.buildQueryParameters(),
-      paginationQuery.buildQueryParameters());
+                  sortQuery.buildQueryParameters(),
+                  FilterQuery.buildFilterQueriesParameters(filterQueries),
+                  eventVenueLocationQuery.buildQueryParameters(),
+                  geolocationQuery.buildQueryParameters(),
+                  paginationQuery.buildQueryParameters());
 
       return queryParameters;
   }
