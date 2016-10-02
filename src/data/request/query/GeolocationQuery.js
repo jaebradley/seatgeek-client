@@ -29,6 +29,10 @@ export default class GeolocationQuery {
       throw new Error('unit must be a Unit value');
     }
 
+    if (!useIpAddress) {
+      useIpAddress = undefined;
+    }
+
     this.useIpAddress = useIpAddress;
     this.latitude = latitude;
     this.longitude = longitude;
