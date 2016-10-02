@@ -29,7 +29,7 @@ export default class QueryParameterBuilder{
   }
 
   static buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies, queryString, perPage, page) {
-    let queryParmeters = {q: queryString};
+    let queryParameters = {q: queryString};
     let performerAttributeQuery = new PerformerAttributeQuery(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies);
     let paginationQuery = new PaginationQuery(perPage, page);
     Object.assign(queryParameters,
