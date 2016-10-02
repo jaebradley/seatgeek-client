@@ -14,8 +14,6 @@ export default class FilterQuery {
     }
 
     if (typeof value !== option.type) {
-      console.log(value);
-      console.log(option.type);
       throw new Error('value is the wrong type');
     }
 
