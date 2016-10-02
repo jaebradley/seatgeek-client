@@ -20,13 +20,13 @@ export default class FilterQuery {
     this.option = option;
     this.operator = operator;
     this.value = value;
-  };
+  }
 
   buildQueryParameter() {
     return {
       this.buildQueryParameterName(): this.value,
     };
-  },
+  }
 
   buildQueryParameterName() {
     return this.option.value + '.' + this.operator.value;

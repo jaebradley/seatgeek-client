@@ -11,7 +11,7 @@ export default class EventVenueQuery extends VenueQuery {
     }
 
     this.ids = ids;
-  };
+  }
 
   buildQueryParameters() {
     return {
