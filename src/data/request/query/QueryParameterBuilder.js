@@ -14,8 +14,8 @@ import PerformerAttributeQuery from './PerformerAttributeQuery';
 export default class QueryParameterBuilder{
 
   static buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
-                                   queryString, useIpAddress, latitude, longitude, range,
-                                   unit, perPage, page) {
+                                   queryString, useIpAddress, latitude, longitude,
+                                   range, unit, perPage, page) {
     let queryParameters = {q: queryString};
     let geolocationQuery = new GeolocationQuery(useIpAddress, latitude, longitude, range, unit);
     let venueLocationQuery = new VenueLocationQuery(cityName, stateCode, countryCode, postalCode);
