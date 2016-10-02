@@ -12,7 +12,7 @@ describe('Test GeolocationQuery', function() {
   let defaultUnit = Unit.MILE;
   let defaultRangeString = String(defaultRange) + defaultUnit.value;
 
-  it('tests expected behavior when geoIp set to true', function() {
+  it('tests expected behavior', function() {
     let trueGeoIp = true;
     let trueGeolocationQuery = new GeolocationQuery(trueGeoIp, defaultLatitude, defaultLongitude, defaultRange, defaultUnit);
     let expectedTrueGeoIpParameters = {
@@ -27,6 +27,9 @@ describe('Test GeolocationQuery', function() {
     expect(trueGeolocationQuery.range).to.equal(defaultRange);
     expect(trueGeolocationQuery.unit).to.equal(defaultUnit);
     expect(trueGeolocationQuery.buildQueryParameters()).to.eql(expectedTrueGeoIpParameters);
+
+    let falseGeoLocationQuery = new GeolocationQuery(false, defaultLatitude, defaultLongitude, defaultRange, defaultUnit);
+    expect(falseGeoLocationQuery.useIpAddress).to.equal(undefined);
   });
 
   it('tests exceptional behavior', function() {
