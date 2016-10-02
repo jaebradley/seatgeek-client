@@ -53,5 +53,17 @@ export default class Datetime {
     if (second < 0 || second > 59) {
       throw new Error('second must be a non-negative integer less than 60');
     }
+
+    this.year = year;
+    this.month = month;
+    this.day = day;
+    this.hour = hour;
+    this.minute = minute;
+    this.second = second;
+    this.type = type;
+  }
+
+  static fromDate(year, month, day, type) {
+    return constructor(year, month, day, 0, 0 ,0, type);
   }
 }

@@ -17,7 +17,9 @@ export default class FilterQuery {
       throw new Error('value is the wrong type');
     }
 
-    super(option, operator, value);
+    this.option = option;
+    this.operator = operator;
+    this.value = value;
   };
 
   buildQueryParameter() {

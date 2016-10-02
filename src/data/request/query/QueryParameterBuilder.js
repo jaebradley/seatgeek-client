@@ -3,12 +3,15 @@
 import Unit from '../../Unit';
 import Genre from '../../Genre';
 import Taxonomy from '../../Taxonomy';
+import SortQuery from './SortQuery';
+import FilterQuery from './FilterQuery';
+import EventVenueQuery from './EventVenueQuery';
 
 export default class QueryParameterBuilder{
 
   static buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
-                                   queryString, geoIp, latitude, longitude,
-                                   address, range, unit, perPage, page) {
+                                   queryString, geoIp, latitude, longitude, range,
+                                   unit, perPage, page) {
     let queryParameters = QueryParameterBuilder.buildGeolocationParameters(geoIp, latitude, longitude, range, unit);
     Object.assign(queryParameters,
                    QueryParameterBuilder.buildPlaceParameters(cityName, stateCode, countryCode, postalCode, queryString),
@@ -170,5 +173,44 @@ export default class QueryParameterBuilder{
       postal_code: postalCode,
       q: queryString
     };
+  }
+
+  static buildEventsQueryParameters(sortQuery, filterQuery, performerSlugs, taxonomies, eventVenueQuery) {
+    if (!(sortQuery instanceof SortQuery)) {
+      throw new Error('sortQuery must be a SortQuery');
+    }
+
+    if (!(filterQuery instanceof FilterQuery)) {
+      throw new Error('filterQuery must be a FilterQuery');
+    }
+
+    if (!(performerSlugs instanceof Array)) {
+      throw new Error('performerSlugs must be an Array');
+    }
+
+    if (!(taxonomies instanceof Array)) {
+      throw new Error('taxonomies must be an Array');
+    }
+
+    let taxonomyIds = [];
+    for (i = 0; i < taxonomies.length; i++) {
+      let taxonomy = taxonomies[i];
+
+      if (!(taxonomy instanceof Taxonomy)) {
+        throw new Error('taxonomies must consist of Taxonomy objects');
+      }
+
+      taxonomyIds.push(taxonomy.id);
+    }
+
+    let queryParameters = {
+      'performers.slug': performerSlugs,
+      'taxonomies.id': taxonomyIds,
+    };
+
+    Object.assign(queryParameters, sortQuery.buildQueryParameters(), filterQuery.buildQueryParameters(),
+                  eventVenueQuery.buildQueryParameters());
+
+    return queryParameters;
   }
 };
