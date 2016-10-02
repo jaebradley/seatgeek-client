@@ -5,10 +5,10 @@ import {expect} from 'chai';
 import VenueQuery from '../src/data/request/query/VenueQuery';
 
 describe('Test Venue Query', function() {
-let defaultCityName = 'Boston';
-let defaultStateCode = 'MA';
-let defaultCountryCode = 'US';
-let defaultPostalCode = '02143';
+  let defaultCityName = 'Boston';
+  let defaultStateCode = 'MA';
+  let defaultCountryCode = 'US';
+  let defaultPostalCode = '02143';
 
   it('tests city name query parameter building', function() {
     let cityNameQueryExpectedParameters = {
