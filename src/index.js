@@ -30,8 +30,8 @@ export default class Client {
   }
 
   static getPerformers(ids=[], slug=undefined, primaryGenres=[], otherGenres=[],
-                       taxonomies=[], perPage=100, page=1) {
-    return Client.fetch(QueryParameterBuilder.buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, perPage, page),
+                       taxonomies=[], parentTaxonomies=[], queryString=undefined, perPage=100, page=1) {
+    return Client.fetch(QueryParameterBuilder.buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies, queryString, perPage, page),
                         Subpath.PERFORMERS.value);
   }
 

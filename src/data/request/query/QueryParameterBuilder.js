@@ -9,6 +9,7 @@ import EventVenueLocationQuery from './EventVenueLocationQuery';
 import VenueLocationQuery from './VenueLocationQuery';
 import GeolocationQuery from './GeolocationQuery';
 import PaginationQuery from './PaginationQuery';
+import PerformerAttributeQuery from './PerformerAttributeQuery';
 
 export default class QueryParameterBuilder{
 
@@ -27,80 +28,21 @@ export default class QueryParameterBuilder{
     return queryParameters;
   }
 
-  static buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, perPage, page) {
-    let queryParameters = QueryParameterBuilder.buildPerformerAttributeParameters(ids, slug, primaryGenres, otherGenres, taxonomies);
+  static buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies, queryString, perPage, page) {
+    let queryParameters = {q: queryString};
+    let performerAttributeQuery = new PerformerAttributeQuery(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies);
     let paginationQuery = new PaginationQuery(perPage, page);
     Object.assign(queryParameters,
+                  performerAttributeQuery.buildQueryParameters(),
                   paginationQuery.buildQueryParameters());
 
     return queryParameters;
   }
 
-  static buildPerformerAttributeParameters(ids, slug, primaryGenres, otherGenres, taxonomies) {
-    if (!(ids instanceof Array)) {
-      throw new Error('ids must be an Array');
-    }
-
-    if ((typeof slug !== 'undefined') && (typeof slug !== 'string')) {
-      throw new Error('defined slug must be String');
-    }
-
-    if (!(primaryGenres instanceof Array)) {
-      throw new Error('primaryGenres must be an Array');
-    }
-
-    if (!(otherGenres instanceof Array)) {
-      throw new Error('otherGenres must be an Array');
-    }
-
-    if (!(taxonomies instanceof Array)) {
-      throw new Error('taxonomies must be an Array');
-    }
-
-    return {
-      'id': ids,
-      'taxonomies.id': QueryParameterBuilder.buildTaxonomyIds(taxonomies),
-      'genres[primary].slug': QueryParameterBuilder.buildGenreSlugs(primaryGenres),
-      'genres.slug': QueryParameterBuilder.buildGenreSlugs(otherGenres),
-    }
-  }
-
-  static buildGenreSlugs(genres) {
-    if (!(genres instanceof Array)) {
-      throw new Error('genres must be an Array');
-    }
-
-    let genreSlugs = [];
-    for (i = 0; i < genres.length; i++) {
-      let genre = genres[i];
-      if (!(genre instanceof Genre)) {
-        throw new Error('all elements must be a Genre');
-      }
-      genreSlugs.push(genre.value);
-    }
-    return genreSlugs;
-  }
-
-  static buildTaxonomyIds(taxonomies) {
-    if (!(taxonomies instanceof Array)) {
-      throw new Error('taxonomies must be an Array');
-    }
-
-    let taxonomyIds = [];
-    for (var i = 0; i < taxonomies.length; i++) {
-      let taxonomy = taxonomies[i];
-      if (!(taxonomy instanceof Taxonomy)) {
-        throw new Error('all elements must be a Taxonomy');
-      }
-      taxonomyIds.push(taxonomy.id);
-    }
-    return taxonomyIds;
-  }
-
   static buildEventsQueryParameters(taxonomies, performerSlugs, venueIds, cityName,
-                                    stateCode, countryCode, postalCode, useIpAddress, latitude,
-                                    longitude, range, unit, sortOption, sortDirection,
-                                    filterOption, operator, filterValue, perPage, page) {
+    stateCode, countryCode, postalCode, useIpAddress, latitude,
+    longitude, range, unit, sortOption, sortDirection,
+    filterOption, operator, filterValue, perPage, page) {
 
     if (!(performerSlugs instanceof Array)) {
       throw new Error('performerSlugs must be an Array');
@@ -124,12 +66,45 @@ export default class QueryParameterBuilder{
     let paginationQuery = new PaginationQuery(perPage, page);
 
     Object.assign(queryParameters,
-                  sortQuery.buildQueryParameters(),
-                  filterQuery.buildQueryParameters(),
-                  eventVenueLocationQuery.buildQueryParameters(),
-                  geolocationQuery.buildQueryParameters(),
-                  paginationQuery.buildQueryParameters());
+      sortQuery.buildQueryParameters(),
+      filterQuery.buildQueryParameters(),
+      eventVenueLocationQuery.buildQueryParameters(),
+      geolocationQuery.buildQueryParameters(),
+      paginationQuery.buildQueryParameters());
 
-    return queryParameters;
+      return queryParameters;
   }
+
+  static buildGenreSlugs(genres) {
+    if (!(genres instanceof Array)) {
+      throw new Error('genres must be an Array');
+    }
+
+    let genreSlugs = [];
+    for (var i = 0; i < genres.length; i++) {
+      let genre = genres[i];
+      if (!(genre instanceof Genre)) {
+        throw new Error('all elements must be a Genre');
+      }
+      genreSlugs.push(genre.slug);
+    }
+    return genreSlugs;
+  }
+
+  static buildTaxonomyIds(taxonomies) {
+    if (!(taxonomies instanceof Array)) {
+      throw new Error('taxonomies must be an Array');
+    }
+
+    let taxonomyIds = [];
+    for (var i = 0; i < taxonomies.length; i++) {
+      let taxonomy = taxonomies[i];
+      if (!(taxonomy instanceof Taxonomy)) {
+        throw new Error('all elements must be a Taxonomy');
+      }
+      taxonomyIds.push(taxonomy.id);
+    }
+    return taxonomyIds;
+  }
+
 };
