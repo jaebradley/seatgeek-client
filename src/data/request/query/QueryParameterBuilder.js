@@ -81,12 +81,12 @@ export default class QueryParameterBuilder{
     }
 
     let genreSlugs = [];
-    for (i = 0; i < genres.length; i++) {
+    for (var i = 0; i < genres.length; i++) {
       let genre = genres[i];
       if (!(genre instanceof Genre)) {
         throw new Error('all elements must be a Genre');
       }
-      genreSlugs.push(genre.value);
+      genreSlugs.push(genre.slug);
     }
     return genreSlugs;
   }
