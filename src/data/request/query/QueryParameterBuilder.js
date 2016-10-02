@@ -28,7 +28,8 @@ export default class QueryParameterBuilder{
     return queryParameters;
   }
 
-  static buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies, queryString, perPage, page) {
+  static buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies,
+                                       parentTaxonomies, queryString, perPage, page) {
     let queryParameters = {q: queryString};
     let performerAttributeQuery = new PerformerAttributeQuery(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies);
     let paginationQuery = new PaginationQuery(perPage, page);
