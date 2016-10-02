@@ -44,7 +44,6 @@ export default class QueryParameterBuilder{
                                     stateCode, countryCode, postalCode, useIpAddress,
                                     latitude, longitude, range, unit, sortOption,
                                     sortDirection, filterQueries, perPage, page) {
-
     if (!(performerSlugs instanceof Array)) {
       throw new Error('performerSlugs must be an Array');
     }

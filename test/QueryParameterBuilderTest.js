@@ -80,14 +80,27 @@ describe('Test QueryParameterBuilder', function() {
     let taxonomy1 = Taxonomy.NFL_FOOTBALL;
     let taxonomy2 = Taxonomy.NBA_BASKETBALL;
     let taxonomy3 = Taxonomy.SPORTS;
-    let primaryGenres = [Genre.COUNTRY, Genre.ROCK];
-    let primaryGenreSlugs = [Genre.]
-    let otherGenres = [Genre.POP];
-    let taxonomies = [Taxonomy.NFL_FOOTBALL, Taxonomy.NBA_BASKETBALL];
-    let parentTaxonomies = [Taxonomy.SPORTS];
+    let primaryGenres = [genre1, genre2];
+    let primaryGenreSlugs = [genre1.slug, genre2.slug];
+    let otherGenres = [genre3];
+    let otherGenresSlug = [genre3.slug];
+    let taxonomies = [taxonomy1, taxonomy2];
+    let taxonomyIds = [taxonomy1.id, taxonomy2.id];
+    let parentTaxonomies = [taxonomy3];
+    let parentTaxonomyIds = [taxonomy3.id];
     let expectedCustomParameters = {
-      id:
+      id: ids,
+      slug: slug,
+      'taxonomies.id': taxonomyIds,
+      'taxonomies.parent_id': parentTaxonomyIds,
+      'genres[primary].slug': primaryGenreSlugs,
+      'genres.slug': otherGenresSlug,
+      q: queryString,
+      per_page: perPage,
+      page: page,
     };
+    expect(QueryParameterBuilder.buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres,
+      taxonomies, parentTaxonomies, queryString, perPage, page)).to.eql(expectedCustomParameters);
   });
 
   it('tests build taxonomy ids', function() {
