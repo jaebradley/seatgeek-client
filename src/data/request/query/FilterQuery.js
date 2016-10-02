@@ -14,8 +14,6 @@ export default class FilterQuery {
     }
 
     if (typeof value !== option.type) {
-      console.log(value);
-      console.log(option.type);
       throw new Error('value is the wrong type');
     }
 
@@ -32,5 +30,21 @@ export default class FilterQuery {
     return {
       [this.buildQueryParameterName()]: this.value,
     };
+  }
+
+  static buildFilterQueriesParameters(filterQueries) {
+    if (!(filterQueries instanceof Array)) {
+      throw new Error('filter queries must be an Array');
+    }
+
+    let parameters = {};
+    for (var i = 0; i < filterQueries.length; i++) {
+      let filterQuery = filterQueries[i];
+      if (!(filterQuery instanceof FilterQuery)) {
+        throw new Error('filter query is not an instance of a FilterQuery');
+      }
+      parameters[filterQuery.buildQueryParameterName()] = filterQuery.value;
+    }
+    return parameters;
   }
 };
