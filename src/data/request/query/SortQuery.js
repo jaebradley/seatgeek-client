@@ -3,8 +3,6 @@
 import SortOption from './SortOption';
 import SortDirection from './SortDirection';
 
-let SORT_PARAMETER_NAME = 'sort';
-
 export default class SortQuery {
   constructor(option, direction) {
     if (!(option instanceof SortOption)) {
@@ -19,9 +17,9 @@ export default class SortQuery {
     this.direction = direction;
   }
 
-  buildQueryParameter() {
+  buildQueryParameters() {
     return {
-      SORT_PARAMETER_NAME: this.option.value + '.' + this.direction.value,
+      'sort': this.option.value + '.' + this.direction.value,
     };
   }
 };

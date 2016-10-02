@@ -2,33 +2,30 @@
 
 import {Enum} from 'enumify';
 
-import Datetime from './Datetime';
-import Date from './Date';
-
 export default class FilterOption extends Enum {}
 FilterOption.initEnum({
   LISTING_COUNT: {
     value: 'listing_count',
-    type: Number,
+    type: 'number',
   },
   AVERAGE_PRICE: {
     value: 'average_price',
-    type: Number,
+    type: 'number',
   },
   LOWEST_PRICE: {
     value: 'lowest_price',
-    type: Number,
+    type: 'number',
   },
   HIGEST_PRICE: {
     value: 'highest_price',
-    type: Number,
+    type: 'number',
   },
   DATETIME_LOCAL: {
     value: 'datetime_local',
-    type: LocalDatetime,
+    type: 'string',
   },
   DATETIME_UTC: {
     value: 'datetime_utc',
-    type: UtcDatetime,
+    type: 'string',
   },
 });

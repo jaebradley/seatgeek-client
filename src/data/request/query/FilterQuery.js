@@ -1,7 +1,7 @@
 'use es6';
 
 import FilterOption from './FilterOption';
-import FilterOperator from './FilterOperator';
+import Operator from './Operator';
 
 export default class FilterQuery {
   constructor(option, operator, value) {
@@ -9,11 +9,13 @@ export default class FilterQuery {
       throw new Error('option must be a FilterOption');
     }
 
-    if (!(operator instanceof FilterOperator)) {
-      throw new Error('operator must be a FilterOperator');
+    if (!(operator instanceof Operator)) {
+      throw new Error('operator must be a Operator');
     }
 
-    if (!(value instanceof option.type)) {
+    if (typeof value !== option.type) {
+      console.log(value);
+      console.log(option.type);
       throw new Error('value is the wrong type');
     }
 
@@ -22,13 +24,13 @@ export default class FilterQuery {
     this.value = value;
   }
 
-  buildQueryParameter() {
-    return {
-      this.buildQueryParameterName(): this.value,
-    };
-  }
-
   buildQueryParameterName() {
     return this.option.value + '.' + this.operator.value;
+  }
+
+  buildQueryParameters() {
+    return {
+      [this.buildQueryParameterName()]: this.value,
+    };
   }
 };

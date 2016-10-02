@@ -9,16 +9,21 @@ import exampleTaxonomies from './files/taxonomies.json';
 describe('Test Client', function() {
   it('tests genres fetch', function() {
     return Client.getGenres(150)
-                 .then(response => expect(response.genres.length).to.equal(Genre.enumValues.length));
+                 .then(response => expect(response.body.genres.length).to.equal(Genre.enumValues.length));
   });
 
   it('tests taxonomies fetch', function() {
     return Client.getTaxonomies(100)
-                 .then(response => expect(response.taxonomies.length).to.equal(Taxonomy.enumValues.length));
+                 .then(response => expect(response.body.taxonomies.length).to.equal(Taxonomy.enumValues.length));
   });
 
   it('tests venues fetch', function() {
     return Client.getVenues('Boston')
                  .then(response => console.log(response));
   });
+
+  it('tests clients fetch', function() {
+    return Client.getEvents()
+                 .then(response => console.log(response))
+  })
 });

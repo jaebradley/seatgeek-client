@@ -19,7 +19,7 @@ export default class EventVenueQuery extends VenueQuery {
       'venue.city': this.cityName,
       'venue.state': this.stateCode,
       'venue.country': this.countryCode,
-      'venue.postal_code'; this.postalCode,
+      'venue.postal_code': this.postalCode,
     };
   }
 };

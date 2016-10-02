@@ -175,14 +175,10 @@ export default class QueryParameterBuilder{
     };
   }
 
-  static buildEventsQueryParameters(sortQuery, filterQuery, performerSlugs, taxonomies, eventVenueQuery) {
-    if (!(sortQuery instanceof SortQuery)) {
-      throw new Error('sortQuery must be a SortQuery');
-    }
-
-    if (!(filterQuery instanceof FilterQuery)) {
-      throw new Error('filterQuery must be a FilterQuery');
-    }
+  static buildEventsQueryParameters(taxonomies, performerSlugs, venueIds, cityName, stateCode, countryCode, postalCode, geoIp, latitude, longitude, range, unit, sortOption, sortDirection, filterOption, operator, filterValue, perPage, page) {
+    let eventVenueQuery = new EventVenueQuery(venueIds, cityName, stateCode, countryCode, postalCode);
+    let sortQuery = new SortQuery(sortOption, sortDirection);
+    let filterQuery = new FilterQuery(filterOption, operator, filterValue);
 
     if (!(performerSlugs instanceof Array)) {
       throw new Error('performerSlugs must be an Array');
@@ -193,7 +189,7 @@ export default class QueryParameterBuilder{
     }
 
     let taxonomyIds = [];
-    for (i = 0; i < taxonomies.length; i++) {
+    for (var i = 0; i < taxonomies.length; i++) {
       let taxonomy = taxonomies[i];
 
       if (!(taxonomy instanceof Taxonomy)) {
@@ -208,8 +204,12 @@ export default class QueryParameterBuilder{
       'taxonomies.id': taxonomyIds,
     };
 
-    Object.assign(queryParameters, sortQuery.buildQueryParameters(), filterQuery.buildQueryParameters(),
-                  eventVenueQuery.buildQueryParameters());
+    Object.assign(queryParameters,
+                  sortQuery.buildQueryParameters(),
+                  filterQuery.buildQueryParameters(),
+                  eventVenueQuery.buildQueryParameters(),
+                  QueryParameterBuilder.buildGeolocationParameters(geoIp, latitude, longitude, range, unit),
+                  QueryParameterBuilder.buildPageParameters(perPage, page));
 
     return queryParameters;
   }
