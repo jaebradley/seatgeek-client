@@ -1,6 +1,6 @@
 'use es6';
 
-export default class VenueQuery {
+export default class BaseVenueLocationQuery {
   constructor(cityName, stateCode, countryCode, postalCode) {
     if ((typeof cityName !== 'undefined') && (typeof cityName !== 'string')) {
       throw new Error('cityName must be a string value');

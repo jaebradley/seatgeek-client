@@ -1,8 +1,8 @@
 'use es6';
 
-import VenueQuery from './VenueQuery';
+import BaseVenueLocationQuery from './BaseVenueLocationQuery';
 
-export default class EventVenueQuery extends VenueQuery {
+export default class EventVenueLocationQuery extends BaseVenueLocationQuery {
   constructor(ids, cityName, stateCode, countryCode, postalCode) {
     super(cityName, stateCode, countryCode, postalCode);
 

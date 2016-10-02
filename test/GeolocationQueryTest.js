@@ -24,8 +24,8 @@ describe('Test GeolocationQuery', function() {
     expect(trueGeolocationQuery.useIpAddress).to.equal(trueGeoIp);
     expect(trueGeolocationQuery.latitude).to.equal(defaultLatitude);
     expect(trueGeolocationQuery.longitude).to.equal(defaultLongitude);
-    expect(trueGeolocationQuery.range).to.equal(range);
-    expect(trueGeolocationQuery.unit).to.equal(unit);
+    expect(trueGeolocationQuery.range).to.equal(defaultRange);
+    expect(trueGeolocationQuery.unit).to.equal(defaultUnit);
     expect(trueGeolocationQuery.buildQueryParameters()).to.eql(expectedTrueGeoIpParameters);
   });
 

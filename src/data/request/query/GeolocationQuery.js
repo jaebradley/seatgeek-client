@@ -1,5 +1,7 @@
 'use es6';
 
+import Unit from '../../Unit';
+
 export default class GeolocationQuery {
   constructor(useIpAddress, latitude, longitude, range, unit) {
     if (typeof useIpAddress !== 'boolean') {
@@ -39,7 +41,7 @@ export default class GeolocationQuery {
       geoIp: this.useIpAddress,
       lat: this.latitude,
       lon: this.longitude,
-      range: String(this.range) + unit.value,
+      range: String(this.range) + this.unit.value,
     };
   }
 }

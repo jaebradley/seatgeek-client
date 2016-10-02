@@ -9,6 +9,7 @@ import SortOption from './data/request/query/SortOption';
 import SortDirection from './data/request/query/SortDirection';
 import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
+import PaginationQuery from './data/request/query/PaginationQuery';
 
 let baseUri = 'https://api.seatgeek.com/2/';
 let headers = { 'User-Agent': 'Request-Promise' };
@@ -17,12 +18,14 @@ export default class Client {
   constructor() {}
 
   static getGenres(perPage=100, page=1) {
-    return Client.fetch(QueryParameterBuilder.buildPageParameters(perPage, page),
+    let paginationQuery = new PaginationQuery(perPage, page);
+    return Client.fetch(paginationQuery.buildQueryParameters(),
                         Subpath.GENRES.value);
   }
 
   static getTaxonomies(perPage=100, page=1) {
-    return Client.fetch(QueryParameterBuilder.buildPageParameters(perPage, page),
+    let paginationQuery = new PaginationQuery(perPage, page);
+    return Client.fetch(paginationQuery.buildQueryParameters(),
                         Subpath.TAXONOMIES.value);
   }
 

@@ -5,8 +5,8 @@ import Genre from '../../Genre';
 import Taxonomy from '../../Taxonomy';
 import SortQuery from './SortQuery';
 import FilterQuery from './FilterQuery';
-import EventVenueQuery from './EventVenueQuery';
-import VenueQuery from './VenueQuery';
+import EventVenueLocationQuery from './EventVenueLocationQuery';
+import VenueLocationQuery from './VenueLocationQuery';
 import GeolocationQuery from './GeolocationQuery';
 import PaginationQuery from './PaginationQuery';
 
@@ -17,10 +17,10 @@ export default class QueryParameterBuilder{
                                    unit, perPage, page) {
     let queryParameters = {q: queryString};
     let geolocationQuery = new GeolocationQuery(useIpAddress, latitude, longitude, range, unit);
-    let venueQuery = new VenueQuery(cityName, stateCode, countryCode, postalCode);
+    let venueLocationQuery = new VenueLocationQuery(cityName, stateCode, countryCode, postalCode);
     let paginationQuery = new PaginationQuery(perPage, page);
     Object.assign(queryParameters,
-                  venueQuery.buildQueryParameters(),
+                  venueLocationQuery.buildQueryParameters(),
                   geolocationQuery.buildQueryParameters(),
                   paginationQuery.buildQueryParameters());
 
@@ -87,7 +87,7 @@ export default class QueryParameterBuilder{
     }
 
     let taxonomyIds = [];
-    for (i = 0; i < taxonomies.length; i++) {
+    for (var i = 0; i < taxonomies.length; i++) {
       let taxonomy = taxonomies[i];
       if (!(taxonomy instanceof Taxonomy)) {
         throw new Error('all elements must be a Taxonomy');
@@ -117,7 +117,7 @@ export default class QueryParameterBuilder{
       'taxonomies.id': taxonomyIds,
     };
 
-    let eventVenueQuery = new EventVenueQuery(venueIds, cityName, stateCode, countryCode, postalCode);
+    let eventVenueLocationQuery = new EventVenueLocationQuery(venueIds, cityName, stateCode, countryCode, postalCode);
     let sortQuery = new SortQuery(sortOption, sortDirection);
     let filterQuery = new FilterQuery(filterOption, operator, filterValue);
     let geolocationQuery = new GeolocationQuery(useIpAddress, latitude, longitude, range, unit);
@@ -126,7 +126,7 @@ export default class QueryParameterBuilder{
     Object.assign(queryParameters,
                   sortQuery.buildQueryParameters(),
                   filterQuery.buildQueryParameters(),
-                  eventVenueQuery.buildQueryParameters(),
+                  eventVenueLocationQuery.buildQueryParameters(),
                   geolocationQuery.buildQueryParameters(),
                   paginationQuery.buildQueryParameters());
 

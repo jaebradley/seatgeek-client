@@ -16,7 +16,7 @@ describe('Pagination Query Test', function() {
 
     expect(paginationQuery.perPage).to.equal(perPage);
     expect(paginationQuery.page).to.equal(page);
-    expect(paginationQuery.buildPageParameters()).to.eql(expectedPageParameters);
+    expect(paginationQuery.buildQueryParameters()).to.eql(expectedPageParameters);
   });
 
   it('tests exceptional page parameter building', function() {
