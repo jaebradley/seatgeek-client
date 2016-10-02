@@ -26,7 +26,7 @@ describe('Test QueryParameterBuilder', function() {
     let defaultGenres = [genre1, genre2];
     let expectedGenreSlugs = [genre1.slug, genre2.slug];
     expect(QueryParameterBuilder.buildGenreSlugs(defaultGenres)).to.eql(expectedGenreSlugs);
-    expet(QueryParameterBuilder.buildGenreSlugs([])).to.eql([]);
+    expect(QueryParameterBuilder.buildGenreSlugs([])).to.eql([]);
   });
 
   it('tests exceptional cases when building genre slug', function() {
