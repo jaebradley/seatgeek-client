@@ -71,7 +71,7 @@ export default class QueryParameterBuilder{
                   geolocationQuery.buildQueryParameters(),
                   paginationQuery.buildQueryParameters());
 
-      return queryParameters;
+    return queryParameters;
   }
 
   static buildGenreSlugs(genres) {
