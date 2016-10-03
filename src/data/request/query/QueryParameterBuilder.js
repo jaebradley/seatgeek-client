@@ -28,7 +28,8 @@ export default class QueryParameterBuilder{
     return queryParameters;
   }
 
-  static buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies, queryString, perPage, page) {
+  static buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies,
+                                       parentTaxonomies, queryString, perPage, page) {
     let queryParameters = {q: queryString};
     let performerAttributeQuery = new PerformerAttributeQuery(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies);
     let paginationQuery = new PaginationQuery(perPage, page);
@@ -43,7 +44,6 @@ export default class QueryParameterBuilder{
                                     stateCode, countryCode, postalCode, useIpAddress,
                                     latitude, longitude, range, unit, sortOption,
                                     sortDirection, filterQueries, perPage, page) {
-
     if (!(performerSlugs instanceof Array)) {
       throw new Error('performerSlugs must be an Array');
     }
@@ -71,7 +71,7 @@ export default class QueryParameterBuilder{
                   geolocationQuery.buildQueryParameters(),
                   paginationQuery.buildQueryParameters());
 
-      return queryParameters;
+    return queryParameters;
   }
 
   static buildGenreSlugs(genres) {

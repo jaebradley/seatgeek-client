@@ -31,12 +31,12 @@ describe('Test QueryParameterBuilder', function() {
       lat: undefined,
       lon: undefined,
       range: '1mi',
-      per_page: 2,
-      page: 3,
+      per_page: perPage,
+      page: page,
     };
     expect(QueryParameterBuilder.buildVenueQueryParameters(undefined, undefined, undefined, undefined,
                                                            undefined, true, undefined, undefined,
-                                                           1, Unit.MILE, 2, 3)).to.eql(expectedDefaultParameters);
+                                                           1, Unit.MILE, perPage, page)).to.eql(expectedDefaultParameters);
 
    let expectedCustomParameters = {
      city: cityName,
@@ -55,6 +55,52 @@ describe('Test QueryParameterBuilder', function() {
    expect(QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
                                                           queryString, false, latitude, longitude,
                                                           range, unit, perPage, page)).to.eql(expectedCustomParameters);
+  });
+
+  it('tests performer query parameters', function() {
+    let expectedDefaultParameters = {
+      id: [],
+      slug: undefined,
+      'genres[primary].slug': [],
+      'genres.slug': [],
+      'taxonomies.id': [],
+      'taxonomies.parent_id': [],
+      q: undefined,
+      per_page: perPage,
+      page: page,
+    };
+    expect(QueryParameterBuilder.buildPerformerQueryParameters([], undefined, [], [], [],
+                                                               [], undefined, perPage, page)).to.eql(expectedDefaultParameters);
+
+    let ids = [1, 2, 3, 4];
+    let slug = 'jae';
+    let genre1 = Genre.COUNTRY;
+    let genre2 = Genre.ROCK;
+    let genre3 = Genre.POP;
+    let taxonomy1 = Taxonomy.NFL_FOOTBALL;
+    let taxonomy2 = Taxonomy.NBA_BASKETBALL;
+    let taxonomy3 = Taxonomy.SPORTS;
+    let primaryGenres = [genre1, genre2];
+    let primaryGenreSlugs = [genre1.slug, genre2.slug];
+    let otherGenres = [genre3];
+    let otherGenresSlug = [genre3.slug];
+    let taxonomies = [taxonomy1, taxonomy2];
+    let taxonomyIds = [taxonomy1.id, taxonomy2.id];
+    let parentTaxonomies = [taxonomy3];
+    let parentTaxonomyIds = [taxonomy3.id];
+    let expectedCustomParameters = {
+      id: ids,
+      slug: slug,
+      'taxonomies.id': taxonomyIds,
+      'taxonomies.parent_id': parentTaxonomyIds,
+      'genres[primary].slug': primaryGenreSlugs,
+      'genres.slug': otherGenresSlug,
+      q: queryString,
+      per_page: perPage,
+      page: page,
+    };
+    expect(QueryParameterBuilder.buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres,
+      taxonomies, parentTaxonomies, queryString, perPage, page)).to.eql(expectedCustomParameters);
   });
 
   it('tests build taxonomy ids', function() {
