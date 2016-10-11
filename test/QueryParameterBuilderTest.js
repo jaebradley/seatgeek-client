@@ -6,6 +6,11 @@ import QueryParameterBuilder from '../src/data/request/query/QueryParameterBuild
 import Taxonomy from '../src/data/Taxonomy';
 import Genre from '../src/data/Genre';
 import Unit from '../src/data/Unit';
+import SortOption from '../src/data/request/query/SortOption';
+import SortDirection from '../src/data/request/query/SortDirection';
+import FilterOption from '../src/data/request/query/FilterOption';
+import Operator from '../src/data/request/query/Operator';
+import FilterQuery from '../src/data/request/query/FilterQuery';
 
 describe('Test QueryParameterBuilder', function() {
   let cityName = 'Boston';
@@ -101,6 +106,71 @@ describe('Test QueryParameterBuilder', function() {
     };
     expect(QueryParameterBuilder.buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres,
       taxonomies, parentTaxonomies, queryString, perPage, page)).to.eql(expectedCustomParameters);
+  });
+
+  it('tests event query parameters', function() {
+    let expectedDefaultParameters = {
+      'taxonomies.id': [],
+      'performers.slug': [],
+      'venue.id': [],
+      'venue.city': undefined,
+      'venue.state': undefined,
+      'venue.country': undefined,
+      'venue.postal_code': undefined,
+      'sort': 'score.desc',
+      geoIp: true,
+      lat: undefined,
+      lon: undefined,
+      range: '3mi',
+      per_page: perPage,
+      page: page,
+    };
+
+    expect(QueryParameterBuilder.buildEventsQueryParameters([], [], [], undefined, undefined, undefined, undefined, true,
+      undefined, undefined, range, unit, SortOption.SCORE, SortDirection.DESCENDING, [], perPage, page)).to.eql(expectedDefaultParameters);
+
+    let taxonomy1 = Taxonomy.SPORTS;
+    let taxonomy2 = Taxonomy.NFL_FOOTBALL;
+    let taxonomies = [taxonomy1, taxonomy2];
+    let taxonomyIds = [taxonomy1.id, taxonomy2.id];
+    let performerSlug1 = 'new-england-patriots';
+    let performerSlug2 = 'boston-red-sox';
+    let performerSlugs = [performerSlug1, performerSlug2];
+    let venueId1 = 33; // Gillette
+    let venueId2 = 21; // Fenway
+    let venueIds = [venueId1, venueId2];
+    let sortOption = SortOption.SCORE;
+    let sortDirection = SortDirection.DESCENDING;
+    let filterOption1 = FilterOption.LISTING_COUNT;
+    let filterOption2 = FilterOption.LOWEST_PRICE;
+    let filterOperator = Operator.GREATER_THAN_OR_EQUAL_TO;
+    let filterValue1 = 1;
+    let filterValue2 = 10;
+    let filterQuery1 = new FilterQuery(filterOption1, filterOperator, filterValue1);
+    let filterQuery2 = new FilterQuery(filterOption2, filterOperator, filterValue2);
+    let filterQueries = [filterQuery1, filterQuery2];
+
+    let expectedCustomParameters = {
+      'taxonomies.id': taxonomyIds,
+      'performers.slug': performerSlugs,
+      'venue.id': venueIds,
+      'venue.city': cityName,
+      'venue.state': stateCode,
+      'venue.country': countryCode,
+      'venue.postal_code': postalCode,
+      'sort': 'score.desc',
+      'listing_count.gte': 1,
+      'lowest_price.gte': 10,
+      geoIp: undefined,
+      lat: latitude,
+      lon: longitude,
+      range: '3mi',
+      per_page: perPage,
+      page: page,
+    };
+
+    expect(QueryParameterBuilder.buildEventsQueryParameters(taxonomies, performerSlugs, venueIds, cityName, stateCode, countryCode, postalCode, false,
+      latitude, longitude, range, unit, SortOption.SCORE, SortDirection.DESCENDING, filterQueries, perPage, page)).to.eql(expectedCustomParameters);
   });
 
   it('tests build taxonomy ids', function() {

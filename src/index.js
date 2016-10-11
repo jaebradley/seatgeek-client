@@ -65,6 +65,7 @@ export default class Client {
       headers: headers,
       json: true,
       resolveWithFullResponse: true,
+      useQuerystring: true,
     }
   }
 
