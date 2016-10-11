@@ -46,6 +46,13 @@ export default class Client {
     return Client.fetch(parameters, Subpath.VENUES.value);
   }
 
+  static getEvents(performers=[], taxonomies=[], venueIds=[], cityName=undefined,
+                   stateCode=undefined, countryCode=undefined, postalCode=undefined,
+                   geoIp=true, latitude=undefined, longitude=undefined,
+                   range=10, unit=Unit.MILE, sortOption=SortOption.SCORE,
+                   sortDirection=SortDirection.DESCENDING, filterQueries=[],
+                   perPage=100, page=1)
+
   static getEvents(taxonomies=[], performerSlugs=[], venueIds=[], cityName=undefined,
                    stateCode=undefined, countryCode=undefined, postalCode=undefined,
                    queryString=undefined, geoIp=true, latitude=undefined, longitude=undefined,
