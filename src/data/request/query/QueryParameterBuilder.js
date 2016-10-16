@@ -107,7 +107,7 @@ export default class QueryParameterBuilder{
     return taxonomyIds;
   }
 
-  static buildPerformerQueryParameters(performers=[]) {
+  static buildPerformerEventQueryParameters(performers) {
     if (!(performers instanceof Array)) {
       throw new Error('performers must be an array');
     }
@@ -120,7 +120,7 @@ export default class QueryParameterBuilder{
         throw new Error('all elements must be a PerformerEventQueryParameter');
       }
 
-      let queryParameterName = performer.buildPerformerEventQueryParameterName();
+      let queryParameterName = performer.buildParameterName();
       let queryParameterValues = [];
 
       if (queryParameterName in performerQueryParameters) {
@@ -132,5 +132,32 @@ export default class QueryParameterBuilder{
     }
 
     return performerQueryParameters;
+  }
+
+  static buildTaxonomyEventQueryParameters(taxonomies) {
+    if (!(taxonomies instanceof Array)) {
+      throw new Error('taxonomies must be an array');
+    }
+
+    let taxonomyQueryParameters = {};
+    for (var i = 0; i < taxonomies.length; i++) {
+      let taxonomy = taxonomies[i];
+
+      if (!(taxonomy instanceof TaxonomyEventQueryParameter)) {
+        throw new Error('all elements must be a TaxonomyEventQueryParameter');
+      }
+
+      let queryParameterName = taxonomy.buildParameterName();
+      let queryParameterValues = [];
+
+      if (queryParameterName in taxonomyQueryParameters) {
+        queryParameterValues = taxonomyQueryParameters[queryParameterName];
+      }
+
+      queryParameterValues.push(taxonomy.value);
+      taxonomyQueryParameters[queryParameterName] = queryParameterValues;
+    }
+
+    return taxonomyQueryParameters;
   }
 };
