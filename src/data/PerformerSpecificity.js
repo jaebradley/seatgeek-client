@@ -2,8 +2,8 @@
 
 import {Enum} from 'enumify';
 
-export default class PerformerCategory extends Enum {}
-PerformerCategory.initEnum({
+export default class PerformerSpecificity extends Enum {}
+PerformerSpecificity.initEnum({
   ANY: { value: 'any' },
   PRIMARY: { value: 'primary' },
   HOME_TEAM: { value: 'home_team' },

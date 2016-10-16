@@ -10,6 +10,7 @@ import VenueLocationQuery from './VenueLocationQuery';
 import GeolocationQuery from './GeolocationQuery';
 import PaginationQuery from './PaginationQuery';
 import PerformerAttributeQuery from './PerformerAttributeQuery';
+import Performer from '../../Performer';
 
 export default class QueryParameterBuilder{
 
@@ -106,4 +107,30 @@ export default class QueryParameterBuilder{
     return taxonomyIds;
   }
 
+  static buildPerformerQueryParameters(performers=[]) {
+    if (!(performers instanceof Array)) {
+      throw new Error('performers must be an array');
+    }
+
+    let performerQueryParameters = {};
+    for (var i = 0; i < performers.length; i++) {
+      let performer = performers[i];
+
+      if (!(performer instanceof Performer)) {
+        throw new Error('all elements must be a Performer');
+      }
+
+      let queryParameterName = performer.buildPerformerEventQueryParameterName();
+      let queryParameterValues = [];
+
+      if (queryParameterName in performerQueryParameters) {
+        queryParameterValues = performerQueryParameters[queryParameterName];
+      }
+
+      queryParameterValues.push(performer.value);
+      performerQueryParameters[queryParameterName] = queryParameterValues;
+    }
+
+    return performerQueryParameters;
+  }
 };
