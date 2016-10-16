@@ -1,15 +1,24 @@
 'use es6';
 
-export default class PerformerEventQueryParameter {
-  let prefix = 'performers';
+import PerformerField from '../../PerformerField';
+import PerformerSpecificity from '../../PerformerSpecificity';
 
-  constructor(value, field, specificity) {
+export default class PerformerEventQueryParameter {
+  constructor(value, field, specificity=PerformerSpecificity.ANY) {
+    if (!(field instanceof PerformerField)) {
+      throw new Error('field must be an instance of PerformerField');
+    }
+
+    if (!(specificity instanceof PerformerSpecificity)) {
+      throw new Error('specificity must be an instance of PerformerSpecificity');
+    }
+
     this.value = value;
     this.field = field;
-    this.category = specificity;
+    this.specificity = specificity;
   }
 
   buildParameterName() {
-    return `${prefix}[${this.category.value}].${this.field.value}`;
+    return `performers[${this.specificity.value}].${this.field.value}`;
   }
 }

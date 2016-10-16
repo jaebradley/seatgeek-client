@@ -51,7 +51,9 @@ export default class Client {
                    geoIp=true, latitude=undefined, longitude=undefined,
                    range=10, unit=Unit.MILE, sortOption=SortOption.SCORE,
                    sortDirection=SortDirection.DESCENDING, filterQueries=[],
-                   perPage=100, page=1)
+                   perPage=100, page=1) {
+    
+  }
 
   static getEvents(taxonomies=[], performerSlugs=[], venueIds=[], cityName=undefined,
                    stateCode=undefined, countryCode=undefined, postalCode=undefined,

@@ -1,14 +1,12 @@
 'use es6';
 
 export default class TaxonomyEventQueryParameter {
-  let prefix = 'taxonomies';
-
-  constructor(value, field) {
-    this.value = value;
+  constructor(taxonomy, field) {
+    this.taxonomy = taxonomy;
     this.field = field;
   }
 
   buildParameterName() {
-    return `${prefix}.${this.field.value}`;
+    return `taxonomies.${this.taxonomy[this.field.value]}`;
   }
 }
