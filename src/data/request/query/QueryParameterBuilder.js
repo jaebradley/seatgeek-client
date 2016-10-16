@@ -10,7 +10,7 @@ import VenueLocationQuery from './VenueLocationQuery';
 import GeolocationQuery from './GeolocationQuery';
 import PaginationQuery from './PaginationQuery';
 import PerformerAttributeQuery from './PerformerAttributeQuery';
-import Performer from '../../PerformerEventQueryParameter';
+import PerformerEventQueryParameter from './PerformerEventQueryParameter';
 
 export default class QueryParameterBuilder{
 
