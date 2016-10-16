@@ -10,7 +10,7 @@ import VenueLocationQuery from './VenueLocationQuery';
 import GeolocationQuery from './GeolocationQuery';
 import PaginationQuery from './PaginationQuery';
 import PerformerAttributeQuery from './PerformerAttributeQuery';
-import Performer from '../../Performer';
+import Performer from '../../PerformerEventQueryParameter';
 
 export default class QueryParameterBuilder{
 
@@ -116,8 +116,8 @@ export default class QueryParameterBuilder{
     for (var i = 0; i < performers.length; i++) {
       let performer = performers[i];
 
-      if (!(performer instanceof Performer)) {
-        throw new Error('all elements must be a Performer');
+      if (!(performer instanceof PerformerEventQueryParameter)) {
+        throw new Error('all elements must be a PerformerEventQueryParameter');
       }
 
       let queryParameterName = performer.buildPerformerEventQueryParameterName();

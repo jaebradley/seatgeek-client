@@ -1,7 +1,7 @@
 'use es6';
 
-export default class Performer {
-  let performerEventQueryParameterPrefix = 'performers';
+export default class PerformerEventQueryParameter {
+  let prefix = 'performers';
 
   constructor(value, field, specificity) {
     this.value = value;
@@ -9,7 +9,7 @@ export default class Performer {
     this.category = specificity;
   }
 
-  buildPerformerEventQueryParameterName() {
-    return `${performersPrefix}[${this.category.value}].${this.field.value}`;
+  buildParameterName() {
+    return `${prefix}[${this.category.value}].${this.field.value}`;
   }
 }
