@@ -41,40 +41,6 @@ export default class QueryParameterBuilder{
     return queryParameters;
   }
 
-  static buildEventsQueryParameters(taxonomies, performerSlugs, venueIds, cityName,
-                                    stateCode, countryCode, postalCode, useIpAddress,
-                                    latitude, longitude, range, unit, sortOption,
-                                    sortDirection, filterQueries, perPage, page) {
-    if (!(performerSlugs instanceof Array)) {
-      throw new Error('performerSlugs must be an Array');
-    }
-
-    if (!(taxonomies instanceof Array)) {
-      throw new Error('taxonomies must be an Array');
-    }
-
-    let taxonomyIds = QueryParameterBuilder.buildTaxonomyIds(taxonomies);
-
-    let queryParameters = {
-      'performers.slug': performerSlugs,
-      'taxonomies.id': taxonomyIds,
-    };
-
-    let eventVenueLocationQuery = new EventVenueLocationQuery(venueIds, cityName, stateCode, countryCode, postalCode);
-    let sortQuery = new SortQuery(sortOption, sortDirection);
-    let geolocationQuery = new GeolocationQuery(useIpAddress, latitude, longitude, range, unit);
-    let paginationQuery = new PaginationQuery(perPage, page);
-
-    Object.assign(queryParameters,
-                  sortQuery.buildQueryParameters(),
-                  FilterQuery.buildFilterQueriesParameters(filterQueries),
-                  eventVenueLocationQuery.buildQueryParameters(),
-                  geolocationQuery.buildQueryParameters(),
-                  paginationQuery.buildQueryParameters());
-
-    return queryParameters;
-  }
-
   static buildGenreSlugs(genres) {
     if (!(genres instanceof Array)) {
       throw new Error('genres must be an Array');
@@ -105,6 +71,38 @@ export default class QueryParameterBuilder{
       taxonomyIds.push(taxonomy.id);
     }
     return taxonomyIds;
+  }
+
+  static buildEventsQueryParameters(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName,
+                          stateCode, countryCode, postalCode, geoIp,
+                          latitude, longitude, range, unit, sortOption,
+                          sortDirection, filterQueries, perPage, page) {
+    if (!(performerQueryParameters instanceof Array)) {
+      throw new Error('performers must be an Array');
+    }
+
+    if (!(taxonomyQueryParameters instanceof Array)) {
+      throw new Error('taxonomies must be an Array');
+    }
+
+    let queryParameters = {};
+    let taxonomyQuery = QueryParameterBuilder.buildTaxonomyEventQueryParameters(taxonomyQueryParameters);
+    let performerQuery = QueryParameterBuilder.buildPerformerEventQueryParameters(performerQueryParameters);
+    let eventVenueLocationQuery = new EventVenueLocationQuery(venueIds, cityName, stateCode, countryCode, postalCode);
+    let sortQuery = new SortQuery(sortOption, sortDirection);
+    let geolocationQuery = new GeolocationQuery(geoIp, latitude, longitude, range, unit);
+    let paginationQuery = new PaginationQuery(perPage, page);
+
+    Object.assign(queryParameters,
+                  taxonomyQuery,
+                  performerQuery,
+                  sortQuery.buildQueryParameters(),
+                  FilterQuery.buildFilterQueriesParameters(filterQueries),
+                  eventVenueLocationQuery.buildQueryParameters(),
+                  geolocationQuery.buildQueryParameters(),
+                  paginationQuery.buildQueryParameters());
+
+    return queryParameters;
   }
 
   static buildPerformerEventQueryParameters(performers) {

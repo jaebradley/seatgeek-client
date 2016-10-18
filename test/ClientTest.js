@@ -11,6 +11,8 @@ import SortDirection from '../src/data/request/query/SortDirection';
 import FilterOption from '../src/data/request/query/FilterOption';
 import Operator from '../src/data/request/query/Operator';
 import FilterQuery from '../src/data/request/query/FilterQuery';
+import PerformerEventQueryParameter from '../src/data/request/query/PerformerEventQueryParameter';
+import TaxonomyEventQueryParameter from '../src/data/request/query/TaxonomyEventQueryParameter';
 
 import exampleTaxonomies from './files/taxonomies.json';
 
