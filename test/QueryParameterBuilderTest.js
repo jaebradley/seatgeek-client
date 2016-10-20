@@ -6,11 +6,16 @@ import QueryParameterBuilder from '../src/data/request/query/QueryParameterBuild
 import Taxonomy from '../src/data/Taxonomy';
 import Genre from '../src/data/Genre';
 import Unit from '../src/data/Unit';
+import PerformerField from '../src/data/PerformerField';
+import TaxonomyField from '../src/data/TaxonomyField';
+import PerformerSpecificity from '../src/data/PerformerSpecificity';
 import SortOption from '../src/data/request/query/SortOption';
 import SortDirection from '../src/data/request/query/SortDirection';
 import FilterOption from '../src/data/request/query/FilterOption';
 import Operator from '../src/data/request/query/Operator';
 import FilterQuery from '../src/data/request/query/FilterQuery';
+import PerformerEventQueryParameter from '../src/data/request/query/PerformerEventQueryParameter';
+import TaxonomyEventQueryParameter from '../src/data/request/query/TaxonomyEventQueryParameter';
 
 describe('Test QueryParameterBuilder', function() {
   let cityName = 'Boston';
@@ -110,8 +115,6 @@ describe('Test QueryParameterBuilder', function() {
 
   it('tests event query parameters', function() {
     let expectedDefaultParameters = {
-      'taxonomies.id': [],
-      'performers.slug': [],
       'venue.id': [],
       'venue.city': undefined,
       'venue.state': undefined,
@@ -129,13 +132,27 @@ describe('Test QueryParameterBuilder', function() {
     expect(QueryParameterBuilder.buildEventsQueryParameters([], [], [], undefined, undefined, undefined, undefined, true,
       undefined, undefined, range, unit, SortOption.SCORE, SortDirection.DESCENDING, [], perPage, page)).to.eql(expectedDefaultParameters);
 
-    let taxonomy1 = Taxonomy.SPORTS;
-    let taxonomy2 = Taxonomy.NFL_FOOTBALL;
-    let taxonomies = [taxonomy1, taxonomy2];
-    let taxonomyIds = [taxonomy1.id, taxonomy2.id];
+    let taxonomy1 = Taxonomy.NFL_FOOTBALL;
+    let taxonomy2 = Taxonomy.NBA_BASKETBALL;
+    let taxonomy3 = Taxonomy.SPORTS;
+
+    let taxonomyQueryParameter1 = new TaxonomyEventQueryParameter(taxonomy1);
+    let taxonomyQueryParameter2 = new TaxonomyEventQueryParameter(taxonomy2, TaxonomyField.NAME);
+    let taxonomyQueryParameter3 = new TaxonomyEventQueryParameter(taxonomy3, TaxonomyField.PARENT_ID);
+    let taxonomyQueryParameters = [taxonomyQueryParameter1, taxonomyQueryParameter2, taxonomyQueryParameter3];
+    let taxonomies = [taxonomyQueryParameter1, taxonomyQueryParameter2. taxonomyQueryParameter2];
+    let taxonomyIds = [taxonomyQueryParameter1.taxonomy.id];
+    let taxonomyNames = [taxonomyQueryParameter2.taxonomy.name];
+    let parentTaxonomyIds = [taxonomyQueryParameter3.taxonomy.parent_id];
+
     let performerSlug1 = 'new-england-patriots';
     let performerSlug2 = 'boston-red-sox';
-    let performerSlugs = [performerSlug1, performerSlug2];
+    let performerQueryParameter1 = new PerformerEventQueryParameter(performerSlug1, PerformerField.SLUG);
+    let performerQueryParameter2 = new PerformerEventQueryParameter(performerSlug2, PerformerField.SLUG, PerformerSpecificity.HOME_TEAM);
+    let performerQueryParameters = [performerQueryParameter1, performerQueryParameter2];
+    let performerSlugs = [performerSlug1];
+    let performerHomeTeamSlugs = [performerSlug2];
+
     let venueId1 = 33; // Gillette
     let venueId2 = 21; // Fenway
     let venueIds = [venueId1, venueId2];
@@ -152,7 +169,10 @@ describe('Test QueryParameterBuilder', function() {
 
     let expectedCustomParameters = {
       'taxonomies.id': taxonomyIds,
-      'performers.slug': performerSlugs,
+      'taxonomies.name': taxonomyNames,
+      'taxonomies.parent_id': parentTaxonomyIds,
+      'performers[any].slug': performerSlugs,
+      'performers[home_team].slug': performerHomeTeamSlugs,
       'venue.id': venueIds,
       'venue.city': cityName,
       'venue.state': stateCode,
@@ -169,7 +189,7 @@ describe('Test QueryParameterBuilder', function() {
       page: page,
     };
 
-    expect(QueryParameterBuilder.buildEventsQueryParameters(taxonomies, performerSlugs, venueIds, cityName, stateCode, countryCode, postalCode, false,
+    expect(QueryParameterBuilder.buildEventsQueryParameters(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName, stateCode, countryCode, postalCode, false,
       latitude, longitude, range, unit, SortOption.SCORE, SortDirection.DESCENDING, filterQueries, perPage, page)).to.eql(expectedCustomParameters);
   });
 

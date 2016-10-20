@@ -46,17 +46,18 @@ export default class Client {
     return Client.fetch(parameters, Subpath.VENUES.value);
   }
 
-  static getEvents(taxonomies=[], performerSlugs=[], venueIds=[], cityName=undefined,
+  static getEvents(performerQueryParameters=[], taxonomyQueryParameters=[], venueIds=[], cityName=undefined,
                    stateCode=undefined, countryCode=undefined, postalCode=undefined,
-                   queryString=undefined, geoIp=true, latitude=undefined, longitude=undefined,
-                   range=10, unit=Unit.MILE, sortOption=SortOption.SCORE, sortDirection=SortDirection.DESCENDING,
-                   filterQueries=[], perPage=100, page=1) {
-   let parameters = QueryParameterBuilder.buildEventsQueryParameters(taxonomies, performerSlugs, venueIds, cityName,
-                                                                     stateCode, countryCode, postalCode, geoIp, latitude,
-                                                                     longitude, range, unit, sortOption, sortDirection,
-                                                                     filterQueries, perPage, page);
-   return Client.fetch(parameters, Subpath.EVENTS.value);
- }
+                   useIpAddress=true, latitude=undefined, longitude=undefined,
+                   range=10, unit=Unit.MILE, sortOption=SortOption.SCORE,
+                   sortDirection=SortDirection.DESCENDING, filterQueries=[],
+                   perPage=100, page=1) {
+    let parameters = QueryParameterBuilder.buildEventsQueryParameters(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName,
+                                                            stateCode, countryCode, postalCode, useIpAddress,
+                                                            latitude, longitude, range, unit, sortOption,
+                                                            sortDirection, filterQueries, perPage, page);
+    return Client.fetch(parameters, Subpath.EVENTS.value);
+  }
 
   static buildRequest(parameters, subpath) {
     return {

@@ -11,6 +11,11 @@ import SortDirection from '../src/data/request/query/SortDirection';
 import FilterOption from '../src/data/request/query/FilterOption';
 import Operator from '../src/data/request/query/Operator';
 import FilterQuery from '../src/data/request/query/FilterQuery';
+import PerformerField from '../src/data/PerformerField';
+import PerformerSpecificity from '../src/data/PerformerSpecificity';
+import TaxonomyField from '../src/data/TaxonomyField';
+import PerformerEventQueryParameter from '../src/data/request/query/PerformerEventQueryParameter';
+import TaxonomyEventQueryParameter from '../src/data/request/query/TaxonomyEventQueryParameter';
 
 import exampleTaxonomies from './files/taxonomies.json';
 
@@ -26,8 +31,9 @@ describe('Test Client', function() {
   let unit = Unit.MILE;
   let perPage = 4;
   let page = 5;
-  let taxonomy1 = Taxonomy.SPORTS;
-  let taxonomy2 = Taxonomy.NFL_FOOTBALL;
+  let taxonomy1 = Taxonomy.NFL_FOOTBALL;
+  let taxonomy2 = Taxonomy.NBA_BASKETBALL;
+  let taxonomy3 = Taxonomy.SPORTS;
   let taxonomies = [taxonomy1, taxonomy2];
   let taxonomyIds = [taxonomy1.id, taxonomy2.id];
   let performerSlug1 = 'new-england-patriots';
@@ -46,6 +52,13 @@ describe('Test Client', function() {
   let filterQuery1 = new FilterQuery(filterOption1, filterOperator, filterValue1);
   let filterQuery2 = new FilterQuery(filterOption2, filterOperator, filterValue2);
   let filterQueries = [filterQuery1, filterQuery2];
+  let taxonomyQueryParameter1 = new TaxonomyEventQueryParameter(taxonomy1);
+  let taxonomyQueryParameter2 = new TaxonomyEventQueryParameter(taxonomy2, TaxonomyField.NAME);
+  let taxonomyQueryParameter3 = new TaxonomyEventQueryParameter(taxonomy3, TaxonomyField.PARENT_ID);
+  let taxonomyQueryParameters = [taxonomyQueryParameter1, taxonomyQueryParameter2, taxonomyQueryParameter3];
+  let performerQueryParameter1 = new PerformerEventQueryParameter(performerSlug1, PerformerField.SLUG);
+  let performerQueryParameter2 = new PerformerEventQueryParameter(performerSlug2, PerformerField.SLUG, PerformerSpecificity.HOME_TEAM);
+  let performerQueryParameters = [performerQueryParameter1, performerQueryParameter2];
 
   it('tests genres fetch', function() {
     return Client.getGenres(150)
@@ -63,7 +76,7 @@ describe('Test Client', function() {
   });
 
   it('tests clients fetch', function() {
-    return Client.getEvents(taxonomies, performerSlugs, venueIds, cityName, stateCode, countryCode, postalCode, undefined, false,
+    return Client.getEvents(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName, stateCode, countryCode, postalCode, false,
       latitude, longitude, range, unit, SortOption.SCORE, SortDirection.DESCENDING, filterQueries, perPage, page)
                  .then(response => console.log(response))
   })
