@@ -11,6 +11,7 @@ import GeolocationQuery from './GeolocationQuery';
 import PaginationQuery from './PaginationQuery';
 import PerformerAttributeQuery from './PerformerAttributeQuery';
 import PerformerEventQueryParameter from './PerformerEventQueryParameter';
+import TaxonomyEventQueryParameter from './TaxonomyEventQueryParameter';
 
 export default class QueryParameterBuilder{
 
@@ -74,7 +75,7 @@ export default class QueryParameterBuilder{
   }
 
   static buildEventsQueryParameters(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName,
-                          stateCode, countryCode, postalCode, geoIp,
+                          stateCode, countryCode, postalCode, useIpAddress,
                           latitude, longitude, range, unit, sortOption,
                           sortDirection, filterQueries, perPage, page) {
     if (!(performerQueryParameters instanceof Array)) {
@@ -90,7 +91,7 @@ export default class QueryParameterBuilder{
     let performerQuery = QueryParameterBuilder.buildPerformerEventQueryParameters(performerQueryParameters);
     let eventVenueLocationQuery = new EventVenueLocationQuery(venueIds, cityName, stateCode, countryCode, postalCode);
     let sortQuery = new SortQuery(sortOption, sortDirection);
-    let geolocationQuery = new GeolocationQuery(geoIp, latitude, longitude, range, unit);
+    let geolocationQuery = new GeolocationQuery(useIpAddress, latitude, longitude, range, unit);
     let paginationQuery = new PaginationQuery(perPage, page);
 
     Object.assign(queryParameters,
@@ -152,7 +153,7 @@ export default class QueryParameterBuilder{
         queryParameterValues = taxonomyQueryParameters[queryParameterName];
       }
 
-      queryParameterValues.push(taxonomy.value);
+      queryParameterValues.push(taxonomy.getValue());
       taxonomyQueryParameters[queryParameterName] = queryParameterValues;
     }
 

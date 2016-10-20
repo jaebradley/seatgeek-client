@@ -115,8 +115,6 @@ describe('Test QueryParameterBuilder', function() {
 
   it('tests event query parameters', function() {
     let expectedDefaultParameters = {
-      'taxonomies.id': [],
-      'performers.slug': [],
       'venue.id': [],
       'venue.city': undefined,
       'venue.state': undefined,
@@ -143,9 +141,9 @@ describe('Test QueryParameterBuilder', function() {
     let taxonomyQueryParameter3 = new TaxonomyEventQueryParameter(taxonomy3, TaxonomyField.PARENT_ID);
     let taxonomyQueryParameters = [taxonomyQueryParameter1, taxonomyQueryParameter2, taxonomyQueryParameter3];
     let taxonomies = [taxonomyQueryParameter1, taxonomyQueryParameter2. taxonomyQueryParameter2];
-    let taxonomyIds = [taxonomyQueryParameter1.id];
-    let taxonomyNames = [taxonomyQueryParameter2.name];
-    let parentTaxonomyIds = [taxonomy3.id];
+    let taxonomyIds = [taxonomyQueryParameter1.taxonomy.id];
+    let taxonomyNames = [taxonomyQueryParameter2.taxonomy.name];
+    let parentTaxonomyIds = [taxonomyQueryParameter3.taxonomy.parent_id];
 
     let performerSlug1 = 'new-england-patriots';
     let performerSlug2 = 'boston-red-sox';

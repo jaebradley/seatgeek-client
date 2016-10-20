@@ -20,4 +20,8 @@ export default class TaxonomyEventQueryParameter {
   buildParameterName() {
     return `taxonomies.${this.field.value}`;
   }
+
+  getValue() {
+    return this.taxonomy[this.field.value];
+  }
 }
