@@ -13,24 +13,43 @@ import PaginationQuery from './data/request/query/PaginationQuery';
 
 let baseUri = 'https://api.seatgeek.com/2/';
 let headers = { 'User-Agent': 'Request-Promise' };
+let DEFAULT_PER_PAGE = 100;
+let DEFAULT_PAGE = 1;
 
 export default class Client {
   constructor() {}
 
   static getGenres(perPage=100, page=1) {
+
     let paginationQuery = new PaginationQuery(perPage, page);
+
     return Client.fetch(paginationQuery.buildQueryParameters(),
                         Subpath.GENRES.value);
   }
 
   static getTaxonomies(perPage=100, page=1) {
+
     let paginationQuery = new PaginationQuery(perPage, page);
+
     return Client.fetch(paginationQuery.buildQueryParameters(),
                         Subpath.TAXONOMIES.value);
   }
 
+  static getPerformers(ids=[], slug=undefined, genreQueryParameters=[],
+                       taxonomyQueryParameters=[], queryString=undefined,
+                       perPage=DEFAULT_PER_PAGE, page=DEFAULT_PAGE) {
+
+    let performerQuery = new PerformerQuery(ids, slug, genreQueryParameters,
+                                            taxonomyQueryParameters, queryString,
+                                            perPage, page);
+
+    return Client.fetch(performerQuery.buildQueryParameters(),
+                        Subpath.PERFORMERS.value);
+  }
+
   static getPerformers(ids=[], slug=undefined, primaryGenres=[], otherGenres=[],
                        taxonomies=[], parentTaxonomies=[], queryString=undefined, perPage=100, page=1) {
+    let performerQuery = new PerformerQuery(ids, slug, genreQueryParameters)
     return Client.fetch(QueryParameterBuilder.buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies, queryString, perPage, page),
                         Subpath.PERFORMERS.value);
   }
