@@ -1,9 +1,11 @@
 'use es6';
 
 import PaginationQuery from './PaginationQuery';
+import GenreQueryParameter from './GenreQueryParameter';
 
 export default class PerformerQuery {
-  constructor(ids, slug, genreQueryParameters, taxonomyQueryParameters, queryString, perPage, page) {
+  constructor(ids, slug, genreQueryParameters, taxonomyQueryParameters,
+              queryString, perPage, page) {
     if (!(ids instanceof Array)) {
       throw new Error('ids must be an Array');
     }
@@ -30,5 +32,20 @@ export default class PerformerQuery {
     this.taxonomyQueryParameters = taxonomyQueryParameters;
     this.queryString = queryString;
     this.paginationQUery = new PaginationQuery(perPage, page);
+  }
+
+  buildQueryParameters() {
+    let queryParameters = {
+      'id': this.ids,
+      'slug': this.slug,
+      'q': this.queryString
+    };
+
+    Object.assign(queryParameters,
+                  GenreQueryParameter.buildQueryParameters(this.genreQueryParameters),
+                  TaxonomyQueryParameter.buildQueryParameters(this.taxonomyQueryParameters),
+                  this.paginationQuery.buildQueryParameters());
+
+    return queryParameters;
   }
 };

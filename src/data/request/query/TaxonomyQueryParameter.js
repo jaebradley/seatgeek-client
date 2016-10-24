@@ -3,7 +3,7 @@
 import Taxonomy from '../../Taxonomy';
 import TaxonomyField from '../../TaxonomyField';
 
-export default class TaxonomyEventQueryParameter {
+export default class TaxonomyQueryParameter {
   constructor(taxonomy, field=TaxonomyField.ID) {
     if (!(taxonomy instanceof Taxonomy)) {
       throw new Error('must be a taxonomy');
@@ -25,7 +25,7 @@ export default class TaxonomyEventQueryParameter {
     return this.taxonomy[this.field.value];
   }
 
-  static buildTaxonomyEventQueryParameters(taxonomies) {
+  static buildQueryParameters(taxonomies) {
     if (!(taxonomies instanceof Array)) {
       throw new Error('taxonomies must be an array');
     }
