@@ -17,14 +17,14 @@ export default class GenreQueryParameter {
 
   buildParameterName() {
     if (this.isPrimary) {
-      return `genres[primary].slug`;
+      return 'genres[primary].slug';
     }
 
-    return `genres.slug`;
+    return 'genres.slug';
   }
 
   getParameterValue() {
-    return `${this.genre.slug}`;
+    return this.genre.slug;
   }
 
   static buildQueryParameters(genreQueryParameters) {
@@ -37,7 +37,7 @@ export default class GenreQueryParameter {
       let genreQueryParameter = genreQueryParameters[i];
 
       if (!(genreQueryParameter instanceof genreQueryParameter)) {
-        throw new Error('all elements must be a genreQueryParameter');
+        throw new Error('all elements must be a a valid genre query parameter');
       }
 
       let queryParameterName = genreQueryParameter.buildParameterName();
@@ -47,7 +47,7 @@ export default class GenreQueryParameter {
         queryParameterValues = genreQueryParameters[queryParameterName];
       }
 
-      queryParameterValues.push(taxonomy.getValue());
+      queryParameterValues.push(genreQueryParameter.getParameterValue());
       parameters[queryParameterName] = queryParameterValues;
     }
 
