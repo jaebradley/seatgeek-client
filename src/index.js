@@ -50,12 +50,13 @@ export default class Client {
   static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
                    postalCode=undefined, queryString=undefined, useIpAddress=true,
                    latitude=undefined, longitude=undefined, range=10, unit=Unit.MILE,
-                   perPage=100, page=1) {
+                   perPage=DEFAULT_PER_PAGE, page=DEFAULT_PAGE) {
 
-    let parameters = QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
-                                                                     queryString, useIpAddress, latitude, longitude,
-                                                                     range, unit, perPage, page);
-    return Client.fetch(parameters, Subpath.VENUES.value);
+    let venueQuery = new VenueQuery(cityName, stateCode, countryCode, postalCode,
+                                    queryString, useIpAddress, latitude, longitude,
+                                    range, unit, perPage, page);
+
+    return Client.fetch(venueQuery.buildQueryParameters(), Subpath.VENUES.value);
   }
 
   static getEvents(performerQueryParameters=[], taxonomyQueryParameters=[], venueIds=[], cityName=undefined,

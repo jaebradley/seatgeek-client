@@ -15,21 +15,6 @@ import TaxonomyEventQueryParameter from './TaxonomyEventQueryParameter';
 
 export default class QueryParameterBuilder{
 
-  static buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
-                                   queryString, useIpAddress, latitude, longitude,
-                                   range, unit, perPage, page) {
-    let queryParameters = {q: queryString};
-    let geolocationQuery = new GeolocationQuery(useIpAddress, latitude, longitude, range, unit);
-    let venueLocationQuery = new VenueLocationQuery(cityName, stateCode, countryCode, postalCode);
-    let paginationQuery = new PaginationQuery(perPage, page);
-    Object.assign(queryParameters,
-                  venueLocationQuery.buildQueryParameters(),
-                  geolocationQuery.buildQueryParameters(),
-                  paginationQuery.buildQueryParameters());
-
-    return queryParameters;
-  }
-
   static buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies,
                                        parentTaxonomies, queryString, perPage, page) {
     let queryParameters = {q: queryString};
