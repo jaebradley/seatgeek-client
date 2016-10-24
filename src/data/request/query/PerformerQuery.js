@@ -31,14 +31,14 @@ export default class PerformerQuery {
     this.genreQueryParameters = genreQueryParameters;
     this.taxonomyQueryParameters = taxonomyQueryParameters;
     this.queryString = queryString;
-    this.paginationQUery = new PaginationQuery(perPage, page);
+    this.paginationQuery = new PaginationQuery(perPage, page);
   }
 
   buildQueryParameters() {
     let queryParameters = {
       'id': this.ids,
       'slug': this.slug,
-      'q': this.queryString
+      'q': this.queryString,
     };
 
     Object.assign(queryParameters,

@@ -47,13 +47,6 @@ export default class Client {
                         Subpath.PERFORMERS.value);
   }
 
-  static getPerformers(ids=[], slug=undefined, primaryGenres=[], otherGenres=[],
-                       taxonomies=[], parentTaxonomies=[], queryString=undefined, perPage=100, page=1) {
-    let performerQuery = new PerformerQuery(ids, slug, genreQueryParameters)
-    return Client.fetch(QueryParameterBuilder.buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres, taxonomies, parentTaxonomies, queryString, perPage, page),
-                        Subpath.PERFORMERS.value);
-  }
-
   static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
                    postalCode=undefined, queryString=undefined, useIpAddress=true,
                    latitude=undefined, longitude=undefined, range=10, unit=Unit.MILE,
