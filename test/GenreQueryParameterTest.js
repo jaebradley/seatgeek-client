@@ -40,7 +40,7 @@ describe('Test Genre Query Parameter', function() {
       'genres[primary].slug': [Genre.COUNTRY.slug, Genre.ROCK.slug],
       'genres.slug': [Genre.POP.slug, Genre.ALTERNATIVE.slug],
     };
-    expect(GenreQueryParameter.buildQueryParameters(queryParameters).to.eql(expectedQueryParameters));
+    expect(GenreQueryParameter.buildQueryParameters(queryParameters)).to.eql(expectedQueryParameters);
   });
 
   it('tests exceptional cases building query parameters', function() {
