@@ -14,8 +14,8 @@ import FilterQuery from '../src/data/request/query/FilterQuery';
 import PerformerField from '../src/data/PerformerField';
 import PerformerSpecificity from '../src/data/PerformerSpecificity';
 import TaxonomyField from '../src/data/TaxonomyField';
-import PerformerEventQueryParameter from '../src/data/request/query/PerformerEventQueryParameter';
-import TaxonomyEventQueryParameter from '../src/data/request/query/TaxonomyEventQueryParameter';
+import PerformerQueryParameter from '../src/data/request/query/PerformerQueryParameter';
+import TaxonomyQueryParameter from '../src/data/request/query/TaxonomyQueryParameter';
 
 import exampleTaxonomies from './files/taxonomies.json';
 
@@ -52,12 +52,12 @@ describe('Test Client', function() {
   let filterQuery1 = new FilterQuery(filterOption1, filterOperator, filterValue1);
   let filterQuery2 = new FilterQuery(filterOption2, filterOperator, filterValue2);
   let filterQueries = [filterQuery1, filterQuery2];
-  let taxonomyQueryParameter1 = new TaxonomyEventQueryParameter(taxonomy1);
-  let taxonomyQueryParameter2 = new TaxonomyEventQueryParameter(taxonomy2, TaxonomyField.NAME);
-  let taxonomyQueryParameter3 = new TaxonomyEventQueryParameter(taxonomy3, TaxonomyField.PARENT_ID);
+  let taxonomyQueryParameter1 = new TaxonomyQueryParameter(taxonomy1);
+  let taxonomyQueryParameter2 = new TaxonomyQueryParameter(taxonomy2, TaxonomyField.NAME);
+  let taxonomyQueryParameter3 = new TaxonomyQueryParameter(taxonomy3, TaxonomyField.PARENT_ID);
   let taxonomyQueryParameters = [taxonomyQueryParameter1, taxonomyQueryParameter2, taxonomyQueryParameter3];
-  let performerQueryParameter1 = new PerformerEventQueryParameter(performerSlug1, PerformerField.SLUG);
-  let performerQueryParameter2 = new PerformerEventQueryParameter(performerSlug2, PerformerField.SLUG, PerformerSpecificity.HOME_TEAM);
+  let performerQueryParameter1 = new PerformerQueryParameter(performerSlug1, PerformerField.SLUG);
+  let performerQueryParameter2 = new PerformerQueryParameter(performerSlug2, PerformerField.SLUG, PerformerSpecificity.HOME_TEAM);
   let performerQueryParameters = [performerQueryParameter1, performerQueryParameter2];
 
   it('tests genres fetch', function() {

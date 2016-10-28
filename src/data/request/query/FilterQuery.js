@@ -47,4 +47,4 @@ export default class FilterQuery {
     }
     return parameters;
   }
-};
+}

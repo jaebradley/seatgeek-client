@@ -14,8 +14,8 @@ import SortDirection from '../src/data/request/query/SortDirection';
 import FilterOption from '../src/data/request/query/FilterOption';
 import Operator from '../src/data/request/query/Operator';
 import FilterQuery from '../src/data/request/query/FilterQuery';
-import PerformerEventQueryParameter from '../src/data/request/query/PerformerEventQueryParameter';
-import TaxonomyEventQueryParameter from '../src/data/request/query/TaxonomyEventQueryParameter';
+import PerformerQueryParameter from '../src/data/request/query/PerformerQueryParameter';
+import TaxonomyQueryParameter from '../src/data/request/query/TaxonomyQueryParameter';
 
 describe('Test QueryParameterBuilder', function() {
   let cityName = 'Boston';
@@ -67,52 +67,6 @@ describe('Test QueryParameterBuilder', function() {
                                                           range, unit, perPage, page)).to.eql(expectedCustomParameters);
   });
 
-  it('tests performer query parameters', function() {
-    let expectedDefaultParameters = {
-      id: [],
-      slug: undefined,
-      'genres[primary].slug': [],
-      'genres.slug': [],
-      'taxonomies.id': [],
-      'taxonomies.parent_id': [],
-      q: undefined,
-      per_page: perPage,
-      page: page,
-    };
-    expect(QueryParameterBuilder.buildPerformerQueryParameters([], undefined, [], [], [],
-                                                               [], undefined, perPage, page)).to.eql(expectedDefaultParameters);
-
-    let ids = [1, 2, 3, 4];
-    let slug = 'jae';
-    let genre1 = Genre.COUNTRY;
-    let genre2 = Genre.ROCK;
-    let genre3 = Genre.POP;
-    let taxonomy1 = Taxonomy.NFL_FOOTBALL;
-    let taxonomy2 = Taxonomy.NBA_BASKETBALL;
-    let taxonomy3 = Taxonomy.SPORTS;
-    let primaryGenres = [genre1, genre2];
-    let primaryGenreSlugs = [genre1.slug, genre2.slug];
-    let otherGenres = [genre3];
-    let otherGenresSlug = [genre3.slug];
-    let taxonomies = [taxonomy1, taxonomy2];
-    let taxonomyIds = [taxonomy1.id, taxonomy2.id];
-    let parentTaxonomies = [taxonomy3];
-    let parentTaxonomyIds = [taxonomy3.id];
-    let expectedCustomParameters = {
-      id: ids,
-      slug: slug,
-      'taxonomies.id': taxonomyIds,
-      'taxonomies.parent_id': parentTaxonomyIds,
-      'genres[primary].slug': primaryGenreSlugs,
-      'genres.slug': otherGenresSlug,
-      q: queryString,
-      per_page: perPage,
-      page: page,
-    };
-    expect(QueryParameterBuilder.buildPerformerQueryParameters(ids, slug, primaryGenres, otherGenres,
-      taxonomies, parentTaxonomies, queryString, perPage, page)).to.eql(expectedCustomParameters);
-  });
-
   it('tests event query parameters', function() {
     let expectedDefaultParameters = {
       'venue.id': [],
@@ -136,9 +90,9 @@ describe('Test QueryParameterBuilder', function() {
     let taxonomy2 = Taxonomy.NBA_BASKETBALL;
     let taxonomy3 = Taxonomy.SPORTS;
 
-    let taxonomyQueryParameter1 = new TaxonomyEventQueryParameter(taxonomy1);
-    let taxonomyQueryParameter2 = new TaxonomyEventQueryParameter(taxonomy2, TaxonomyField.NAME);
-    let taxonomyQueryParameter3 = new TaxonomyEventQueryParameter(taxonomy3, TaxonomyField.PARENT_ID);
+    let taxonomyQueryParameter1 = new TaxonomyQueryParameter(taxonomy1);
+    let taxonomyQueryParameter2 = new TaxonomyQueryParameter(taxonomy2, TaxonomyField.NAME);
+    let taxonomyQueryParameter3 = new TaxonomyQueryParameter(taxonomy3, TaxonomyField.PARENT_ID);
     let taxonomyQueryParameters = [taxonomyQueryParameter1, taxonomyQueryParameter2, taxonomyQueryParameter3];
     let taxonomies = [taxonomyQueryParameter1, taxonomyQueryParameter2. taxonomyQueryParameter2];
     let taxonomyIds = [taxonomyQueryParameter1.taxonomy.id];
@@ -147,8 +101,8 @@ describe('Test QueryParameterBuilder', function() {
 
     let performerSlug1 = 'new-england-patriots';
     let performerSlug2 = 'boston-red-sox';
-    let performerQueryParameter1 = new PerformerEventQueryParameter(performerSlug1, PerformerField.SLUG);
-    let performerQueryParameter2 = new PerformerEventQueryParameter(performerSlug2, PerformerField.SLUG, PerformerSpecificity.HOME_TEAM);
+    let performerQueryParameter1 = new PerformerQueryParameter(performerSlug1, PerformerField.SLUG);
+    let performerQueryParameter2 = new PerformerQueryParameter(performerSlug2, PerformerField.SLUG, PerformerSpecificity.HOME_TEAM);
     let performerQueryParameters = [performerQueryParameter1, performerQueryParameter2];
     let performerSlugs = [performerSlug1];
     let performerHomeTeamSlugs = [performerSlug2];

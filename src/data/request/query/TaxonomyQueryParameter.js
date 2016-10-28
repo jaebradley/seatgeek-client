@@ -34,8 +34,8 @@ export default class TaxonomyQueryParameter {
     for (var i = 0; i < taxonomies.length; i++) {
       let taxonomy = taxonomies[i];
 
-      if (!(taxonomy instanceof TaxonomyEventQueryParameter)) {
-        throw new Error('all elements must be a TaxonomyEventQueryParameter');
+      if (!(taxonomy instanceof TaxonomyQueryParameter)) {
+        throw new Error('all elements must be a TaxonomyQueryParameter');
       }
 
       let queryParameterName = taxonomy.buildParameterName();

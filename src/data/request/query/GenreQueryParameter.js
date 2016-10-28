@@ -8,7 +8,7 @@ export default class GenreQueryParameter {
       throw new Error('must specify a valid genre');
     }
 
-    if (!(isPrimary typeof === 'boolean')) {
+    if (typeof isPrimary !== 'boolean') {
       throw new Error('must specify a valid boolean');
     }
     this.genre = genre;
@@ -17,14 +17,14 @@ export default class GenreQueryParameter {
 
   buildParameterName() {
     if (this.isPrimary) {
-      return `genres[primary].slug`;
+      return 'genres[primary].slug';
     }
 
-    return `genres.slug`;
+    return 'genres.slug';
   }
 
   getParameterValue() {
-    return `${this.genre.slug}`;
+    return this.genre.slug;
   }
 
   static buildQueryParameters(genreQueryParameters) {
@@ -36,22 +36,24 @@ export default class GenreQueryParameter {
     for (var i = 0; i < genreQueryParameters.length; i++) {
       let genreQueryParameter = genreQueryParameters[i];
 
-      if (!(genreQueryParameter instanceof genreQueryParameter)) {
-        throw new Error('all elements must be a genreQueryParameter');
+      if (!(genreQueryParameter instanceof GenreQueryParameter)) {
+        throw new Error('all elements must be a a valid genre query parameter');
       }
 
       let queryParameterName = genreQueryParameter.buildParameterName();
       let queryParameterValues = [];
 
-      if (queryParameterName in genreQueryParameters) {
-        queryParameterValues = genreQueryParameters[queryParameterName];
+      if (queryParameterName in parameters) {
+        queryParameterValues = parameters[queryParameterName];
       }
 
-      queryParameterValues.push(taxonomy.getValue());
+      console.log(queryParameterName);
+      console.log(queryParameterValues);
+
+      queryParameterValues.push(genreQueryParameter.getParameterValue());
       parameters[queryParameterName] = queryParameterValues;
     }
 
     return parameters;
-    }
   }
 }

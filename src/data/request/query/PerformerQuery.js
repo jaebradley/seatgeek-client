@@ -4,14 +4,14 @@ import PaginationQuery from './PaginationQuery';
 import GenreQueryParameter from './GenreQueryParameter';
 
 export default class PerformerQuery {
-  constructor(ids, slug, genreQueryParameters, taxonomyQueryParameters,
+  constructor(ids, slugs, genreQueryParameters, taxonomyQueryParameters,
               queryString, perPage, page) {
     if (!(ids instanceof Array)) {
       throw new Error('ids must be an Array');
     }
 
-    if ((typeof slug !== 'undefined') && (typeof slug !== 'string')) {
-      throw new Error('defined slug must be String');
+    if (!(slugs instanceof Array) {
+      throw new Error('slugs must be an Array');
     }
 
     if (!(genreQueryParameters instanceof Array)) {
@@ -27,7 +27,7 @@ export default class PerformerQuery {
     }
 
     this.ids = ids;
-    this.slug = slug;
+    this.slugs = slugs;
     this.genreQueryParameters = genreQueryParameters;
     this.taxonomyQueryParameters = taxonomyQueryParameters;
     this.queryString = queryString;
@@ -37,7 +37,7 @@ export default class PerformerQuery {
   buildQueryParameters() {
     let queryParameters = {
       'id': this.ids,
-      'slug': this.slug,
+      'slug': this.slugs,
       'q': this.queryString,
     };
 
