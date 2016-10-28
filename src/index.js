@@ -35,11 +35,11 @@ export default class Client {
                         Subpath.TAXONOMIES.value);
   }
 
-  static getPerformers(ids=[], slug=undefined, genreQueryParameters=[],
+  static getPerformers(ids=[], slugs=[], genreQueryParameters=[],
                        taxonomyQueryParameters=[], queryString=undefined,
                        perPage=DEFAULT_PER_PAGE, page=DEFAULT_PAGE) {
 
-    let performerQuery = new PerformerQuery(ids, slug, genreQueryParameters,
+    let performerQuery = new PerformerQuery(ids, slugs, genreQueryParameters,
                                             taxonomyQueryParameters, queryString,
                                             perPage, page);
 
