@@ -3,7 +3,7 @@
 import PerformerField from '../../PerformerField';
 import PerformerSpecificity from '../../PerformerSpecificity';
 
-export default class PerformerEventQueryParameter {
+export default class PerformerQueryParameter {
   constructor(value, field, specificity=PerformerSpecificity.ANY) {
     if (!(field instanceof PerformerField)) {
       throw new Error('field must be an instance of PerformerField');
