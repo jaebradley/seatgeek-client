@@ -235,10 +235,15 @@ Taxonomy.initEnum({
     id: 1120000,
     parent_id: 1000000,
   },
-  CONCERT: {
+  CONCERTS: {
     slug: '',
     id: 2000000,
     parent_id: null,
+  },
+  CONCERT: {
+    slug: '',
+    id: 2000001,
+    parent_id: 2000000,
   },
   MUSIC_FESTIVAL: {
     slug: 'music_festival',
@@ -275,7 +280,7 @@ Taxonomy.initEnum({
     id: 3020000,
     parent_id: 3000000,
   },
-  BROADWAY_SHOW: {
+  BROADWAY_SHOWS: {
     slug: 'broadway_tickets_national',
     id: 3030000,
     parent_id: 3000000,
@@ -290,7 +295,7 @@ Taxonomy.initEnum({
     id: 3050000,
     parent_id: 3000000,
   },
-  DANCE_SHOW: {
+  DANCE_SHOWS: {
     slug: 'dance_performance_tour',
     id: 3060000,
     parent_id: 3000000,
