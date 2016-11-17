@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 
-import Client from '../src/index';
+import SeatGeekClient from '../src/index';
 import Genre from '../src/data/Genre';
 import Taxonomy from '../src/data/Taxonomy';
 
@@ -61,22 +61,22 @@ describe('Test Client', function() {
   let performerQueryParameters = [performerQueryParameter1, performerQueryParameter2];
 
   it('tests genres fetch', function() {
-    return Client.getGenres(150)
+    return SeatGeekClient.getGenres(150)
                  .then(response => expect(response.body.genres.length).to.equal(Genre.enumValues.length));
   });
 
   it('tests taxonomies fetch', function() {
-    return Client.getTaxonomies(100)
+    return SeatGeekClient.getTaxonomies(100)
                  .then(response => expect(response.body.taxonomies.length).to.equal(Taxonomy.enumValues.length));
   });
 
   it('tests venues fetch', function() {
-    return Client.getVenues('Boston')
+    return SeatGeekClient.getVenues('Boston')
                  .then(response => console.log(response));
   });
 
   it('tests clients fetch', function() {
-    return Client.getEvents(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName, stateCode, countryCode, postalCode, false,
+    return SeatGeekClient.getEvents(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName, stateCode, countryCode, postalCode, false,
       latitude, longitude, range, unit, SortOption.SCORE, SortDirection.DESCENDING, filterQueries, perPage, page)
                  .then(response => console.log(response))
   })
