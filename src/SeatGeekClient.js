@@ -10,6 +10,7 @@ import SortDirection from './data/request/query/SortDirection';
 import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import PaginationQuery from './data/request/query/PaginationQuery';
+import VenueQuery from './data/request/query/VenueQuery';
 
 let baseUri = 'https://api.seatgeek.com/2/';
 let headers = { 'User-Agent': 'Request-Promise' };
@@ -52,10 +53,10 @@ export default class SeatGeekClient {
                    latitude=undefined, longitude=undefined, range=10, unit=Unit.MILE,
                    perPage=100, page=1) {
 
-    let parameters = QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
-                                                                     queryString, useIpAddress, latitude, longitude,
-                                                                     range, unit, perPage, page);
-    return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
+    let venueQuery = new VenueQuery(cityName, stateCode, countryCode, postalCode,
+                                    queryString, useIpAddress, latitude, longitude,
+                                    range, unit, perPage, page);
+    return SeatGeekClient.fetch(venueQuery.buildQueryParameters(), Subpath.VENUES.value);
   }
 
   static getEvents(performerQueryParameters=[], taxonomyQueryParameters=[], venueIds=[], cityName=undefined,

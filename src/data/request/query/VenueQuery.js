@@ -6,7 +6,7 @@ import GeolocationQuery from './GeolocationQuery';
 
 export default class VenueQuery {
   constructor(cityName, stateCode, countryCode, postalCode, queryString,
-              useIpAddress, latitude, longitude, range, unit, perPage, page)) {
+              useIpAddress, latitude, longitude, range, unit, perPage, page) {
 
     if ((typeof queryString !== 'undefined') && (typeof queryString !== 'string')) {
       throw new Error('defined queryString must be String');

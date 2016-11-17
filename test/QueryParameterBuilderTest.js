@@ -30,43 +30,6 @@ describe('Test QueryParameterBuilder', function() {
   let perPage = 4;
   let page = 5;
 
-  it('tests venue query parameters', function() {
-    let expectedDefaultParameters = {
-      city: undefined,
-      state: undefined,
-      country: undefined,
-      postal_code: undefined,
-      q: undefined,
-      geoIp: true,
-      lat: undefined,
-      lon: undefined,
-      range: '1mi',
-      per_page: perPage,
-      page: page,
-    };
-    expect(QueryParameterBuilder.buildVenueQueryParameters(undefined, undefined, undefined, undefined,
-                                                           undefined, true, undefined, undefined,
-                                                           1, Unit.MILE, perPage, page)).to.eql(expectedDefaultParameters);
-
-   let expectedCustomParameters = {
-     city: cityName,
-     state: stateCode,
-     country: countryCode,
-     postal_code: postalCode,
-     q: queryString,
-     geoIp: undefined,
-     lat: latitude,
-     lon: longitude,
-     range: '3mi',
-     per_page: perPage,
-     page: page,
-   };
-
-   expect(QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
-                                                          queryString, false, latitude, longitude,
-                                                          range, unit, perPage, page)).to.eql(expectedCustomParameters);
-  });
-
   it('tests event query parameters', function() {
     let expectedDefaultParameters = {
       'venue.id': [],
