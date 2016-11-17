@@ -10,7 +10,7 @@ export default class PerformerQuery {
       throw new Error('ids must be an Array');
     }
 
-    if (!(slugs instanceof Array) {
+    if (!(slugs instanceof Array)) {
       throw new Error('slugs must be an Array');
     }
 
