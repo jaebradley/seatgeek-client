@@ -16,14 +16,14 @@ let headers = { 'User-Agent': 'Request-Promise' };
 let DEFAULT_PER_PAGE = 100;
 let DEFAULT_PAGE = 1;
 
-export default class Client {
+export default class SeatGeekClient {
   constructor() {}
 
   static getGenres(perPage=100, page=1) {
 
     let paginationQuery = new PaginationQuery(perPage, page);
 
-    return Client.fetch(paginationQuery.buildQueryParameters(),
+    return SeatGeekClient.fetch(paginationQuery.buildQueryParameters(),
                         Subpath.GENRES.value);
   }
 
@@ -31,7 +31,7 @@ export default class Client {
 
     let paginationQuery = new PaginationQuery(perPage, page);
 
-    return Client.fetch(paginationQuery.buildQueryParameters(),
+    return SeatGeekClient.fetch(paginationQuery.buildQueryParameters(),
                         Subpath.TAXONOMIES.value);
   }
 
@@ -43,7 +43,7 @@ export default class Client {
                                             taxonomyQueryParameters, queryString,
                                             perPage, page);
 
-    return Client.fetch(performerQuery.buildQueryParameters(),
+    return SeatGeekClient.fetch(performerQuery.buildQueryParameters(),
                         Subpath.PERFORMERS.value);
   }
 
@@ -55,7 +55,7 @@ export default class Client {
     let parameters = QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
                                                                      queryString, useIpAddress, latitude, longitude,
                                                                      range, unit, perPage, page);
-    return Client.fetch(parameters, Subpath.VENUES.value);
+    return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
   }
 
   static getEvents(performerQueryParameters=[], taxonomyQueryParameters=[], venueIds=[], cityName=undefined,
@@ -68,7 +68,7 @@ export default class Client {
                                                             stateCode, countryCode, postalCode, useIpAddress,
                                                             latitude, longitude, range, unit, sortOption,
                                                             sortDirection, filterQueries, perPage, page);
-    return Client.fetch(parameters, Subpath.EVENTS.value);
+    return SeatGeekClient.fetch(parameters, Subpath.EVENTS.value);
   }
 
   static buildRequest(parameters, subpath) {
@@ -83,7 +83,7 @@ export default class Client {
   }
 
   static fetch(parameters, subpath) {
-    return rp(Client.buildRequest(parameters, subpath))
+    return rp(SeatGeekClient.buildRequest(parameters, subpath))
       .then(response => response)
       .catch(err => console.log(err));
   }
