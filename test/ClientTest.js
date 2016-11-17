@@ -62,22 +62,26 @@ describe('Test Client', function() {
 
   it('tests genres fetch', function() {
     return SeatGeekClient.getGenres(150)
-                 .then(response => expect(response.body.genres.length).to.equal(Genre.enumValues.length));
+                 .then(response => expect(response.body.genres.length).to.equal(Genre.enumValues.length))
+                 .done();
   });
 
   it('tests taxonomies fetch', function() {
     return SeatGeekClient.getTaxonomies(100)
-                 .then(response => expect(response.body.taxonomies.length).to.equal(Taxonomy.enumValues.length));
+                 .then(response => expect(response.body.taxonomies.length).to.equal(Taxonomy.enumValues.length))
+                 .done();
   });
 
   it('tests venues fetch', function() {
     return SeatGeekClient.getVenues('Boston')
-                 .then(response => console.log(response));
+                 .then(response => console.log(response))
+                 .done();
   });
 
   it('tests clients fetch', function() {
     return SeatGeekClient.getEvents(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName, stateCode, countryCode, postalCode, false,
       latitude, longitude, range, unit, SortOption.SCORE, SortDirection.DESCENDING, filterQueries, perPage, page)
                  .then(response => console.log(response))
+                 .done();
   })
 });
