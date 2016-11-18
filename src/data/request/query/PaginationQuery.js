@@ -20,4 +20,11 @@ export default class PaginationQuery {
       page: this.page,
     };
   }
+
+  static buildQueryParameters(perPage, page) {
+    return {
+      per_page: perPage,
+      page: page,
+    };
+  }
 }
