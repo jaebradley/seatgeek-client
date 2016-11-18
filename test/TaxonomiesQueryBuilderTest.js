@@ -11,9 +11,9 @@ describe('Test Taxonomy Query Builder', function() {
   it('tests query building', function() {
     let queryParameter = new TaxonomyQueryParameter(Taxonomy.SPORTS, TaxonomyField.ID);
     let expectedQueryParameters = {
-      'taxonomies.id': Taxonomy.SPORT['id'],
+      'taxonomies.id': [Taxonomy.SPORTS.id],
     };
-    TaxonomiesQueryBuilder.buildQueryParameters([queryParameter])
-                          .to.eql(expectedQueryParameters);
+    expect(TaxonomiesQueryBuilder.buildQueryParameters([queryParameter]))
+          .to.eql(expectedQueryParameters);
   });
 });

@@ -1,6 +1,7 @@
 'use es6';
 
-import Genre from '../../Genre';
+import Genre from '../../../Genre';
+import GenreQueryParameter from '../GenreQueryParameter';
 
 export default class GenresQueryBuilder {
   static buildQueryParameters(genreQueryParameters) {
@@ -13,7 +14,7 @@ export default class GenresQueryBuilder {
       let genreQueryParameter = genreQueryParameters[i];
 
       if (!(genreQueryParameter instanceof GenreQueryParameter)) {
-        throw new Error('all elements must be a a valid genre query parameter');
+        throw new TypeError('all elements must be a a valid genre query parameter');
       }
 
       let queryParameterName = genreQueryParameter.buildParameterName();

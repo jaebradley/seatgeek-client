@@ -1,7 +1,8 @@
 'use es6';
 
-import Taxonomy from '../../Taxonomy';
-import TaxonomyField from '../../TaxonomyField';
+import Taxonomy from '../../../Taxonomy';
+import TaxonomyField from '../../../TaxonomyField';
+import TaxonomyQueryParameter from '../TaxonomyQueryParameter';
 
 export default class TaxonomiesQueryBuilder {
   static buildQueryParameters(taxonomies) {
