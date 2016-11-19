@@ -10,6 +10,7 @@ import SortDirection from './data/request/query/SortDirection';
 import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import PaginationQuery from './data/request/query/PaginationQuery';
+import PerformersQuery from './data/request/query/PerformersQuery';
 
 let baseUri = 'https://api.seatgeek.com/2/';
 let headers = { 'User-Agent': 'Request-Promise' };
@@ -35,16 +36,11 @@ export default class SeatGeekClient {
                         Subpath.TAXONOMIES.value);
   }
 
-  static getPerformers(ids=[], slugs=[], genreQueryParameters=[],
-                       taxonomyQueryParameters=[], queryString=undefined,
-                       perPage=DEFAULT_PER_PAGE, page=DEFAULT_PAGE) {
+  static getPerformers(performersQuery) {
 
-    let performerQuery = new PerformerQuery(ids, slugs, genreQueryParameters,
-                                            taxonomyQueryParameters, queryString,
-                                            perPage, page);
+    let queryParameters = PerformersQueryBuilder.buildQueryParameters(performersQuery);
 
-    return SeatGeekClient.fetch(performerQuery.buildQueryParameters(),
-                        Subpath.PERFORMERS.value);
+    return SeatGeekClient.fetch(queryParameters, Subpath.PERFORMERS.value);
   }
 
   static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
