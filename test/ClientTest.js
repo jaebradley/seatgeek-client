@@ -11,6 +11,7 @@ import SortDirection from '../src/data/request/query/SortDirection';
 import FilterOption from '../src/data/request/query/FilterOption';
 import Operator from '../src/data/request/query/Operator';
 import FilterQuery from '../src/data/request/query/FilterQuery';
+import PageQuery from '../src/data/request/query/PageQuery';
 import PerformerField from '../src/data/PerformerField';
 import PerformerSpecificity from '../src/data/PerformerSpecificity';
 import TaxonomyField from '../src/data/TaxonomyField';
@@ -61,12 +62,12 @@ describe('Test Client', function() {
   let performerQueryParameters = [performerQueryParameter1, performerQueryParameter2];
 
   it('tests genres fetch', function() {
-    return SeatGeekClient.getGenres(150)
+    return SeatGeekClient.getGenres({perPage: 150})
                  .then(response => expect(response.body.genres.length).to.equal(Genre.enumValues.length));
   });
 
   it('tests taxonomies fetch', function() {
-    return SeatGeekClient.getTaxonomies(100)
+    return SeatGeekClient.getTaxonomies({perPage: 100})
                  .then(response => expect(response.body.taxonomies.length).to.equal(Taxonomy.enumValues.length));
   });
 

@@ -10,6 +10,7 @@ import SortDirection from './data/request/query/SortDirection';
 import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import PaginationQuery from './data/request/query/PaginationQuery';
+import PageQuery from './data/request/query/PageQuery';
 import PerformersQuery from './data/request/query/PerformersQuery';
 import PageQueryBuilder from './data/request/query/builders/PageQueryBuilder';
 
@@ -22,12 +23,12 @@ export default class SeatGeekClient {
   constructor() {}
 
   static getGenres(pageQuery) {
-    let query = PageQueryBuilder.buildQueryParameters(pageQuery);
+    let query = PageQueryBuilder.buildQueryParameters(new PageQuery(pageQuery));
     return SeatGeekClient.fetch(query, Subpath.GENRES.value);
   }
 
   static getTaxonomies(pageQuery) {
-    let query = PageQueryBuilder.buildQueryParameters(pageQuery);
+    let query = PageQueryBuilder.buildQueryParameters(new PageQuery(pageQuery));
     return SeatGeekClient.fetch(query, Subpath.TAXONOMIES.value);
   }
 
