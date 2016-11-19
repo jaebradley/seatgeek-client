@@ -1,10 +1,10 @@
 'use es6';
 
 export default class PageQueryBuilder {
-  static buildQueryParameters(perPage, page) {
+  static buildQueryParameters(pageQuery) {
     return {
-      per_page: perPage,
-      page: page,
+      per_page: pageQuery.perPage,
+      page: pageQuery.page,
     };
   }
 }

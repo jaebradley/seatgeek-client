@@ -15,7 +15,7 @@ export default class PerformersQueryBuilder {
     Object.assign(queryParameters,
                   GenresQueryBuilder.buildQueryParameters(performersQuery.genreQueryParameters),
                   TaxonomiesQueryBuilder.buildQueryParameters(performersQuery.taxonomyQueryParameters),
-                  PageQueryBuilder.buildQueryParameters(performersQuery.perPage, performersQuery.page));
+                  PageQueryBuilder.buildQueryParameters(performersQuery.pageQuery));
 
     return queryParameters;
   }
