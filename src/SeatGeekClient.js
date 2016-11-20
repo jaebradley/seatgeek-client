@@ -10,7 +10,9 @@ import SortDirection from './data/request/query/SortDirection';
 import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import PaginationQuery from './data/request/query/PaginationQuery';
+import PageQuery from './data/request/query/PageQuery';
 import PerformersQuery from './data/request/query/PerformersQuery';
+import PageQueryBuilder from './data/request/query/builders/PageQueryBuilder';
 
 let baseUri = 'https://api.seatgeek.com/2/';
 let headers = { 'User-Agent': 'Request-Promise' };
@@ -20,20 +22,14 @@ let DEFAULT_PAGE = 1;
 export default class SeatGeekClient {
   constructor() {}
 
-  static getGenres(perPage=100, page=1) {
-
-    let paginationQuery = new PaginationQuery(perPage, page);
-
-    return SeatGeekClient.fetch(paginationQuery.buildQueryParameters(),
-                        Subpath.GENRES.value);
+  static getGenres(pageQuery) {
+    let query = PageQueryBuilder.buildQueryParameters(new PageQuery(pageQuery));
+    return SeatGeekClient.fetch(query, Subpath.GENRES.value);
   }
 
-  static getTaxonomies(perPage=100, page=1) {
-
-    let paginationQuery = new PaginationQuery(perPage, page);
-
-    return SeatGeekClient.fetch(paginationQuery.buildQueryParameters(),
-                        Subpath.TAXONOMIES.value);
+  static getTaxonomies(pageQuery) {
+    let query = PageQueryBuilder.buildQueryParameters(new PageQuery(pageQuery));
+    return SeatGeekClient.fetch(query, Subpath.TAXONOMIES.value);
   }
 
   static getPerformers(performersQuery) {
