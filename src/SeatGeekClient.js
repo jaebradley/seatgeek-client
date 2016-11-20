@@ -67,7 +67,7 @@ export default class SeatGeekClient {
       qs: parameters,
       headers: headers,
       json: true,
-      resolveWithFullResponse: true,
+      resolveWithFullResponse: false,
       useQuerystring: true,
     }
   }
