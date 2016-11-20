@@ -2,6 +2,8 @@
 
 import {Record} from 'immutable';
 
+import Unit from '../../Unit';
+
 let defaults = {
   useIpAddress: true,
   latitude: undefined,

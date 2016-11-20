@@ -2,9 +2,6 @@
 
 import {Record} from 'immutable';
 
-import VenuePropertiesQuery from './VenuePropertiesQuery';
-import GeolocationQuery from './GeolocationQuery';
-import PageQuery from './PageQuery';
 import Unit from '../../Unit';
 
 let defaults = {
@@ -23,5 +20,5 @@ let defaults = {
   page: 1,
 };
 
-export default class VenueSearchQuery extends Record(defaults) {
+export default class VenueSearch extends Record(defaults) {
 };

@@ -11,12 +11,10 @@ import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import PaginationQuery from './data/request/query/PaginationQuery';
 import PageQuery from './data/request/query/PageQuery';
-import PageQuery from './data/request/query/PageQuery';
 import VenueSearch from './data/request/query/VenueSearch';
-import VenueSearchQuery from './data/request/query/VenueSearchQuery';
 import PerformersQuery from './data/request/query/PerformersQuery';
 import PageQueryBuilder from './data/request/query/builders/PageQueryBuilder';
-import VenueSearchParametersBuilder './data/request/query/builders/VenueSearchParametersBuilder';
+import VenueSearchParametersBuilder from './data/request/query/builders/VenueSearchParametersBuilder';
 
 let baseUri = 'https://api.seatgeek.com/2/';
 let headers = { 'User-Agent': 'Request-Promise' };

@@ -4,9 +4,9 @@ import VenuePropertiesParametersBuilder from './VenuePropertiesParametersBuilder
 import GeolocationParametersBuilder from './GeolocationParametersBuilder';
 import PageQueryBuilder from './PageQueryBuilder';
 
-import VenueProperties from './VenueProperties';
-import GeolocationQuery from './GeolocationQuery';
-import PageQuery from './PageQuery';
+import VenueProperties from '../VenueProperties';
+import GeolocationQuery from '../GeolocationQuery';
+import PageQuery from '../PageQuery';
 
 export default class VenueSearchParametersBuilder {
   static build(query) {
@@ -21,7 +21,7 @@ export default class VenueSearchParametersBuilder {
                       stateCode: query.stateCode,
                       countryCode: query.countryCode,
                       postalCode: query.postalCode,
-                    });
+                    })
                   ),
                   GeolocationParametersBuilder.build(
                     new GeolocationQuery({
@@ -30,13 +30,13 @@ export default class VenueSearchParametersBuilder {
                       longitude: query.longitude,
                       range: query.range,
                       unit: query.unit,
-                    });
+                    })
                   ),
                   PageQueryBuilder.build(
                     new PageQuery({
                       perPage: query.perPage,
                       page: query.page,
-                    });
+                    })
                   ));
 
     return parameters;

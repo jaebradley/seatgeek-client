@@ -1,8 +1,5 @@
 'use es6';
 
-import VenuePropertiesParametersBuilder from 'VenuePropertiesParametersBuilder';
-
-
 export default class GeolocationParametersBuilder {
   static build(query) {
     return {
