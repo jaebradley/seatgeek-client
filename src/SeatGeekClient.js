@@ -23,19 +23,17 @@ export default class SeatGeekClient {
   constructor() {}
 
   static getGenres(pageQuery) {
-    let query = PageQueryBuilder.buildQueryParameters(new PageQuery(pageQuery));
+    let query = PageQueryBuilder.build(new PageQuery(pageQuery));
     return SeatGeekClient.fetch(query, Subpath.GENRES.value);
   }
 
   static getTaxonomies(pageQuery) {
-    let query = PageQueryBuilder.buildQueryParameters(new PageQuery(pageQuery));
+    let query = PageQueryBuilder.build(new PageQuery(pageQuery));
     return SeatGeekClient.fetch(query, Subpath.TAXONOMIES.value);
   }
 
   static getPerformers(performersQuery) {
-
     let queryParameters = PerformersQueryBuilder.buildQueryParameters(performersQuery);
-
     return SeatGeekClient.fetch(queryParameters, Subpath.PERFORMERS.value);
   }
 
