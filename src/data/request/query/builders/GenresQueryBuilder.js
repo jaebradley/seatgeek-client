@@ -4,7 +4,7 @@ import Genre from '../../../Genre';
 import GenreQueryParameter from '../GenreQueryParameter';
 
 export default class GenresQueryBuilder {
-  static buildQueryParameters(genreQueryParameters) {
+  static build(genreQueryParameters) {
     if (!(genreQueryParameters instanceof Array)) {
       throw new Error('genre query parameters must be an array');
     }

@@ -17,11 +17,11 @@ describe('Test Genre Query Builder', function() {
       'genres[primary].slug': [Genre.COUNTRY.slug, Genre.ROCK.slug],
       'genres.slug': [Genre.POP.slug, Genre.ALTERNATIVE.slug],
     };
-    expect(GenresQueryBuilder.buildQueryParameters(queryParameters)).to.eql(expectedQueryParameters);
+    expect(GenresQueryBuilder.build(queryParameters)).to.eql(expectedQueryParameters);
   });
 
   it('tests exceptional cases building query parameters', function() {
-    expect(() => GenresQueryBuilder.buildQueryParameters(1).to.throw(Error));
-    expect(() => GenresQueryBuilder.buildQueryParameters([1, 2, 3]).to.throw(Error));
+    expect(() => GenresQueryBuilder.build(1).to.throw(Error));
+    expect(() => GenresQueryBuilder.build([1, 2, 3]).to.throw(Error));
   });
 });

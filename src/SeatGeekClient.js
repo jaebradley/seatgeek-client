@@ -33,7 +33,7 @@ export default class SeatGeekClient {
   }
 
   static getPerformers(performersQuery) {
-    let queryParameters = PerformersQueryBuilder.buildQueryParameters(performersQuery);
+    let queryParameters = PerformersQueryBuilder.build(performersQuery);
     return SeatGeekClient.fetch(queryParameters, Subpath.PERFORMERS.value);
   }
 

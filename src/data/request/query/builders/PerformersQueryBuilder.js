@@ -5,7 +5,7 @@ import TaxonomiesQueryBuilder from './TaxonomiesQueryBuilder';
 import GenresQueryBuilder from './GenresQueryBuilder';
 
 export default class PerformersQueryBuilder {
-  static buildQueryParameters(performersQuery) {
+  static build(performersQuery) {
     let queryParameters = {
       'id': performersQuery.ids,
       'slug': performersQuery.slugs,
@@ -13,9 +13,9 @@ export default class PerformersQueryBuilder {
     };
 
     Object.assign(queryParameters,
-                  GenresQueryBuilder.buildQueryParameters(performersQuery.genreQueryParameters),
-                  TaxonomiesQueryBuilder.buildQueryParameters(performersQuery.taxonomyQueryParameters),
-                  PageQueryBuilder.buildQueryParameters(performersQuery.pageQuery));
+                  GenresQueryBuilder.build(performersQuery.genreQueryParameters),
+                  TaxonomiesQueryBuilder.build(performersQuery.taxonomyQueryParameters),
+                  PageQueryBuilder.build(performersQuery.pageQuery));
 
     return queryParameters;
   }
