@@ -11,8 +11,12 @@ import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import PaginationQuery from './data/request/query/PaginationQuery';
 import PageQuery from './data/request/query/PageQuery';
+import PageQuery from './data/request/query/PageQuery';
+import VenueSearch from './data/request/query/VenueSearch';
+import VenueSearchQuery from './data/request/query/VenueSearchQuery';
 import PerformersQuery from './data/request/query/PerformersQuery';
 import PageQueryBuilder from './data/request/query/builders/PageQueryBuilder';
+import VenueSearchParametersBuilder './data/request/query/builders/VenueSearchParametersBuilder';
 
 let baseUri = 'https://api.seatgeek.com/2/';
 let headers = { 'User-Agent': 'Request-Promise' };
@@ -37,14 +41,8 @@ export default class SeatGeekClient {
     return SeatGeekClient.fetch(queryParameters, Subpath.PERFORMERS.value);
   }
 
-  static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
-                   postalCode=undefined, queryString=undefined, useIpAddress=true,
-                   latitude=undefined, longitude=undefined, range=10, unit=Unit.MILE,
-                   perPage=100, page=1) {
-
-    let parameters = QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
-                                                                     queryString, useIpAddress, latitude, longitude,
-                                                                     range, unit, perPage, page);
+  static getVenues(query) {
+    let parameters = VenueSearchParametersBuilder.build(new VenueSearch(query));
     return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
   }
 
