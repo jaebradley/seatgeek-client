@@ -1,14 +1,14 @@
 'use es6';
 
-import {Record} from 'immutable';
+import {List, Record} from 'immutable';
 
 import Pagination from './Pagination';
 
 let defaults = {
-  ids: [],
-  slugs: [],
-  genreQueryParameters: [],
-  taxonomyQueryParameters: [],
+  ids: new List(),
+  slugs: new List(),
+  taxonomies: new List(),
+  genres: new List(),
   pagination: new Pagination(),
   queryString: undefined,
 };

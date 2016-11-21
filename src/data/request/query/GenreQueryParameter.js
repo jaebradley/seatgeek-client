@@ -47,9 +47,6 @@ export default class GenreQueryParameter {
         queryParameterValues = parameters[queryParameterName];
       }
 
-      console.log(queryParameterName);
-      console.log(queryParameterValues);
-
       queryParameterValues.push(genreQueryParameter.getParameterValue());
       parameters[queryParameterName] = queryParameterValues;
     }
