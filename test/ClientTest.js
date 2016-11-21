@@ -11,7 +11,7 @@ import SortDirection from '../src/data/request/query/SortDirection';
 import FilterOption from '../src/data/request/query/FilterOption';
 import Operator from '../src/data/request/query/Operator';
 import FilterQuery from '../src/data/request/query/FilterQuery';
-import PageQuery from '../src/data/request/query/PageQuery';
+import Pagination from '../src/data/request/query/Pagination';
 import PerformerField from '../src/data/PerformerField';
 import PerformerSpecificity from '../src/data/PerformerSpecificity';
 import TaxonomyField from '../src/data/TaxonomyField';

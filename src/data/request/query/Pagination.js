@@ -7,5 +7,5 @@ let defaults = {
   page: 1,
 };
 
-export default class PageQuery extends Record(defaults) {
+export default class Pagination extends Record(defaults) {
 };
