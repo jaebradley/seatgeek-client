@@ -3,9 +3,10 @@
 import {Record} from 'immutable';
 
 import TaxonomyField from '../../TaxonomyField';
+import Taxonomy from '../../Taxonomy';
 
 let defaults = {
-  taxonomy: undefined,
+  taxonomy: Taxonomy.CONCERTS,
   field: TaxonomyField.ID,
 };
 
