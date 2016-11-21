@@ -14,7 +14,13 @@ describe('Test GeolocationQuery', function() {
 
   it('tests expected behavior', function() {
     let trueGeoIp = true;
-    let trueGeolocationQuery = new GeolocationQuery(trueGeoIp, defaultLatitude, defaultLongitude, defaultRange, defaultUnit);
+    let trueGeolocationQuery = new GeolocationQuery({
+      useIpAddress: trueGeoIp,
+      latitude: defaultLatitude,
+      longitude: defaultLongitude,
+      range: defaultRange,
+      unit: defaultUnit
+    });
     let expectedTrueGeoIpParameters = {
       geoIp: trueGeoIp,
       lat: defaultLatitude,
@@ -27,25 +33,5 @@ describe('Test GeolocationQuery', function() {
     expect(trueGeolocationQuery.range).to.equal(defaultRange);
     expect(trueGeolocationQuery.unit).to.equal(defaultUnit);
     expect(trueGeolocationQuery.buildQueryParameters()).to.eql(expectedTrueGeoIpParameters);
-
-    let falseGeoLocationQuery = new GeolocationQuery(false, defaultLatitude, defaultLongitude, defaultRange, defaultUnit);
-    expect(falseGeoLocationQuery.useIpAddress).to.equal(undefined);
-  });
-
-  it('tests exceptional behavior', function() {
-    expect(() => new GeolocationQuery(1, defaultLatitude, defaultLongitude, defaultRange, defaultUnit))
-      .to.throw(Error);
-
-    expect(() => new GeolocationQuery(true, undefined, defaultLongitude, defaultRange, defaultUnit))
-      .to.throw(Error);
-
-    expect(() => new GeolocationQuery(true, defaultLatitude, undefined, defaultRange, defaultUnit))
-      .to.throw(Error);
-
-    expect(() => new GeolocationQuery(true, defaultLatitude, defaultLongitude, "foo", defaultUnit))
-      .to.throw(Error);
-
-    expect(() => new GeolocationQuery(true, defaultLatitude, defaultLongitude, defaultRange, "bar"))
-      .to.throw(Error);
   });
 });

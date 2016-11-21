@@ -63,16 +63,16 @@ describe('Test Client', function() {
 
   it('tests genres fetch', function() {
     return SeatGeekClient.getGenres({perPage: 150})
-                 .then(response => expect(response.body.genres.length).to.equal(Genre.enumValues.length));
+                 .then(response => expect(response.genres.length).to.equal(Genre.enumValues.length));
   });
 
   it('tests taxonomies fetch', function() {
     return SeatGeekClient.getTaxonomies({perPage: 100})
-                 .then(response => expect(response.body.taxonomies.length).to.equal(Taxonomy.enumValues.length));
+                 .then(response => expect(response.taxonomies.length).to.equal(Taxonomy.enumValues.length));
   });
 
   it('tests venues fetch', function() {
-    return SeatGeekClient.getVenues('Boston')
+    return SeatGeekClient.getVenues({cityName: 'Boston'})
                  .then(response => console.log(response));
   });
 
