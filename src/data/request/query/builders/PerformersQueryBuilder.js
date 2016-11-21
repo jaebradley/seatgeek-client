@@ -1,6 +1,6 @@
 'use es6';
 
-import PaginationBuilder from './PaginationBuilder';
+import PaginationParametersBuilder from './PaginationParametersBuilder';
 import TaxonomiesQueryBuilder from './TaxonomiesQueryBuilder';
 import GenresQueryBuilder from './GenresQueryBuilder';
 
@@ -15,7 +15,7 @@ export default class PerformersQueryBuilder {
     Object.assign(queryParameters,
                   GenresQueryBuilder.build(performersQuery.genreQueryParameters),
                   TaxonomiesQueryBuilder.build(performersQuery.taxonomyQueryParameters),
-                  PaginationBuilder.build(performersQuery.pagination));
+                  PaginationParametersBuilder.build(performersQuery.pagination));
 
     return queryParameters;
   }

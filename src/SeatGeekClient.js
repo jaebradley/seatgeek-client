@@ -13,7 +13,7 @@ import PaginationQuery from './data/request/query/PaginationQuery';
 import Pagination from './data/request/query/Pagination';
 import VenueSearch from './data/request/query/VenueSearch';
 import PerformersQuery from './data/request/query/PerformersQuery';
-import PaginationBuilder from './data/request/query/builders/PaginationBuilder';
+import PaginationParametersBuilder from './data/request/query/builders/PaginationParametersBuilder';
 import VenueSearchParametersBuilder from './data/request/query/builders/VenueSearchParametersBuilder';
 
 let baseUri = 'https://api.seatgeek.com/2/';
@@ -25,12 +25,12 @@ export default class SeatGeekClient {
   constructor() {}
 
   static getGenres(query) {
-    let parameters = PaginationBuilder.build(new Pagination(query));
+    let parameters = PaginationParametersBuilder.build(new Pagination(query));
     return SeatGeekClient.fetch(parameters, Subpath.GENRES.value);
   }
 
   static getTaxonomies(query) {
-    let parameters = PaginationBuilder.build(new Pagination(query));
+    let parameters = PaginationParametersBuilder.build(new Pagination(query));
     return SeatGeekClient.fetch(parameters, Subpath.TAXONOMIES.value);
   }
 
