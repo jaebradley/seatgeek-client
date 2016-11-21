@@ -1,12 +1,14 @@
 'use es6';
 
+import Geolocation from '../Geolocation';
+
 export default class GeolocationParametersBuilder {
-  static build(query) {
+  static build(geolocation) {
     return {
-      geoIp: query.useIpAddress,
-      lat: query.latitude,
-      lon: query.longitude,
-      range: String(query.range) + query.unit.value,
+      geoIp: geolocation.useIpAddress,
+      lat: geolocation.latitude,
+      lon: geolocation.longitude,
+      range: String(geolocation.range) + geolocation.unit.value,
     };
   }
 }
