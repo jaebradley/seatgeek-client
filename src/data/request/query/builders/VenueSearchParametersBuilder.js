@@ -2,11 +2,11 @@
 
 import VenuePropertiesParametersBuilder from './VenuePropertiesParametersBuilder';
 import GeolocationParametersBuilder from './GeolocationParametersBuilder';
-import PageQueryBuilder from './PageQueryBuilder';
+import PaginationBuilder from './PaginationBuilder';
 
 import VenueProperties from '../VenueProperties';
 import GeolocationQuery from '../GeolocationQuery';
-import PageQuery from '../PageQuery';
+import Pagination from '../Pagination';
 
 export default class VenueSearchParametersBuilder {
   static build(query) {
@@ -32,8 +32,8 @@ export default class VenueSearchParametersBuilder {
                       unit: query.unit,
                     })
                   ),
-                  PageQueryBuilder.build(
-                    new PageQuery({
+                  PaginationBuilder.build(
+                    new Pagination({
                       perPage: query.perPage,
                       page: query.page,
                     })

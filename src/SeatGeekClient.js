@@ -10,10 +10,10 @@ import SortDirection from './data/request/query/SortDirection';
 import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import PaginationQuery from './data/request/query/PaginationQuery';
-import PageQuery from './data/request/query/PageQuery';
+import Pagination from './data/request/query/Pagination';
 import VenueSearch from './data/request/query/VenueSearch';
 import PerformersQuery from './data/request/query/PerformersQuery';
-import PageQueryBuilder from './data/request/query/builders/PageQueryBuilder';
+import PaginationBuilder from './data/request/query/builders/PaginationBuilder';
 import VenueSearchParametersBuilder from './data/request/query/builders/VenueSearchParametersBuilder';
 
 let baseUri = 'https://api.seatgeek.com/2/';
@@ -24,14 +24,14 @@ let DEFAULT_PAGE = 1;
 export default class SeatGeekClient {
   constructor() {}
 
-  static getGenres(pageQuery) {
-    let query = PageQueryBuilder.build(new PageQuery(pageQuery));
-    return SeatGeekClient.fetch(query, Subpath.GENRES.value);
+  static getGenres(query) {
+    let parameters = PaginationBuilder.build(new Pagination(query));
+    return SeatGeekClient.fetch(parameters, Subpath.GENRES.value);
   }
 
-  static getTaxonomies(pageQuery) {
-    let query = PageQueryBuilder.build(new PageQuery(pageQuery));
-    return SeatGeekClient.fetch(query, Subpath.TAXONOMIES.value);
+  static getTaxonomies(query) {
+    let parameters = PaginationBuilder.build(new Pagination(query));
+    return SeatGeekClient.fetch(parameters, Subpath.TAXONOMIES.value);
   }
 
   static getPerformers(performersQuery) {

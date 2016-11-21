@@ -2,14 +2,14 @@
 
 import {Record} from 'immutable';
 
-import PageQuery from './PageQuery';
+import Pagination from './Pagination';
 
 let defaults = {
   ids: [],
   slugs: [],
   genreQueryParameters: [],
   taxonomyQueryParameters: [],
-  pageQuery: new PageQuery(),
+  pagination: new Pagination(),
   queryString: undefined,
 };
 
