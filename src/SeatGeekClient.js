@@ -36,7 +36,7 @@ export default class SeatGeekClient {
 
   static getPerformers(query) {
     let parameters = PerformersQueryBuilder.build(new PerformersQuery(query));
-    return SeatGeekClient.fetch(queryParameters, Subpath.PERFORMERS.value);
+    return SeatGeekClient.fetch(parameters, Subpath.PERFORMERS.value);
   }
 
   static getVenues(query) {
