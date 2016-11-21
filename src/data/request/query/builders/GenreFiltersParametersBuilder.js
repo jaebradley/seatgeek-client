@@ -1,6 +1,6 @@
 'use es6';
 
-import {List} from 'immutable';
+import {Map} from 'immutable';
 
 import GenreFilter from '../GenreFilter';
 
@@ -11,7 +11,7 @@ export default class GenreFiltersParametersBuilder {
       let filter = filters[i];
 
       if (!(filter instanceof GenreFilter)) {
-        throw new Error('all elements must be a a valid genre filter');
+        throw new TypeError('all elements must be a valid genre filter');
       }
 
       let parameterName = GenreFiltersParametersBuilder.buildParameterName(filter);
@@ -25,18 +25,26 @@ export default class GenreFiltersParametersBuilder {
       parameters[parameterName] = parameterValues;
     }
 
-    return List.of(parameters);
+    return Map.of(parameters);
   }
 
-  static buildParameterName() {
-    if (this.isPrimary) {
+  static buildParameterName(filter) {
+    if (!(filter instanceof GenreFilter)) {
+      throw new TypeError('Must be a valid genre filter');
+    }
+
+    if (filter.isPrimary) {
       return 'genres[primary].slug';
     }
 
     return 'genres.slug';
   }
 
-  static getParameterValue() {
-    return this.genre.slug;
+  static getParameterValue(filter) {
+    if (!(filter instanceof GenreFilter)) {
+      throw new TypeError('Must be a valid genre filter');
+    }
+
+    return filter.genre.slug;
   }
 };
