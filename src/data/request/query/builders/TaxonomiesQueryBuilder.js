@@ -5,7 +5,7 @@ import TaxonomyField from '../../../TaxonomyField';
 import TaxonomyQueryParameter from '../TaxonomyQueryParameter';
 
 export default class TaxonomiesQueryBuilder {
-  static buildQueryParameters(taxonomies) {
+  static build(taxonomies) {
     if (!(taxonomies instanceof Array)) {
       throw new Error('taxonomies must be an array');
     }

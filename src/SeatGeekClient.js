@@ -11,8 +11,10 @@ import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import PaginationQuery from './data/request/query/PaginationQuery';
 import PageQuery from './data/request/query/PageQuery';
+import VenueSearch from './data/request/query/VenueSearch';
 import PerformersQuery from './data/request/query/PerformersQuery';
 import PageQueryBuilder from './data/request/query/builders/PageQueryBuilder';
+import VenueSearchParametersBuilder from './data/request/query/builders/VenueSearchParametersBuilder';
 
 let baseUri = 'https://api.seatgeek.com/2/';
 let headers = { 'User-Agent': 'Request-Promise' };
@@ -23,30 +25,22 @@ export default class SeatGeekClient {
   constructor() {}
 
   static getGenres(pageQuery) {
-    let query = PageQueryBuilder.buildQueryParameters(new PageQuery(pageQuery));
+    let query = PageQueryBuilder.build(new PageQuery(pageQuery));
     return SeatGeekClient.fetch(query, Subpath.GENRES.value);
   }
 
   static getTaxonomies(pageQuery) {
-    let query = PageQueryBuilder.buildQueryParameters(new PageQuery(pageQuery));
+    let query = PageQueryBuilder.build(new PageQuery(pageQuery));
     return SeatGeekClient.fetch(query, Subpath.TAXONOMIES.value);
   }
 
   static getPerformers(performersQuery) {
-
-    let queryParameters = PerformersQueryBuilder.buildQueryParameters(performersQuery);
-
+    let queryParameters = PerformersQueryBuilder.build(performersQuery);
     return SeatGeekClient.fetch(queryParameters, Subpath.PERFORMERS.value);
   }
 
-  static getVenues(cityName=undefined, stateCode=undefined, countryCode=undefined,
-                   postalCode=undefined, queryString=undefined, useIpAddress=true,
-                   latitude=undefined, longitude=undefined, range=10, unit=Unit.MILE,
-                   perPage=100, page=1) {
-
-    let parameters = QueryParameterBuilder.buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
-                                                                     queryString, useIpAddress, latitude, longitude,
-                                                                     range, unit, perPage, page);
+  static getVenues(query) {
+    let parameters = VenueSearchParametersBuilder.build(new VenueSearch(query));
     return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
   }
 
@@ -69,7 +63,7 @@ export default class SeatGeekClient {
       qs: parameters,
       headers: headers,
       json: true,
-      resolveWithFullResponse: true,
+      resolveWithFullResponse: false,
       useQuerystring: true,
     }
   }

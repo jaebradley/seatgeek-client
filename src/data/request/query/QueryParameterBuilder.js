@@ -15,21 +15,6 @@ import TaxonomyQueryParameter from './TaxonomyQueryParameter';
 
 export default class QueryParameterBuilder{
 
-  static buildVenueQueryParameters(cityName, stateCode, countryCode, postalCode,
-                                   queryString, useIpAddress, latitude, longitude,
-                                   range, unit, perPage, page) {
-    let queryParameters = {q: queryString};
-    let geolocationQuery = new GeolocationQuery(useIpAddress, latitude, longitude, range, unit);
-    let venueLocationQuery = new VenueLocationQuery(cityName, stateCode, countryCode, postalCode);
-    let paginationQuery = new PaginationQuery(perPage, page);
-    Object.assign(queryParameters,
-                  venueLocationQuery.buildQueryParameters(),
-                  geolocationQuery.buildQueryParameters(),
-                  paginationQuery.buildQueryParameters());
-
-    return queryParameters;
-  }
-
   static buildEventsQueryParameters(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName,
                           stateCode, countryCode, postalCode, useIpAddress,
                           latitude, longitude, range, unit, sortOption,
@@ -47,7 +32,13 @@ export default class QueryParameterBuilder{
     let performerQuery = QueryParameterBuilder.buildPerformerQueryParameters(performerQueryParameters);
     let eventVenueLocationQuery = new EventVenueLocationQuery(venueIds, cityName, stateCode, countryCode, postalCode);
     let sortQuery = new SortQuery(sortOption, sortDirection);
-    let geolocationQuery = new GeolocationQuery(useIpAddress, latitude, longitude, range, unit);
+    let geolocationQuery = new GeolocationQuery({
+      useIpAddress: useIpAddress,
+      latitude: latitude,
+      longitude: longitude,
+      range: range,
+      unit: unit,
+    });
     let paginationQuery = new PaginationQuery(perPage, page);
 
     Object.assign(queryParameters,
