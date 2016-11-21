@@ -8,9 +8,10 @@ import FilterQuery from './FilterQuery';
 import EventVenueLocationQuery from './EventVenueLocationQuery';
 import VenueLocationQuery from './VenueLocationQuery';
 import GeolocationQuery from './GeolocationQuery';
-import PaginationQuery from './PaginationQuery';
+import Pagination from './Pagination';
 import PerformerQueryParameter from './PerformerQueryParameter';
 import TaxonomyQueryParameter from './TaxonomyQueryParameter';
+import PaginationParametersBuilder from './builders/PaginationParametersBuilder';
 
 export default class QueryParameterBuilder{
 
@@ -38,7 +39,7 @@ export default class QueryParameterBuilder{
       range: range,
       unit: unit,
     });
-    let paginationQuery = new PaginationQuery(perPage, page);
+    let pagination = new Pagination({perPage: perPage, page: page});
 
     Object.assign(queryParameters,
                   taxonomyQuery,
@@ -47,7 +48,7 @@ export default class QueryParameterBuilder{
                   FilterQuery.buildFilterQueriesParameters(filterQueries),
                   eventVenueLocationQuery.buildQueryParameters(),
                   geolocationQuery.buildQueryParameters(),
-                  paginationQuery.buildQueryParameters());
+                  PaginationParametersBuilder.build(pagination));
 
     return queryParameters;
   }
