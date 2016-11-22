@@ -1,5 +1,7 @@
 'use es6';
 
+import Unit from './Unit';
+
 export default class Constants {
   static getDefaultPerPage() {
     return 100;
@@ -7,5 +9,13 @@ export default class Constants {
 
   static getDefaultPage() {
     return 1;
+  }
+
+  static getDefaultRange() {
+    return 10;
+  }
+
+  static getDefaultUnit() {
+    return Unit.MILE;
   }
 }
