@@ -2,14 +2,14 @@
 
 import {Record} from 'immutable';
 
-import Unit from '../../Unit';
+import Constants from '../../Constants';
 
 let defaults = {
   useIpAddress: true,
   latitude: undefined,
   longitude: undefined,
-  range: 10,
-  unit: Unit.MILE,
+  range: Constants.getDefaultRange(),
+  unit: Constants.getDefaultUnit(),
 };
 
 export default class Geolocation extends Record(defaults) {
