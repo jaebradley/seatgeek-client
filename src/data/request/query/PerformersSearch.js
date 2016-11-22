@@ -13,5 +13,5 @@ let defaults = {
   queryString: undefined,
 };
 
-export default class PerformersQuery extends Record(defaults) {
+export default class PerformersSearch extends Record(defaults) {
 }
