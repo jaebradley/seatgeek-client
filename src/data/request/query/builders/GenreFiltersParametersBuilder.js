@@ -1,50 +1,36 @@
 'use es6';
 
-import {Map} from 'immutable';
+import {List, Map} from 'immutable';
 
 import GenreFilter from '../GenreFilter';
 
 export default class GenreFiltersParametersBuilder {
   static build(filters) {
-    let parameters = {};
-    for (var i = 0; i < filters.length; i++) {
-      let filter = filters[i];
+    let parameters = new Map();
+    filters.forEach(function(filter) {
+      let parameterName = GenreFiltersParametersBuilder.getParameterName(filter);
+      let parameterValues = parameters.has(parameterName) ? parameters.get(parameterName) : new List();
+      parameterValues = parameterValues.push(GenreFiltersParametersBuilder.getParameterValue(filter));
+      parameters = parameters.set(parameterName, parameterValues);
+    });
 
-      if (!(filter instanceof GenreFilter)) {
-        throw new TypeError('all elements must be a valid genre filter');
-      }
-
-      let parameterName = GenreFiltersParametersBuilder.buildParameterName(filter);
-      let parameterValues = [];
-
-      if (parameterName in parameters) {
-        parameterValues = parameters[parameterName];
-      }
-
-      parameterName.push(GenreFiltersParametersBuilder.getParameterValue(filter));
-      parameters[parameterName] = parameterValues;
-    }
-
-    return Map.of(parameters);
+    return parameters;
   }
 
-  static buildParameterName(filter) {
-    if (!(filter instanceof GenreFilter)) {
-      throw new TypeError('Must be a valid genre filter');
-    }
-
-    if (filter.isPrimary) {
-      return 'genres[primary].slug';
-    }
-
-    return 'genres.slug';
+  static getParameterName(filter) {
+    return filter.isPrimary ? GenreFiltersParametersBuilder.getPrimaryGenreParameterName()
+                            : GenreFiltersParametersBuilder.getGenreParameterName();
   }
 
   static getParameterValue(filter) {
-    if (!(filter instanceof GenreFilter)) {
-      throw new TypeError('Must be a valid genre filter');
-    }
-
     return filter.genre.slug;
+  }
+
+  static getPrimaryGenreParameterName() {
+    return 'genres[primary].slug';
+  }
+
+  static getGenreParameterName() {
+    return 'genres.slug';
   }
 };

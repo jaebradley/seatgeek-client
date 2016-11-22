@@ -5,7 +5,7 @@ import GeolocationParametersBuilder from './GeolocationParametersBuilder';
 import PaginationParametersBuilder from './PaginationParametersBuilder';
 
 import VenueProperties from '../VenueProperties';
-import GeolocationQuery from '../GeolocationQuery';
+import Geolocation from '../Geolocation';
 import Pagination from '../Pagination';
 
 export default class VenueSearchParametersBuilder {
@@ -24,7 +24,7 @@ export default class VenueSearchParametersBuilder {
                     })
                   ),
                   GeolocationParametersBuilder.build(
-                    new GeolocationQuery({
+                    new Geolocation({
                       useIpAddress: query.useIpAddress,
                       latitude: query.latitude,
                       longitude: query.longitude,

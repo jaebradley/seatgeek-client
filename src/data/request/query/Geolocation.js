@@ -12,5 +12,5 @@ let defaults = {
   unit: Unit.MILE,
 };
 
-export default class GeolocationQuery extends Record(defaults) {
+export default class Geolocation extends Record(defaults) {
 };
