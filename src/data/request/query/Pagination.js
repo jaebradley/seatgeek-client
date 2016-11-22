@@ -2,9 +2,11 @@
 
 import {Record} from 'immutable';
 
+import SeatGeekClient from '../../../SeatGeekClient';
+
 let defaults = {
-  perPage: 100,
-  page: 1,
+  perPage: SeatGeekClient.getDefaultPerPage(),
+  page: SeatGeekClient.getDefaultPage(),
 };
 
 export default class Pagination extends Record(defaults) {

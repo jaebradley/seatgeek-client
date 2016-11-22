@@ -14,14 +14,7 @@ import PerformersQuery from './data/request/query/PerformersQuery';
 import PaginationParametersBuilder from './data/request/query/builders/PaginationParametersBuilder';
 import VenueSearchParametersBuilder from './data/request/query/builders/VenueSearchParametersBuilder';
 
-let baseUri = 'https://api.seatgeek.com/2/';
-let headers = { 'User-Agent': 'Request-Promise' };
-let DEFAULT_PER_PAGE = 100;
-let DEFAULT_PAGE = 1;
-
 export default class SeatGeekClient {
-  constructor() {}
-
   static getGenres(query) {
     let parameters = PaginationParametersBuilder.build(new Pagination(query));
     return SeatGeekClient.fetch(parameters, Subpath.GENRES.value);
@@ -48,9 +41,9 @@ export default class SeatGeekClient {
 
   static buildRequest(parameters, subpath) {
     return {
-      uri: baseUri + subpath,
+      uri: SeatGeekClient.getBaseUrl() + subpath,
       qs: parameters,
-      headers: headers,
+      headers: SeatGeekClient.getHeaders(),
       json: true,
       resolveWithFullResponse: false,
       useQuerystring: true,
@@ -61,5 +54,21 @@ export default class SeatGeekClient {
     return rp(SeatGeekClient.buildRequest(parameters, subpath))
       .then(response => response)
       .catch(err => console.log(err));
+  }
+
+  static getBaseUrl() {
+    return 'https://api.seatgeek.com/2/';
+  }
+
+  static getHeaders() {
+    return { 'User-Agent': 'Request-Promise' };
+  }
+
+  static getDefaultPerPage() {
+    return 100;
+  }
+
+  static getDefaultPage() {
+    return 1;
   }
 }
