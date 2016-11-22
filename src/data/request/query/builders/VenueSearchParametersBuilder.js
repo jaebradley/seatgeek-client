@@ -20,12 +20,12 @@ export default class VenueSearchParametersBuilder {
     let parameters = Map();
     if (typeof search.ids !== 'undefined') {
       parameters = parameters.set(VenueSearchParametersBuilder.getIdsParameterName(),
-                     search.ids);
+                                  search.ids);
     }
 
     if (typeof search.queryString !== 'undefined') {
       parameters = parameters.set(VenueSearchParametersBuilder.getQueryStringParameterName(),
-                     search.queryString);
+                                  search.queryString);
     }
 
     parameters = parameters.merge(VenuePropertiesParametersBuilder.build(

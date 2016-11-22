@@ -72,7 +72,7 @@ describe('Test Client', function() {
 
   it('tests venues fetch', function() {
     return SeatGeekClient.getVenues({cityName: 'Boston'})
-                 .then(response => console.log(response));
+                 .then(response => expect(response.venues.length).to.equal(100));
   });
 
   it('tests clients fetch', function() {
