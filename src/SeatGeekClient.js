@@ -63,12 +63,4 @@ export default class SeatGeekClient {
   static getHeaders() {
     return { 'User-Agent': 'Request-Promise' };
   }
-
-  static getDefaultPerPage() {
-    return 100;
-  }
-
-  static getDefaultPage() {
-    return 1;
-  }
 }
