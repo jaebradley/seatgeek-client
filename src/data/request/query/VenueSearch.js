@@ -2,7 +2,7 @@
 
 import {Record} from 'immutable';
 
-import SeatGeekClient from '../../../SeatGeekClient';
+import Constants from '../../Constants';
 import Unit from '../../Unit';
 
 let defaults = {
@@ -17,8 +17,8 @@ let defaults = {
   longitude: undefined,
   range: 10,
   unit: Unit.MILE,
-  perPage: SeatGeekClient.getDefaultPerPage(),
-  page: SeatGeekClient.getDefaultPage(),
+  perPage: Constants.getDefaultPerPage(),
+  page: Constants.getDefaultPage(),
 };
 
 export default class VenueSearch extends Record(defaults) {
