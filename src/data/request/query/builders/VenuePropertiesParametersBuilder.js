@@ -3,9 +3,9 @@
 export default class VenuePropertiesParametersBuilder {
   static build(query) {
     return {
-      city: query.city,
-      state: query.state,
-      country: query.country,
+      city: query.cityName,
+      state: query.stateCode,
+      country: query.countryCode,
       postal_code: query.postalCode,
     };
   }

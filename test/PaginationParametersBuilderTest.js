@@ -17,7 +17,7 @@ describe('Test pagination parameters builder', function() {
       per_page: perPage,
       page: page,
     };
-    expect(PaginationParametersBuilder.build(pagination))
+    expect(PaginationParametersBuilder.build(pagination).toJS())
           .to.eql(expectedParameters);
   });
 });

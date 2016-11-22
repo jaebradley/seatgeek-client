@@ -38,7 +38,6 @@ export default class VenueSearchParametersBuilder {
                       page: query.page,
                     })
                   ));
-
     return parameters;
   }
 }
