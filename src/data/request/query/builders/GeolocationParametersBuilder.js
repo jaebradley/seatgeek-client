@@ -8,7 +8,11 @@ export default class GeolocationParametersBuilder {
       geoIp: geolocation.useIpAddress,
       lat: geolocation.latitude,
       lon: geolocation.longitude,
-      range: String(geolocation.range) + geolocation.unit.value,
+      range: GeolocationParametersBuilder.buildRangeParameterValue(geolocation),
     };
+  }
+
+  static buildRangeParameterValue(geolocation) {
+    return String(geolocation.range) + geolocation.unit.value;
   }
 }

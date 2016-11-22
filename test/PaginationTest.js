@@ -3,9 +3,16 @@
 import {expect} from 'chai';
 
 import Pagination from '../src/data/request/query/Pagination';
+import Constants from '../src/data/Constants';
 
 describe('Pagination Test', function() {
-  it('tests expected pagination building', function() {
+  it('tests pagination default values', function() {
+    let pagination = new Pagination();
+    expect(pagination.perPage).to.equal(Constants.getDefaultPerPage());
+    expect(pagination.page).to.equal(Constants.getDefaultPage());
+  });
+
+  it('tests expected pagination', function() {
     let perPage = 100;
     let page = 200;
     let expectedPageParameters = {
