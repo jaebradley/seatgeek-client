@@ -10,7 +10,9 @@ import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import Pagination from './data/request/query/Pagination';
 import VenueSearch from './data/request/query/VenueSearch';
-import PerformersQuery from './data/request/query/PerformersQuery';
+import PerformersSearch from './data/request/query/PerformersSearch';
+
+import PerformersParametersBuilder from './data/request/query/builders/PerformersParametersBuilder';
 import PaginationParametersBuilder from './data/request/query/builders/PaginationParametersBuilder';
 import VenueSearchParametersBuilder from './data/request/query/builders/VenueSearchParametersBuilder';
 
@@ -26,7 +28,7 @@ export default class SeatGeekClient {
   }
 
   static getPerformers(query) {
-    let parameters = PerformersQueryBuilder.build(new PerformersQuery(query));
+    let parameters = PerformersParametersBuilder.build(new PerformersSearch(query));
     return SeatGeekClient.fetch(parameters, Subpath.PERFORMERS.value);
   }
 

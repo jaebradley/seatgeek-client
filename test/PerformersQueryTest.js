@@ -2,11 +2,11 @@
 
 import {expect} from 'chai';
 
-import PerformersQuery from '../src/data/request/query/PerformersQuery';
+import PerformersSearch from '../src/data/request/query/PerformersSearch';
 
-describe('Test PerformersQuery', function() {
+describe('Test Performers Search', function() {
   it('tests construction', function() {
-    let defaultPerformersQuery = new PerformersQuery({queryString: 'jae'});
-    expect(defaultPerformersQuery.queryString).to.equal('jae');
+    let defaultPerformersSearch = new PerformersSearch({queryString: 'jae'});
+    expect(defaultPerformersSearch.queryString).to.equal('jae');
   });
 });
