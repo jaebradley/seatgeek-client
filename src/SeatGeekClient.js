@@ -44,7 +44,7 @@ export default class SeatGeekClient {
   static buildRequest(parameters, subpath) {
     return {
       uri: SeatGeekClient.getBaseUrl() + subpath,
-      qs: parameters,
+      qs: parameters.toJS(),
       headers: SeatGeekClient.getHeaders(),
       json: true,
       resolveWithFullResponse: false,
