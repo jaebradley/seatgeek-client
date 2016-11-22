@@ -34,6 +34,6 @@ describe('Test Geolocation Parameter building', function() {
       lon: longitude,
       range: expectedRangeParameter,
     };
-    expect(parameters).to.eql(expectedParameters);
+    expect(parameters.toJS()).to.eql(expectedParameters);
   });
 });

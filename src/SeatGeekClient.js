@@ -38,13 +38,13 @@ export default class SeatGeekClient {
   }
 
   static getEvents(query) {
-    return SeatGeekClient.fetch(parameters, Subpath.EVENTS.value);
+    // return SeatGeekClient.fetch(parameters, Subpath.EVENTS.value);
   }
 
   static buildRequest(parameters, subpath) {
     return {
       uri: SeatGeekClient.getBaseUrl() + subpath,
-      qs: parameters,
+      qs: parameters.toJS(),
       headers: SeatGeekClient.getHeaders(),
       json: true,
       resolveWithFullResponse: false,
