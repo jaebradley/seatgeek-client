@@ -4,7 +4,6 @@ import SeatGeekClient from '../src/index';
 import Genre from '../src/data/Genre';
 import Taxonomy from '../src/data/Taxonomy';
 
-import QueryParameterBuilder from '../src/data/request/query/QueryParameterBuilder';
 import Unit from '../src/data/Unit';
 import SortOption from '../src/data/request/query/SortOption';
 import SortDirection from '../src/data/request/query/SortDirection';
@@ -16,7 +15,7 @@ import PerformerField from '../src/data/PerformerField';
 import PerformerSpecificity from '../src/data/PerformerSpecificity';
 import TaxonomyField from '../src/data/TaxonomyField';
 import PerformerQueryParameter from '../src/data/request/query/PerformerQueryParameter';
-import TaxonomyQueryParameter from '../src/data/request/query/TaxonomyQueryParameter';
+import TaxonomyFilter from '../src/data/request/query/TaxonomyFilter';
 
 import exampleTaxonomies from './files/taxonomies.json';
 
@@ -53,9 +52,9 @@ describe('Test Client', function() {
   let filterQuery1 = new FilterQuery(filterOption1, filterOperator, filterValue1);
   let filterQuery2 = new FilterQuery(filterOption2, filterOperator, filterValue2);
   let filterQueries = [filterQuery1, filterQuery2];
-  let taxonomyQueryParameter1 = new TaxonomyQueryParameter(taxonomy1);
-  let taxonomyQueryParameter2 = new TaxonomyQueryParameter(taxonomy2, TaxonomyField.NAME);
-  let taxonomyQueryParameter3 = new TaxonomyQueryParameter(taxonomy3, TaxonomyField.PARENT_ID);
+  let taxonomyQueryParameter1 = new TaxonomyFilter({taxonomy: taxonomy1});
+  let taxonomyQueryParameter2 = new TaxonomyFilter({taxonomy: taxonomy2, field: TaxonomyField.NAME});
+  let taxonomyQueryParameter3 = new TaxonomyFilter({taxonomy: taxonomy3, field: TaxonomyField.PARENT_ID});
   let taxonomyQueryParameters = [taxonomyQueryParameter1, taxonomyQueryParameter2, taxonomyQueryParameter3];
   let performerQueryParameter1 = new PerformerQueryParameter(performerSlug1, PerformerField.SLUG);
   let performerQueryParameter2 = new PerformerQueryParameter(performerSlug2, PerformerField.SLUG, PerformerSpecificity.HOME_TEAM);
@@ -77,8 +76,7 @@ describe('Test Client', function() {
   });
 
   it('tests clients fetch', function() {
-    return SeatGeekClient.getEvents(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName, stateCode, countryCode, postalCode, false,
-      latitude, longitude, range, unit, SortOption.SCORE, SortDirection.DESCENDING, filterQueries, perPage, page)
-                 .then(response => console.log(response))
+    // return SeatGeekClient.getEvents()
+    //              .then(response => console.log(response))
   })
 });

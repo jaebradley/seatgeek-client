@@ -3,13 +3,11 @@
 import rp from 'request-promise';
 
 import Unit from './data/Unit';
-import QueryParameterBuilder from './data/request/query/QueryParameterBuilder';
 import Subpath from './data/request/Subpath';
 import SortOption from './data/request/query/SortOption';
 import SortDirection from './data/request/query/SortDirection';
 import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
-import PaginationQuery from './data/request/query/PaginationQuery';
 import Pagination from './data/request/query/Pagination';
 import VenueSearch from './data/request/query/VenueSearch';
 import PerformersQuery from './data/request/query/PerformersQuery';
@@ -34,9 +32,9 @@ export default class SeatGeekClient {
     return SeatGeekClient.fetch(parameters, Subpath.TAXONOMIES.value);
   }
 
-  static getPerformers(performersQuery) {
-    let queryParameters = PerformersQueryBuilder.build(performersQuery);
-    return SeatGeekClient.fetch(queryParameters, Subpath.PERFORMERS.value);
+  static getPerformers(query) {
+    let parameters = PerformersQueryBuilder.build(new PerformersQuery(query));
+    return SeatGeekClient.fetch(parameters, Subpath.PERFORMERS.value);
   }
 
   static getVenues(query) {
@@ -44,16 +42,7 @@ export default class SeatGeekClient {
     return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
   }
 
-  static getEvents(performerQueryParameters=[], taxonomyQueryParameters=[], venueIds=[], cityName=undefined,
-                   stateCode=undefined, countryCode=undefined, postalCode=undefined,
-                   useIpAddress=true, latitude=undefined, longitude=undefined,
-                   range=10, unit=Unit.MILE, sortOption=SortOption.SCORE,
-                   sortDirection=SortDirection.DESCENDING, filterQueries=[],
-                   perPage=100, page=1) {
-    let parameters = QueryParameterBuilder.buildEventsQueryParameters(performerQueryParameters, taxonomyQueryParameters, venueIds, cityName,
-                                                            stateCode, countryCode, postalCode, useIpAddress,
-                                                            latitude, longitude, range, unit, sortOption,
-                                                            sortDirection, filterQueries, perPage, page);
+  static getEvents(query) {
     return SeatGeekClient.fetch(parameters, Subpath.EVENTS.value);
   }
 
