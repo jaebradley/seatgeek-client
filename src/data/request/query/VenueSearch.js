@@ -2,6 +2,7 @@
 
 import {Record} from 'immutable';
 
+import Constants from '../../Constants';
 import Unit from '../../Unit';
 
 let defaults = {
@@ -16,8 +17,8 @@ let defaults = {
   longitude: undefined,
   range: 10,
   unit: Unit.MILE,
-  perPage: 100,
-  page: 1,
+  perPage: Constants.getDefaultPerPage(),
+  page: Constants.getDefaultPage(),
 };
 
 export default class VenueSearch extends Record(defaults) {
