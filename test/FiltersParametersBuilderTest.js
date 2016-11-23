@@ -1,6 +1,6 @@
 'use es6';
 
-export {expect} from 'chai';
+import {expect} from 'chai';
 
 import {List} from 'immutable';
 
@@ -79,5 +79,9 @@ describe('Tests Filters Parameters Builder', function() {
 
   it('tests undefined filter option when creating parameters', function() {
     expect(() => FiltersParametersBuilder.build(undefinedOptionFilters)).to.throw(ReferenceError);
+  });
+
+  it('tests incorrect filter type when creating parameters', function() {
+    expect(() => FiltersParametersBuilder.build(invalidTypeFilters)).to.throw(TypeError);
   });
 });
