@@ -2,12 +2,8 @@
 
 import rp from 'request-promise';
 
-import Unit from './data/Unit';
 import Subpath from './data/request/Subpath';
-import SortOption from './data/request/query/SortOption';
-import SortDirection from './data/request/query/SortDirection';
-import FilterOption from './data/request/query/FilterOption';
-import Operator from './data/request/query/Operator';
+
 import Pagination from './data/request/query/Pagination';
 import VenueSearch from './data/request/query/VenueSearch';
 import EventsSearch from './data/request/query/EventsSearch';
