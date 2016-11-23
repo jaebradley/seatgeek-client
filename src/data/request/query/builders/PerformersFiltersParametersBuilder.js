@@ -3,7 +3,7 @@
 import {Map} from 'immutable';
 
 import PerformerFilter from '../PerformerFilter';
-import PerformerFilters from '../PerformerFilters';
+import PerformersFilters from '../PerformersFilters';
 
 export default class PerformersFiltersParametersBuilder {
   static build(filters) {

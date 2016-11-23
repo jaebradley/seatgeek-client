@@ -2,11 +2,11 @@
 
 import {List, Record} from 'immutable';
 
-import Pagination from '../../Pagination';
-import SortFilter from '../../SortFilter';
-import Geolocation from '../../Geolocation';
-import VenuesFilter from '../../VenuesFilter';
-import PerformersFilter from '../../PerformersFilter';
+import Pagination from './Pagination';
+import SortFilter from './SortFilter';
+import Geolocation from './Geolocation';
+import VenuesFilter from './VenuesFilter';
+import PerformersFilters from './PerformersFilters';
 
 let defaults = {
   ids: List(),
