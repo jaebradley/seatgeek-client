@@ -8,7 +8,7 @@ import PaginationParametersBuilder from './PaginationParametersBuilder';
 import TaxonomyFiltersParametersBuilder from './TaxonomyFiltersParametersBuilder';
 import GenreFiltersParametersBuilder from './GenreFiltersParametersBuilder';
 
-export default class PerformersParametersBuilder {
+export default class PerformersSearchParametersBuilder {
   static build(search) {
     if (!(search instanceof PerformersSearch)) {
       throw new TypeError('must be a PerformersSearch instance');
