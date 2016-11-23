@@ -37,6 +37,95 @@ describe('Test Geolocation Parameter Builder', function() {
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
+  it('tests invalid input', function() {
+    expect(() => GeolocationParametersBuilder.build(1)).to.throw(TypeError);
+  });
+
+  it('tests undefined useIpAddress', function() {
+    let test = new Geolocation({
+      useIpAddress: undefined,
+      latitude: latitude,
+      longitude: longitude,
+      range: range,
+      unit: unit,
+    });
+    let expectedParameters = {
+      latitude: latitude,
+      longitude: longitude,
+      range: expectedRangeParameter,
+    };
+    let parameters = GeolocationParametersBuilder.build(test);
+    expect(parameters.toJS()).to.equal(expectedParameters);
+  });
+
+  it('tests undefined latitude', function() {
+    let test = new Geolocation({
+      useIpAddress: useIpAddress,
+      latitude: undefined,
+      longitude: longitude,
+      range: range,
+      unit: unit,
+    });
+    let expectedParameters = {
+      useIpAddress: useIpAddress,
+      longitude: longitude,
+      range: expectedRangeParameter,
+    };
+    let parameters = GeolocationParametersBuilder.build(test);
+    expect(parameters.toJS()).to.equal(expectedParameters);
+  });
+
+  it('tests undefined longitude', function() {
+    let test = new Geolocation({
+      useIpAddress: useIpAddress,
+      latitude: latitude,
+      longitude: undefined,
+      range: range,
+      unit: unit,
+    });
+    let expectedParameters = {
+      useIpAddress: useIpAddress,
+      latitude: latitude,
+      range: expectedRangeParameter,
+    };
+    let parameters = GeolocationParametersBuilder.build(test);
+    expect(parameters.toJS()).to.equal(expectedParameters);
+  });
+
+  it('tests undefined range', function() {
+    let test = new Geolocation({
+      useIpAddress: useIpAddress,
+      latitude: latitude,
+      longitude: longitude,
+      range: undefined,
+      unit: unit,
+    });
+    let expectedParameters = {
+      useIpAddress: useIpAddress,
+      latitude: latitude,
+      longitude: longitude,
+    };
+    let parameters = GeolocationParametersBuilder.build(test);
+    expect(parameters.toJS()).to.equal(expectedParameters);
+  });
+
+  it('tests undefined unit', function() {
+    let test = new Geolocation({
+      useIpAddress: useIpAddress,
+      latitude: latitude,
+      longitude: longitude,
+      range: range,
+      unit: undefined,
+    });
+    let expectedParameters = {
+      useIpAddress: useIpAddress,
+      latitude: latitude,
+      longitude: longitude,
+    };
+    let parameters = GeolocationParametersBuilder.build(test);
+    expect(parameters.toJS()).to.equal(expectedParameters);
+  });
+
   it('tests static parameter names', function() {
     expect(GeolocationParametersBuilder.getUseIpAddressParameterName()).to.equal('geoIp');
     expect(GeolocationParametersBuilder.getLatitudeParameterName()).to.equal('lat');
