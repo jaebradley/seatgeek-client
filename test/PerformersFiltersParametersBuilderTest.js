@@ -3,8 +3,8 @@
 import {expect} from 'chai';
 import {List} from 'immutable';
 
-import PerformerField from '../src/data/PerformerField';
-import PerformerSpecificity from '../src/data/PerformerSpecificity';
+import PerformerField from '../src/data/request/query/PerformerField';
+import PerformerSpecificity from '../src/data/request/query/PerformerSpecificity';
 import PerformerFilter from '../src/data/request/query/PerformerFilter';
 import PerformersFilters from '../src/data/request/query/PerformersFilters';
 import PerformersFiltersParametersBuilder from '../src/data/request/query/builders/PerformersFiltersParametersBuilder';

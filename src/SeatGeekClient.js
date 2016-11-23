@@ -2,12 +2,8 @@
 
 import rp from 'request-promise';
 
-import Unit from './data/Unit';
 import Subpath from './data/request/Subpath';
-import SortOption from './data/request/query/SortOption';
-import SortDirection from './data/request/query/SortDirection';
-import FilterOption from './data/request/query/FilterOption';
-import Operator from './data/request/query/Operator';
+
 import Pagination from './data/request/query/Pagination';
 import VenueSearch from './data/request/query/VenueSearch';
 import EventsSearch from './data/request/query/EventsSearch';
@@ -19,23 +15,23 @@ import VenueSearchParametersBuilder from './data/request/query/builders/VenueSea
 import EventsSearchParametersBuilder from './data/request/query/builders/EventsSearchParametersBuilder';
 
 export default class SeatGeekClient {
-  static getGenres(query) {
-    let parameters = PaginationParametersBuilder.build(new Pagination(query));
+  static getGenres(pagination) {
+    let parameters = PaginationParametersBuilder.build(new Pagination(pagination));
     return SeatGeekClient.fetch(parameters, Subpath.GENRES.value);
   }
 
-  static getTaxonomies(query) {
-    let parameters = PaginationParametersBuilder.build(new Pagination(query));
+  static getTaxonomies(pagination) {
+    let parameters = PaginationParametersBuilder.build(new Pagination(pagination));
     return SeatGeekClient.fetch(parameters, Subpath.TAXONOMIES.value);
   }
 
-  static getPerformers(query) {
-    let parameters = PerformersSearchParametersBuilder.build(new PerformersSearch(query));
+  static getPerformers(search) {
+    let parameters = PerformersSearchParametersBuilder.build(new PerformersSearch(search));
     return SeatGeekClient.fetch(parameters, Subpath.PERFORMERS.value);
   }
 
-  static getVenues(query) {
-    let parameters = VenueSearchParametersBuilder.build(new VenueSearch(query));
+  static getVenues(search) {
+    let parameters = VenueSearchParametersBuilder.build(new VenueSearch(search));
     return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
   }
 

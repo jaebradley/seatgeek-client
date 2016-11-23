@@ -2,8 +2,8 @@
 
 import {Record} from 'immutable';
 
-import PerformerField from '../../PerformerField';
-import PerformerSpecificity from '../../PerformerSpecificity';
+import PerformerField from './PerformerField';
+import PerformerSpecificity from './PerformerSpecificity';
 
 let defaults = {
   value: 1,

@@ -1,8 +1,8 @@
 import {expect} from 'chai';
 
-import SeatGeekClient from '../src/index';
-import Genre from '../src/data/Genre';
-import Taxonomy from '../src/data/Taxonomy';
+import {SeatGeekClient} from '../src/index';
+import {Genre} from '../src/index';
+import {Taxonomy} from '../src/index';
 
 describe('Test Client', function() {
   it('tests genres fetch', function() {
