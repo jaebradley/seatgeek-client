@@ -8,7 +8,7 @@ import PaginationParametersBuilder from './PaginationParametersBuilder';
 import TaxonomyFiltersParametersBuilder from './TaxonomyFiltersParametersBuilder';
 import GenreFiltersParametersBuilder from './GenreFiltersParametersBuilder';
 
-export default class PerformersParametersBuilder {
+export default class PerformersSearchParametersBuilder {
   static build(search) {
     if (!(search instanceof PerformersSearch)) {
       throw new TypeError('must be a PerformersSearch instance');
@@ -16,17 +16,17 @@ export default class PerformersParametersBuilder {
 
     let parameters = Map();
     if (typeof search.ids !== 'undefined') {
-      parameters = parameters.set(PerformersParametersBuilder.getIdsParameterName(),
+      parameters = parameters.set(PerformersSearchParametersBuilder.getIdsParameterName(),
                                   search.ids);
     }
 
     if (typeof search.slugs !== 'undefined') {
-      parameters = parameters.set(PerformersParametersBuilder.getSlugsParameterName(),
+      parameters = parameters.set(PerformersSearchParametersBuilder.getSlugsParameterName(),
                                   search.slugs);
     }
 
     if (typeof search.queryString !== 'undefined') {
-      parameters = parameters.set(PerformersParametersBuilder.getQueryStringParameterName(),
+      parameters = parameters.set(PerformersSearchParametersBuilder.getQueryStringParameterName(),
                                   search.queryString);
     }
 

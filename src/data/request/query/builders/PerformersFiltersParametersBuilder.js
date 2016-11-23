@@ -1,6 +1,6 @@
 'use es6';
 
-import {Map} from 'immutable';
+import {List, Map} from 'immutable';
 
 import PerformerFilter from '../PerformerFilter';
 import PerformersFilters from '../PerformersFilters';
@@ -12,12 +12,22 @@ export default class PerformersFiltersParametersBuilder {
     }
 
     let parameters = Map();
+    if (typeof filters.ids !== 'undefined') {
+      parameters = parameters.set(PerformersFiltersParametersBuilder.getIdsParameterName(),
+                                  filters.ids);
+    }
+
     filters.filters.forEach(function(filter) {
       if (!(filter instanceof PerformerFilter)) {
         throw new TypeError('must be a PerformerFilter instance');
       }
-      parameters = parameters.set(PerformersFiltersParametersBuilder.buildParameterName(filter),
-                                  filter.value);
+
+      if (typeof filter.value !== 'undefined') {
+        let parameterName =PerformersFiltersParametersBuilder.buildParameterName(filter);
+        let parameterValues = parameters.has(parameterName) ? parameters.get(parameterName) : new List();
+        parameterValues = parameterValues.push(filter.value);
+        parameters = parameters.set(parameterName, parameterValues);
+      }
     });
 
     return parameters;
