@@ -12,14 +12,21 @@ export default class PerformersFiltersParametersBuilder {
     }
 
     let parameters = Map();
+    if (typeof filters.ids !== 'undefined') {
+      parameters = parameters.set(PerformersFiltersParametersBuilder.getIdsParameterName(),
+                                  filters.ids);
+    }
+
     filters.filters.forEach(function(filter) {
       if (!(filter instanceof PerformerFilter)) {
         throw new TypeError('must be a PerformerFilter instance');
       }
 
       if (typeof filter.value !== 'undefined') {
-        parameters = parameters.set(PerformersFiltersParametersBuilder.buildParameterName(filter),
-                                    filter.value);
+        let parameterName =PerformersFiltersParametersBuilder.buildParameterName(filter);
+        let parameterValues = parameters.has(parameterName) ? parameters.get(parameterName) : new List();
+        parameterValues = parameterValues.push(filter.value);
+        parameters = parameters.set(parameterName, parameterValues);
       }
     });
 
