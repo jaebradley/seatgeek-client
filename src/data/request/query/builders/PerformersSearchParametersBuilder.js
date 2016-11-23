@@ -16,17 +16,17 @@ export default class PerformersSearchParametersBuilder {
 
     let parameters = Map();
     if (typeof search.ids !== 'undefined') {
-      parameters = parameters.set(PerformersParametersBuilder.getIdsParameterName(),
+      parameters = parameters.set(PerformersSearchParametersBuilder.getIdsParameterName(),
                                   search.ids);
     }
 
     if (typeof search.slugs !== 'undefined') {
-      parameters = parameters.set(PerformersParametersBuilder.getSlugsParameterName(),
+      parameters = parameters.set(PerformersSearchParametersBuilder.getSlugsParameterName(),
                                   search.slugs);
     }
 
     if (typeof search.queryString !== 'undefined') {
-      parameters = parameters.set(PerformersParametersBuilder.getQueryStringParameterName(),
+      parameters = parameters.set(PerformersSearchParametersBuilder.getQueryStringParameterName(),
                                   search.queryString);
     }
 

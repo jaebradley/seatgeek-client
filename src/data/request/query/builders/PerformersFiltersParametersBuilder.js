@@ -1,6 +1,6 @@
 'use es6';
 
-import {Map} from 'immutable';
+import {List, Map} from 'immutable';
 
 import PerformerFilter from '../PerformerFilter';
 import PerformersFilters from '../PerformersFilters';
