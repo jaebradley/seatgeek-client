@@ -10,11 +10,13 @@ import FilterOption from './data/request/query/FilterOption';
 import Operator from './data/request/query/Operator';
 import Pagination from './data/request/query/Pagination';
 import VenueSearch from './data/request/query/VenueSearch';
+import EventsSearch from './data/request/query/EventsSearch';
 import PerformersSearch from './data/request/query/PerformersSearch';
 
 import PerformersParametersBuilder from './data/request/query/builders/PerformersParametersBuilder';
 import PaginationParametersBuilder from './data/request/query/builders/PaginationParametersBuilder';
 import VenueSearchParametersBuilder from './data/request/query/builders/VenueSearchParametersBuilder';
+import EventsSearchParametersBuilder from './data/request/query/builders/EventsSearchParametersBuilder';
 
 export default class SeatGeekClient {
   static getGenres(query) {
@@ -38,7 +40,8 @@ export default class SeatGeekClient {
   }
 
   static getEvents(search) {
-    // return SeatGeekClient.fetch(parameters, Subpath.EVENTS.value);
+    let parameters = EventsSearchParametersBuilder.build(new EventsSearch(search));
+    return SeatGeekClient.fetch(parameters, Subpath.EVENTS.value);
   }
 
   static buildRequest(parameters, subpath) {
