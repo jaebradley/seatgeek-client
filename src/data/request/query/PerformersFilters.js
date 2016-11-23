@@ -7,5 +7,5 @@ let defaults = {
   filters: List(),
 };
 
-export default class PerformersFilter extends Record(defaults) {
+export default class PerformersFilters extends Record(defaults) {
 };
