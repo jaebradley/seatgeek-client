@@ -16,8 +16,11 @@ export default class PerformersFiltersParametersBuilder {
       if (!(filter instanceof PerformerFilter)) {
         throw new TypeError('must be a PerformerFilter instance');
       }
-      parameters = parameters.set(PerformersFiltersParametersBuilder.buildParameterName(filter),
-                                  filter.value);
+
+      if (typeof filter.value !== 'undefined') {
+        parameters = parameters.set(PerformersFiltersParametersBuilder.buildParameterName(filter),
+                                    filter.value);
+      }
     });
 
     return parameters;
