@@ -25,7 +25,7 @@ describe('Tests Performers Filter Parameters Builder', function() {
     value: anotherValue,
   });
   let ids = List.of(2, 3);
-  let filters = List.of(filter);
+  let filters = List.of(filter, anotherFilter);
   let performersFilters = new PerformersFilters({
     ids: ids,
     filters: filters,
@@ -46,8 +46,8 @@ describe('Tests Performers Filter Parameters Builder', function() {
 
   it('tests expected behavior building parameters', function() {
     let expectedParameters = {
-      'id': ids,
-      'performers[any].id': List.of(value, anotherValue),
+      'id': [2, 3],
+      'performers[any].id': [value, anotherValue],
     };
     let parameters = PerformersFiltersParametersBuilder.build(performersFilters);
     expect(parameters.toJS()).to.eql(expectedParameters);

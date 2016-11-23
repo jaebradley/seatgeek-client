@@ -35,10 +35,10 @@ describe('Test pagination parameters builder', function() {
       page: undefined,
     });
     let expectedUndefinedPerPageResult = {
-      page: page
+      page: page,
     };
     let expectedUndefinedPageResult = {
-      perPage: perPage,
+      per_page: perPage,
     };
     expect(PaginationParametersBuilder.build(undefinedPerPage).toJS())
           .to.eql(expectedUndefinedPerPageResult);

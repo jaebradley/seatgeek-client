@@ -55,7 +55,7 @@ describe('Test Geolocation Parameter Builder', function() {
       range: expectedRangeParameter,
     };
     let parameters = GeolocationParametersBuilder.build(test);
-    expect(parameters.toJS()).to.equal(expectedParameters);
+    expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests undefined latitude', function() {
@@ -72,7 +72,7 @@ describe('Test Geolocation Parameter Builder', function() {
       range: expectedRangeParameter,
     };
     let parameters = GeolocationParametersBuilder.build(test);
-    expect(parameters.toJS()).to.equal(expectedParameters);
+    expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests undefined longitude', function() {
@@ -89,7 +89,7 @@ describe('Test Geolocation Parameter Builder', function() {
       range: expectedRangeParameter,
     };
     let parameters = GeolocationParametersBuilder.build(test);
-    expect(parameters.toJS()).to.equal(expectedParameters);
+    expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests undefined range', function() {
@@ -106,7 +106,7 @@ describe('Test Geolocation Parameter Builder', function() {
       lon: longitude,
     };
     let parameters = GeolocationParametersBuilder.build(test);
-    expect(parameters.toJS()).to.equal(expectedParameters);
+    expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests undefined unit', function() {
@@ -123,7 +123,7 @@ describe('Test Geolocation Parameter Builder', function() {
       lon: longitude,
     };
     let parameters = GeolocationParametersBuilder.build(test);
-    expect(parameters.toJS()).to.equal(expectedParameters);
+    expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests static parameter names', function() {

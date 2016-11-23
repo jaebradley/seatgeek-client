@@ -33,7 +33,7 @@ describe('Tests Performers Search Parameters Builder', function() {
   });
   let taxonomyFilter2 = new TaxonomyFilter({
     taxonomy: Taxonomy.CONCERTS,
-    field: TaxonomyField.SLUG,
+    field: TaxonomyField.NAME,
   });
   let taxonomyFilters = List.of(taxonomyFilter1, taxonomyFilter2);
   let perPage = 4;
@@ -48,17 +48,19 @@ describe('Tests Performers Search Parameters Builder', function() {
     taxonomies: taxonomyFilters,
     genres: genreFilters,
     pagination: pagination,
-    q: query,
+    queryString: query,
   });
   it('tests expected parameter building', function() {
     let parameters = PerformersSearchParametersBuilder.build(search);
     let expectedParameters = {
-      id: ids,
-      slug: slugs,
+      id: ids.toJS(),
+      slug: slugs.toJS(),
       'genres[primary].slug': [Genre.COUNTRY.slug],
       'genres.slug': [Genre.POP.slug],
       'taxonomies.id': [Taxonomy.SPORTS.id],
-      'taxonomies.slug':[Taxonomy.CONCERTS.slug],
+      'taxonomies.name':[Taxonomy.CONCERTS.name],
+      page: page,
+      per_page: perPage,
       q: query,
     };
     expect(parameters.toJS()).to.eql(expectedParameters);
