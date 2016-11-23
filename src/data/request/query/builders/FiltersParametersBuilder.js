@@ -12,8 +12,8 @@ export default class FiltersParametersBuilder {
         throw new TypeError('not a Filter object');
       }
 
-      if ((typeof filter.option !== 'undefined') && (typeof filter.operator !== 'undefined')) {
-        throw new ReferenceError('Filter option and operator are not defined');
+      if ((typeof filter.option === 'undefined') || (typeof filter.operator === 'undefined')) {
+        throw new ReferenceError('filter option or operator are not defined');
       }
 
       if (typeof filter.value !== filter.option.type) {
@@ -32,8 +32,8 @@ export default class FiltersParametersBuilder {
       throw new TypeError('not a Filter object');
     }
 
-    if ((typeof filter.option !== 'undefined') && (typeof filter.operator !== 'undefined')) {
-      throw new ReferenceError('filter option and operator are not defined');
+    if ((typeof filter.option === 'undefined') || (typeof filter.operator === 'undefined')) {
+      throw new ReferenceError('filter option or operator are not defined');
     }
 
     return filter.option.value + '.' + filter.operator.value;
