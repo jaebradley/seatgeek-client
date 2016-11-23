@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 
-import SeatGeekClient from '../src/index';
+import {SeatGeekClient} from '../src/index';
 import Genre from '../src/data/Genre';
 import Taxonomy from '../src/data/Taxonomy';
 
