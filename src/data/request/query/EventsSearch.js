@@ -9,6 +9,7 @@ import VenuesFilter from '../../VenuesFilter';
 import PerformersFilter from '../../PerformersFilter';
 
 let defaults = {
+  ids: List(),
   venues: new VenuesFilter(),
   performers: new PerformersFilters(),
   taxonomies: new List(),
