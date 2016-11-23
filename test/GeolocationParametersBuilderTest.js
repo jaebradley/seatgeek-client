@@ -50,8 +50,8 @@ describe('Test Geolocation Parameter Builder', function() {
       unit: unit,
     });
     let expectedParameters = {
-      latitude: latitude,
-      longitude: longitude,
+      lat: latitude,
+      lon: longitude,
       range: expectedRangeParameter,
     };
     let parameters = GeolocationParametersBuilder.build(test);
@@ -67,8 +67,8 @@ describe('Test Geolocation Parameter Builder', function() {
       unit: unit,
     });
     let expectedParameters = {
-      useIpAddress: useIpAddress,
-      longitude: longitude,
+      geoIp: useIpAddress,
+      lon: longitude,
       range: expectedRangeParameter,
     };
     let parameters = GeolocationParametersBuilder.build(test);
@@ -84,8 +84,8 @@ describe('Test Geolocation Parameter Builder', function() {
       unit: unit,
     });
     let expectedParameters = {
-      useIpAddress: useIpAddress,
-      latitude: latitude,
+      geoIp: useIpAddress,
+      lat: latitude,
       range: expectedRangeParameter,
     };
     let parameters = GeolocationParametersBuilder.build(test);
@@ -101,9 +101,9 @@ describe('Test Geolocation Parameter Builder', function() {
       unit: unit,
     });
     let expectedParameters = {
-      useIpAddress: useIpAddress,
-      latitude: latitude,
-      longitude: longitude,
+      geoIp: useIpAddress,
+      lat: latitude,
+      lon: longitude,
     };
     let parameters = GeolocationParametersBuilder.build(test);
     expect(parameters.toJS()).to.equal(expectedParameters);
@@ -118,9 +118,9 @@ describe('Test Geolocation Parameter Builder', function() {
       unit: undefined,
     });
     let expectedParameters = {
-      useIpAddress: useIpAddress,
-      latitude: latitude,
-      longitude: longitude,
+      geoIp: useIpAddress,
+      lat: latitude,
+      lon: longitude,
     };
     let parameters = GeolocationParametersBuilder.build(test);
     expect(parameters.toJS()).to.equal(expectedParameters);
@@ -129,7 +129,7 @@ describe('Test Geolocation Parameter Builder', function() {
   it('tests static parameter names', function() {
     expect(GeolocationParametersBuilder.getUseIpAddressParameterName()).to.equal('geoIp');
     expect(GeolocationParametersBuilder.getLatitudeParameterName()).to.equal('lat');
-    expect(GeolocationParametersBuilder.getLongitudeParameterName()).to.equal('long');
+    expect(GeolocationParametersBuilder.getLongitudeParameterName()).to.equal('lon');
     expect(GeolocationParametersBuilder.getRangeParameterName()).to.equal('range');
   });
 });
