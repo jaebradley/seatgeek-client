@@ -6,7 +6,7 @@ import Geolocation from '../src/data/request/query/Geolocation';
 import GeolocationParametersBuilder from '../src/data/request/query/builders/GeolocationParametersBuilder';
 import Unit from '../src/data/Unit';
 
-describe('Test Geolocation Parameter building', function() {
+describe('Test Geolocation Parameter Builder', function() {
   let latitude = 12.34;
   let longitude = 56.78;
   let range = 10;
@@ -35,5 +35,12 @@ describe('Test Geolocation Parameter building', function() {
       range: expectedRangeParameter,
     };
     expect(parameters.toJS()).to.eql(expectedParameters);
+  });
+
+  it('tests static parameter names', function() {
+    expect(GeolocationParametersBuilder.getUseIpAddressParameterName()).to.equal('geoIp');
+    expect(GeolocationParametersBuilder.getLatitudeParameterName()).to.equal('lat');
+    expect(GeolocationParametersBuilder.getLongitudeParameterName()).to.equal('long');
+    expect(GeolocationParametersBuilder.getRangeParameterName()).to.equal('range');
   });
 });

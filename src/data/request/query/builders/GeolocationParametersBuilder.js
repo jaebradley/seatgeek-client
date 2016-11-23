@@ -25,11 +25,11 @@ export default class GeolocationParametersBuilder {
                                   geolocation.longitude);
     }
 
-    if ((typeof geolocation.range !== 'undefined') || (typeof geolocation.unit !== 'undefined')) {
+    if ((typeof geolocation.range !== 'undefined') && (typeof geolocation.unit !== 'undefined')) {
       parameters = parameters.set(GeolocationParametersBuilder.getRangeParameterName(),
                                   GeolocationParametersBuilder.buildRangeParameterValue(geolocation));
     }
-    
+
     return parameters;
   }
 
