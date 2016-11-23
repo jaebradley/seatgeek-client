@@ -49,4 +49,4 @@ describe('Tests Sort Filter Parameters Builder', function() {
     let parameters = SortFilterParametersBuilder.build(filter);
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
-)};
+});

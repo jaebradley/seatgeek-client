@@ -16,7 +16,7 @@ import PerformersSearchParametersBuilder from '../src/data/request/query/builder
 
 describe('Tests Performers Search Parameters Builder', function() {
   let ids = List.of(1, 2, 3);
-  let slugs = List.of('jae', 'bae' 'bradley');
+  let slugs = List.of('jae', 'bae', 'bradley');
   let query = 'jaebaebae';
   let genreFilter1 = new GenreFilter({
     genre: Genre.COUNTRY,

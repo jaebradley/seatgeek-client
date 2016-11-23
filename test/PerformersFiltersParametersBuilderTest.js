@@ -28,7 +28,7 @@ describe('Tests Performers Filter Parameters Builder', function() {
   let filters = List.of(filter);
   let performersFilters = new PerformersFilters({
     ids: ids,
-    filters: filters;
+    filters: filters,
   });
 
   it('tests static parameter name', function() {
@@ -56,9 +56,9 @@ describe('Tests Performers Filter Parameters Builder', function() {
   it('tests invalid inputs', function() {
     let invalidFilters = new PerformersFilters({
       ids: ids,
-      filters: List.of(1, 2);
+      filters: List.of(1, 2),
     });
     expect(() => PerformersFiltersParametersBuilder.build(1)).to.throw(TypeError);
     expect(() => PerformersFiltersParametersBuilder.build(invalidFilters)).to.throw(TypeError);
   });
-)};
+});
