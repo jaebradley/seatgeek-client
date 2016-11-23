@@ -37,7 +37,7 @@ export default class SeatGeekClient {
     return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
   }
 
-  static getEvents(query) {
+  static getEvents(search) {
     // return SeatGeekClient.fetch(parameters, Subpath.EVENTS.value);
   }
 
