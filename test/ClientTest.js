@@ -76,7 +76,7 @@ describe('Test Client', function() {
   });
 
   it('tests clients fetch', function() {
-    // return SeatGeekClient.getEvents()
-    //              .then(response => console.log(response))
+    return SeatGeekClient.getEvents()
+                 .then(response => console.log(response))
   })
 });
