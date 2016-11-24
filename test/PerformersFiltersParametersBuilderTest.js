@@ -6,7 +6,6 @@ import {List} from 'immutable';
 import PerformerField from '../src/data/request/query/PerformerField';
 import PerformerSpecificity from '../src/data/request/query/PerformerSpecificity';
 import PerformerFilter from '../src/data/request/query/PerformerFilter';
-import PerformersFilters from '../src/data/request/query/PerformersFilters';
 import PerformersFiltersParametersBuilder from '../src/data/request/query/builders/PerformersFiltersParametersBuilder';
 
 describe('Tests Performers Filter Parameters Builder', function() {
@@ -26,14 +25,6 @@ describe('Tests Performers Filter Parameters Builder', function() {
   });
   let ids = List.of(2, 3);
   let filters = List.of(filter, anotherFilter);
-  let performersFilters = new PerformersFilters({
-    ids: ids,
-    filters: filters,
-  });
-
-  it('tests static parameter name', function() {
-    expect(PerformersFiltersParametersBuilder.getIdsParameterName()).to.equal('id');
-  });
 
   it('tests expected behavior building parameter name', function() {
     let name = PerformersFiltersParametersBuilder.buildParameterName(filter);
@@ -46,18 +37,14 @@ describe('Tests Performers Filter Parameters Builder', function() {
 
   it('tests expected behavior building parameters', function() {
     let expectedParameters = {
-      'id': [2, 3],
       'performers[any].id': [value, anotherValue],
     };
-    let parameters = PerformersFiltersParametersBuilder.build(performersFilters);
+    let parameters = PerformersFiltersParametersBuilder.build(filters);
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests invalid inputs', function() {
-    let invalidFilters = new PerformersFilters({
-      ids: ids,
-      filters: List.of(1, 2),
-    });
+    let invalidFilters = List.of(1, 2);
     expect(() => PerformersFiltersParametersBuilder.build(1)).to.throw(TypeError);
     expect(() => PerformersFiltersParametersBuilder.build(invalidFilters)).to.throw(TypeError);
   });

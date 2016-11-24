@@ -1,12 +1,12 @@
 'use es6';
 
-import {Record} from 'immutable';
+import {List, Record} from 'immutable';
 
 import Constants from '../../Constants';
 import Unit from '../../Unit';
 
 let defaults = {
-  ids: [],
+  ids: List(),
   cityName: undefined,
   stateCode: undefined,
   countryCode: undefined,

@@ -6,16 +6,15 @@ import Pagination from './Pagination';
 import SortFilter from './SortFilter';
 import Geolocation from './Geolocation';
 import VenuesFilter from './VenuesFilter';
-import PerformersFilters from './PerformersFilters';
 
 let defaults = {
   ids: List(),
   venues: new VenuesFilter(),
-  performers: new PerformersFilters(),
-  taxonomies: new List(),
+  performers: List(),
+  taxonomies: List(),
   geolocation: new Geolocation(),
   sort: new SortFilter(),
-  filters: new List(),
+  filters: List(),
   pagination: new Pagination(),
 };
 
