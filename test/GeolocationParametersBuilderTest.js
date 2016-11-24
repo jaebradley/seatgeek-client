@@ -37,10 +37,6 @@ describe('Test Geolocation Parameter Builder', function() {
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
-  it('tests invalid input', function() {
-    expect(() => GeolocationParametersBuilder.build(1)).to.throw(TypeError);
-  });
-
   it('tests undefined useIpAddress', function() {
     let test = new Geolocation({
       useIpAddress: undefined,

@@ -5,10 +5,6 @@ import Geolocation from '../Geolocation';
 
 export default class GeolocationParametersBuilder {
   static build(geolocation) {
-    if (!(geolocation instanceof Geolocation)) {
-      throw new TypeError('not a Geolocation instance');
-    }
-
     let parameters = Map();
     if (typeof geolocation.useIpAddress !== 'undefined') {
       parameters = parameters.set(GeolocationParametersBuilder.getUseIpAddressParameterName(),

@@ -14,10 +14,6 @@ describe('Tests Sort Filter Parameters Builder', function() {
     expect(SortFilterParametersBuilder.getSortParameterName()).to.equal('sort');
   });
 
-  it('tests invalid input', function() {
-    expect(() => SortFilterParametersBuilder.build(1)).to.throw(TypeError);
-  });
-
   it('tests expected behavior', function() {
     let filter = new SortFilter({
       option: option,

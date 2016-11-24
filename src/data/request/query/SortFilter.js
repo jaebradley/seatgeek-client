@@ -7,7 +7,7 @@ import SortDirection from './SortDirection';
 
 let defaults = {
   option: SortOption.SCORE,
-  direction: SortDirection.DESC,
+  direction: SortDirection.DESCENDING,
 };
 
 export default class SortFilter extends Record(defaults) {

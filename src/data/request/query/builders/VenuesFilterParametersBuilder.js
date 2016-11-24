@@ -7,10 +7,6 @@ import EventsVenuePropertiesParametersBuilder from './EventsVenuePropertiesParam
 
 export default class VenuesFilterParametersBuilder {
   static build(filter) {
-    if (!(filter instanceof VenuesFilter)) {
-      throw new TypeError('not a VenuesFilter');
-    }
-
     let parameters = Map();
     if (typeof filter.ids !== 'undefined') {
       parameters = parameters.set(VenuesFilterParametersBuilder.getIdsParameterName(),

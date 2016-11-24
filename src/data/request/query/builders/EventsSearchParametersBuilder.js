@@ -25,16 +25,17 @@ export default class EventsSearchParametersBuilder {
     let parameters = Map();
     if (typeof search.ids !== 'undefined') {
       parameters = parameters.set(EventsSearchParametersBuilder.getIdsParameterName(),
-                     search.ids);
+                                  search.ids);
     }
 
-    parameters = parameters.merge(VenuesFilterParametersBuilder.build(new VenuesFilter(search.venues)),
+    parameters = parameters.merge(VenuesFilterParametersBuilder.build(search.venues),
                                   PerformersFiltersParametersBuilder.build(search.performers),
                                   TaxonomyFiltersParametersBuilder.build(search.taxonomies),
-                                  GeolocationParametersBuilder.build(new Geolocation(search.geolocation)),
-                                  SortFilterParametersBuilder.build(new SortFilter(search.sort)),
+                                  GeolocationParametersBuilder.build(search.geolocation),
+                                  SortFilterParametersBuilder.build(search.sort),
                                   FiltersParametersBuilder.build(search.filters),
-                                  PaginationParametersBuilder.build(new Pagination(search.pagination)));
+                                  PaginationParametersBuilder.build(search.pagination));
+
     return parameters;
   }
 
