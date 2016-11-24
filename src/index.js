@@ -1,5 +1,6 @@
 'use es6';
 
+import FilterOption from './data/FilterOption';
 import Genre from './data/Genre';
 import Operator from './data/request/query/Operator';
 import PerformerField from './data/request/query/PerformerField';
@@ -12,6 +13,7 @@ import TaxonomyField from './data/TaxonomyField';
 import Unit from './data/Unit';
 
 module.exports = {
+  FilterOption: FilterOption,
   Genre: Genre,
   Operator: Operator,
   PerformerField: PerformerField,
