@@ -19,4 +19,7 @@ SortOption.initEnum({
   SCORE: {
     value: 'score',
   },
+  LOWEST_PRICE: {
+    value: 'lowest_price',
+  },
 });
