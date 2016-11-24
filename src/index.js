@@ -1,6 +1,6 @@
 'use es6';
 
-import FilterOption from './data/FilterOption';
+import FilterOption from './data/request/query/FilterOption';
 import Genre from './data/Genre';
 import Operator from './data/request/query/Operator';
 import PerformerField from './data/request/query/PerformerField';
