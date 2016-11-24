@@ -20,7 +20,7 @@ describe('Test Client', function() {
                  .then(response => console.log(response));
   });
 
-  it('tests clients fetch', function() {
+  it('tests events fetch', function() {
     return SeatGeekClient.getEvents({venues: {properties: {cityName: 'Boston', stateCode: 'MA'}}})
                  .then(response => console.log(response));
   })

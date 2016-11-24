@@ -21,10 +21,6 @@ describe('Test pagination parameters builder', function() {
           .to.eql(expectedParameters);
   });
 
-  it('tests non-Pagination input throws Error', function() {
-    expect(() => PaginationParametersBuilder.build(1)).to.throw(TypeError);
-  });
-
   it('tests Pagination with undefined inputs', function() {
     let undefinedPerPage = new Pagination({
       perPage: undefined,

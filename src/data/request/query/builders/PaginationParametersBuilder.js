@@ -6,10 +6,6 @@ import Pagination from '../Pagination';
 
 export default class PaginationParametersBuilder {
   static build(pagination) {
-    if (!(pagination instanceof Pagination)) {
-      throw new TypeError('not a Pagination object');
-    }
-
     let parameters = Map();
     if (typeof pagination.perPage !== 'undefined') {
       parameters = parameters.set(PaginationParametersBuilder.getPerPageParameterName(),
