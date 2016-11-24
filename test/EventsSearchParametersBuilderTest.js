@@ -9,7 +9,6 @@ import Taxonomy from '../src/data/Taxonomy';
 import TaxonomyField from '../src/data/TaxonomyField';
 import Pagination from '../src/data/request/query/Pagination';
 import VenuesFilter from '../src/data/request/query/VenuesFilter';
-import PerformersFilters from '../src/data/request/query/PerformersFilters';
 import PerformerFilter from '../src/data/request/query/PerformerFilter';
 import PerformerField from '../src/data/request/query/PerformerField';
 import PerformerSpecificity from '../src/data/request/query/PerformerSpecificity';
