@@ -8,10 +8,6 @@ export default class FiltersParametersBuilder {
   static build(filters) {
     let parameters = Map();
     filters.forEach(function(filter) {
-      if (!(filter instanceof Filter)) {
-        throw new TypeError('not a Filter object');
-      }
-
       if ((typeof filter.option === 'undefined') || (typeof filter.operator === 'undefined')) {
         throw new ReferenceError('filter option or operator are not defined');
       }
@@ -28,10 +24,6 @@ export default class FiltersParametersBuilder {
   }
 
   static buildParameterName(filter) {
-    if (!(filter instanceof Filter)) {
-      throw new TypeError('not a Filter object');
-    }
-
     if ((typeof filter.option === 'undefined') || (typeof filter.operator === 'undefined')) {
       throw new ReferenceError('filter option or operator are not defined');
     }

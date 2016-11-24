@@ -31,21 +31,11 @@ describe('Tests Performers Filter Parameters Builder', function() {
     expect(name).to.equal('performers[any].id');
   });
 
-  it('tests invalid input building parameter name', function() {
-    expect(() => PerformersFiltersParametersBuilder.buildParameterName(1)).to.throw(TypeError);
-  });
-
   it('tests expected behavior building parameters', function() {
     let expectedParameters = {
       'performers[any].id': [value, anotherValue],
     };
     let parameters = PerformersFiltersParametersBuilder.build(filters);
     expect(parameters.toJS()).to.eql(expectedParameters);
-  });
-
-  it('tests invalid inputs', function() {
-    let invalidFilters = List.of(1, 2);
-    expect(() => PerformersFiltersParametersBuilder.build(1)).to.throw(TypeError);
-    expect(() => PerformersFiltersParametersBuilder.build(invalidFilters)).to.throw(TypeError);
   });
 });

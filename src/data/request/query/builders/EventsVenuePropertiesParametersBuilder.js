@@ -6,10 +6,6 @@ import VenueProperties from '../VenueProperties';
 
 export default class EventsVenuePropertiesParametersBuilder {
   static build(properties) {
-    if (!(properties instanceof VenueProperties)) {
-      throw new TypeError('must be a VenueProperties instance');
-    }
-
     let parameters = Map();
     if (typeof properties.cityName !== 'undefined') {
       parameters = parameters.set(EventsVenuePropertiesParametersBuilder.getCityNamePropertyName(),

@@ -51,7 +51,7 @@ describe('Tests Venue Search Parameters Builder', function() {
       country: countryCode,
       postal_code: postalCode,
       q: queryString,
-      geoIp: true,
+      geoip: true,
       lat: latitude,
       lon: longitude,
       range: '6mi',

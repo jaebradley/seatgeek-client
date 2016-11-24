@@ -156,7 +156,7 @@ describe('Tests Events Search Parameters Builder', function() {
       'taxonomies.id': [taxonomy1.id],
       'taxonomies.name': [taxonomy2.name],
       'taxonomies.parent_id': [taxonomy3.parent_id],
-      geoIp: useIpAddress,
+      geoip: useIpAddress,
       lat: latitude,
       lon: longitude,
       range: '15mi',
