@@ -16,9 +16,6 @@ export default class SortFilterParametersBuilder {
                                   filter.option.value + '.' + filter.direction.value);
     }
 
-    console.log(filter);
-    console.log(parameters);
-
     return parameters;
   }
 
