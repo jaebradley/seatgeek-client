@@ -25,7 +25,7 @@ export default class EventsSearchParametersBuilder {
     let parameters = Map();
     if (typeof search.ids !== 'undefined') {
       parameters = parameters.set(EventsSearchParametersBuilder.getIdsParameterName(),
-                     search.ids);
+                                  search.ids);
     }
 
     parameters = parameters.merge(VenuesFilterParametersBuilder.build(search.venues),
@@ -35,6 +35,7 @@ export default class EventsSearchParametersBuilder {
                                   SortFilterParametersBuilder.build(search.sort),
                                   FiltersParametersBuilder.build(search.filters),
                                   PaginationParametersBuilder.build(search.pagination));
+
     return parameters;
   }
 

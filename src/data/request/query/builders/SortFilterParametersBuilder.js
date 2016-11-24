@@ -9,7 +9,7 @@ export default class SortFilterParametersBuilder {
     let parameters = Map();
     if ((typeof filter.option !== 'undefined') && (typeof filter.direction !== 'undefined')) {
       parameters = parameters.set(SortFilterParametersBuilder.getSortParameterName(),
-                                  filter.option.value + '.' + filter.direction.value);
+                                  `${filter.option.value}.${filter.direction.value}`);
     }
 
     return parameters;
