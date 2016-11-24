@@ -12,15 +12,15 @@ describe('Test Geolocation', function() {
   let defaultUnit = Unit.MILE;
 
   it('tests expected behavior', function() {
-    let trueGeoIp = true;
+    let truegeoip = true;
     let trueGeolocation = new Geolocation({
-      useIpAddress: trueGeoIp,
+      useIpAddress: truegeoip,
       latitude: defaultLatitude,
       longitude: defaultLongitude,
       range: defaultRange,
       unit: defaultUnit
     });
-    expect(trueGeolocation.useIpAddress).to.equal(trueGeoIp);
+    expect(trueGeolocation.useIpAddress).to.equal(truegeoip);
     expect(trueGeolocation.latitude).to.equal(defaultLatitude);
     expect(trueGeolocation.longitude).to.equal(defaultLongitude);
     expect(trueGeolocation.range).to.equal(defaultRange);

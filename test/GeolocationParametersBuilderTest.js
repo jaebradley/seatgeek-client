@@ -29,7 +29,7 @@ describe('Test Geolocation Parameter Builder', function() {
   it('tests geolocation parameter building', function() {
     let parameters = GeolocationParametersBuilder.build(geolocation);
     let expectedParameters = {
-      geoIp: useIpAddress,
+      geoip: useIpAddress,
       lat: latitude,
       lon: longitude,
       range: expectedRangeParameter,
@@ -67,7 +67,7 @@ describe('Test Geolocation Parameter Builder', function() {
       unit: unit,
     });
     let expectedParameters = {
-      geoIp: useIpAddress,
+      geoip: useIpAddress,
       lon: longitude,
       range: expectedRangeParameter,
     };
@@ -84,7 +84,7 @@ describe('Test Geolocation Parameter Builder', function() {
       unit: unit,
     });
     let expectedParameters = {
-      geoIp: useIpAddress,
+      geoip: useIpAddress,
       lat: latitude,
       range: expectedRangeParameter,
     };
@@ -101,7 +101,7 @@ describe('Test Geolocation Parameter Builder', function() {
       unit: unit,
     });
     let expectedParameters = {
-      geoIp: useIpAddress,
+      geoip: useIpAddress,
       lat: latitude,
       lon: longitude,
     };
@@ -118,7 +118,7 @@ describe('Test Geolocation Parameter Builder', function() {
       unit: undefined,
     });
     let expectedParameters = {
-      geoIp: useIpAddress,
+      geoip: useIpAddress,
       lat: latitude,
       lon: longitude,
     };
@@ -127,7 +127,7 @@ describe('Test Geolocation Parameter Builder', function() {
   });
 
   it('tests static parameter names', function() {
-    expect(GeolocationParametersBuilder.getUseIpAddressParameterName()).to.equal('geoIp');
+    expect(GeolocationParametersBuilder.getUseIpAddressParameterName()).to.equal('geoip');
     expect(GeolocationParametersBuilder.getLatitudeParameterName()).to.equal('lat');
     expect(GeolocationParametersBuilder.getLongitudeParameterName()).to.equal('lon');
     expect(GeolocationParametersBuilder.getRangeParameterName()).to.equal('range');

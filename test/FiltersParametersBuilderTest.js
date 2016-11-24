@@ -49,10 +49,6 @@ describe('Tests Filters Parameters Builder', function() {
       expect(parameterName).to.equal('average_price.lt');
   });
 
-  it('tests invalid input when creating parameter name', function() {
-    expect(() => FiltersParametersBuilder.buildParameterName(1)).to.throw(TypeError);
-  });
-
   it('tests undefined filter option for parameter name creation', function() {
     expect(() => FiltersParametersBuilder.buildParameterName(undefinedOptionFilter)).to.throw(ReferenceError);
   });
@@ -67,10 +63,6 @@ describe('Tests Filters Parameters Builder', function() {
       'average_price.lt': value1,
     };
     expect(parameters.toJS()).to.eql(expectedParameters);
-  });
-
-  it('tests invalid input filters when creating parameters', function() {
-    expect(() => FiltersParametersBuilder.build(invalidFilters)).to.throw(TypeError);
   });
 
   it('tests undefined filter operator when creating parameters', function() {

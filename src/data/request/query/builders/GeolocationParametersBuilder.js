@@ -38,7 +38,7 @@ export default class GeolocationParametersBuilder {
   }
 
   static getUseIpAddressParameterName() {
-    return 'geoIp';
+    return 'geoip';
   }
 
   static getLatitudeParameterName() {

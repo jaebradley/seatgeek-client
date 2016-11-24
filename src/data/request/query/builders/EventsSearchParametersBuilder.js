@@ -1,8 +1,13 @@
 'use es6';
 
-import {Map} from 'immutable';
+import {List, Map} from 'immutable';
 
 import EventsSearch from '../EventsSearch';
+import VenuesFilter from '../VenuesFilter';
+import Geolocation from '../Geolocation';
+import SortFilter from '../SortFilter';
+import Pagination from '../Pagination';
+
 import VenuesFilterParametersBuilder from './VenuesFilterParametersBuilder';
 import PerformersFiltersParametersBuilder from './PerformersFiltersParametersBuilder';
 import TaxonomyFiltersParametersBuilder from './TaxonomyFiltersParametersBuilder';
@@ -23,13 +28,13 @@ export default class EventsSearchParametersBuilder {
                      search.ids);
     }
 
-    parameters = parameters.merge(VenuesFilterParametersBuilder.build(search.venues),
+    parameters = parameters.merge(VenuesFilterParametersBuilder.build(new VenuesFilter(search.venues)),
                                   PerformersFiltersParametersBuilder.build(search.performers),
                                   TaxonomyFiltersParametersBuilder.build(search.taxonomies),
-                                  GeolocationParametersBuilder.build(search.geolocation),
-                                  SortFilterParametersBuilder.build(search.sort),
+                                  GeolocationParametersBuilder.build(new Geolocation(search.geolocation)),
+                                  SortFilterParametersBuilder.build(new SortFilter(search.sort)),
                                   FiltersParametersBuilder.build(search.filters),
-                                  PaginationParametersBuilder.build(search.pagination));
+                                  PaginationParametersBuilder.build(new Pagination(search.pagination)));
     return parameters;
   }
 
