@@ -5,7 +5,7 @@ import {Record} from 'immutable';
 import Constants from '../../Constants';
 
 let defaults = {
-  useIpAddress: true,
+  useIpAddress: false,
   latitude: undefined,
   longitude: undefined,
   range: Constants.getDefaultRange(),
