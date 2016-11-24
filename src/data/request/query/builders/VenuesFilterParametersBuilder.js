@@ -3,7 +3,7 @@
 import {Map} from 'immutable';
 
 import VenuesFilter from '../VenuesFilter';
-import VenuePropertiesParametersBuilder from './VenuePropertiesParametersBuilder';
+import EventsVenuePropertiesParametersBuilder from './EventsVenuePropertiesParametersBuilder';
 
 export default class VenuesFilterParametersBuilder {
   static build(filter) {
@@ -18,7 +18,7 @@ export default class VenuesFilterParametersBuilder {
     }
 
     if (typeof filter.properties !== 'undefined') {
-      parameters = parameters.merge(VenuePropertiesParametersBuilder.build(filter.properties));
+      parameters = parameters.merge(EventsVenuePropertiesParametersBuilder.build(filter.properties));
     }
 
     return parameters;
