@@ -17,6 +17,8 @@ import Geolocation from '../src/data/request/query/Geolocation';
 import SortOption from '../src/data/request/query/SortOption';
 import SortDirection from '../src/data/request/query/SortDirection';
 import SortFilter from '../src/data/request/query/SortFilter';
+import Operator from '../src/data/request/query/Operator';
+import FilterOption from '../src/data/request/query/FilterOption';
 import Filter from '../src/data/request/query/Filter';
 import VenueProperties from '../src/data/request/query/VenueProperties';
 import EventsSearch from '../src/data/request/query/EventsSearch';
@@ -27,7 +29,7 @@ describe('Tests Events Search Parameters Builder', function() {
   let id1 = 1;
   let id2 = 2;
   let id3 = 3;
-  let ids = List.of(id1, id2, id3);
+  let eventIds = List.of(id1, id2, id3);
   let venueId1 = 4;
   let venueId2 = 5;
   let venueId3 = 6;
@@ -40,7 +42,7 @@ describe('Tests Events Search Parameters Builder', function() {
     cityName: cityName,
     stateCode: stateCode,
     countryCode: countryCode,
-    postalCode: postalCodem
+    postalCode: postalCode,
   });
   let venues = new VenuesFilter({
     ids: venueIds,
@@ -65,14 +67,7 @@ describe('Tests Events Search Parameters Builder', function() {
     specificity: PerformerSpecificity.HOME_TEAM,
   });
   let performerFilters = List.of(performerFilter1, performerFilter2, performerFilter3);
-  let performerId1 = 10;
-  let performerId2 = 11;
-  let performerId3 = 12;
-  let performerIds = List.of(performerId1, performerId2, performerId3);
-  let performersFilters = new PerformersFilters({
-    ids: performersIds,
-    filters: performersFilters,
-  });
+
   let taxonomy1 = Taxonomy.NFL_FOOTBALL;
   let taxonomyField1 = TaxonomyField.ID;
   let taxonomyFilter1 = new TaxonomyFilter({
@@ -104,7 +99,7 @@ describe('Tests Events Search Parameters Builder', function() {
     range: range,
     unit: unit,
   });
-  let sortDirection = SortDirection.ASC;
+  let sortDirection = SortDirection.ASCENDING;
   let sortOption = SortOption.SCORE;
   let sort = new SortFilter({
     direction: sortDirection,
@@ -134,10 +129,10 @@ describe('Tests Events Search Parameters Builder', function() {
     page: page,
   });
 
-  let search = new EventSearch({
-    ids: ids,
+  let search = new EventsSearch({
+    ids: eventIds,
     venues: venues,
-    performers: performersFilters,
+    performers: performerFilters,
     taxonomies: taxonomyFilters,
     geolocation: geolocation,
     sort: sort,
@@ -147,14 +142,15 @@ describe('Tests Events Search Parameters Builder', function() {
 
   it('tests events search parameter building', function() {
     let parameters = EventsSearchParametersBuilder.build(search);
+    let filterName1 = filterOption1.value + '.' + filterOperator1.value;
+    let filterName2 = filterOption2.value + '.' + filterOperator2.value;
     let expectedParameters = {
-      ids: [id1, id2, id3],
+      id: [id1, id2, id3],
       'venue.id': [venueId1, venueId2, venueId3],
       city: cityName,
       state: stateCode,
       country: countryCode,
       postal_code: postalCode,
-      'performers.id': [performerId1, performerId2, performerId3],
       'performers[any].id': [performerValue1],
       'performers[primary].slug': [performerValue2],
       'performers[home_team].id': [performerValue3],
@@ -165,9 +161,9 @@ describe('Tests Events Search Parameters Builder', function() {
       lat: latitude,
       lon: longitude,
       range: '15mi',
-      sort: sortOption.value + '.' + sortDirection.value,
-      filterOption1.value + '.' + filterOperator1.value: filterValue1,
-      filterOption2.value + '.' + filterOperator2.value: filterValue2,
+      sort: 'score.asc',
+      'average_price.lt': filterValue1,
+      'listing_count.gte': filterValue2,
       per_page: perPage,
       page: page,
     };

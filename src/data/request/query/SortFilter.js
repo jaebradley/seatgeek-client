@@ -11,9 +11,4 @@ let defaults = {
 };
 
 export default class SortFilter extends Record(defaults) {
-  buildQueryParameters() {
-    return {
-      'sort': this.option.value + '.' + this.direction.value,
-    };
-  }
 };

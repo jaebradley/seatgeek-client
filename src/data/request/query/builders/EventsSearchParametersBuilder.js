@@ -19,7 +19,7 @@ export default class EventsSearchParametersBuilder {
 
     let parameters = Map();
     if (typeof search.ids !== 'undefined') {
-      parameters.set(EventsSearchParametersBuilder.getIdParameterName(),
+      parameters = parameters.set(EventsSearchParametersBuilder.getIdsParameterName(),
                      search.ids);
     }
 
@@ -33,7 +33,7 @@ export default class EventsSearchParametersBuilder {
     return parameters;
   }
 
-  static getIdParameterName() {
+  static getIdsParameterName() {
     return 'id';
   }
 }
