@@ -1,16 +1,14 @@
 'use es6';
 
-import {List, Map} from 'immutable';
+import {Map} from 'immutable';
 
-import EventsSearch from '../EventsSearch';
-
-import VenuesFilterParametersBuilder from './VenuesFilterParametersBuilder';
-import PerformersFiltersParametersBuilder from './PerformersFiltersParametersBuilder';
-import TaxonomyFiltersParametersBuilder from './TaxonomyFiltersParametersBuilder';
-import GeolocationParametersBuilder from './GeolocationParametersBuilder';
-import SortFilterParametersBuilder from './SortFilterParametersBuilder';
-import PaginationParametersBuilder from './PaginationParametersBuilder';
 import FiltersParametersBuilder from './FiltersParametersBuilder';
+import GeolocationParametersBuilder from './GeolocationParametersBuilder';
+import PaginationParametersBuilder from './PaginationParametersBuilder';
+import PerformersFiltersParametersBuilder from './PerformersFiltersParametersBuilder';
+import SortFilterParametersBuilder from './SortFilterParametersBuilder';
+import TaxonomyFiltersParametersBuilder from './TaxonomyFiltersParametersBuilder';
+import VenuesFilterParametersBuilder from './VenuesFilterParametersBuilder';
 
 export default class EventsSearchParametersBuilder {
   static build(search) {
