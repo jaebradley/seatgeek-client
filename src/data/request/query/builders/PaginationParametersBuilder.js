@@ -2,8 +2,6 @@
 
 import {Map} from 'immutable';
 
-import Pagination from '../Pagination';
-
 export default class PaginationParametersBuilder {
   static build(pagination) {
     let parameters = Map();
