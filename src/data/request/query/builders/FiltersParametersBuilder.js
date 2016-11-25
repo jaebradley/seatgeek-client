@@ -8,9 +8,7 @@ export default class FiltersParametersBuilder {
   static build(filters) {
     let parameters = Map();
     filters.forEach(function(filter) {
-      if ((typeof filter.option === 'undefined') || (typeof filter.operator === 'undefined')) {
-        throw new ReferenceError('filter option or operator are not defined');
-      }
+      FiltersParametersBuilder.isDefinedFilter(filter);
 
       if (typeof filter.value !== filter.option.type) {
         throw new TypeError('value is the wrong type');
@@ -24,10 +22,15 @@ export default class FiltersParametersBuilder {
   }
 
   static buildParameterName(filter) {
-    if ((typeof filter.option === 'undefined') || (typeof filter.operator === 'undefined')) {
+    FiltersParametersBuilder.isDefinedFilter(filter);
+
+    return `${filter.option.value}.${filter.operator.value}`;
+  }
+
+  static isDefinedFilter(filter) {
+    if ((typeof filter.option === 'undefined')
+         || (typeof filter.operator === 'undefined')) {
       throw new ReferenceError('filter option or operator are not defined');
     }
-
-    return filter.option.value + '.' + filter.operator.value;
   }
 }
