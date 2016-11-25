@@ -3,10 +3,6 @@
 import {List, Map} from 'immutable';
 
 import EventsSearch from '../EventsSearch';
-import VenuesFilter from '../VenuesFilter';
-import Geolocation from '../Geolocation';
-import SortFilter from '../SortFilter';
-import Pagination from '../Pagination';
 
 import VenuesFilterParametersBuilder from './VenuesFilterParametersBuilder';
 import PerformersFiltersParametersBuilder from './PerformersFiltersParametersBuilder';
@@ -18,10 +14,6 @@ import FiltersParametersBuilder from './FiltersParametersBuilder';
 
 export default class EventsSearchParametersBuilder {
   static build(search) {
-    if (!(search instanceof EventsSearch)) {
-      throw new TypeError('not an EventsSearch instance');
-    }
-
     let parameters = Map();
     if (typeof search.ids !== 'undefined') {
       parameters = parameters.set(EventsSearchParametersBuilder.getIdsParameterName(),
