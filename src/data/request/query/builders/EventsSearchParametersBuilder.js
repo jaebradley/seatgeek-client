@@ -26,7 +26,7 @@ export default class EventsSearchParametersBuilder {
                                   GeolocationParametersBuilder.build(search.geolocation),
                                   SortFilterParametersBuilder.build(search.sort),
                                   FiltersParametersBuilder.build(search.filters),
-                                  PaginationParametersBuilder.build(new Pagination(search.perPage, search.page)));
+                                  PaginationParametersBuilder.build(new Pagination({perPage: search.perPage, page: search.page})));
 
     return parameters;
   }

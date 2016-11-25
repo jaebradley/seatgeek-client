@@ -27,7 +27,7 @@ export default class PerformersFiltersParametersBuilder {
   }
 
   static isValidFilter(filter) {
-    if ((typeof filter !== 'undefined')
+    if ((typeof filter === 'undefined')
          || (!(filter.specificity instanceof PerformerSpecificity))
          || (!(filter.field instanceof PerformerField))) {
       throw new TypeError('invalid filter');
