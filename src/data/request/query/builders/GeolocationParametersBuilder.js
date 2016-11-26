@@ -1,7 +1,6 @@
 'use es6';
 
 import {Map} from 'immutable';
-import Geolocation from '../Geolocation';
 
 export default class GeolocationParametersBuilder {
   static build(geolocation) {

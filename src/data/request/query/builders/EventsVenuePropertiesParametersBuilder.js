@@ -2,8 +2,6 @@
 
 import {Map} from 'immutable';
 
-import VenueProperties from '../VenueProperties';
-
 export default class EventsVenuePropertiesParametersBuilder {
   static build(properties) {
     let parameters = Map();

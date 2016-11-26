@@ -18,10 +18,6 @@ describe('Tests Venue Properties Parameters Builder', function() {
     expect(VenuePropertiesParametersBuilder.getPostalCodePropertyName()).to.equal('postal_code');
   });
 
-  it('tests invalid input value', function() {
-    expect(() => VenuePropertiesParametersBuilder.build(1)).to.throw(TypeError);
-  });
-
   it('tests expected behavior', function() {
     let properties = new VenueProperties({
       cityName: cityName,

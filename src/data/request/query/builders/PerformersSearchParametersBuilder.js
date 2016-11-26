@@ -10,10 +10,6 @@ import GenreFiltersParametersBuilder from './GenreFiltersParametersBuilder';
 
 export default class PerformersSearchParametersBuilder {
   static build(search) {
-    if (!(search instanceof PerformersSearch)) {
-      throw new TypeError('must be a PerformersSearch instance');
-    }
-
     let parameters = Map();
     if (typeof search.ids !== 'undefined') {
       parameters = parameters.set(PerformersSearchParametersBuilder.getIdsParameterName(),

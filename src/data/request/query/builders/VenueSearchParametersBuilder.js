@@ -6,17 +6,12 @@ import VenuePropertiesParametersBuilder from './VenuePropertiesParametersBuilder
 import GeolocationParametersBuilder from './GeolocationParametersBuilder';
 import PaginationParametersBuilder from './PaginationParametersBuilder';
 
-import VenueSearch from '../VenueSearch';
 import VenueProperties from '../VenueProperties';
 import Geolocation from '../Geolocation';
 import Pagination from '../Pagination';
 
 export default class VenueSearchParametersBuilder {
   static build(search) {
-    if (!(search instanceof VenueSearch)) {
-      throw new TypeError('must be a VenueSearch instance');
-    }
-
     let parameters = Map();
     if (typeof search.ids !== 'undefined') {
       parameters = parameters.set(VenueSearchParametersBuilder.getIdsParameterName(),

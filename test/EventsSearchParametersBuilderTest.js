@@ -123,10 +123,6 @@ describe('Tests Events Search Parameters Builder', function() {
   let filters = List.of(filter1, filter2);
   let perPage = 18;
   let page = 19;
-  let pagination = new Pagination({
-    perPage: perPage,
-    page: page,
-  });
 
   let search = new EventsSearch({
     ids: eventIds,
@@ -136,7 +132,8 @@ describe('Tests Events Search Parameters Builder', function() {
     geolocation: geolocation,
     sort: sort,
     filters: filters,
-    pagination: pagination,
+    perPage: perPage,
+    page: page,
   });
 
   it('tests events search parameter building', function() {
