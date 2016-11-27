@@ -38,16 +38,13 @@ describe('Tests Performers Search Parameters Builder', function() {
   let taxonomyFilters = List.of(taxonomyFilter1, taxonomyFilter2);
   let perPage = 4;
   let page = 5;
-  let pagination = new Pagination({
-    perPage: perPage,
-    page: page,
-  });
   let search = new PerformersSearch({
     ids: ids,
     slugs: slugs,
     taxonomies: taxonomyFilters,
     genres: genreFilters,
-    pagination: pagination,
+    perPage: perPage,
+    page: page,
     queryString: query,
   });
   it('tests expected parameter building', function() {
