@@ -3,6 +3,7 @@
 import {Map} from 'immutable';
 
 import PerformersSearch from '../PerformersSearch';
+import Pagination from '../Pagination';
 
 import PaginationParametersBuilder from './PaginationParametersBuilder';
 import TaxonomyFiltersParametersBuilder from './TaxonomyFiltersParametersBuilder';
@@ -28,7 +29,12 @@ export default class PerformersSearchParametersBuilder {
 
     parameters = parameters.merge(GenreFiltersParametersBuilder.build(search.genres),
                                   TaxonomyFiltersParametersBuilder.build(search.taxonomies),
-                                  PaginationParametersBuilder.build(search.pagination));
+                                  PaginationParametersBuilder.build(
+                                    new Pagination({
+                                      perPage: search.perPage,
+                                      page: search.page,
+                                    });
+                                  ));
 
     return parameters;
   }
