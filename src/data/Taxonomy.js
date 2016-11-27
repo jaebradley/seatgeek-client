@@ -241,7 +241,7 @@ Taxonomy.initEnum({
     parent_id: null,
   },
   CONCERT: {
-    slug: '',
+    slug: 'concert',
     id: 2000001,
     parent_id: 2000000,
   },
