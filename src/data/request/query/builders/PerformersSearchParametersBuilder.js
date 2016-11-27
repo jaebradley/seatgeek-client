@@ -40,7 +40,7 @@ export default class PerformersSearchParametersBuilder {
         new Pagination({
           perPage: search.perPage,
           page: search.page,
-        });
+        })
       ));
     }
 
