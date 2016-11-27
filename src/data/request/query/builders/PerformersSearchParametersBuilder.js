@@ -27,14 +27,22 @@ export default class PerformersSearchParametersBuilder {
                                   search.queryString);
     }
 
-    parameters = parameters.merge(GenreFiltersParametersBuilder.build(search.genres),
-                                  TaxonomyFiltersParametersBuilder.build(search.taxonomies),
-                                  PaginationParametersBuilder.build(
-                                    new Pagination({
-                                      perPage: search.perPage,
-                                      page: search.page,
-                                    });
-                                  ));
+    if (typeof search.genres !== 'undefined') {
+      parameters = parameters.merge(GenreFiltersParametersBuilder.build(search.genres));
+    }
+
+    if (typeof search.taxonomies !== 'undefined') {
+      parameters = parameters.merge(TaxonomyFiltersParametersBuilder.build(search.taxonomies));
+    }
+
+    if ((typeof search.perPage !== 'undefined') && (typeof search.page !== 'undefined')) {
+      parameters = parameters.merge(PaginationParametersBuilder.build(
+        new Pagination({
+          perPage: search.perPage,
+          page: search.page,
+        });
+      ));
+    }
 
     return parameters;
   }
