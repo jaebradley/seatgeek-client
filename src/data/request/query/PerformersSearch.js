@@ -3,7 +3,6 @@
 import {List, Record} from 'immutable';
 
 import Constants from '../../Constants';
-import Pagination from './Pagination';
 
 let defaults = {
   ids: new List(),
