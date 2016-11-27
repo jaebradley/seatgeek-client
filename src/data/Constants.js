@@ -18,8 +18,4 @@ export default class Constants {
   static getDefaultUnit() {
     return Unit.MILE;
   }
-
-  static getDefaultUseIpAddress() {
-    return true;
-  }
 }

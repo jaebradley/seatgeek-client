@@ -11,7 +11,7 @@ let defaults = {
   countryCode: undefined,
   postalCode: undefined,
   queryString: undefined,
-  useIpAddress: Constants.getDefaultUseIpAddress(),
+  useIpAddress: undefined,
   latitude: undefined,
   longitude: undefined,
   range: Constants.getDefaultRange(),

@@ -21,8 +21,4 @@ describe('Test Constants', function() {
   it('tests default unit', function() {
     expect(Constants.getDefaultUnit()).to.eql(Unit.MILE);
   });
-
-  it('tests default use ip address', function() {
-    expect(Constants.getDefaultUseIpAddress()).to.be.true;
-  });
 });
