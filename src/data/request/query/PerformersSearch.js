@@ -2,15 +2,16 @@
 
 import {List, Record} from 'immutable';
 
-import Pagination from './Pagination';
+import Constants from '../../Constants';
 
 let defaults = {
   ids: new List(),
   slugs: new List(),
   taxonomies: new List(),
   genres: new List(),
-  pagination: new Pagination(),
   queryString: undefined,
+  perPage: Constants.getDefaultPerPage(),
+  page: Constants.getDefaultPage(),
 };
 
 export default class PerformersSearch extends Record(defaults) {
