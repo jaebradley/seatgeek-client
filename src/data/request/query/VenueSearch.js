@@ -3,7 +3,6 @@
 import {List, Record} from 'immutable';
 
 import Constants from '../../Constants';
-import Unit from '../../Unit';
 
 let defaults = {
   ids: List(),
@@ -12,11 +11,11 @@ let defaults = {
   countryCode: undefined,
   postalCode: undefined,
   queryString: undefined,
-  useIpAddress: true,
+  useIpAddress: undefined,
   latitude: undefined,
   longitude: undefined,
-  range: 10,
-  unit: Unit.MILE,
+  range: Constants.getDefaultRange(),
+  unit: Constants.getDefaultUnit(),
   perPage: Constants.getDefaultPerPage(),
   page: Constants.getDefaultPage(),
 };
