@@ -6,7 +6,7 @@ import {List} from 'immutable';
 
 import Genre from '../src/data/Genre';
 import Taxonomy from '../src/data/Taxonomy';
-import TaxonomyField from '../src/data/TaxonomyField';
+import TaxonomyField from '../src/data/request/query/TaxonomyField';
 
 import Pagination from '../src/data/request/query/Pagination';
 import TaxonomyFilter from '../src/data/request/query/TaxonomyFilter';
