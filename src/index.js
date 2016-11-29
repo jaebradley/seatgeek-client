@@ -9,7 +9,7 @@ import SeatGeekClient from './SeatGeekClient';
 import SortDirection from './data/request/query/SortDirection';
 import SortOption from './data/request/query/SortOption';
 import Taxonomy from './data/Taxonomy';
-import TaxonomyField from './data/TaxonomyField';
+import TaxonomyField from './data/request/query/TaxonomyField';
 import Unit from './data/Unit';
 
 module.exports = {
