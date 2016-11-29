@@ -9,10 +9,13 @@ export default class TaxonomyFiltersParametersBuilder {
   static build(filters) {
     let parameters = new Map();
     filters.forEach(function(filter) {
-      let parameterName = TaxonomyFiltersParametersBuilder.getParameterName(filter);
-      let parameterValues = parameters.has(parameterName) ? parameters.get(parameterName) : new List();
-      parameterValues = parameterValues.push(TaxonomyFiltersParametersBuilder.getParameterValue(filter));
-      parameters = parameters.set(parameterName, parameterValues);
+      let parameterValue = TaxonomyFiltersParametersBuilder.getParameterValue(filter);
+      if (parameterValue !== null) {
+        let parameterName = TaxonomyFiltersParametersBuilder.getParameterName(filter);
+        let parameterValues = parameters.has(parameterName) ? parameters.get(parameterName) : new List();
+        parameterValues = parameterValues.push(parameterValue);
+        parameters = parameters.set(parameterName, parameterValues);
+      }
     });
 
     return parameters;
