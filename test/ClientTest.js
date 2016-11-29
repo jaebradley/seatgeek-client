@@ -2,7 +2,7 @@ import {expect} from 'chai';
 
 import {SeatGeekClient} from '../src/index';
 import {Genre} from '../src/index';
-import {Taxonomy} from '../src/index';
+import {Taxonomy, TaxonomyField} from '../src/index';
 
 describe('Test Client', function() {
   it('tests genres fetch', function() {
@@ -22,6 +22,14 @@ describe('Test Client', function() {
 
   it('tests events fetch', function() {
     return SeatGeekClient.getEvents({venues: {properties: {cityName: 'Boston', stateCode: 'MA'}}})
+                 .then(response => console.log(response));
+  });
+
+  it('tests events fetch', function() {
+    return SeatGeekClient.getEvents({taxonomies: [{
+        taxonomy: Taxonomy.CONCERT,
+        field: TaxonomyField.NAME,
+      }]})
                  .then(response => console.log(response));
   })
 });

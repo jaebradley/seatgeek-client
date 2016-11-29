@@ -3,6 +3,7 @@
 import {Map, List} from 'immutable';
 
 import TaxonomyFilter from '../TaxonomyFilter';
+import TaxonomyField from '../../../TaxonomyField';
 
 export default class TaxonomyFiltersParametersBuilder {
   static build(filters) {
@@ -22,6 +23,22 @@ export default class TaxonomyFiltersParametersBuilder {
   }
 
   static getParameterValue(filter) {
-    return filter.taxonomy[filter.field.value];
+    return filter.taxonomy[TaxonomyFiltersParametersBuilder.getTaxonomyDataField(filter.field)];
+  }
+
+  static getTaxonomyDataField(filter) {
+    switch (filter) {
+      case TaxonomyField.ID:
+        return 'id';
+
+      case TaxonomyField.NAME:
+        return 'slug';
+
+      case TaxonomyField.PARENT_ID:
+        return 'parent_id';
+
+      default:
+        throw new ReferenceError('unknown taxonomy field');
+    }
   }
 }
