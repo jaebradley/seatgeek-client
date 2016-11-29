@@ -55,7 +55,7 @@ describe('Tests Performers Search Parameters Builder', function() {
       'genres[primary].slug': [Genre.COUNTRY.slug],
       'genres.slug': [Genre.POP.slug],
       'taxonomies.id': [Taxonomy.SPORTS.id],
-      'taxonomies.name':[Taxonomy.CONCERTS.name],
+      'taxonomies.name':[Taxonomy.CONCERTS.slug],
       page: page,
       per_page: perPage,
       q: query,

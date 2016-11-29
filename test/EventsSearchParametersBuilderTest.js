@@ -151,7 +151,7 @@ describe('Tests Events Search Parameters Builder', function() {
       'performers[primary].slug': [performerValue2],
       'performers[home_team].id': [performerValue3],
       'taxonomies.id': [taxonomy1.id],
-      'taxonomies.name': [taxonomy2.name],
+      'taxonomies.name': [taxonomy2.slug],
       'taxonomies.parent_id': [taxonomy3.parent_id],
       geoip: useIpAddress,
       lat: latitude,
