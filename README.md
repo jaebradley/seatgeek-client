@@ -147,3 +147,100 @@ let venues = SeatGeekClient.getVenues(venuesSearch);
 * `unit`
   * An enum representing the search radius distance unit
   * Default value is `Unit.MILE` because fuck you, rest of the world, with your logical unit system.
+
+### Fetch Events
+
+```javascript
+import {SeatGeekClient, PerformerField, PerformerSpecificity, Taxonomy, TaxonomyField, Unit, SortOption, SortDirection, FilterOption, Operator} from 'seatgeek-client';
+
+let query = {
+  ids: [1, 2, 3, 4],
+  venues: {
+    ids: [5, 6, 7],
+    cityName: 'Boston',
+    stateCode: 'MA',
+    countryCode: 'US',
+    postalCode: '02144'
+  },
+  performers: [
+    {
+      field: PerformerField.ID,
+      specificity: PerformerSpecificity.ANY,
+      value: 8
+    },
+    {
+      field: PerformerField.SLUG,
+      specificity: PerformerSpecificity.PRIMARY,
+      value: 'boston-celtics'
+    }
+  ],
+  taxonomies: [
+    {
+      taxonomy: Taxonomy.NBA
+    },
+    {
+      taxonomy: Taxonomy.CONCERTS,
+      field: TaxonomyField.PARENT_ID,
+    }
+  ],
+  filters: [
+    {
+      option: FilterOption.AVERAGE_PRICE,
+      operator: Operator.LESS_THAN,
+      value: 9
+    },
+    {
+      option: FilterOption.LISTING_COUNT,
+      operator: Operator.GREATER_THAN_OR_EQUAL_TO,
+      value: 10
+    }
+  ],
+  geolocation: {
+    useIpAddress: false,
+    latitude: 10,
+    longitude: 11,
+    range: 12,
+    unit: Unit.KILOMETER
+  },
+  sort: {
+    option: SortOption.ID,
+    direction: SortDirection.ASCENDING
+  },
+  perPage: 13,
+  page: 14
+};
+let events = SeatGeekClient.getEvents(query);
+```
+
+#### Arguments
+
+* `ids`
+  * An array of event ids to query for
+  * Default value is an empty array
+* `venues`
+  * An object used to specify venue filtering
+  * `ids`
+    * An array of venue ids to query for
+    * Default value is an empty array
+  *
+* `cityName`
+  * A string representing a city name
+  * Default value is an empty string
+* `stateCode`
+  * A string representing the ISO state code
+  * Default value is an empty string
+* `countryCode`
+  * A string representing the ISO country code
+  * Default value is an empty string
+* `useIpAddress`
+  * A boolean representing whether or not to use the IP address location to search for venues
+  * Default value is `false`
+* `latitude` and `longitude`
+  * Use coordinates to search for venues
+  * Cannot specify just `latitude` or `longitude`
+* `range`
+  * An integer representing the search radius distance
+  * Default value is `10`
+* `unit`
+  * An enum representing the search radius distance unit
+  * Default value is `Unit.MILE` because fuck you, rest of the world, with your logical unit system.
