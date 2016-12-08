@@ -2,14 +2,8 @@
 
 import {Map} from 'immutable';
 
-import VenuesFilter from '../VenuesFilter';
-
 export default class VenuesFilterParametersBuilder {
   static build(filter) {
-    if (!(filter instanceof VenuesFilter)) {
-      throw new TypeError('filter is not a VenuesFilter');
-    }
-
     let parameters = Map();
     if (typeof filter.ids !== 'undefined') {
       parameters = parameters.set(VenuesFilterParametersBuilder.getIdsParameterName(),
