@@ -39,7 +39,6 @@ describe('Tests Events Search Parameters Builder', function() {
   let postalCode = '12345';
   let venues = new VenuesFilter({
     ids: venueIds,
-    properties: venueProperties,
     cityName: cityName,
     stateCode: stateCode,
     countryCode: countryCode,
