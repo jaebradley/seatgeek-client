@@ -2,15 +2,18 @@
 
 import {List} from 'immutable';
 
+import PerformersSearch from '../PerformersSearch';
 import Genre from '../../../Genre';
 import Taxonomy from '../../../Taxonomy';
 
 export default class PerformersSearchBuilder {
   static build(json) {
-    let ids = List();
-    let slugs = List();
-    let genres = List();
-    let taxonomies = List();
+    let defaults = PerformersSearch.DEFAULTS;
+    let ids = defaults.get('ids');
+    let slugs = defaults.get('slugs');
+    let genres = defaults.get('genres');
+    let taxonomies = defaults.get('taxonomies');
+    let queryString = defaults.get('queryString');
 
     if ('ids' in json) {
       ids = PerformersSearchBuilder.buildIds(json['ids']);
@@ -26,6 +29,10 @@ export default class PerformersSearchBuilder {
 
     if ('taxonomies' in json) {
       taxonomies = PerformersSearchBuilder.buildSlugs(json['taxonomies']);
+    }
+
+    if ('queryString' in json) {
+      queryString = PerformersSearchBuilder.buildQueryString(json['queryString']);
     }
   }
 
@@ -81,5 +88,11 @@ export default class PerformersSearchBuilder {
         throw new TypeError('Not a Taxonomy instance');
       }
     });
+  }
+
+  static buildQueryString(queryString) {
+    if ((typeof queryString !== 'undefined') && (typeof queryString !== 'string')) {
+      throw new TypeError('invalid query string');
+    }
   }
 }
