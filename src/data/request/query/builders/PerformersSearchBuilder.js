@@ -2,6 +2,8 @@
 
 import {List} from 'immutable';
 
+import Genre from '../../../Genre';
+
 export default class PerformersSearchBuilder {
   static build(json) {
     let ids = List();
@@ -14,10 +16,13 @@ export default class PerformersSearchBuilder {
     if ('slugs' in json) {
       slugs = PerformersSearchBuilder.buildSlugs(json['slugs']);
     }
+
+    if ('genres' in json) {
+
+    }
   }
 
   static buildIds(ids) {
-    let builtIds = List();
     if (typeof ids !== 'array') {
       throw new TypeError('ids must be an array');
     }
@@ -32,7 +37,6 @@ export default class PerformersSearchBuilder {
   }
 
   static buildSlugs(slugs) {
-    let slugs = List();
     if (typeof slugs !== 'array') {
       throw new TypeError('slugs must be an array');
     }
@@ -44,5 +48,19 @@ export default class PerformersSearchBuilder {
     });
 
     return List(slugs);
+  }
+
+  static buildGenres(genres) {
+    if (typeof genres !== 'array') {
+      throw new TypeError('slugs must be an array');
+    }
+
+    genres.forEach(function(genre) {
+      if (!(genre instanceof Genre)) {
+        throw new TypeError('genre not an instance of Genre');
+      }
+    });
+
+    return List(genres);
   }
 }
