@@ -2,11 +2,12 @@
 
 import {List, Record} from 'immutable';
 
-import VenueProperties from './VenueProperties';
-
 let defaults = {
   ids: List(),
-  properties: new VenueProperties(),
+  cityName: undefined,
+  stateCode: undefined,
+  countryCode: undefined,
+  postalCode: undefined,
 };
 
 export default class VenuesFilter extends Record(defaults) {

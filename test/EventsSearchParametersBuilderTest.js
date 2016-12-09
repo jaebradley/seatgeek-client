@@ -37,15 +37,12 @@ describe('Tests Events Search Parameters Builder', function() {
   let stateCode = 'MA';
   let countryCode = 'US';
   let postalCode = '12345';
-  let venueProperties = new VenueProperties({
+  let venues = new VenuesFilter({
+    ids: venueIds,
     cityName: cityName,
     stateCode: stateCode,
     countryCode: countryCode,
     postalCode: postalCode,
-  });
-  let venues = new VenuesFilter({
-    ids: venueIds,
-    properties: venueProperties,
   });
   let performerValue1 = 7;
   let performerFilter1 = new PerformerFilter({
