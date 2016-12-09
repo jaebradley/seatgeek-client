@@ -3,11 +3,14 @@
 import {List} from 'immutable';
 
 import Genre from '../../../Genre';
+import Taxonomy from '../../../Taxonomy';
 
 export default class PerformersSearchBuilder {
   static build(json) {
     let ids = List();
     let slugs = List();
+    let genres = List();
+    let taxonomies = List();
 
     if ('ids' in json) {
       ids = PerformersSearchBuilder.buildIds(json['ids']);
@@ -18,7 +21,11 @@ export default class PerformersSearchBuilder {
     }
 
     if ('genres' in json) {
+      genres = PerformersSearchBuilder.buildSlugs(json['genres']);
+    }
 
+    if ('taxonomies' in json) {
+      taxonomies = PerformersSearchBuilder.buildSlugs(json['taxonomies']);
     }
   }
 
@@ -57,10 +64,22 @@ export default class PerformersSearchBuilder {
 
     genres.forEach(function(genre) {
       if (!(genre instanceof Genre)) {
-        throw new TypeError('genre not an instance of Genre');
+        throw new TypeError('Not a Genre instance');
       }
     });
 
     return List(genres);
+  }
+
+  static buildTaxonomies(taxonomies) {
+    if (typeof taxonomies !== 'array') {
+      throw new TypeError('taxonomies must be an array');
+    }
+
+    taxonomies.forEach(function(taxonomy) {
+      if (!(taxonomy instanceof Taxonomy)) {
+        throw new TypeError('Not a Taxonomy instance');
+      }
+    });
   }
 }
