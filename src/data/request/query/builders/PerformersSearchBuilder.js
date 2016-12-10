@@ -37,12 +37,12 @@ export default class PerformersSearchBuilder {
       queryString = PerformersSearchBuilder.buildQueryString(json['queryString']);
     }
 
-    if (('page' in json) && (Number.isInteger(json['page']))) {
-      page = parseInt(json['page']);
+    if ('page' in json) {
+      page = PerformersSearchBuilder.buildNumericValue(json['page']);
     }
 
-    if (('perPage' in json) && (Number.isInteger(json['perPage']))) {
-      perPage = parseInt(json['perPage']);
+    if ('perPage' in json)  {
+      perPage = PerformersSearchBuilder.buildNumericValue(json['perPage']);
     }
   }
 
@@ -104,5 +104,15 @@ export default class PerformersSearchBuilder {
     if ((typeof queryString !== 'undefined') && (typeof queryString !== 'string')) {
       throw new TypeError('invalid query string');
     }
+
+    return queryString;
+  }
+
+  static buildNumericValue(value) {
+    if (!Number.isInteger(value)) {
+      throw new TypeError('must be a number');
+    }
+
+    return parseInt(value);
   }
 }
