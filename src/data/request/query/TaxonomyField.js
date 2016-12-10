@@ -4,7 +4,7 @@ import {Enum} from 'enumify';
 
 export default class TaxonomyField extends Enum {}
 TaxonomyField.initEnum({
-  NAME: { value: 'name', parameterName: 'name' },
-  ID: { value: 'id', parameterName: 'slug' },
-  PARENT_ID: { value: 'parent_id', parameterName: 'parent__id' },
+  NAME: { value: 'name', parameterName: 'slug' },
+  ID: { value: 'id', parameterName: 'id' },
+  PARENT_ID: { value: 'parent_id', parameterName: 'parent_id' },
 });
