@@ -2,6 +2,7 @@
 
 import {List, Map} from 'immutable';
 
+import Unit from '../../../Unit';
 import VenueSearch from '../VenueSearch';
 import Utilities from './Utilities';
 
@@ -34,7 +35,33 @@ export default class VenueSearchBuilder {
     }
 
     if ('useIpAddress' in json) {
-
+      args = args.set('useIpAddress', Utilities.buildBoolean(json['useIpAddress']));
     }
+
+    if ('latitude' in json) {
+      args = args.set('latitude', Utilities.buildFloat(json['latitude']));
+    }
+
+    if ('longitude' in json) {
+      args = args.set('longitude', Utilities.buildFloat(json['longitude']));
+    }
+
+    if ('range' in json) {
+      args = args.set('range', Utilities.buildInteger(json['range']));
+    }
+
+    if (('unit' in json) && (json['unit'] instanceof Unit)) {
+      args = args.set('unit', json['unit']);
+    }
+
+    if ('page' in json) {
+      args = args.set('page', Utilities.buildInteger(json['page']));
+    }
+
+    if ('perPage' in json)  {
+      args = args.set('perPage', Utilities.buildInteger(json['perPage']));
+    }
+
+    return new VenueSearch(args.toJS());
   }
 }

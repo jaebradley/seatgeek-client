@@ -22,7 +22,7 @@ export default class Utilities {
   }
 
   static buildString(s) {
-    if ((typeof s !== 'undefined') && (typeof s !== 'string')) {
+    if (typeof s !== 'string') {
       throw new TypeError('invalid string');
     }
 
@@ -32,6 +32,22 @@ export default class Utilities {
   static buildInteger(value) {
     if (!Number.isInteger(value)) {
       throw new TypeError('must be a number');
+    }
+
+    return value;
+  }
+
+  static buildBoolean(value) {
+    if (typeof value !== 'boolean') {
+      throw new TypeError('must be a boolean');
+    }
+
+    return value;
+  }
+
+  static buildFloat(value) {
+    if (typeof value !== 'float') {
+      throw new TypeError('must be a boolean');
     }
 
     return value;
