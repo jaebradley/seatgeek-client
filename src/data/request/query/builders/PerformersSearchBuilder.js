@@ -75,7 +75,7 @@ export default class PerformersSearchBuilder {
   }
 
   static buildSlugs(slugs) {
-    if (typeof slugs !== 'array') {
+    if (!Arrays.isArray(slugs)) {
       throw new TypeError('slugs must be an array');
     }
 
@@ -89,7 +89,7 @@ export default class PerformersSearchBuilder {
   }
 
   static buildGenres(genres) {
-    if (typeof genres !== 'array') {
+    if (!Arrays.isArray(genres)) {
       throw new TypeError('slugs must be an array');
     }
 
@@ -103,7 +103,7 @@ export default class PerformersSearchBuilder {
   }
 
   static buildTaxonomies(taxonomies) {
-    if (typeof taxonomies !== 'array') {
+    if (!Arrays.isArray(taxonomies)) {
       throw new TypeError('taxonomies must be an array');
     }
 
