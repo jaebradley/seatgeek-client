@@ -44,6 +44,16 @@ export default class PerformersSearchBuilder {
     if ('perPage' in json)  {
       perPage = PerformersSearchBuilder.buildNumericValue(json['perPage']);
     }
+
+    return new PerformersSearch({
+      ids: ids,
+      slugs: slugs,
+      taxonomies: taxonomies,
+      genres: genres,
+      queryString: queryString,
+      perPage: perPage,
+      page: page,
+    });
   }
 
   static buildIds(ids) {
