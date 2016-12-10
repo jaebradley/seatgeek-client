@@ -11,6 +11,7 @@ import PerformersSearch from './data/request/query/PerformersSearch';
 
 import PerformersSearchBuilder from './data/request/query/builders/PerformersSearchBuilder';
 import PaginationBuilder from './data/request/query/builders/PaginationBuilder';
+import VenueSearchBuilder from './data/request/query/builders/VenueSearchBuilder';
 
 import PerformersSearchParametersBuilder from './data/request/query/builders/PerformersSearchParametersBuilder';
 import PaginationParametersBuilder from './data/request/query/builders/PaginationParametersBuilder';
@@ -37,7 +38,8 @@ export default class SeatGeekClient {
   }
 
   static getVenues(search) {
-    let parameters = VenueSearchParametersBuilder.build(new VenueSearch(search));
+    let query = VenueSearchBuilder.build(search);
+    let parameters = VenueSearchParametersBuilder.build(query);
     return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
   }
 

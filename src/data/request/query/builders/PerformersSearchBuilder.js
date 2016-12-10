@@ -5,7 +5,7 @@ import {List, Map} from 'immutable';
 import PerformersSearch from '../PerformersSearch';
 import Genre from '../../../Genre';
 import Taxonomy from '../../../Taxonomy';
-import Utilities from './Utilties';
+import Utilities from './Utilities';
 
 export default class PerformersSearchBuilder {
   static build(json) {

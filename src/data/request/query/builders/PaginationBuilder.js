@@ -3,7 +3,7 @@
 import {Map} from 'immutable';
 
 import Pagination from '../Pagination';
-import Utilities form './Utilities';
+import Utilities from './Utilities';
 
 export default class PaginationBuilder {
   static build(json) {
