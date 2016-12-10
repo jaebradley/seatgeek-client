@@ -2,21 +2,21 @@
 
 import {Map} from 'immutable';
 
-import Pagination from 'Pagination';
+import Pagination from '../Pagination';
 
 export default class PaginationBuilder {
   static build(json) {
-    let arguments = Map();
+    let args = Map();
 
     if ('page' in json) {
-      arguments = arguments.set('page', PaginationBuilder.buildNumericValue(json['page']));
+      args = args.set('page', PaginationBuilder.buildNumericValue(json['page']));
     }
 
     if ('perPage' in json)  {
-      arguments = arguments.set('perPage', PaginationBuilder.buildNumericValue(json['perPage']));
+      args = args.set('perPage', PaginationBuilder.buildNumericValue(json['perPage']));
     }
 
-    return new Pagination(arguments.toJS());
+    return new Pagination(args.toJS());
   }
 
   static buildNumericValue(value) {

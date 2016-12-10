@@ -8,37 +8,37 @@ import Taxonomy from '../../../Taxonomy';
 
 export default class PerformersSearchBuilder {
   static build(json) {
-    let arguments = Map();
+    let args = Map();
 
     if ('ids' in json) {
-      arguments = arguments.set('ids', PerformersSearchBuilder.buildIds(json['ids']));
+      args = args.set('ids', PerformersSearchBuilder.buildIds(json['ids']));
     }
 
     if ('slugs' in json) {
-      arguments = arguments.set('slugs', PerformersSearchBuilder.buildSlugs(json['slugs']));
+      args = args.set('slugs', PerformersSearchBuilder.buildSlugs(json['slugs']));
     }
 
     if ('genres' in json) {
-      arguments = arguments.set('genres', PerformersSearchBuilder.buildSlugs(json['genres']));
+      args = args.set('genres', PerformersSearchBuilder.buildSlugs(json['genres']));
     }
 
     if ('taxonomies' in json) {
-      arguments = arguments.set('taxonomies', PerformersSearchBuilder.buildSlugs(json['taxonomies']));
+      args = args.set('taxonomies', PerformersSearchBuilder.buildSlugs(json['taxonomies']));
     }
 
     if ('queryString' in json) {
-      arguments = arguments.set('queryString', PerformersSearchBuilder.buildQueryString(json['queryString']));
+      args = args.set('queryString', PerformersSearchBuilder.buildQueryString(json['queryString']));
     }
 
     if ('page' in json) {
-      arguments = arguments.set('page', PerformersSearchBuilder.buildNumericValue(json['page']));
+      args = args.set('page', PerformersSearchBuilder.buildNumericValue(json['page']));
     }
 
     if ('perPage' in json)  {
-      arguments = arguments.set('perPage', PerformersSearchBuilder.buildNumericValue(json['perPage']));
+      args = args.set('perPage', PerformersSearchBuilder.buildNumericValue(json['perPage']));
     }
 
-    return new PerformersSearch(arguments.toJS());
+    return new PerformersSearch(args.toJS());
   }
 
   static buildIds(ids) {
