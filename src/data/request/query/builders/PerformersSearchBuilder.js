@@ -14,6 +14,8 @@ export default class PerformersSearchBuilder {
     let genres = defaults.get('genres');
     let taxonomies = defaults.get('taxonomies');
     let queryString = defaults.get('queryString');
+    let perPage = defaults.get('perPage');
+    let page = defaults.get('page');
 
     if ('ids' in json) {
       ids = PerformersSearchBuilder.buildIds(json['ids']);
@@ -33,6 +35,14 @@ export default class PerformersSearchBuilder {
 
     if ('queryString' in json) {
       queryString = PerformersSearchBuilder.buildQueryString(json['queryString']);
+    }
+
+    if (('page' in json) && (Number.isInteger(json['page']))) {
+      page = parseInt(json['page']);
+    }
+
+    if (('perPage' in json) && (Number.isInteger(json['perPage']))) {
+      perPage = parseInt(json['perPage']);
     }
   }
 
