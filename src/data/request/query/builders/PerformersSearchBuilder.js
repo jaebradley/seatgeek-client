@@ -1,6 +1,6 @@
 'use es6';
 
-import {List} from 'immutable';
+import {List, Map} from 'immutable';
 
 import PerformersSearch from '../PerformersSearch';
 import Genre from '../../../Genre';
@@ -8,52 +8,37 @@ import Taxonomy from '../../../Taxonomy';
 
 export default class PerformersSearchBuilder {
   static build(json) {
-    let defaults = PerformersSearch.DEFAULTS;
-    let ids = defaults.get('ids');
-    let slugs = defaults.get('slugs');
-    let genres = defaults.get('genres');
-    let taxonomies = defaults.get('taxonomies');
-    let queryString = defaults.get('queryString');
-    let perPage = defaults.get('perPage');
-    let page = defaults.get('page');
+    let arguments = Map();
 
     if ('ids' in json) {
-      ids = PerformersSearchBuilder.buildIds(json['ids']);
+      arguments = arguments.set('ids', PerformersSearchBuilder.buildIds(json['ids']));
     }
 
     if ('slugs' in json) {
-      slugs = PerformersSearchBuilder.buildSlugs(json['slugs']);
+      arguments = arguments.set('slugs', PerformersSearchBuilder.buildSlugs(json['slugs']));
     }
 
     if ('genres' in json) {
-      genres = PerformersSearchBuilder.buildSlugs(json['genres']);
+      arguments = arguments.set('genres', PerformersSearchBuilder.buildSlugs(json['genres']));
     }
 
     if ('taxonomies' in json) {
-      taxonomies = PerformersSearchBuilder.buildSlugs(json['taxonomies']);
+      arguments = arguments.set('taxonomies', PerformersSearchBuilder.buildSlugs(json['taxonomies']));
     }
 
     if ('queryString' in json) {
-      queryString = PerformersSearchBuilder.buildQueryString(json['queryString']);
+      arguments = arguments.set('queryString', PerformersSearchBuilder.buildQueryString(json['queryString']));
     }
 
     if ('page' in json) {
-      page = PerformersSearchBuilder.buildNumericValue(json['page']);
+      arguments = arguments.set('page', PerformersSearchBuilder.buildNumericValue(json['page']));
     }
 
     if ('perPage' in json)  {
-      perPage = PerformersSearchBuilder.buildNumericValue(json['perPage']);
+      arguments = arguments.set('perPage', PerformersSearchBuilder.buildNumericValue(json['perPage']));
     }
 
-    return new PerformersSearch({
-      ids: ids,
-      slugs: slugs,
-      taxonomies: taxonomies,
-      genres: genres,
-      queryString: queryString,
-      perPage: perPage,
-      page: page,
-    });
+    return new PerformersSearch(arguments.toJS());
   }
 
   static buildIds(ids) {
