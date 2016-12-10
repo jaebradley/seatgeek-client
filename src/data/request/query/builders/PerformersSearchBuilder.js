@@ -57,17 +57,21 @@ export default class PerformersSearchBuilder {
   }
 
   static buildIds(ids) {
-    if (typeof ids !== 'array') {
+    if (!Array.isArray(ids)) {
       throw new TypeError('ids must be an array');
     }
 
+    let parsedIds = List();
+
     ids.forEach(function(id) {
-      if (typeof id !== 'number') {
+      if (!Number.isInteger(id)) {
         throw new TypeError('invalid id type');
       }
+
+      parsedIds = parsedIds.push(id);
     });
 
-    return List(ids);
+    return parsedIds;
   }
 
   static buildSlugs(slugs) {
@@ -123,6 +127,6 @@ export default class PerformersSearchBuilder {
       throw new TypeError('must be a number');
     }
 
-    return parseInt(value);
+    return value;
   }
 }
