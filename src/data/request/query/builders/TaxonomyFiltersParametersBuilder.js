@@ -24,22 +24,7 @@ export default class TaxonomyFiltersParametersBuilder {
   }
 
   static getParameterValue(filter) {
-    return filter.taxonomy[TaxonomyFiltersParametersBuilder.getTaxonomyDataField(filter.field)];
+    return filter.taxonomy[filter.field.parameterName];
   }
 
-  static getTaxonomyDataField(filter) {
-    switch (filter) {
-      case TaxonomyField.ID:
-        return 'id';
-
-      case TaxonomyField.NAME:
-        return 'slug';
-
-      case TaxonomyField.PARENT_ID:
-        return 'parent_id';
-
-      default:
-        throw new ReferenceError('unknown taxonomy field');
-    }
-  }
 }

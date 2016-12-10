@@ -1,13 +1,13 @@
 'use es6';
 
-import {Record} from 'immutable';
+import {Map, Record} from 'immutable';
 
 import Constants from '../../Constants';
 
-let defaults = {
+let DEFAULTS = Map({
   perPage: Constants.getDefaultPerPage(),
   page: Constants.getDefaultPage(),
-};
+});
 
-export default class Pagination extends Record(defaults) {
+export default class Pagination extends Record(DEFAULTS.toJS()) {
 };

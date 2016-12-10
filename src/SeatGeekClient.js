@@ -9,24 +9,30 @@ import VenueSearch from './data/request/query/VenueSearch';
 import EventsSearch from './data/request/query/EventsSearch';
 import PerformersSearch from './data/request/query/PerformersSearch';
 
+import PerformersSearchBuilder from './data/request/query/builders/PerformersSearchBuilder';
+import PaginationBuilder from './data/request/query/builders/PaginationBuilder';
+
 import PerformersSearchParametersBuilder from './data/request/query/builders/PerformersSearchParametersBuilder';
 import PaginationParametersBuilder from './data/request/query/builders/PaginationParametersBuilder';
 import VenueSearchParametersBuilder from './data/request/query/builders/VenueSearchParametersBuilder';
 import EventsSearchParametersBuilder from './data/request/query/builders/EventsSearchParametersBuilder';
 
 export default class SeatGeekClient {
-  static getGenres(pagination) {
-    let parameters = PaginationParametersBuilder.build(new Pagination(pagination));
+  static getGenres(search) {
+    let pagination = PaginationBuilder.build(search);
+    let parameters = PaginationParametersBuilder.build(pagination);
     return SeatGeekClient.fetch(parameters, Subpath.GENRES.value);
   }
 
-  static getTaxonomies(pagination) {
-    let parameters = PaginationParametersBuilder.build(new Pagination(pagination));
+  static getTaxonomies(search) {
+    let pagination = PaginationBuilder.build(search);
+    let parameters = PaginationParametersBuilder.build(pagination);
     return SeatGeekClient.fetch(parameters, Subpath.TAXONOMIES.value);
   }
 
   static getPerformers(search) {
-    let parameters = PerformersSearchParametersBuilder.build(new PerformersSearch(search));
+    let query = PerformersSearchBuilder.build(search);
+    let parameters = PerformersSearchParametersBuilder.build(query);
     return SeatGeekClient.fetch(parameters, Subpath.PERFORMERS.value);
   }
 
