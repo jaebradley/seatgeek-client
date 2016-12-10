@@ -2,10 +2,12 @@
 
 import {Map} from 'immutable';
 
+import Unit from '../../../Unit';
+
 export default class GeolocationParametersBuilder {
   static build(geolocation) {
     let parameters = Map();
-    if (typeof geolocation.useIpAddress !== 'undefined') {
+    if (geolocation.useIpAddress) {
       parameters = parameters.set(GeolocationParametersBuilder.getUseIpAddressParameterName(),
                                   geolocation.useIpAddress);
     }
