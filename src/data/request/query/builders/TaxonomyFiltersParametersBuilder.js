@@ -24,6 +24,6 @@ export default class TaxonomyFiltersParametersBuilder {
   }
 
   static getParameterValue(filter) {
-    return filter.taxonomy[TaxonomyFiltersParametersBuilder.getTaxonomyDataField(filter.field.parameterValue)];
+    return filter.taxonomy[filter.field.parameterName];
   }
 }
