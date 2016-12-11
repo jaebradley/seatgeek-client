@@ -50,7 +50,11 @@ export default class VenueSearchBuilder {
       args = args.set('range', Utilities.buildInteger(json['range']));
     }
 
-    if (('unit' in json) && (json['unit'] instanceof Unit)) {
+    if ('unit' in json) {
+      if (!(json['unit'] instanceof Unit)) {
+        throw new TypeError('unit not an instance of Unit');
+      }
+
       args = args.set('unit', json['unit']);
     }
 
