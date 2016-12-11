@@ -31,7 +31,7 @@ export default class EventSearchBuilder {
     }
 
     if ('taxonomies' in json) {
-      args = args.set('taxonomies', EventSearchBuilder.buildTaxonomyFilters(json['taxonomies']))
+      args = args.set('taxonomies', Utilities.buildTaxonomyFilters(json['taxonomies']))
     }
 
     if ('filters' in json) {
@@ -109,27 +109,6 @@ export default class EventSearchBuilder {
         return new PerformerFilter(args.toJS());
       }));
   }
-
-  static buildTaxonomyFilters(filters) {
-    if (!Array.isArray(filters)) {
-      throw new TypeError('expected an array');
-    }
-
-    return List(
-      filters.map(function(filter) {
-        if (!filter['taxonomy'] instanceof Taxonomy) {
-          throw new TypeError('expected a Taxonomy');
-        }
-        let args = Map({taxonomy: filter[taxonomy]});
-        if ('field' in filter) {
-          if (!(filter['field'] instanceof TaxonomyField)) {
-            throw new TypeError('expected TaxonomyField');
-          }
-          args = args.set('field', filter['field']);
-        }
-        return new TaxonomyFilter(args.toJS());
-      }));
-    }
 
   static buildFilters(filters) {
     if (!Array.isArray(filters)) {
