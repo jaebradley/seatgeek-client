@@ -4,6 +4,7 @@ import {List, Map} from 'immutable';
 
 import PerformersSearch from '../PerformersSearch';
 import Genre from '../../../Genre';
+import GenreFilter from '../GenreFilter';
 import Taxonomy from '../../../Taxonomy';
 import Utilities from './Utilities';
 
@@ -24,7 +25,7 @@ export default class PerformersSearchBuilder {
     }
 
     if ('taxonomies' in json) {
-      args = args.set('taxonomies', PerformersSearchBuilder.buildTaxonomies(json['taxonomies']));
+      args = args.set('taxonomies', Utilities.buildTaxonomyFilters(json['taxonomies']));
     }
 
     if ('queryString' in json) {
@@ -43,7 +44,7 @@ export default class PerformersSearchBuilder {
   }
 
   static buildSlugs(slugs) {
-    if (!Arrays.isArray(slugs)) {
+    if (!Array.isArray(slugs)) {
       throw new TypeError('slugs must be an array');
     }
 
@@ -56,37 +57,27 @@ export default class PerformersSearchBuilder {
     return List(slugs);
   }
 
-  static buildGenres(genres) {
-    if (!Arrays.isArray(genres)) {
+  static buildGenresFilter(filters) {
+    if (!Array.isArray(filters)) {
       throw new TypeError('slugs must be an array');
     }
 
-    genres.forEach(function(genre) {
-      if (!(genre instanceof Genre)) {
-        throw new TypeError('Not a Genre instance');
-      }
-    });
+    return List(
+      filters.map(function(filter) {
+        let args = Map();
+        if (!(filter.genre instanceof Genre)) {
+          throw new TypeError('not a Genre instance');
+        }
 
-    return List(genres);
-  }
+        args = args.set('genre', filter.genre);
+        if ('isPrimary' in filter) {
+          if (typeof filter['isPrimary'] !== 'boolean') {
+            throw new TypeError('not a boolean');
+          }
+          args = args.set('isPrimary', filter['isPrimary']);
+        }
 
-  static buildTaxonomies(taxonomies) {
-    if (!Arrays.isArray(taxonomies)) {
-      throw new TypeError('taxonomies must be an array');
-    }
-
-    taxonomies.forEach(function(taxonomy) {
-      if (!(taxonomy instanceof Taxonomy)) {
-        throw new TypeError('Not a Taxonomy instance');
-      }
-    });
-  }
-
-  static buildQueryString(queryString) {
-    if ((typeof queryString !== 'undefined') && (typeof queryString !== 'string')) {
-      throw new TypeError('invalid query string');
-    }
-
-    return queryString;
+        return new GenreFilter(args.toJS());
+      }));
   }
 }
