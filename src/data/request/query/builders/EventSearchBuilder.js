@@ -116,7 +116,7 @@ export default class EventSearchBuilder {
     }
 
     return List(
-      filters.map(function(filter)) {
+      filters.map(function(filter) {
         if (!filter['taxonomy'] instanceof Taxonomy) {
           throw new TypeError('expected a Taxonomy');
         }
@@ -128,7 +128,7 @@ export default class EventSearchBuilder {
           args = args.set('field', filter['field']);
         }
         return new TaxonomyFilter(args.toJS());
-      });
+      }));
     }
 
   static buildFilters(filters) {
@@ -186,6 +186,6 @@ export default class EventSearchBuilder {
       args = args.set('unit', json['unit']);
     }
 
-    return new Geolocation(args.toJS()));
+    return new Geolocation(args.toJS());
   }
 }
