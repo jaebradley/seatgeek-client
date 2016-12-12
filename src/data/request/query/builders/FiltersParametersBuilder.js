@@ -1,14 +1,20 @@
 'use es6';
 
-import {Map} from 'immutable';
+import {List, Map} from 'immutable';
 
 import Filter from '../Filter';
 
 export default class FiltersParametersBuilder {
   static build(filters) {
+    if (!(filters instanceof List)) {
+      throw new TypeError('expected a List');
+    }
+
     let parameters = Map();
     filters.forEach(function(filter) {
-      FiltersParametersBuilder.isDefinedFilter(filter);
+      if (!(filter instanceof Filter)) {
+        throw new TypeError('expected a Filter');
+      }
 
       if (typeof filter.value !== filter.option.type) {
         throw new TypeError('value is the wrong type');
@@ -22,15 +28,10 @@ export default class FiltersParametersBuilder {
   }
 
   static buildParameterName(filter) {
-    FiltersParametersBuilder.isDefinedFilter(filter);
-
-    return `${filter.option.value}.${filter.operator.value}`;
-  }
-
-  static isDefinedFilter(filter) {
-    if ((typeof filter.option === 'undefined')
-         || (typeof filter.operator === 'undefined')) {
-      throw new ReferenceError('filter option or operator are not defined');
+    if (!(filter instanceof Filter)) {
+      throw new TypeError('expected a Filter');
     }
+    
+    return `${filter.option.value}.${filter.operator.value}`;
   }
 }

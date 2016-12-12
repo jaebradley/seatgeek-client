@@ -20,18 +20,6 @@ describe('Tests Filters Parameters Builder', function() {
     value: value1,
   });
 
-  let undefinedOptionFilter = new Filter({
-    option: undefined,
-    operator: operator,
-    value: value1,
-  });
-
-  let undefinedOperatorFilter = new Filter({
-    option: option,
-    operator: undefined,
-    value: value1,
-  });
-
   let invalidTypeFilter = new Filter({
     option: option,
     operator: operator,
@@ -40,21 +28,11 @@ describe('Tests Filters Parameters Builder', function() {
 
   let filters = List.of(filter);
   let invalidFilters = List.of(1);
-  let undefinedOptionFilters = List.of(undefinedOptionFilter);
-  let undefinedOperatorFilters = List.of(undefinedOperatorFilter);
   let invalidTypeFilters = List.of(invalidTypeFilter);
 
   it('tests filter parameter name creation', function() {
       let parameterName = FiltersParametersBuilder.buildParameterName(filter);
       expect(parameterName).to.equal('average_price.lt');
-  });
-
-  it('tests undefined filter option for parameter name creation', function() {
-    expect(() => FiltersParametersBuilder.buildParameterName(undefinedOptionFilter)).to.throw(ReferenceError);
-  });
-
-  it('tests undefined filter operator for parameter name creation', function() {
-    expect(() => FiltersParametersBuilder.buildParameterName(undefinedOperatorFilter)).to.throw(ReferenceError);
   });
 
   it('tests expected filter parameters creation', function() {
@@ -63,14 +41,6 @@ describe('Tests Filters Parameters Builder', function() {
       'average_price.lt': value1,
     };
     expect(parameters.toJS()).to.eql(expectedParameters);
-  });
-
-  it('tests undefined filter operator when creating parameters', function() {
-    expect(() => FiltersParametersBuilder.build(undefinedOperatorFilters)).to.throw(ReferenceError);
-  });
-
-  it('tests undefined filter option when creating parameters', function() {
-    expect(() => FiltersParametersBuilder.build(undefinedOptionFilters)).to.throw(ReferenceError);
   });
 
   it('tests incorrect filter type when creating parameters', function() {
