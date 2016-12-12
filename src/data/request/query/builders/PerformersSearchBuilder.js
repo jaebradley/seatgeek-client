@@ -29,18 +29,18 @@ export default class PerformersSearchBuilder {
     }
 
     if ('queryString' in json) {
-      args = args.set('queryString', Utilities.buildString(json['queryString']));
+      args = args.set('queryString', Utilities.isString(json['queryString']));
     }
 
     if ('page' in json) {
-      args = args.set('page', Utilities.buildInteger(json['page']));
+      args = args.set('page', Utilities.isInteger(json['page']));
     }
 
     if ('perPage' in json)  {
-      args = args.set('perPage', Utilities.buildInteger(json['perPage']));
+      args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
-    return new PerformersSearch(args.toJS());
+    return new PerformersSearch(args);
   }
 
   static buildSlugs(slugs) {

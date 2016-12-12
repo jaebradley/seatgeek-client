@@ -5,6 +5,7 @@ import {List} from 'immutable';
 import Taxonomy from '../../../Taxonomy';
 import TaxonomyField from '../TaxonomyField';
 import TaxonomyFilter from '../TaxonomyFilter';
+import Unit from '../../../Unit';
 
 export default class Utilities {
   static buildIds(ids) {
@@ -12,20 +13,17 @@ export default class Utilities {
       throw new TypeError('ids must be an array');
     }
 
-    let parsedIds = List();
+    return List(
+      ids.map(function(id) {
+        if (!Number.isInteger(id)) {
+          throw new TypeError('invalid id type');
+        }
 
-    ids.forEach(function(id) {
-      if (!Number.isInteger(id)) {
-        throw new TypeError('invalid id type');
-      }
-
-      parsedIds = parsedIds.push(id);
-    });
-
-    return parsedIds;
+        return id;
+      }));
   }
 
-  static buildString(s) {
+  static isString(s) {
     if (typeof s !== 'string') {
       throw new TypeError('invalid string');
     }
@@ -33,7 +31,7 @@ export default class Utilities {
     return s;
   }
 
-  static buildInteger(value) {
+  static isInteger(value) {
     if (!Number.isInteger(value)) {
       throw new TypeError('must be a number');
     }
@@ -41,7 +39,7 @@ export default class Utilities {
     return value;
   }
 
-  static buildBoolean(value) {
+  static isBoolean(value) {
     if (typeof value !== 'boolean') {
       throw new TypeError('must be a boolean');
     }
@@ -49,12 +47,16 @@ export default class Utilities {
     return value;
   }
 
-  static buildFloat(value) {
-    if (typeof value !== 'float') {
-      throw new TypeError('must be a boolean');
+  static isNumber(value) {
+    if (!Utilities.isNumeric(value)) {
+      throw new TypeError('must be a number');
     }
 
     return value;
+  }
+
+  static isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
   }
 
   static buildTaxonomyFilters(filters) {
@@ -76,5 +78,13 @@ export default class Utilities {
         }
         return new TaxonomyFilter(args.toJS());
       }));
+  }
+
+  static isUnit(unit) {
+    if (!(unit instanceof Unit)) {
+      throw new TypeError('unit not an instance of Unit');
+    }
+
+    return unit;
   }
 }
