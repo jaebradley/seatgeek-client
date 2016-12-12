@@ -14,6 +14,9 @@ import EventsSearch from '../src/data/request/query/EventsSearch';
 import PerformerField from '../src/data/request/query/PerformerField';
 import PerformerFilter from '../src/data/request/query/PerformerFilter';
 import PerformerSpecificity from '../src/data/request/query/PerformerSpecificity';
+import SortFilter from '../src/data/request/query/SortFilter';
+import SortOption from '../src/data/request/query/SortOption';
+import SortDirection from '../src/data/request/query/SortDirection';
 import VenuesFilter from '../src/data/request/query/VenuesFilter';
 
 import EventsSearchBuilder from '../src/data/request/query/builders/EventsSearchBuilder';
@@ -73,6 +76,26 @@ describe('Test Event Search Builder', function() {
     chai.expect(createdPerformerFilters).to.eql(expectedPerformerFilters);
   });
 
+  it('tests performer filter building error cases', function() {
+    chai.expect(() => EventsSearchBuilder.buildPerformerFilters(1)).to.throw(TypeError);
+    chai.expect(() => EventsSearchBuilder.buildPerformerFilters([{}])).to.throw(ReferenceError);
+
+    let wrongPerformerField = [
+      {
+        value: value2,
+        field: 'jaebaebae'
+      }
+    ];
+    chai.expect(() => EventsSearchBuilder.buildPerformerFilters(wrongPerformerField)).to.throw(TypeError);
+    let wrongSpecificityField = [
+      {
+        value: value2,
+        specificity: 'jaebaebae'
+      }
+    ];
+    chai.expect(() => EventsSearchBuilder.buildPerformerFilters(wrongSpecificityField)).to.throw(TypeError);
+  });
+
   it('tests filters building', function() {
     let filtersJson = [
       {
@@ -96,5 +119,46 @@ describe('Test Event Search Builder', function() {
     );
     let createdFilters = EventsSearchBuilder.buildFilters(filtersJson);
     chai.expect(createdFilters).to.eql(expectedFilters);
+  });
+
+  it('tests filter building error cases', function() {
+    chai.expect(() => EventsSearchBuilder.buildFilters(1)).to.throw(TypeError);
+    chai.expect(() => EventsSearchBuilder.buildFilters([{}])).to.throw(ReferenceError);
+
+    let wrongOptionField = [
+      {
+        value: value2,
+        option: 'jaebaebae'
+      }
+    ];
+    chai.expect(() => EventsSearchBuilder.buildFilters(wrongOptionField)).to.throw(TypeError);
+    let wrongOperatorField = [
+      {
+        value: value2,
+        operator: 'jaebaebae'
+      }
+    ];
+    chai.expect(() => EventsSearchBuilder.buildFilters(wrongOperatorField)).to.throw(TypeError);
+  });
+
+  it('tests sort filter builder', function() {
+    let filterJson = {
+      'option': SortOption.SCORE,
+      'direction': SortDirection.ASCENDING,
+    };
+    let expectedFilter = new SortFilter(filterJson);
+    chai.expect(EventsSearchBuilder.buildSortFilter(filterJson)).to.eql(expectedFilter);
+  });
+
+  it('tests sort filter building error cases', function() {
+    let wrongOption = {
+      'option': 'jaebaebae'
+    };
+    chai.expect(() => EventsSearchBuilder.buildSortFilter(wrongOption)).to.throw(TypeError);
+
+    let wrongDirection = {
+      'direction': 'jaebaebae'
+    };
+    chai.expect(() => EventsSearchBuilder.buildSortFilter(wrongDirection)).to.throw(TypeError);
   });
 });

@@ -1,9 +1,10 @@
 'use es6';
 
-import {Map} from 'immutable';
+import {List, Map} from 'immutable';
 
 import Pagination from '../Pagination';
 
+import EventsSearch from '../EventsSearch';
 import FiltersParametersBuilder from './FiltersParametersBuilder';
 import GeolocationParametersBuilder from './GeolocationParametersBuilder';
 import PaginationParametersBuilder from './PaginationParametersBuilder';
@@ -14,8 +15,12 @@ import VenuesFilterParametersBuilder from './VenuesFilterParametersBuilder';
 
 export default class EventsSearchParametersBuilder {
   static build(search) {
+    if (!(search instanceof EventsSearch)) {
+      throw new TypeError('expected EventsSearch');
+    }
+
     let parameters = Map();
-    if (typeof search.ids !== 'undefined') {
+    if (search.ids instanceof List) {
       parameters = parameters.set(EventsSearchParametersBuilder.getIdsParameterName(),
                                   search.ids);
     }
