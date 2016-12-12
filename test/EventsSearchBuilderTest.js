@@ -121,6 +121,26 @@ describe('Test Event Search Builder', function() {
     chai.expect(createdFilters).to.eql(expectedFilters);
   });
 
+  it('tests filter building error cases', function() {
+    chai.expect(() => EventsSearchBuilder.buildFilters(1)).to.throw(TypeError);
+    chai.expect(() => EventsSearchBuilder.buildFilters([{}])).to.throw(ReferenceError);
+
+    let wrongOptionField = [
+      {
+        value: value2,
+        option: 'jaebaebae'
+      }
+    ];
+    chai.expect(() => EventsSearchBuilder.buildFilters(wrongOptionField)).to.throw(TypeError);
+    let wrongOperatorField = [
+      {
+        value: value2,
+        operator: 'jaebaebae'
+      }
+    ];
+    chai.expect(() => EventsSearchBuilder.buildFilters(wrongOperatorField)).to.throw(TypeError);
+  });
+
   it('tests sort filter builder', function() {
     let filterJson = {
       'option': SortOption.SCORE,
