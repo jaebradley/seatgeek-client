@@ -29,7 +29,7 @@ export default class PerformersSearchBuilder {
     }
 
     if ('queryString' in json) {
-      args = args.set('queryString', Utilities.buildString(json['queryString']));
+      args = args.set('queryString', Utilities.isString(json['queryString']));
     }
 
     if ('page' in json) {

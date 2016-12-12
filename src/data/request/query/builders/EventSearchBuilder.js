@@ -60,19 +60,19 @@ export default class EventSearchBuilder {
     }
 
     if ('cityName' in json) {
-      args = args.set('cityName', Utilities.buildString(json['cityName']));
+      args = args.set('cityName', Utilities.isString(json['cityName']));
     }
 
     if ('stateCode' in json) {
-      args = args.set('stateCode', Utilities.buildString(json['stateCode']));
+      args = args.set('stateCode', Utilities.isString(json['stateCode']));
     }
 
     if ('countryCode' in json) {
-      args = args.set('countryCode', Utilities.buildString(json['countryCode']));
+      args = args.set('countryCode', Utilities.isString(json['countryCode']));
     }
 
     if ('postalCode' in json) {
-      args = args.set('postalCode', Utilities.buildString(json['postalCode']));
+      args = args.set('postalCode', Utilities.isString(json['postalCode']));
     }
 
     return new VenuesFilter(venueProperties.toJS());
@@ -150,11 +150,11 @@ export default class EventSearchBuilder {
     }
 
     if ('latitude' in geolocation) {
-      args = args.set('latitude', Utilities.buildFloat(geolocation['latitude']));
+      args = args.set('latitude', Utilities.isNumber(geolocation['latitude']));
     }
 
     if ('longitude' in geolocation) {
-      args = args.set('longitude', Utilities.buildFloat(geolocation['longitude']));
+      args = args.set('longitude', Utilities.isNumber(geolocation['longitude']));
     }
 
     if ('range' in geolocation) {

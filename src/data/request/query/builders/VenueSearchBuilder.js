@@ -15,23 +15,23 @@ export default class VenueSearchBuilder {
     }
 
     if ('cityName' in json) {
-      args = args.set('cityName', Utilities.buildString(json['cityName']));
+      args = args.set('cityName', Utilities.isString(json['cityName']));
     }
 
     if ('stateCode' in json) {
-      args = args.set('stateCode', Utilities.buildString(json['stateCode']));
+      args = args.set('stateCode', Utilities.isString(json['stateCode']));
     }
 
     if ('countryCode' in json) {
-      args = args.set('countryCode', Utilities.buildString(json['countryCode']));
+      args = args.set('countryCode', Utilities.isString(json['countryCode']));
     }
 
     if ('postalCode' in json) {
-      args = args.set('postalCode', Utilities.buildString(json['postalCode']));
+      args = args.set('postalCode', Utilities.isString(json['postalCode']));
     }
 
     if ('queryString' in json) {
-      args = args.set('queryString', Utilities.buildString(json['queryString']));
+      args = args.set('queryString', Utilities.isString(json['queryString']));
     }
 
     if ('useIpAddress' in json) {
@@ -39,11 +39,11 @@ export default class VenueSearchBuilder {
     }
 
     if ('latitude' in json) {
-      args = args.set('latitude', Utilities.buildFloat(json['latitude']));
+      args = args.set('latitude', Utilities.isNumber(json['latitude']));
     }
 
     if ('longitude' in json) {
-      args = args.set('longitude', Utilities.buildFloat(json['longitude']));
+      args = args.set('longitude', Utilities.isNumber(json['longitude']));
     }
 
     if ('range' in json) {
@@ -51,11 +51,7 @@ export default class VenueSearchBuilder {
     }
 
     if ('unit' in json) {
-      if (!(json['unit'] instanceof Unit)) {
-        throw new TypeError('unit not an instance of Unit');
-      }
-
-      args = args.set('unit', json['unit']);
+      args = args.set('unit', Utilities.isUnit(json['unit']));
     }
 
     if ('page' in json) {
@@ -66,6 +62,6 @@ export default class VenueSearchBuilder {
       args = args.set('perPage', Utilities.buildInteger(json['perPage']));
     }
 
-    return new VenueSearch(args.toJS());
+    return new VenueSearch(args);
   }
 }
