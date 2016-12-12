@@ -75,7 +75,7 @@ export default class EventSearchBuilder {
       args = args.set('postalCode', Utilities.isString(json['postalCode']));
     }
 
-    return new VenuesFilter(venueProperties);
+    return new VenuesFilter(args);
   }
 
   static buildPerformerFilters(filters) {
