@@ -50,7 +50,7 @@ export default class EventSearchBuilder {
       args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
-    return new EventSearch(args.toJS());
+    return new EventSearch(args));
   }
 
   static buildVenuesFilter(venues) {
@@ -75,7 +75,7 @@ export default class EventSearchBuilder {
       args = args.set('postalCode', Utilities.isString(json['postalCode']));
     }
 
-    return new VenuesFilter(venueProperties.toJS());
+    return new VenuesFilter(venueProperties);
   }
 
   static buildPerformerFilters(filters) {
@@ -106,7 +106,7 @@ export default class EventSearchBuilder {
           args = args.set('specificity', filter['specificity']);
         }
 
-        return new PerformerFilter(args.toJS());
+        return new PerformerFilter(args);
       }));
   }
 
@@ -138,7 +138,7 @@ export default class EventSearchBuilder {
           args = args.set('operator', filter['operator']);
         }
 
-        return new Filter(args.toJS());
+        return new Filter(args);
       }));
   }
 
@@ -165,6 +165,6 @@ export default class EventSearchBuilder {
       args = args.set('unit', json['unit']);
     }
 
-    return new Geolocation(args.toJS());
+    return new Geolocation(args);
   }
 }
