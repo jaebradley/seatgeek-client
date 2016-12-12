@@ -149,4 +149,16 @@ describe('Test Event Search Builder', function() {
     let expectedFilter = new SortFilter(filterJson);
     chai.expect(EventsSearchBuilder.buildSortFilter(filterJson)).to.eql(expectedFilter);
   });
+
+  it('tests sort filter building error cases', function() {
+    let wrongOption = {
+      'option': 'jaebaebae'
+    };
+    chai.expect(() => EventsSearchBuilder.buildSortFilter(wrongOption)).to.throw(TypeError);
+
+    let wrongDirection = {
+      'direction': 'jaebaebae'
+    };
+    chai.expect(() => EventsSearchBuilder.buildSortFilter(wrongDirection)).to.throw(TypeError);
+  });
 });
