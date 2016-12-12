@@ -76,6 +76,26 @@ describe('Test Event Search Builder', function() {
     chai.expect(createdPerformerFilters).to.eql(expectedPerformerFilters);
   });
 
+  it('tests performer filter building error cases', function() {
+    chai.expect(() => EventsSearchBuilder.buildPerformerFilters(1)).to.throw(TypeError);
+    chai.expect(() => EventsSearchBuilder.buildPerformerFilters([{}])).to.throw(ReferenceError);
+
+    let wrongPerformerField = [
+      {
+        value: value2,
+        field: 'jaebaebae'
+      }
+    ];
+    chai.expect(() => EventsSearchBuilder.buildPerformerFilters(wrongPerformerField)).to.throw(TypeError);
+    let wrongSpecificityField = [
+      {
+        value: value2,
+        specificity: PerformerSpecificity.HOME_TEAM
+      }
+    ];
+    chai.expect(() => EventsSearchBuilder.buildPerformerFilters(wrongSpecificityField)).to.throw(TypeError);
+  });
+
   it('tests filters building', function() {
     let filtersJson = [
       {
