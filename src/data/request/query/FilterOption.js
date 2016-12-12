@@ -16,7 +16,7 @@ FilterOption.initEnum({
     value: 'lowest_price',
     type: 'number',
   },
-  HIGEST_PRICE: {
+  HIGHEST_PRICE: {
     value: 'highest_price',
     type: 'number',
   },

@@ -2,6 +2,9 @@
 
 import {List, Map} from 'immutable';
 
+import Filter from '../Filter';
+import FilterOption from '../FilterOption';
+import Operator from '../Operator';
 import Geolocation from '../Geolocation';
 import PerformerSpecificity from '../PerformerSpecificity';
 import PerformerField from '../PerformerField';
