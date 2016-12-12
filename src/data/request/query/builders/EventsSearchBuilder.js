@@ -2,6 +2,9 @@
 
 import {List, Map} from 'immutable';
 
+import Filter from '../Filter';
+import FilterOption from '../FilterOption';
+import Operator from '../Operator';
 import Geolocation from '../Geolocation';
 import PerformerSpecificity from '../PerformerSpecificity';
 import PerformerField from '../PerformerField';
@@ -14,7 +17,7 @@ import Unit from '../../../Unit';
 
 import Utilities from './Utilities';
 
-export default class EventSearchBuilder {
+export default class EventsSearchBuilder {
   static build(json) {
     let args = Map();
 
@@ -39,7 +42,7 @@ export default class EventSearchBuilder {
     }
 
     if ('geolocation' in json) {
-      args = args.set('geolocation', EventSearchBuilder.buildGeolocation(json['geolocation']));
+      args = args.set('geolocation', new Geolocation(Utilities.buildGeolocationParameters(json['geolocation'])));
     }
 
     if ('page' in json) {
@@ -50,7 +53,7 @@ export default class EventSearchBuilder {
       args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
-    return new EventSearch(args.toJS());
+    return new EventSearch(args);
   }
 
   static buildVenuesFilter(venues) {
@@ -59,23 +62,9 @@ export default class EventSearchBuilder {
       args = args.set('ids', Utilities.buildIds(venues['ids']));
     }
 
-    if ('cityName' in json) {
-      args = args.set('cityName', Utilities.isString(json['cityName']));
-    }
+    args = args.merge(Utilities.buildVenueParameters(venues));
 
-    if ('stateCode' in json) {
-      args = args.set('stateCode', Utilities.isString(json['stateCode']));
-    }
-
-    if ('countryCode' in json) {
-      args = args.set('countryCode', Utilities.isString(json['countryCode']));
-    }
-
-    if ('postalCode' in json) {
-      args = args.set('postalCode', Utilities.isString(json['postalCode']));
-    }
-
-    return new VenuesFilter(venueProperties.toJS());
+    return new VenuesFilter(args);
   }
 
   static buildPerformerFilters(filters) {
@@ -106,7 +95,7 @@ export default class EventSearchBuilder {
           args = args.set('specificity', filter['specificity']);
         }
 
-        return new PerformerFilter(args.toJS());
+        return new PerformerFilter(args);
       }));
   }
 
@@ -138,33 +127,7 @@ export default class EventSearchBuilder {
           args = args.set('operator', filter['operator']);
         }
 
-        return new Filter(args.toJS());
+        return new Filter(args);
       }));
-  }
-
-  static buildGeolocation(geolocation) {
-    let args = Map();
-
-    if ('useIpAddress' in geolocation) {
-      args = args.set('useIpAddress', Utilities.isBoolean(geolocation['useIpAddress']));
-    }
-
-    if ('latitude' in geolocation) {
-      args = args.set('latitude', Utilities.isNumber(geolocation['latitude']));
-    }
-
-    if ('longitude' in geolocation) {
-      args = args.set('longitude', Utilities.isNumber(geolocation['longitude']));
-    }
-
-    if ('range' in geolocation) {
-      args = args.set('range', Utilities.isInteger(geolocation['range']));
-    }
-
-    if (('unit' in geolocation) && (geolocation['unit'] instanceof Unit)) {
-      args = args.set('unit', json['unit']);
-    }
-
-    return new Geolocation(args.toJS());
   }
 }

@@ -1,6 +1,6 @@
 'use es6';
 
-import {List} from 'immutable';
+import {List, Map} from 'immutable';
 
 import Taxonomy from '../../../Taxonomy';
 import TaxonomyField from '../TaxonomyField';
@@ -78,6 +78,54 @@ export default class Utilities {
         }
         return new TaxonomyFilter(args.toJS());
       }));
+  }
+
+  static buildVenueParameters(json) {
+    let args = Map();
+
+    if ('cityName' in json) {
+      args = args.set('cityName', Utilities.isString(json['cityName']));
+    }
+
+    if ('stateCode' in json) {
+      args = args.set('stateCode', Utilities.isString(json['stateCode']));
+    }
+
+    if ('countryCode' in json) {
+      args = args.set('countryCode', Utilities.isString(json['countryCode']));
+    }
+
+    if ('postalCode' in json) {
+      args = args.set('postalCode', Utilities.isString(json['postalCode']));
+    }
+
+    return args;
+  }
+
+  static buildGeolocationParameters(json) {
+    let args = Map();
+
+    if ('useIpAddress' in json) {
+      args = args.set('useIpAddress', Utilities.isBoolean(json['useIpAddress']));
+    }
+
+    if ('latitude' in json) {
+      args = args.set('latitude', Utilities.isNumber(json['latitude']));
+    }
+
+    if ('longitude' in json) {
+      args = args.set('longitude', Utilities.isNumber(json['longitude']));
+    }
+
+    if ('range' in json) {
+      args = args.set('range', Utilities.isInteger(json['range']));
+    }
+
+    if ('unit' in json) {
+      args = args.set('unit', Utilities.isUnit(json['unit']));
+    }
+
+    return args;
   }
 
   static isUnit(unit) {
