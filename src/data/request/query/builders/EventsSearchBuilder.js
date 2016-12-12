@@ -2,6 +2,7 @@
 
 import {List, Map} from 'immutable';
 
+import EventsSearch from '../EventsSearch';
 import Filter from '../Filter';
 import FilterOption from '../FilterOption';
 import Operator from '../Operator';
@@ -53,7 +54,7 @@ export default class EventsSearchBuilder {
       args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
-    return new EventSearch(args);
+    return new EventsSearch(args);
   }
 
   static buildVenuesFilter(venues) {
