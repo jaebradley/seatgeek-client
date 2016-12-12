@@ -40,7 +40,7 @@ export default class PerformersSearchBuilder {
       args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
-    return new PerformersSearch(args.toJS());
+    return new PerformersSearch(args);
   }
 
   static buildSlugs(slugs) {
