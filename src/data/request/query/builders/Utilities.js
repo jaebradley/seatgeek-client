@@ -39,7 +39,7 @@ export default class Utilities {
     return value;
   }
 
-  static buildBoolean(value) {
+  static isBoolean(value) {
     if (typeof value !== 'boolean') {
       throw new TypeError('must be a boolean');
     }

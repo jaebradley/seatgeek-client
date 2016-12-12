@@ -35,7 +35,7 @@ export default class VenueSearchBuilder {
     }
 
     if ('useIpAddress' in json) {
-      args = args.set('useIpAddress', Utilities.buildBoolean(json['useIpAddress']));
+      args = args.set('useIpAddress', Utilities.isBoolean(json['useIpAddress']));
     }
 
     if ('latitude' in json) {

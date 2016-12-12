@@ -146,7 +146,7 @@ export default class EventSearchBuilder {
     let args = Map();
 
     if ('useIpAddress' in geolocation) {
-      args = args.set('useIpAddress', Utilities.buildBoolean(geolocation['useIpAddress']));
+      args = args.set('useIpAddress', Utilities.isBoolean(geolocation['useIpAddress']));
     }
 
     if ('latitude' in geolocation) {
