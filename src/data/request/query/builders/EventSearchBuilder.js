@@ -43,11 +43,11 @@ export default class EventSearchBuilder {
     }
 
     if ('page' in json) {
-      args = args.set('page', Utilities.buildInteger(json['page']));
+      args = args.set('page', Utilities.isInteger(json['page']));
     }
 
     if ('perPage' in json)  {
-      args = args.set('perPage', Utilities.buildInteger(json['perPage']));
+      args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
     return new EventSearch(args.toJS());
@@ -158,7 +158,7 @@ export default class EventSearchBuilder {
     }
 
     if ('range' in geolocation) {
-      args = args.set('range', Utilities.buildInteger(geolocation['range']));
+      args = args.set('range', Utilities.isInteger(geolocation['range']));
     }
 
     if (('unit' in geolocation) && (geolocation['unit'] instanceof Unit)) {

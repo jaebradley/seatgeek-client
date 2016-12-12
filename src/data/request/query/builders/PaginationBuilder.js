@@ -10,11 +10,11 @@ export default class PaginationBuilder {
     let args = Map();
 
     if ('page' in json) {
-      args = args.set('page', Utilities.buildInteger(json['page']));
+      args = args.set('page', Utilities.isInteger(json['page']));
     }
 
     if ('perPage' in json)  {
-      args = args.set('perPage', Utilities.buildInteger(json['perPage']));
+      args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
     return new Pagination(args.toJS());

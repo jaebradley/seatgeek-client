@@ -47,7 +47,7 @@ export default class VenueSearchBuilder {
     }
 
     if ('range' in json) {
-      args = args.set('range', Utilities.buildInteger(json['range']));
+      args = args.set('range', Utilities.isInteger(json['range']));
     }
 
     if ('unit' in json) {
@@ -55,11 +55,11 @@ export default class VenueSearchBuilder {
     }
 
     if ('page' in json) {
-      args = args.set('page', Utilities.buildInteger(json['page']));
+      args = args.set('page', Utilities.isInteger(json['page']));
     }
 
     if ('perPage' in json)  {
-      args = args.set('perPage', Utilities.buildInteger(json['perPage']));
+      args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
     return new VenueSearch(args);

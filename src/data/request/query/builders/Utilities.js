@@ -31,7 +31,7 @@ export default class Utilities {
     return s;
   }
 
-  static buildInteger(value) {
+  static isInteger(value) {
     if (!Number.isInteger(value)) {
       throw new TypeError('must be a number');
     }
