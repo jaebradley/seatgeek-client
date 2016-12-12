@@ -14,7 +14,7 @@ import Unit from '../../../Unit';
 
 import Utilities from './Utilities';
 
-export default class EventSearchBuilder {
+export default class EventsSearchBuilder {
   static build(json) {
     let args = Map();
 
@@ -39,7 +39,7 @@ export default class EventSearchBuilder {
     }
 
     if ('geolocation' in json) {
-      args = args.set('geolocation', EventSearchBuilder.buildGeolocation(json['geolocation']));
+      args = args.set('geolocation', new Geolocation(Utilities.buildGeolocationParameters(json['geolocation'])));
     }
 
     if ('page' in json) {
@@ -50,7 +50,7 @@ export default class EventSearchBuilder {
       args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
-    return new EventSearch(args));
+    return new EventSearch(args);
   }
 
   static buildVenuesFilter(venues) {
@@ -59,21 +59,7 @@ export default class EventSearchBuilder {
       args = args.set('ids', Utilities.buildIds(venues['ids']));
     }
 
-    if ('cityName' in json) {
-      args = args.set('cityName', Utilities.isString(json['cityName']));
-    }
-
-    if ('stateCode' in json) {
-      args = args.set('stateCode', Utilities.isString(json['stateCode']));
-    }
-
-    if ('countryCode' in json) {
-      args = args.set('countryCode', Utilities.isString(json['countryCode']));
-    }
-
-    if ('postalCode' in json) {
-      args = args.set('postalCode', Utilities.isString(json['postalCode']));
-    }
+    args.merge(Utilities.buildVenueParameters());
 
     return new VenuesFilter(args);
   }
@@ -140,31 +126,5 @@ export default class EventSearchBuilder {
 
         return new Filter(args);
       }));
-  }
-
-  static buildGeolocation(geolocation) {
-    let args = Map();
-
-    if ('useIpAddress' in geolocation) {
-      args = args.set('useIpAddress', Utilities.isBoolean(geolocation['useIpAddress']));
-    }
-
-    if ('latitude' in geolocation) {
-      args = args.set('latitude', Utilities.isNumber(geolocation['latitude']));
-    }
-
-    if ('longitude' in geolocation) {
-      args = args.set('longitude', Utilities.isNumber(geolocation['longitude']));
-    }
-
-    if ('range' in geolocation) {
-      args = args.set('range', Utilities.isInteger(geolocation['range']));
-    }
-
-    if (('unit' in geolocation) && (geolocation['unit'] instanceof Unit)) {
-      args = args.set('unit', json['unit']);
-    }
-
-    return new Geolocation(args);
   }
 }
