@@ -88,7 +88,7 @@ export default class EventsSearchBuilder {
 
         let args = Map({value: filter['value']});
         if ('field' in filter) {
-          if (!filter['field'] instanceof PerformerField) {
+          if (!(filter['field'] instanceof PerformerField)) {
             throw new TypeError('expected a PerformerField');
           }
 
@@ -96,7 +96,7 @@ export default class EventsSearchBuilder {
         }
 
         if ('specificity' in filter) {
-          if (!filter['specificity'] instanceof PerformerSpecificity) {
+          if (!(filter['specificity'] instanceof PerformerSpecificity)) {
             throw new TypeError('expected a PerformerSpecificity');
           }
 

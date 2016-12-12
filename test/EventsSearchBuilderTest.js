@@ -90,7 +90,7 @@ describe('Test Event Search Builder', function() {
     let wrongSpecificityField = [
       {
         value: value2,
-        specificity: PerformerSpecificity.HOME_TEAM
+        specificity: 'jaebaebae'
       }
     ];
     chai.expect(() => EventsSearchBuilder.buildPerformerFilters(wrongSpecificityField)).to.throw(TypeError);
