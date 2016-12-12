@@ -6,8 +6,14 @@ import GenreFilter from '../GenreFilter';
 
 export default class GenreFiltersParametersBuilder {
   static build(filters) {
+    if (!(filters instanceof List)) {
+      throw new TypeError('expected a List');
+    }
     let parameters = new Map();
     filters.forEach(function(filter) {
+      if (!(filter instanceof GenreFilter)) {
+        throw new TypeError('expected a GenreFilter');
+      }
       let parameterName = GenreFiltersParametersBuilder.getParameterName(filter);
       let parameterValues = parameters.has(parameterName) ? parameters.get(parameterName) : new List();
       parameterValues = parameterValues.push(GenreFiltersParametersBuilder.getParameterValue(filter));
