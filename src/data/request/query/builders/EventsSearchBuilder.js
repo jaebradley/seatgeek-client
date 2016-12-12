@@ -59,7 +59,7 @@ export default class EventsSearchBuilder {
       args = args.set('ids', Utilities.buildIds(venues['ids']));
     }
 
-    args.merge(Utilities.buildVenueParameters());
+    args = args.merge(Utilities.buildVenueParameters(venues));
 
     return new VenuesFilter(args);
   }

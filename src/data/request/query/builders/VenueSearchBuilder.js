@@ -14,13 +14,13 @@ export default class VenueSearchBuilder {
       args = args.set('ids', Utilities.buildIds(json['ids']));
     }
 
-    args.merge(Utilities.buildVenueParameters(json));
+    args = args.merge(Utilities.buildVenueParameters(json));
 
     if ('queryString' in json) {
       args = args.set('queryString', Utilities.isString(json['queryString']));
     }
 
-    args.merge(Utilities.buildGeolocationParameters(json));
+    args = args.merge(Utilities.buildGeolocationParameters(json));
 
     if ('page' in json) {
       args = args.set('page', Utilities.isInteger(json['page']));

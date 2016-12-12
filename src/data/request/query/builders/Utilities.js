@@ -1,6 +1,6 @@
 'use es6';
 
-import {List} from 'immutable';
+import {List, Map} from 'immutable';
 
 import Taxonomy from '../../../Taxonomy';
 import TaxonomyField from '../TaxonomyField';
