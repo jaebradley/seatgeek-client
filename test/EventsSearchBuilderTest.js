@@ -14,6 +14,9 @@ import EventsSearch from '../src/data/request/query/EventsSearch';
 import PerformerField from '../src/data/request/query/PerformerField';
 import PerformerFilter from '../src/data/request/query/PerformerFilter';
 import PerformerSpecificity from '../src/data/request/query/PerformerSpecificity';
+import SortFilter from '../src/data/request/query/SortFilter';
+import SortOption from '../src/data/request/query/SortOption';
+import SortDirection from '../src/data/request/query/SortDirection';
 import VenuesFilter from '../src/data/request/query/VenuesFilter';
 
 import EventsSearchBuilder from '../src/data/request/query/builders/EventsSearchBuilder';
@@ -96,5 +99,14 @@ describe('Test Event Search Builder', function() {
     );
     let createdFilters = EventsSearchBuilder.buildFilters(filtersJson);
     chai.expect(createdFilters).to.eql(expectedFilters);
+  });
+
+  it('tests sort filter builder', function() {
+    let filterJson = {
+      'option': SortOption.SCORE,
+      'direction': SortDirection.ASCENDING,
+    };
+    let expectedFilter = new SortFilter(filterJson);
+    chai.expect(EventsSearchBuilder.buildSortFilter(filterJson)).to.eql(expectedFilter);
   });
 });

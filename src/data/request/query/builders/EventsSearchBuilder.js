@@ -10,6 +10,9 @@ import Geolocation from '../Geolocation';
 import PerformerSpecificity from '../PerformerSpecificity';
 import PerformerField from '../PerformerField';
 import PerformerFilter from '../PerformerFilter';
+import SortFilter from '../SortFilter';
+import SortDirection from '../SortDirection';
+import SortOption from '../SortOption';
 import Taxonomy from '../../../Taxonomy';
 import TaxonomyField from '../TaxonomyField';
 import TaxonomyFilter from '../TaxonomyFilter';
@@ -44,6 +47,10 @@ export default class EventsSearchBuilder {
 
     if ('geolocation' in json) {
       args = args.set('geolocation', new Geolocation(Utilities.buildGeolocationParameters(json['geolocation'])));
+    }
+
+    if ('sort' in json) {
+      args = args.set('sort', new SortFilter(EventsSearchBuilder.buildSortFilter(json['sort'])));
     }
 
     if ('page' in json) {
@@ -130,5 +137,26 @@ export default class EventsSearchBuilder {
 
         return new Filter(args);
       }));
+  }
+
+  static buildSortFilter(filter) {
+    let args = Map();
+    if ('option' in filter) {
+      if (!(filter['option'] instanceof SortOption)) {
+        throw new TypeError('expected SortOption');
+      }
+
+      args = args.set('option', filter['option']);
+    }
+
+    if ('direction' in filter) {
+      if (!(filter['direction'] instanceof SortDirection)) {
+        throw new TypeError('expected SortDirection');
+      }
+
+      args = args.set('direction', filter['direction']);
+    }
+
+    return new SortFilter(args);
   }
 }
