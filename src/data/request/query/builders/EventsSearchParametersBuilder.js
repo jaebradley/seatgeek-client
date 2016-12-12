@@ -1,6 +1,6 @@
 'use es6';
 
-import {Map} from 'immutable';
+import {List, Map} from 'immutable';
 
 import Pagination from '../Pagination';
 
@@ -20,7 +20,7 @@ export default class EventsSearchParametersBuilder {
     }
 
     let parameters = Map();
-    if (typeof search.ids !== 'undefined') {
+    if (search.ids instanceof List) {
       parameters = parameters.set(EventsSearchParametersBuilder.getIdsParameterName(),
                                   search.ids);
     }
