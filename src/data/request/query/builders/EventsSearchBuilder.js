@@ -26,11 +26,11 @@ export default class EventsSearchBuilder {
     }
 
     if ('venues' in json) {
-      args = args.set('venues', EventSearchBuilder.buildVenuesFilter(json['venues']));
+      args = args.set('venues', EventsSearchBuilder.buildVenuesFilter(json['venues']));
     }
 
     if ('performers' in json) {
-      args = args.set('performers', EventSearchBuilder.buildPerformerFilters(json['performers']));
+      args = args.set('performers', EventsSearchBuilder.buildPerformerFilters(json['performers']));
     }
 
     if ('taxonomies' in json) {
@@ -38,7 +38,7 @@ export default class EventsSearchBuilder {
     }
 
     if ('filters' in json) {
-      args = args.set('filters', EventSearchBuilder.buildFilters(json['filters']))
+      args = args.set('filters', EventsSearchBuilder.buildFilters(json['filters']))
     }
 
     if ('geolocation' in json) {

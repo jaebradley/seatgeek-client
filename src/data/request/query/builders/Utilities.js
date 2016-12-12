@@ -66,17 +66,17 @@ export default class Utilities {
 
     return List(
       filters.map(function(filter) {
-        if (!filter['taxonomy'] instanceof Taxonomy) {
+        if (!(filter['taxonomy'] instanceof Taxonomy)) {
           throw new TypeError('expected a Taxonomy');
         }
-        let args = Map({taxonomy: filter[taxonomy]});
+        let args = Map({taxonomy: filter['taxonomy']});
         if ('field' in filter) {
           if (!(filter['field'] instanceof TaxonomyField)) {
             throw new TypeError('expected TaxonomyField');
           }
           args = args.set('field', filter['field']);
         }
-        return new TaxonomyFilter(args.toJS());
+        return new TaxonomyFilter(args);
       }));
   }
 
