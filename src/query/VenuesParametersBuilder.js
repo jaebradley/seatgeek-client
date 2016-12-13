@@ -3,7 +3,7 @@
 import {Map} from 'immutable';
 
 export default class VenuesParametersBuilder {
-  static build(search, isEventsSearch) {
+  static build(search) {
     let parameters = Map();
 
     if (typeof venues.cityName !== 'undefined') {
