@@ -30,7 +30,7 @@ export default class EventsSearchParametersBuilder {
                                   search.venueIds);
     }
 
-    parameters = parameters.merge(VenuesFilterParametersBuilder.build(search.venues),
+    parameters = parameters.merge(VenuesParametersBuilder.build(search),
                                   PerformersFiltersParametersBuilder.build(search.performers),
                                   TaxonomyFiltersParametersBuilder.build(search.taxonomies),
                                   GeolocationParametersBuilder.build(search.geolocation),

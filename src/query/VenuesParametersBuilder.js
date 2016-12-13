@@ -3,51 +3,57 @@
 import {Map} from 'immutable';
 
 export default class VenuesParametersBuilder {
-  static build(venues, isEventsSearch) {
+  static build(search, isEventsSearch) {
     let parameters = Map();
 
     if (typeof venues.cityName !== 'undefined') {
-      parameters = parameters.set(VenuesParametersBuilder.getCityNamePropertyName(isEventsSearch),
+      parameters = parameters.set(VenuesParametersBuilder.buildSearchTypeName(search, VenuesParametersBuilder.getCityNamePropertyName()),
                                   venues.cityName);
     }
 
     if (typeof filter.stateCode !== 'undefined') {
-      parameters = parameters.set(VenuesParametersBuilder.getStateCodePropertyName(isEventsSearch),
+      parameters = parameters.set(VenuesParametersBuilder.buildSearchTypeName(search, VenuesParametersBuilder.getStateCodePropertyName()),
                                   venues.stateCode);
     }
 
     if (typeof filter.countryCode !== 'undefined') {
-      parameters = parameters.set(VenuesParametersBuilder.getCountryCodePropertyName(isEventsSearch),
+      parameters = parameters.set(VenuesParametersBuilder.buildSearchTypeName(search, VenuesParametersBuilder.getCountryCodePropertyName()),
                                   venues.countryCode);
     }
 
     if (typeof filter.postalCode !== 'undefined') {
-      parameters = parameters.set(VenuesParametersBuilder.getPostalCodePropertyName(isEventsSearch),
+      parameters = parameters.set(VenuesParametersBuilder.buildSearchTypeName(search, VenuesParametersBuilder.getPostalCodePropertyName()),
                                   venues.postalCode);
     }
 
     return parameters;
   }
 
-  static getIdsParameterName(isEventsSearch) {
-    return isEventsSearch
-           ? 'venue.id'
-           : 'id' ;
+  static buildSearchTypeName(search, name) {
+    if (search instanceof EventsSearch) {
+      return `venue.${name}`;
+    }
+
+    return name;
   }
 
-  static getCityNamePropertyName(isEventsSearch) {
-    return 'venue.city';
+  static getIdsParameterName() {
+    return 'id' ;
   }
 
-  static getStateCodePropertyName(isEventsSearch) {
-    return 'venue.state';
+  static getCityNamePropertyName() {
+    return 'city';
   }
 
-  static getCountryCodePropertyName(isEventsSearch) {
-    return 'venue.country';
+  static getStateCodePropertyName() {
+    return 'state';
   }
 
-  static getPostalCodePropertyName(isEventsSearch) {
-    return 'venue.postal_code';
+  static getCountryCodePropertyName() {
+    return 'country';
+  }
+
+  static getPostalCodePropertyName() {
+    return 'postal_code';
   }
 };
