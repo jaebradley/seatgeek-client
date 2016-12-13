@@ -12,7 +12,7 @@ import Taxonomy from '../src/data/Taxonomy';
 import TaxonomyFilter from '../src/query/TaxonomyFilter';
 import TaxonomyField from '../src/query/TaxonomyField';
 
-import PerformersSearchBuilder from '../src/data/request/query/builders/PerformersSearchBuilder';
+import PerformersSearchBuilder from '../src/query/performers/PerformersSearchBuilder';
 
 describe('Test Performers Search Builder', function() {
   it('tests slugs building', function() {

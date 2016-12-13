@@ -6,7 +6,7 @@ import {List} from 'immutable';
 import PerformerField from '../src/query/performer/PerformerField';
 import PerformerSpecificity from '../src/query/performer/PerformerSpecificity';
 import PerformerFilter from '../src/query/performer/PerformerFilter';
-import PerformersFiltersParametersBuilder from '../src/data/request/query/builders/PerformersFiltersParametersBuilder';
+import PerformersFiltersParametersBuilder from '../src/query/events/performer/PerformersFiltersParametersBuilder';
 
 describe('Tests Performers Filter Parameters Builder', function() {
   let field = PerformerField.ID;

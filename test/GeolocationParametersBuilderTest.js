@@ -3,7 +3,7 @@
 import {expect} from 'chai';
 
 import Geolocation from '../src/query/events/Geolocation';
-import GeolocationParametersBuilder from '../src/data/request/query/builders/GeolocationParametersBuilder';
+import GeolocationParametersBuilder from '../src/query/GeolocationParametersBuilder';
 import Unit from '../src/data/Unit';
 
 describe('Test Geolocation Parameter Builder', function() {

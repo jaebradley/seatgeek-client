@@ -9,7 +9,7 @@ import {List} from 'immutable';
 import Unit from '../src/data/Unit';
 import VenueSearch from '../src/query/venue/VenueSearch';
 
-import VenueSearchBuilder from '../src/data/request/query/builders/VenueSearchBuilder';
+import VenueSearchBuilder from '../src/query/venues/VenueSearchBuilder';
 
 describe('Test Venue Search Builder', function() {
   it('tests search building', function() {

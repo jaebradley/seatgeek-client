@@ -9,7 +9,7 @@ import FiltersParametersBuilder from './FiltersParametersBuilder';
 import GeolocationParametersBuilder from './GeolocationParametersBuilder';
 import PaginationParametersBuilder from './PaginationParametersBuilder';
 import PerformersFiltersParametersBuilder from './PerformersFiltersParametersBuilder';
-import SortFilterParametersBuilder from './SortFilterParametersBuilder';
+import SortFilterParametersBuilder from '../sort/SortFilterParametersBuilder';
 import TaxonomyFiltersParametersBuilder from './TaxonomyFiltersParametersBuilder';
 import VenuesFilterParametersBuilder from './VenuesFilterParametersBuilder';
 

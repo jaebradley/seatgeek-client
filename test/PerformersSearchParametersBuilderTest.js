@@ -11,8 +11,8 @@ import TaxonomyField from '../src/query/TaxonomyField';
 import Pagination from '../src/query/Pagination';
 import TaxonomyFilter from '../src/query/TaxonomyFilter';
 import GenreFilter from '../src/query/performers/GenreFilter';
-import PerformersSearch from '../src/data/request/query/PerformersSearch';
-import PerformersSearchParametersBuilder from '../src/data/request/query/builders/PerformersSearchParametersBuilder';
+import PerformersSearch from '../src/query/performers/PerformersSearch';
+import PerformersSearchParametersBuilder from '../src/query/performers/PerformersSearchParametersBuilder';
 
 describe('Tests Performers Search Parameters Builder', function() {
   let ids = List.of(1, 2, 3);

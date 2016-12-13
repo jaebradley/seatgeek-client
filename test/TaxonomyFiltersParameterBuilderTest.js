@@ -7,7 +7,7 @@ import {List} from 'immutable';
 import Taxonomy from '../src/data/Taxonomy';
 import TaxonomyFilter from '../src/query/TaxonomyFilter';
 import TaxonomyField from '../src/query/TaxonomyField';
-import TaxonomyFiltersParametersBuilder from '../src/data/request/query/builders/TaxonomyFiltersParametersBuilder';
+import TaxonomyFiltersParametersBuilder from '../src/query/TaxonomyFiltersParametersBuilder';
 
 describe('Test Taxonomy Filters Parameter Builder', function() {
   it('tests parameter building', function() {
