@@ -3,7 +3,6 @@
 import {List, Record} from 'immutable';
 
 let defaults = {
-  ids: List(),
   cityName: undefined,
   stateCode: undefined,
   countryCode: undefined,
