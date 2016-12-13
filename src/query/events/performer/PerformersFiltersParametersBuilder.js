@@ -2,8 +2,7 @@
 
 import {List, Map} from 'immutable';
 
-import PerformerSpecificity from './PerformerSpecificity';
-import PerformerField from './PerformerField';
+import PerformerFilter from './PerformerFilter';
 
 export default class PerformersFiltersParametersBuilder {
   static build(filters) {
@@ -18,7 +17,7 @@ export default class PerformersFiltersParametersBuilder {
       }
 
       if (typeof filter.value !== 'undefined') {
-        let parameterName =PerformersFiltersParametersBuilder.buildParameterName(filter);
+        let parameterName = PerformersFiltersParametersBuilder.buildParameterName(filter);
         let parameterValues = parameters.has(parameterName)
                                         ? parameters.get(parameterName)
                                         : new List();
