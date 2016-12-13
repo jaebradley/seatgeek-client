@@ -7,7 +7,7 @@ import {List} from 'immutable';
 import Unit from '../src/data/Unit';
 import Taxonomy from '../src/data/Taxonomy';
 import TaxonomyField from '../src/data/request/query/TaxonomyField';
-import Pagination from '../src/data/request/query/Pagination';
+import Pagination from '../src/query/Pagination';
 import VenuesFilter from '../src/data/request/query/VenuesFilter';
 import PerformerFilter from '../src/data/request/query/PerformerFilter';
 import PerformerField from '../src/data/request/query/PerformerField';

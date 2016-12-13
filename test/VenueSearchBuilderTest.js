@@ -7,7 +7,7 @@ chai.use(chaiImmutable);
 import {List} from 'immutable';
 
 import Unit from '../src/data/Unit';
-import VenueSearch from '../src/data/request/query/VenueSearch';
+import VenueSearch from '../src/query/venue/VenueSearch';
 
 import VenueSearchBuilder from '../src/data/request/query/builders/VenueSearchBuilder';
 

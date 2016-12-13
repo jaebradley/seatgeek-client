@@ -8,7 +8,7 @@ import Genre from '../src/data/Genre';
 import Taxonomy from '../src/data/Taxonomy';
 import TaxonomyField from '../src/data/request/query/TaxonomyField';
 
-import Pagination from '../src/data/request/query/Pagination';
+import Pagination from '../src/query/Pagination';
 import TaxonomyFilter from '../src/data/request/query/TaxonomyFilter';
 import GenreFilter from '../src/data/request/query/GenreFilter';
 import PerformersSearch from '../src/data/request/query/PerformersSearch';

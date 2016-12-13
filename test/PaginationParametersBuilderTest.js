@@ -2,7 +2,7 @@
 
 import {expect} from 'chai';
 
-import Pagination from '../src/data/request/query/Pagination';
+import Pagination from '../src/query/Pagination';
 import PaginationParametersBuilder from '../src/data/request/query/builders/PaginationParametersBuilder';
 
 describe('Test pagination parameters builder', function() {

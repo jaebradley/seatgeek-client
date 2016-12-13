@@ -2,7 +2,7 @@
 
 import {expect} from 'chai';
 
-import Pagination from '../src/data/request/query/Pagination';
+import Pagination from '../src/query/Pagination';
 import Constants from '../src/data/Constants';
 
 describe('Pagination Test', function() {
