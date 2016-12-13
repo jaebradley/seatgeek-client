@@ -2,10 +2,10 @@
 
 import {List, Record} from 'immutable';
 
-import SortFilter from './SortFilter';
+import SortFilter from '../sort/SortFilter';
 import Geolocation from './Geolocation';
-import VenuesFilter from './VenuesFilter';
-import Constants from '../../Constants';
+import VenuesFilter from '../venue/VenuesFilter';
+import Constants from '../../data/Constants';
 
 let defaults = {
   ids: List(),
