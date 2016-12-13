@@ -10,7 +10,7 @@ import TaxonomyField from '../src/query/TaxonomyField';
 
 import Pagination from '../src/query/Pagination';
 import TaxonomyFilter from '../src/query/TaxonomyFilter';
-import GenreFilter from '../src/data/request/query/GenreFilter';
+import GenreFilter from '../src/query/performers/GenreFilter';
 import PerformersSearch from '../src/data/request/query/PerformersSearch';
 import PerformersSearchParametersBuilder from '../src/data/request/query/builders/PerformersSearchParametersBuilder';
 

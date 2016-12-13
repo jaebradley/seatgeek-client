@@ -7,7 +7,7 @@ import {List} from 'immutable';
 import Operator from '../src/query/events/filter/Operator';
 import FilterOption from '../src/query/events/filter/FilterOption';
 import Filter from '../src/query/events/filter/Filter';
-import FiltersParametersBuilder from '../src/data/request/query/builders/FiltersParametersBuilder';
+import FiltersParametersBuilder from '../src/query/events/filter/FiltersParametersBuilder';
 
 describe('Tests Filters Parameters Builder', function() {
   let option = FilterOption.AVERAGE_PRICE;

@@ -7,7 +7,7 @@ chai.use(chaiImmutable);
 import {List} from 'immutable';
 
 import Genre from '../src/data/Genre';
-import GenreFilter from '../src/data/request/query/GenreFilter';
+import GenreFilter from '../src/query/performers/GenreFilter';
 import Taxonomy from '../src/data/Taxonomy';
 import TaxonomyFilter from '../src/query/TaxonomyFilter';
 import TaxonomyField from '../src/query/TaxonomyField';

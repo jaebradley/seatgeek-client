@@ -5,8 +5,8 @@ import {expect} from 'chai';
 import {List} from 'immutable';
 
 import Genre from '../src/data/Genre';
-import GenreFilter from '../src/data/request/query/GenreFilter';
-import GenreFiltersParametersBuilder from '../src/data/request/query/builders/GenreFiltersParametersBuilder';
+import GenreFilter from '../src/query/performers/GenreFilter';
+import GenreFiltersParametersBuilder from '../src/query/performers/GenreFiltersParametersBuilder';
 
 describe('Test Genre Filters Parameters Builder', function() {
   let countryFilter = new GenreFilter({genre: Genre.COUNTRY, isPrimary: true});
