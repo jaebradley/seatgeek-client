@@ -2,24 +2,24 @@
 
 import {List, Map} from 'immutable';
 
-import EventsSearch from '../EventsSearch';
-import Filter from '../Filter';
-import FilterOption from '../FilterOption';
-import Operator from '../Operator';
-import Geolocation from '../Geolocation';
-import PerformerSpecificity from '../PerformerSpecificity';
-import PerformerField from '../PerformerField';
-import PerformerFilter from '../PerformerFilter';
-import SortFilter from '../SortFilter';
-import SortDirection from '../SortDirection';
-import SortOption from '../SortOption';
-import Taxonomy from '../../../Taxonomy';
+import EventsSearch from './EventsSearch';
+import Filter from './filter/Filter';
+import FilterOption from './filter/FilterOption';
+import Operator from './filter/Operator';
+import Geolocation from './Geolocation';
+import PerformerSpecificity from './performer/PerformerSpecificity';
+import PerformerField from './performer/PerformerField';
+import PerformerFilter from './performer/PerformerFilter';
+import SortFilter from './sort/SortFilter';
+import SortDirection from './sort/SortDirection';
+import SortOption from './sort/SortOption';
+import Taxonomy from '../../data/Taxonomy';
 import TaxonomyField from '../TaxonomyField';
 import TaxonomyFilter from '../TaxonomyFilter';
-import VenuesFilter from '../VenuesFilter';
-import Unit from '../../../Unit';
+import VenuesFilter from './venue/VenuesFilter';
+import Unit from '../../data/Unit';
 
-import Utilities from './Utilities';
+import Utilities from '../Utilities';
 
 export default class EventsSearchBuilder {
   static build(json) {
