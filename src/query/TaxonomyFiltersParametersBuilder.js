@@ -2,8 +2,8 @@
 
 import {Map, List} from 'immutable';
 
-import TaxonomyFilter from '../TaxonomyFilter';
-import TaxonomyField from '../TaxonomyField';
+import TaxonomyFilter from './TaxonomyFilter';
+import TaxonomyField from './TaxonomyField';
 
 export default class TaxonomyFiltersParametersBuilder {
   static build(filters) {
