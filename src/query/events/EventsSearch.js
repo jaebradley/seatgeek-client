@@ -11,7 +11,7 @@ import VenuesProperties from '../VenuesProperties';
 
 let defaults = {
   ids: List(),
-  venuesProperties: new VenuesProperties(),
+  venues: new VenuesProperties(),
   performers: List(),
   taxonomies: List(),
   filters: List(),
