@@ -9,8 +9,8 @@ import {List} from 'immutable';
 import Genre from '../src/data/Genre';
 import GenreFilter from '../src/data/request/query/GenreFilter';
 import Taxonomy from '../src/data/Taxonomy';
-import TaxonomyFilter from '../src/data/request/query/TaxonomyFilter';
-import TaxonomyField from '../src/data/request/query/TaxonomyField';
+import TaxonomyFilter from '../src/query/TaxonomyFilter';
+import TaxonomyField from '../src/query/TaxonomyField';
 
 import PerformersSearchBuilder from '../src/data/request/query/builders/PerformersSearchBuilder';
 

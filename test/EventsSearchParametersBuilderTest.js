@@ -6,23 +6,23 @@ import {List} from 'immutable';
 
 import Unit from '../src/data/Unit';
 import Taxonomy from '../src/data/Taxonomy';
-import TaxonomyField from '../src/data/request/query/TaxonomyField';
+import TaxonomyField from '../src/query/TaxonomyField';
 import Pagination from '../src/query/Pagination';
 import VenuesFilter from '../src/query/events/venue/VenuesFilter';
 import PerformerFilter from '../src/query/performer/PerformerFilter';
 import PerformerField from '../src/query/performer/PerformerField';
 import PerformerSpecificity from '../src/query/performer/PerformerSpecificity';
-import Geolocation from '../src/data/request/query/Geolocation';
+import Geolocation from '../src/query/events/Geolocation';
 import SortOption from '../src/query/events/sort/SortOption';
 import SortDirection from '../src/query/events/sort/SortDirection';
 import SortFilter from '../src/query/events/sort/SortFilter';
 import Operator from '../src/query/events/filter/Operator';
 import FilterOption from '../src/query/events/filter/FilterOption';
 import Filter from '../src/query/events/filter/Filter';
-import VenueProperties from '../src/data/request/query/VenueProperties';
+import VenueProperties from '../src/query/venues/VenueProperties';
 import EventsSearch from '../src/query/events/EventsSearch';
-import TaxonomyFilter from '../src/data/request/query/TaxonomyFilter';
-import EventsSearchParametersBuilder from '../src/data/request/query/builders/EventsSearchParametersBuilder';
+import TaxonomyFilter from '../src/query/TaxonomyFilter';
+import EventsSearchParametersBuilder from '../src/query/events/EventsSearchParametersBuilder';
 
 describe('Tests Events Search Parameters Builder', function() {
   let id1 = 1;

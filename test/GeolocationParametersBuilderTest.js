@@ -2,7 +2,7 @@
 
 import {expect} from 'chai';
 
-import Geolocation from '../src/data/request/query/Geolocation';
+import Geolocation from '../src/query/events/Geolocation';
 import GeolocationParametersBuilder from '../src/data/request/query/builders/GeolocationParametersBuilder';
 import Unit from '../src/data/Unit';
 

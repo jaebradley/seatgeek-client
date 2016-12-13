@@ -2,7 +2,7 @@
 
 import {expect} from 'chai';
 
-import VenueProperties from '../src/data/request/query/VenueProperties';
+import VenueProperties from '../src/query/venues/VenueProperties';
 import VenuePropertiesParametersBuilder from '../src/data/request/query/builders/VenuePropertiesParametersBuilder';
 
 describe('Tests Venue Properties Parameters Builder', function() {

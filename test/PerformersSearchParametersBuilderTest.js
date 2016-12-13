@@ -6,10 +6,10 @@ import {List} from 'immutable';
 
 import Genre from '../src/data/Genre';
 import Taxonomy from '../src/data/Taxonomy';
-import TaxonomyField from '../src/data/request/query/TaxonomyField';
+import TaxonomyField from '../src/query/TaxonomyField';
 
 import Pagination from '../src/query/Pagination';
-import TaxonomyFilter from '../src/data/request/query/TaxonomyFilter';
+import TaxonomyFilter from '../src/query/TaxonomyFilter';
 import GenreFilter from '../src/data/request/query/GenreFilter';
 import PerformersSearch from '../src/data/request/query/PerformersSearch';
 import PerformersSearchParametersBuilder from '../src/data/request/query/builders/PerformersSearchParametersBuilder';
