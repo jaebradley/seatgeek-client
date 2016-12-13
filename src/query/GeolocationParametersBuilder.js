@@ -5,33 +5,33 @@ import {Map} from 'immutable';
 import Unit from '../data/Unit';
 
 export default class GeolocationParametersBuilder {
-  static build(geolocation) {
+  static build(search) {
     let parameters = Map();
-    if (geolocation.useIpAddress) {
+    if (search.useIpAddress) {
       parameters = parameters.set(GeolocationParametersBuilder.getUseIpAddressParameterName(),
-                                  geolocation.useIpAddress);
+                                  search.useIpAddress);
     }
 
-    if (typeof geolocation.latitude !== 'undefined') {
+    if (typeof search.latitude !== 'undefined') {
       parameters = parameters.set(GeolocationParametersBuilder.getLatitudeParameterName(),
-                                  geolocation.latitude);
+                                  search.latitude);
     }
 
-    if (typeof geolocation.longitude !== 'undefined') {
+    if (typeof search.longitude !== 'undefined') {
       parameters = parameters.set(GeolocationParametersBuilder.getLongitudeParameterName(),
-                                  geolocation.longitude);
+                                  search.longitude);
     }
 
-    if ((typeof geolocation.range !== 'undefined') && (typeof geolocation.unit !== 'undefined')) {
+    if (typeof search.range !== 'undefined') {
       parameters = parameters.set(GeolocationParametersBuilder.getRangeParameterName(),
-                                  GeolocationParametersBuilder.buildRangeParameterValue(geolocation));
+                                  GeolocationParametersBuilder.buildRangeParameterValue(search));
     }
 
     return parameters;
   }
 
-  static buildRangeParameterValue(geolocation) {
-    return String(geolocation.range) + geolocation.unit.value;
+  static buildRangeParameterValue(search) {
+    return String(search.range) + search.unit.value;
   }
 
   static getUseIpAddressParameterName() {

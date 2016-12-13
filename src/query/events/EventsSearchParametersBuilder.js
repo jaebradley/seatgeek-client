@@ -33,7 +33,7 @@ export default class EventsSearchParametersBuilder {
     parameters = parameters.merge(VenuesParametersBuilder.build(search),
                                   PerformersFiltersParametersBuilder.build(search.performers),
                                   TaxonomyFiltersParametersBuilder.build(search.taxonomies),
-                                  GeolocationParametersBuilder.build(search.geolocation),
+                                  GeolocationParametersBuilder.build(search),
                                   SortFilterParametersBuilder.build(search.sort),
                                   FiltersParametersBuilder.build(search.filters),
                                   PaginationParametersBuilder.build(new Pagination({perPage: search.perPage, page: search.page})));
