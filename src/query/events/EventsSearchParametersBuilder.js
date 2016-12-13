@@ -2,8 +2,6 @@
 
 import {List, Map} from 'immutable';
 
-import Pagination from '../Pagination';
-
 import EventsSearch from './EventsSearch';
 import FiltersParametersBuilder from './filter/FiltersParametersBuilder';
 import GeolocationParametersBuilder from '../GeolocationParametersBuilder';
@@ -36,7 +34,7 @@ export default class EventsSearchParametersBuilder {
                                   GeolocationParametersBuilder.build(search),
                                   SortFilterParametersBuilder.build(search.sort),
                                   FiltersParametersBuilder.build(search.filters),
-                                  PaginationParametersBuilder.build(new Pagination({perPage: search.perPage, page: search.page})));
+                                  PaginationParametersBuilder.build(search);
 
     return parameters;
   }

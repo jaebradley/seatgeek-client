@@ -9,14 +9,13 @@ import PaginationParametersBuilder from '../PaginationParametersBuilder';
 import VenuesSearch from './VenuesSearch';
 import VenueProperties from '../VenueProperties';
 import Geolocation from '../Geolocation';
-import Pagination from '../Pagination';
 
 export default class VenuesSearchParametersBuilder {
   static build(search) {
     if (!(search instanceof VenuesSearch)) {
       throw new TypeError('expected a VenuesSearch');
     }
-    
+
     let parameters = Map();
     if (search.ids.size > 0) {
       parameters = parameters.set(VenuesSearchParametersBuilder.getIdsParameterName(),

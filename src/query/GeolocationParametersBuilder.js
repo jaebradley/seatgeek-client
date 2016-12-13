@@ -7,6 +7,7 @@ import Unit from '../data/Unit';
 export default class GeolocationParametersBuilder {
   static build(search) {
     let parameters = Map();
+    
     if (search.useIpAddress) {
       parameters = parameters.set(GeolocationParametersBuilder.getUseIpAddressParameterName(),
                                   search.useIpAddress);
