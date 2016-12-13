@@ -2,7 +2,7 @@
 
 import {List, Record} from 'immutable';
 
-import Constants from '../../Constants';
+import Constants from '../../data/Constants';
 
 let defaults = {
   ids: List(),
