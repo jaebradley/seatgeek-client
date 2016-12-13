@@ -2,9 +2,9 @@
 
 import {List, Map} from 'immutable';
 
-import Unit from '../../../Unit';
-import VenueSearch from '../VenueSearch';
-import Utilities from './Utilities';
+import Unit from '../../data/Unit';
+import VenueSearch from './VenueSearch';
+import Utilities from '../Utilities';
 
 export default class VenueSearchBuilder {
   static build(json) {
