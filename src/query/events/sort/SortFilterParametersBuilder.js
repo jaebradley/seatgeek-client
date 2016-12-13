@@ -6,13 +6,21 @@ import SortFilter from './SortFilter';
 
 export default class SortFilterParametersBuilder {
   static build(filter) {
-    let parameters = Map();
-    if ((typeof filter.option !== 'undefined') && (typeof filter.direction !== 'undefined')) {
-      parameters = parameters.set(SortFilterParametersBuilder.getSortParameterName(),
-                                  `${filter.option.value}.${filter.direction.value}`);
+    if (!(filter instanceof SortFilter)) {
+      throw new TypeError('expected a sort filter');
     }
 
-    return parameters;
+    return Map({
+      SortFilterParametersBuilder.getSortParameterName(): SortFilterParametersBuilder.buildSortParameterValue(filter)
+    });
+  }
+
+  static buildSortParameterValue(filter) {
+    if (!(filter instanceof SortFilter)) {
+      throw new TypeError('expected a sort filter');
+    }
+
+    return `${filter.option.value}.${filter.direction.value}`;
   }
 
   static getSortParameterName() {
