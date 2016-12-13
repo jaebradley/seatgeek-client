@@ -27,41 +27,40 @@ export default class SeatGeekClient {
   getGenres(search) {
     let pagination = PaginationBuilder.build(search);
     let parameters = PaginationParametersBuilder.build(pagination);
-    return this.fetch(parameters, Subpath.GENRES.value);
+    return this.fetch(parameters, Subpath.GENRES);
   }
 
   getTaxonomies(search) {
     let pagination = PaginationBuilder.build(search);
     let parameters = PaginationParametersBuilder.build(pagination);
-    return this.fetch(parameters, Subpath.TAXONOMIES.value);
+    return this.fetch(parameters, Subpath.TAXONOMIES);
   }
 
   getPerformers(search) {
     let query = PerformersSearchBuilder.build(search);
     let parameters = PerformersSearchParametersBuilder.build(query);
-    return this.fetch(parameters, Subpath.PERFORMERS.value);
+    return this.fetch(parameters, Subpath.PERFORMERS);
   }
 
   getVenues(search) {
     let query = VenuesSearchBuilder.build(search);
     let parameters = VenuesSearchParametersBuilder.build(query);
-    return this.fetch(parameters, Subpath.VENUES.value);
+    return this.fetch(parameters, Subpath.VENUES);
   }
 
   getEvents(search) {
     let query = EventsSearchBuilder.build(search);
     let parameters = EventsSearchParametersBuilder.build(query);
-    return this.fetch(parameters, Subpath.EVENTS.value);
+    return this.fetch(parameters, Subpath.EVENTS);
   }
 
   buildRequest(parameters, subpath) {
     return {
-      uri: SeatGeekClient.getBaseUrl() + subpath,
+      uri: `${SeatGeekClient.getBaseUrl()}${subpath.value}`,
       qs: parameters.toJS(),
       headers: this.getHeaders(),
-      json: true,
-      resolveWithFullResponse: false,
-      useQuerystring: true,
+      json: SeatGeekClient.getIsJson(),
+      useQuerystring: SeatGeekClient.getUseQueryString,
     }
   }
 
@@ -76,6 +75,14 @@ export default class SeatGeekClient {
       'User-Agent': 'Request-Promise',
       'Authorization': `Basic ${this.clientId}`
     };
+  }
+
+  static getIsJson() {
+    return true;
+  }
+
+  static getUseQueryString() {
+    return true;
   }
 
   static getBaseUrl() {
