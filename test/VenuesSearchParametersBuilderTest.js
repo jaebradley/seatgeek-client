@@ -6,8 +6,8 @@ import {List} from 'immutable';
 
 import Unit from '../src/data/Unit';
 import Pagination from '../src/query/Pagination';
-import VenueSearch from '../src/query/venue/VenueSearch';
-import VenueSearchParametersBuilder from '../src/query/venue/VenueSearchParametersBuilder';
+import VenuesSearch from '../src/query/venues/VenuesSearch';
+import VenuesSearchParametersBuilder from '../src/query/venues/VenuesSearchParametersBuilder';
 
 describe('Tests Venue Search Parameters Builder', function() {
   let id1 = 1;

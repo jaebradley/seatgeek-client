@@ -2,7 +2,7 @@
 
 import {Record} from 'immutable';
 
-import Genre from '../../data/Genre';
+import Genre from '../../../data/Genre';
 
 let defaults = {
   genre: Genre.POP,

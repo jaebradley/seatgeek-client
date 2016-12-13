@@ -6,7 +6,7 @@ import EventsSearch from './EventsSearch';
 import Filter from './filter/Filter';
 import FilterOption from './filter/FilterOption';
 import Operator from './filter/Operator';
-import Geolocation from './Geolocation';
+import Geolocation from '../Geolocation';
 import PerformerSpecificity from './performer/PerformerSpecificity';
 import PerformerField from './performer/PerformerField';
 import PerformerFilter from './performer/PerformerFilter';

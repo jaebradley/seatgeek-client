@@ -2,9 +2,9 @@
 
 import {Map} from 'immutable';
 
-import VenuePropertiesParametersBuilder from './VenuePropertiesParametersBuilder';
-import GeolocationParametersBuilder from './GeolocationParametersBuilder';
-import PaginationParametersBuilder from './PaginationParametersBuilder';
+import VenuePropertiesParametersBuilder from '../VenuePropertiesParametersBuilder';
+import GeolocationParametersBuilder from '../GeolocationParametersBuilder';
+import PaginationParametersBuilder from '../PaginationParametersBuilder';
 
 import VenueProperties from '../VenueProperties';
 import Geolocation from '../Geolocation';

@@ -4,7 +4,7 @@ import {List, Map} from 'immutable';
 
 import PerformersSearch from './PerformersSearch';
 import Genre from '../../data/Genre';
-import GenreFilter from './GenreFilter';
+import GenreFilter from './genre/GenreFilter';
 import Utilities from '../Utilities';
 
 export default class PerformersSearchBuilder {

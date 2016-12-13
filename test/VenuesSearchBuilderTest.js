@@ -7,9 +7,9 @@ chai.use(chaiImmutable);
 import {List} from 'immutable';
 
 import Unit from '../src/data/Unit';
-import VenueSearch from '../src/query/venue/VenueSearch';
+import VenueSearch from '../src/query/venues/VenuesSearch';
 
-import VenueSearchBuilder from '../src/query/venues/VenueSearchBuilder';
+import VenuesSearchBuilder from '../src/query/venues/VenuesSearchBuilder';
 
 describe('Test Venue Search Builder', function() {
   it('tests search building', function() {

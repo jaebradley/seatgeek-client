@@ -11,12 +11,12 @@ import PerformersSearch from './query/performers/PerformersSearch';
 
 import PerformersSearchBuilder from './query/performers/PerformersSearchBuilder';
 import PaginationBuilder from './query/PaginationBuilder';
-import VenueSearchBuilder from './query/venues/VenueSearchBuilder';
+import VenueSearchBuilder from './query/venues/VenuesSearchBuilder';
 import EventsSearchBuilder from './query/events/EventsSearchBuilder';
 
 import PerformersSearchParametersBuilder from './query/performers/PerformersSearchParametersBuilder';
 import PaginationParametersBuilder from './query/PaginationParametersBuilder';
-import VenueSearchParametersBuilder from './query/venues/VenueSearchParametersBuilder';
+import VenueSearchParametersBuilder from './query/venues/VenuesSearchParametersBuilder';
 import EventsSearchParametersBuilder from './query/events/EventsSearchParametersBuilder';
 
 export default class SeatGeekClient {
