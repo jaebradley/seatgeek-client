@@ -11,12 +11,12 @@ import PerformersSearch from './query/performers/PerformersSearch';
 
 import PerformersSearchBuilder from './query/performers/PerformersSearchBuilder';
 import PaginationBuilder from './query/PaginationBuilder';
-import VenueSearchBuilder from './query/venues/VenuesSearchBuilder';
+import VenuesSearchBuilder from './query/venues/VenuesSearchBuilder';
 import EventsSearchBuilder from './query/events/EventsSearchBuilder';
 
 import PerformersSearchParametersBuilder from './query/performers/PerformersSearchParametersBuilder';
 import PaginationParametersBuilder from './query/PaginationParametersBuilder';
-import VenueSearchParametersBuilder from './query/venues/VenuesSearchParametersBuilder';
+import VenuesSearchParametersBuilder from './query/venues/VenuesSearchParametersBuilder';
 import EventsSearchParametersBuilder from './query/events/EventsSearchParametersBuilder';
 
 export default class SeatGeekClient {
@@ -39,8 +39,8 @@ export default class SeatGeekClient {
   }
 
   static getVenues(search) {
-    let query = VenueSearchBuilder.build(search);
-    let parameters = VenueSearchParametersBuilder.build(query);
+    let query = VenuesSearchBuilder.build(search);
+    let parameters = VenuesSearchParametersBuilder.build(query);
     return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
   }
 
@@ -72,6 +72,9 @@ export default class SeatGeekClient {
   }
 
   static getHeaders() {
-    return { 'User-Agent': 'Request-Promise' };
+    return {
+      'User-Agent': 'Request-Promise',
+      'Authorization': 'Basic ' + process.env.CLIENT_ID
+    };
   }
 }

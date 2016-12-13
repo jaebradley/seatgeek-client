@@ -1,5 +1,8 @@
 'use es6';
 
+var dotenv = require('dotenv');
+dotenv.load();
+
 import FilterOption from './query/events/filter/FilterOption';
 import Genre from './data/Genre';
 import Operator from './query/events/filter/Operator';

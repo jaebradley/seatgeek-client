@@ -7,7 +7,7 @@ chai.use(chaiImmutable);
 import {List} from 'immutable';
 
 import Unit from '../src/data/Unit';
-import VenueSearch from '../src/query/venues/VenuesSearch';
+import VenuesSearch from '../src/query/venues/VenuesSearch';
 
 import VenuesSearchBuilder from '../src/query/venues/VenuesSearchBuilder';
 
@@ -29,7 +29,7 @@ describe('Test Venue Search Builder', function() {
     let unit = Unit.MILE;
     let page = 10;
     let perPage = 11;
-    let venueSearchJson = {
+    let VenuesSearchJson = {
       ids: ids,
       cityName: cityName,
       stateCode: stateCode,
@@ -44,7 +44,7 @@ describe('Test Venue Search Builder', function() {
       perPage: perPage,
       page: page,
     };
-    let expected = new VenueSearch({
+    let expected = new VenuesSearch({
       ids: List.of(id1, id2, id3),
       cityName: cityName,
       stateCode: stateCode,
@@ -59,7 +59,7 @@ describe('Test Venue Search Builder', function() {
       perPage: perPage,
       page: page,
     });
-    let createdVenueSearch = VenueSearchBuilder.build(venueSearchJson);
-    chai.expect(createdVenueSearch).to.eql(expected);
+    let createdVenuesSearch = VenuesSearchBuilder.build(VenuesSearchJson);
+    chai.expect(createdVenuesSearch).to.eql(expected);
   });
 });
