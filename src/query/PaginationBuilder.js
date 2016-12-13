@@ -17,6 +17,6 @@ export default class PaginationBuilder {
       args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
-    return new Pagination(args.toJS());
+    return new Pagination(args);
   }
 }
