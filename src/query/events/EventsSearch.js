@@ -2,29 +2,23 @@
 
 import {List, Record} from 'immutable';
 
-import SortFilter from './sort/SortFilter';
-import Geolocation from '../Geolocation';
-import VenuesFilter from './venue/VenuesFilter';
 import Constants from '../../data/Constants';
+import Geolocation from '../Geolocation';
+import Pagination from '../Pagination';
+import SortFilter from './sort/SortFilter';
+import VenuesFilter from './venue/VenuesFilter';
+import VenuesProperties from '../VenuesProperties';
 
 let defaults = {
   ids: List(),
-  venueIds: List(),
-  cityName: undefined,
-  stateCode: undefined,
-  countryCode: undefined,
-  postalCode: undefined,
+  venuesProperties: new VenuesProperties(),
   performers: List(),
   taxonomies: List(),
   filters: List(),
   sort: new SortFilter(),
-  useIpAddress: undefined,
-  latitude: undefined,
-  longitude: undefined,
-  range: Constants.getDefaultRange(),
-  unit: Constants.getDefaultUnit(),
-  perPage: Constants.getDefaultPerPage(),
-  page: Constants.getDefaultPage(),
+  geolocation: new Geolocation(),
+  queryString: undefined,
+  pagination: new Pagination()
 };
 
 export default class EventsSearch extends Record(defaults) {
