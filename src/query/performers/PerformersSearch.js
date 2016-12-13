@@ -1,10 +1,10 @@
 'use es6';
 
-import {Map, List, Record} from 'immutable';
+import {List, Record} from 'immutable';
 
-import Constants from '../../Constants';
+import Constants from '../../data/Constants';
 
-let DEFAULTS = Map({
+let defaults = {
   ids: new List(),
   slugs: new List(),
   taxonomies: new List(),
@@ -12,7 +12,7 @@ let DEFAULTS = Map({
   queryString: undefined,
   perPage: Constants.getDefaultPerPage(),
   page: Constants.getDefaultPage(),
-});
+};
 
-export default class PerformersSearch extends Record(DEFAULTS.toJS()) {
+export default class PerformersSearch extends Record(defaults) {
 }
