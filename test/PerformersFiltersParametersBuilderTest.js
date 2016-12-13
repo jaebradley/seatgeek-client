@@ -3,9 +3,9 @@
 import {expect} from 'chai';
 import {List} from 'immutable';
 
-import PerformerField from '../src/data/request/query/PerformerField';
-import PerformerSpecificity from '../src/data/request/query/PerformerSpecificity';
-import PerformerFilter from '../src/data/request/query/PerformerFilter';
+import PerformerField from '../src/query/performer/PerformerField';
+import PerformerSpecificity from '../src/query/performer/PerformerSpecificity';
+import PerformerFilter from '../src/query/performer/PerformerFilter';
 import PerformersFiltersParametersBuilder from '../src/data/request/query/builders/PerformersFiltersParametersBuilder';
 
 describe('Tests Performers Filter Parameters Builder', function() {

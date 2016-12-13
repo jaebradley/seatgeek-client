@@ -2,9 +2,9 @@
 
 import {expect} from 'chai';
 
-import SortDirection from '../src/data/request/query/SortDirection';
-import SortOption from '../src/data/request/query/SortOption';
-import SortFilter from '../src/data/request/query/SortFilter';
+import SortDirection from '../src/query/events/sort/SortDirection';
+import SortOption from '../src/query/events/sort/SortOption';
+import SortFilter from '../src/query/events/sort/SortFilter';
 import SortFilterParametersBuilder from '../src/data/request/query/builders/SortFilterParametersBuilder';
 
 describe('Tests Sort Filter Parameters Builder', function() {

@@ -4,9 +4,9 @@ import {expect} from 'chai';
 
 import {List} from 'immutable';
 
-import Operator from '../src/data/request/query/Operator';
-import FilterOption from '../src/data/request/query/FilterOption';
-import Filter from '../src/data/request/query/Filter';
+import Operator from '../src/query/events/filter/Operator';
+import FilterOption from '../src/query/events/filter/FilterOption';
+import Filter from '../src/query/events/filter/Filter';
 import FiltersParametersBuilder from '../src/data/request/query/builders/FiltersParametersBuilder';
 
 describe('Tests Filters Parameters Builder', function() {
