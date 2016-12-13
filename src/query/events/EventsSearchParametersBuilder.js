@@ -25,6 +25,11 @@ export default class EventsSearchParametersBuilder {
                                   search.ids);
     }
 
+    if (search.venueIds instanceof List) {
+      parameters = parameters.set(EventsSearchParametersBuilder.getVenueIdsParameterName().
+                                  search.venueIds);
+    }
+
     parameters = parameters.merge(VenuesFilterParametersBuilder.build(search.venues),
                                   PerformersFiltersParametersBuilder.build(search.performers),
                                   TaxonomyFiltersParametersBuilder.build(search.taxonomies),
@@ -38,5 +43,9 @@ export default class EventsSearchParametersBuilder {
 
   static getIdsParameterName() {
     return 'id';
+  }
+
+  static getVenueIdsParameterName() {
+
   }
 }
