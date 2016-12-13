@@ -29,7 +29,7 @@ describe('Test Client', function() {
   it('tests events fetch', function() {
     return client.getEvents({taxonomies: [{
         taxonomy: Taxonomy.CONCERT,
-        field: TaxonomyField.NAME,
+        field: TaxognomyField.NAME,
       }]})
                  .then(response => console.log(response));
   })

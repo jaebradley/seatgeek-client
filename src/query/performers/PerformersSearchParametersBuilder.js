@@ -10,13 +10,17 @@ import GenreFiltersParametersBuilder from './genre/GenreFiltersParametersBuilder
 
 export default class PerformersSearchParametersBuilder {
   static build(search) {
+    if (!(search instanceof PerformersSearch)) {
+      throw new TypeError('expected a PerformersSearch');
+    }
+
     let parameters = Map();
-    if (typeof search.ids !== 'undefined') {
+    if (search.ids.size > 0) {
       parameters = parameters.set(PerformersSearchParametersBuilder.getIdsParameterName(),
                                   search.ids);
     }
 
-    if (typeof search.slugs !== 'undefined') {
+    if (search.slugs > 0) {
       parameters = parameters.set(PerformersSearchParametersBuilder.getSlugsParameterName(),
                                   search.slugs);
     }
@@ -26,22 +30,19 @@ export default class PerformersSearchParametersBuilder {
                                   search.queryString);
     }
 
-    if (typeof search.genres !== 'undefined') {
+    if (search.genres.size > 0) {
       parameters = parameters.merge(GenreFiltersParametersBuilder.build(search.genres));
     }
 
-    if (typeof search.taxonomies !== 'undefined') {
+    if (search.taxonomies.size > 0) {
       parameters = parameters.merge(TaxonomyFiltersParametersBuilder.build(search.taxonomies));
     }
 
-    if ((typeof search.perPage !== 'undefined') && (typeof search.page !== 'undefined')) {
-      parameters = parameters.merge(PaginationParametersBuilder.build(
-        new Pagination({
-          perPage: search.perPage,
-          page: search.page,
-        })
-      ));
-    }
+    parameters = parameters.merge(PaginationParametersBuilder.build(
+      new Pagination({
+        perPage: search.perPage,
+        page: search.page,
+      })));
 
     return parameters;
   }
