@@ -3,10 +3,10 @@
 import {expect} from 'chai';
 import {List} from 'immutable';
 
-import PerformerField from '../src/data/request/query/PerformerField';
-import PerformerSpecificity from '../src/data/request/query/PerformerSpecificity';
-import PerformerFilter from '../src/data/request/query/PerformerFilter';
-import PerformersFiltersParametersBuilder from '../src/data/request/query/builders/PerformersFiltersParametersBuilder';
+import PerformerField from '../src/query/events/performer/PerformerField';
+import PerformerSpecificity from '../src/query/events/performer/PerformerSpecificity';
+import PerformerFilter from '../src/query/events/performer/PerformerFilter';
+import PerformersFiltersParametersBuilder from '../src/query/events/performer/PerformersFiltersParametersBuilder';
 
 describe('Tests Performers Filter Parameters Builder', function() {
   let field = PerformerField.ID;

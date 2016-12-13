@@ -2,10 +2,10 @@
 
 import {List, Map} from 'immutable';
 
-import Taxonomy from '../../../Taxonomy';
-import TaxonomyField from '../TaxonomyField';
-import TaxonomyFilter from '../TaxonomyFilter';
-import Unit from '../../../Unit';
+import Taxonomy from '../data/Taxonomy';
+import TaxonomyField from './TaxonomyField';
+import TaxonomyFilter from './TaxonomyFilter';
+import Unit from '../data/Unit';
 
 export default class Utilities {
   static buildIds(ids) {

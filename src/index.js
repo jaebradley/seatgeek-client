@@ -1,15 +1,15 @@
 'use es6';
 
-import FilterOption from './data/request/query/FilterOption';
+import FilterOption from './query/events/filter/FilterOption';
 import Genre from './data/Genre';
-import Operator from './data/request/query/Operator';
-import PerformerField from './data/request/query/PerformerField';
-import PerformerSpecificity from './data/request/query/PerformerSpecificity';
+import Operator from './query/events/filter/Operator';
+import PerformerField from './query/events/performer/PerformerField';
+import PerformerSpecificity from './query/events/performer/PerformerSpecificity';
 import SeatGeekClient from './SeatGeekClient';
-import SortDirection from './data/request/query/SortDirection';
-import SortOption from './data/request/query/SortOption';
+import SortDirection from './query/events/sort/SortDirection';
+import SortOption from './query/events/sort/SortOption';
 import Taxonomy from './data/Taxonomy';
-import TaxonomyField from './data/request/query/TaxonomyField';
+import TaxonomyField from './query/TaxonomyField';
 import Unit from './data/Unit';
 
 module.exports = {

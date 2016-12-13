@@ -6,20 +6,20 @@ chai.use(chaiImmutable);
 
 import {List} from 'immutable';
 
-import Filter from '../src/data/request/query/Filter';
-import FilterOption from '../src/data/request/query/FilterOption';
-import Operator from '../src/data/request/query/Operator';
+import Filter from '../src/query/events/filter/Filter';
+import FilterOption from '../src/query/events/filter/FilterOption';
+import Operator from '../src/query/events/filter/Operator';
 import Unit from '../src/data/Unit';
-import EventsSearch from '../src/data/request/query/EventsSearch';
-import PerformerField from '../src/data/request/query/PerformerField';
-import PerformerFilter from '../src/data/request/query/PerformerFilter';
-import PerformerSpecificity from '../src/data/request/query/PerformerSpecificity';
-import SortFilter from '../src/data/request/query/SortFilter';
-import SortOption from '../src/data/request/query/SortOption';
-import SortDirection from '../src/data/request/query/SortDirection';
-import VenuesFilter from '../src/data/request/query/VenuesFilter';
+import EventsSearch from '../src/query/events/EventsSearch';
+import PerformerField from '../src/query/events/performer/PerformerField';
+import PerformerFilter from '../src/query/events/performer/PerformerFilter';
+import PerformerSpecificity from '../src/query/events/performer/PerformerSpecificity';
+import SortFilter from '../src/query/events/sort/SortFilter';
+import SortOption from '../src/query/events/sort/SortOption';
+import SortDirection from '../src/query/events/sort/SortDirection';
+import VenuesFilter from '../src/query/events/venue/VenuesFilter';
 
-import EventsSearchBuilder from '../src/data/request/query/builders/EventsSearchBuilder';
+import EventsSearchBuilder from '../src/query/events/EventsSearchBuilder';
 
 describe('Test Event Search Builder', function() {
   let id1 = 1;

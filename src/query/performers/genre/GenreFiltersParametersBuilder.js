@@ -2,7 +2,7 @@
 
 import {List, Map} from 'immutable';
 
-import GenreFilter from '../GenreFilter';
+import GenreFilter from './GenreFilter';
 
 export default class GenreFiltersParametersBuilder {
   static build(filters) {

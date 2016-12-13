@@ -2,7 +2,7 @@
 
 import {Map, Record} from 'immutable';
 
-import Constants from '../../Constants';
+import Constants from '../data/Constants';
 
 let DEFAULTS = Map({
   perPage: Constants.getDefaultPerPage(),

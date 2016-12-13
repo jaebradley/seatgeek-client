@@ -5,9 +5,9 @@ import {expect} from 'chai';
 import {List} from 'immutable';
 
 import Taxonomy from '../src/data/Taxonomy';
-import TaxonomyFilter from '../src/data/request/query/TaxonomyFilter';
-import TaxonomyField from '../src/data/request/query/TaxonomyField';
-import TaxonomyFiltersParametersBuilder from '../src/data/request/query/builders/TaxonomyFiltersParametersBuilder';
+import TaxonomyFilter from '../src/query/TaxonomyFilter';
+import TaxonomyField from '../src/query/TaxonomyField';
+import TaxonomyFiltersParametersBuilder from '../src/query/TaxonomyFiltersParametersBuilder';
 
 describe('Test Taxonomy Filters Parameter Builder', function() {
   it('tests parameter building', function() {

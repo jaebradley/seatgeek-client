@@ -2,7 +2,7 @@
 
 import {Map} from 'immutable';
 
-import SortFilter from '../SortFilter';
+import SortFilter from './SortFilter';
 
 export default class SortFilterParametersBuilder {
   static build(filter) {

@@ -2,7 +2,7 @@
 
 import {expect} from 'chai';
 
-import PerformersSearch from '../src/data/request/query/PerformersSearch';
+import PerformersSearch from '../src/query/performers/PerformersSearch';
 
 describe('Test Performers Search', function() {
   it('tests construction', function() {

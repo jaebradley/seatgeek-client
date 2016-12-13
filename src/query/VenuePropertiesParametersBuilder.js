@@ -2,7 +2,7 @@
 
 import {Map} from 'immutable';
 
-import VenueProperties from '../VenueProperties';
+import VenueProperties from './VenueProperties';
 
 export default class VenuePropertiesParametersBuilder {
   static build(properties) {

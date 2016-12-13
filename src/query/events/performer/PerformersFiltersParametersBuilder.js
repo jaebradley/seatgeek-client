@@ -2,8 +2,8 @@
 
 import {List, Map} from 'immutable';
 
-import PerformerSpecificity from '../PerformerSpecificity';
-import PerformerField from '../PerformerField';
+import PerformerSpecificity from './PerformerSpecificity';
+import PerformerField from './PerformerField';
 
 export default class PerformersFiltersParametersBuilder {
   static build(filters) {

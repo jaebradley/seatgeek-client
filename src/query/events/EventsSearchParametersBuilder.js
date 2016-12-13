@@ -4,14 +4,14 @@ import {List, Map} from 'immutable';
 
 import Pagination from '../Pagination';
 
-import EventsSearch from '../EventsSearch';
-import FiltersParametersBuilder from './FiltersParametersBuilder';
-import GeolocationParametersBuilder from './GeolocationParametersBuilder';
-import PaginationParametersBuilder from './PaginationParametersBuilder';
-import PerformersFiltersParametersBuilder from './PerformersFiltersParametersBuilder';
-import SortFilterParametersBuilder from './SortFilterParametersBuilder';
-import TaxonomyFiltersParametersBuilder from './TaxonomyFiltersParametersBuilder';
-import VenuesFilterParametersBuilder from './VenuesFilterParametersBuilder';
+import EventsSearch from './EventsSearch';
+import FiltersParametersBuilder from './filter/FiltersParametersBuilder';
+import GeolocationParametersBuilder from '../GeolocationParametersBuilder';
+import PaginationParametersBuilder from '../PaginationParametersBuilder';
+import PerformersFiltersParametersBuilder from './performer/PerformersFiltersParametersBuilder';
+import SortFilterParametersBuilder from './sort/SortFilterParametersBuilder';
+import TaxonomyFiltersParametersBuilder from '../TaxonomyFiltersParametersBuilder';
+import VenuesFilterParametersBuilder from './venue/VenuesFilterParametersBuilder';
 
 export default class EventsSearchParametersBuilder {
   static build(search) {

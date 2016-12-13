@@ -3,7 +3,7 @@
 import {Record} from 'immutable';
 
 import TaxonomyField from './TaxonomyField';
-import Taxonomy from '../../Taxonomy';
+import Taxonomy from '../data/Taxonomy';
 
 let defaults = {
   taxonomy: Taxonomy.CONCERTS,

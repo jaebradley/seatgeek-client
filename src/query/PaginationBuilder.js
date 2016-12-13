@@ -2,7 +2,7 @@
 
 import {Map} from 'immutable';
 
-import Pagination from '../Pagination';
+import Pagination from './Pagination';
 import Utilities from './Utilities';
 
 export default class PaginationBuilder {
@@ -17,6 +17,6 @@ export default class PaginationBuilder {
       args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
-    return new Pagination(args.toJS());
+    return new Pagination(args);
   }
 }

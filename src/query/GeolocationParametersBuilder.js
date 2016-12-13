@@ -2,7 +2,7 @@
 
 import {Map} from 'immutable';
 
-import Unit from '../../../Unit';
+import Unit from '../data/Unit';
 
 export default class GeolocationParametersBuilder {
   static build(geolocation) {

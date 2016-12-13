@@ -2,7 +2,7 @@
 
 import {List, Record} from 'immutable';
 
-import Constants from '../../Constants';
+import Constants from '../../data/Constants';
 
 let defaults = {
   ids: List(),
@@ -20,5 +20,5 @@ let defaults = {
   page: Constants.getDefaultPage(),
 };
 
-export default class VenueSearch extends Record(defaults) {
+export default class VenuesSearch extends Record(defaults) {
 };

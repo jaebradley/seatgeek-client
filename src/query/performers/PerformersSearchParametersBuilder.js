@@ -2,12 +2,11 @@
 
 import {Map} from 'immutable';
 
-import PerformersSearch from '../PerformersSearch';
+import PerformersSearch from './PerformersSearch';
 import Pagination from '../Pagination';
-
-import PaginationParametersBuilder from './PaginationParametersBuilder';
-import TaxonomyFiltersParametersBuilder from './TaxonomyFiltersParametersBuilder';
-import GenreFiltersParametersBuilder from './GenreFiltersParametersBuilder';
+import PaginationParametersBuilder from '../PaginationParametersBuilder';
+import TaxonomyFiltersParametersBuilder from '../TaxonomyFiltersParametersBuilder';
+import GenreFiltersParametersBuilder from './genre/GenreFiltersParametersBuilder';
 
 export default class PerformersSearchParametersBuilder {
   static build(search) {

@@ -2,8 +2,8 @@
 
 import {expect} from 'chai';
 
-import Geolocation from '../src/data/request/query/Geolocation';
-import GeolocationParametersBuilder from '../src/data/request/query/builders/GeolocationParametersBuilder';
+import Geolocation from '../src/query/Geolocation';
+import GeolocationParametersBuilder from '../src/query/GeolocationParametersBuilder';
 import Unit from '../src/data/Unit';
 
 describe('Test Geolocation Parameter Builder', function() {

@@ -2,7 +2,7 @@
 
 import {List, Map} from 'immutable';
 
-import Filter from '../Filter';
+import Filter from './Filter';
 
 export default class FiltersParametersBuilder {
   static build(filters) {
@@ -31,7 +31,7 @@ export default class FiltersParametersBuilder {
     if (!(filter instanceof Filter)) {
       throw new TypeError('expected a Filter');
     }
-    
+
     return `${filter.option.value}.${filter.operator.value}`;
   }
 }

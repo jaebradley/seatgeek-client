@@ -2,22 +2,22 @@
 
 import rp from 'request-promise';
 
-import Subpath from './data/request/Subpath';
+import Subpath from './data/Subpath';
 
-import Pagination from './data/request/query/Pagination';
-import VenueSearch from './data/request/query/VenueSearch';
-import EventsSearch from './data/request/query/EventsSearch';
-import PerformersSearch from './data/request/query/PerformersSearch';
+import Pagination from './query/Pagination';
+import VenuesSearch from './query/venues/VenuesSearch';
+import EventsSearch from './query/events/EventsSearch';
+import PerformersSearch from './query/performers/PerformersSearch';
 
-import PerformersSearchBuilder from './data/request/query/builders/PerformersSearchBuilder';
-import PaginationBuilder from './data/request/query/builders/PaginationBuilder';
-import VenueSearchBuilder from './data/request/query/builders/VenueSearchBuilder';
-import EventsSearchBuilder from './data/request/query/builders/EventsSearchBuilder';
+import PerformersSearchBuilder from './query/performers/PerformersSearchBuilder';
+import PaginationBuilder from './query/PaginationBuilder';
+import VenuesSearchBuilder from './query/venues/VenuesSearchBuilder';
+import EventsSearchBuilder from './query/events/EventsSearchBuilder';
 
-import PerformersSearchParametersBuilder from './data/request/query/builders/PerformersSearchParametersBuilder';
-import PaginationParametersBuilder from './data/request/query/builders/PaginationParametersBuilder';
-import VenueSearchParametersBuilder from './data/request/query/builders/VenueSearchParametersBuilder';
-import EventsSearchParametersBuilder from './data/request/query/builders/EventsSearchParametersBuilder';
+import PerformersSearchParametersBuilder from './query/performers/PerformersSearchParametersBuilder';
+import PaginationParametersBuilder from './query/PaginationParametersBuilder';
+import VenuesSearchParametersBuilder from './query/venues/VenuesSearchParametersBuilder';
+import EventsSearchParametersBuilder from './query/events/EventsSearchParametersBuilder';
 
 export default class SeatGeekClient {
   static getGenres(search) {
@@ -39,8 +39,8 @@ export default class SeatGeekClient {
   }
 
   static getVenues(search) {
-    let query = VenueSearchBuilder.build(search);
-    let parameters = VenueSearchParametersBuilder.build(query);
+    let query = VenuesSearchBuilder.build(search);
+    let parameters = VenuesSearchParametersBuilder.build(query);
     return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
   }
 
@@ -72,6 +72,9 @@ export default class SeatGeekClient {
   }
 
   static getHeaders() {
-    return { 'User-Agent': 'Request-Promise' };
+    return {
+      'User-Agent': 'Request-Promise',
+      'Authorization': 'Basic TXpVd05ERTFObnd4TkRneE5qQTFPRE0yOg=='
+    };
   }
 }

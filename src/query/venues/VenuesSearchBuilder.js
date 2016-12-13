@@ -2,11 +2,11 @@
 
 import {List, Map} from 'immutable';
 
-import Unit from '../../../Unit';
-import VenueSearch from '../VenueSearch';
-import Utilities from './Utilities';
+import Unit from '../../data/Unit';
+import VenuesSearch from './VenuesSearch';
+import Utilities from '../Utilities';
 
-export default class VenueSearchBuilder {
+export default class VenuesSearchBuilder {
   static build(json) {
     let args = Map();
 
@@ -30,6 +30,6 @@ export default class VenueSearchBuilder {
       args = args.set('perPage', Utilities.isInteger(json['perPage']));
     }
 
-    return new VenueSearch(args);
+    return new VenuesSearch(args);
   }
 }

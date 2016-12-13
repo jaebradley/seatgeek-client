@@ -2,8 +2,8 @@
 
 import {expect} from 'chai';
 
-import VenueProperties from '../src/data/request/query/VenueProperties';
-import VenuePropertiesParametersBuilder from '../src/data/request/query/builders/VenuePropertiesParametersBuilder';
+import VenueProperties from '../src/query/VenueProperties';
+import VenuePropertiesParametersBuilder from '../src/query/VenuePropertiesParametersBuilder';
 
 describe('Tests Venue Properties Parameters Builder', function() {
   let cityName = 'Boston';

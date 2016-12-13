@@ -2,11 +2,10 @@
 
 import {List, Map} from 'immutable';
 
-import PerformersSearch from '../PerformersSearch';
-import Genre from '../../../Genre';
-import GenreFilter from '../GenreFilter';
-import Taxonomy from '../../../Taxonomy';
-import Utilities from './Utilities';
+import PerformersSearch from './PerformersSearch';
+import Genre from '../../data/Genre';
+import GenreFilter from './genre/GenreFilter';
+import Utilities from '../Utilities';
 
 export default class PerformersSearchBuilder {
   static build(json) {
@@ -77,7 +76,7 @@ export default class PerformersSearchBuilder {
           args = args.set('isPrimary', filter['isPrimary']);
         }
 
-        return new GenreFilter(args.toJS());
+        return new GenreFilter(args);
       }));
   }
 }

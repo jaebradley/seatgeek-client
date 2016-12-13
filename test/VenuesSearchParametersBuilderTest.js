@@ -5,9 +5,9 @@ import {expect} from 'chai';
 import {List} from 'immutable';
 
 import Unit from '../src/data/Unit';
-import Pagination from '../src/data/request/query/Pagination';
-import VenueSearch from '../src/data/request/query/VenueSearch';
-import VenueSearchParametersBuilder from '../src/data/request/query/builders/VenueSearchParametersBuilder';
+import Pagination from '../src/query/Pagination';
+import VenuesSearch from '../src/query/venues/VenuesSearch';
+import VenuesSearchParametersBuilder from '../src/query/venues/VenuesSearchParametersBuilder';
 
 describe('Tests Venue Search Parameters Builder', function() {
   let id1 = 1;
@@ -26,7 +26,7 @@ describe('Tests Venue Search Parameters Builder', function() {
   let unit = Unit.MILE;
   let perPage = 7;
   let page = 8;
-  let search = new VenueSearch({
+  let search = new VenuesSearch({
     ids: ids,
     cityName: cityName,
     stateCode: stateCode,
@@ -43,7 +43,7 @@ describe('Tests Venue Search Parameters Builder', function() {
   });
 
   it('tests expected behavior for parameter building', function() {
-    let parameters = VenueSearchParametersBuilder.build(search);
+    let parameters = VenuesSearchParametersBuilder.build(search);
     let expectedParameters = {
       id: [id1, id2, id3],
       city: cityName,
