@@ -74,7 +74,7 @@ export default class SeatGeekClient {
   static getHeaders() {
     return {
       'User-Agent': 'Request-Promise',
-      'Authorization': 'Basic ' + process.env.CLIENT_ID
+      'Authorization': 'Basic TXpVd05ERTFObnd4TkRneE5qQTFPRE0yOg=='
     };
   }
 }

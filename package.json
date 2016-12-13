@@ -19,8 +19,7 @@
     "immutable": "^3.8.1",
     "request": "latest",
     "request-promise": "^4.0.2",
-    "enumify": "^1.0.4",
-    "dotenv": "^2.0.0"
+    "enumify": "^1.0.4"
   },
   "devDependencies": {
     "chai": "3.5.0",
