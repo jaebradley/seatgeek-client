@@ -6,14 +6,19 @@ import VenuePropertiesParametersBuilder from '../VenuePropertiesParametersBuilde
 import GeolocationParametersBuilder from '../GeolocationParametersBuilder';
 import PaginationParametersBuilder from '../PaginationParametersBuilder';
 
+import VenuesSearch from './VenuesSearch';
 import VenueProperties from '../VenueProperties';
 import Geolocation from '../Geolocation';
 import Pagination from '../Pagination';
 
 export default class VenuesSearchParametersBuilder {
   static build(search) {
+    if (!(search instanceof VenuesSearch)) {
+      throw new TypeError('expected a VenuesSearch');
+    }
+    
     let parameters = Map();
-    if (typeof search.ids !== 'undefined') {
+    if (search.ids.size > 0) {
       parameters = parameters.set(VenuesSearchParametersBuilder.getIdsParameterName(),
                                   search.ids);
     }
@@ -23,29 +28,9 @@ export default class VenuesSearchParametersBuilder {
                                   search.queryString);
     }
 
-    parameters = parameters.merge(VenuePropertiesParametersBuilder.build(
-                                    new VenueProperties({
-                                      cityName: search.cityName,
-                                      stateCode: search.stateCode,
-                                      countryCode: search.countryCode,
-                                      postalCode: search.postalCode,
-                                    })
-                                  ),
-                                  GeolocationParametersBuilder.build(
-                                    new Geolocation({
-                                      useIpAddress: search.useIpAddress,
-                                      latitude: search.latitude,
-                                      longitude: search.longitude,
-                                      range: search.range,
-                                      unit: search.unit,
-                                    })
-                                  ),
-                                  PaginationParametersBuilder.build(
-                                    new Pagination({
-                                      perPage: search.perPage,
-                                      page: search.page,
-                                    })
-                                  ));
+    parameters = parameters.merge(VenueParametersBuilder.build(search),
+                                  GeolocationParametersBuilder.build(search),
+                                  PaginationParametersBuilder.build(search));
     return parameters;
   }
 
