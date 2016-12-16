@@ -19,13 +19,11 @@ export default class EventsSearchParametersBuilder {
 
     let parameters = Map();
     if (search.ids instanceof List) {
-      parameters = parameters.set(EventsSearchParametersBuilder.getIdsParameterName(),
-                                  search.ids);
+      parameters = parameters.set('id', search.ids);
     }
 
     if (search.venueIds instanceof List) {
-      parameters = parameters.set(EventsSearchParametersBuilder.getVenueIdsParameterName().
-                                  search.venueIds);
+      parameters = parameters.set('venue.id', search.venueIds);
     }
 
     parameters = parameters.merge(VenuesParametersBuilder.build(search),
@@ -37,13 +35,5 @@ export default class EventsSearchParametersBuilder {
                                   PaginationParametersBuilder.build(search));
 
     return parameters;
-  }
-
-  static getIdsParameterName() {
-    return 'id';
-  }
-
-  static getVenueIdsParameterName() {
-    return 'venue.id';
   }
 }

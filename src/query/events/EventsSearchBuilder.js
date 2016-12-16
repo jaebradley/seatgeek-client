@@ -16,7 +16,7 @@ import SortOption from './sort/SortOption';
 import Taxonomy from '../../data/Taxonomy';
 import TaxonomyField from '../TaxonomyField';
 import TaxonomyFilter from '../TaxonomyFilter';
-import VenuesFilter from './venue/VenuesFilter';
+import VenuesProperties from '../VenuesProperties';
 import Unit from '../../data/Unit';
 
 import Utilities from '../Utilities';
@@ -29,11 +29,7 @@ export default class EventsSearchBuilder {
       args = args.set('ids', Utilities.buildIds(json['ids']));
     }
 
-    if ('venueIds' in json) {
-      args = args.set('venueIds', Utilities.buildIds(json['venueIds']));
-    }
-
-    args = args.merge(Utilities.buildVenueParameters(json));
+    args = args.merge(EventsSearchBuilder.buildVenueProperties(json));
 
     if ('performers' in json) {
       args = args.set('performers', EventsSearchBuilder.buildPerformerFilters(json['performers']));
@@ -62,6 +58,15 @@ export default class EventsSearchBuilder {
     }
 
     return new EventsSearch(args);
+  }
+
+  static buildVenueProperties(json) {
+    if ('venueIds' in json) {
+      args = args.set('id', Utilities.buildIds(json['venueIds']));
+    }
+
+    args = args.merge(Utilities.buildVenueParameters(json));
+    return new VenueProperties(args);
   }
 
   static buildPerformerFilters(filters) {
