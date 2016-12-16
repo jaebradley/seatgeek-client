@@ -2,13 +2,11 @@
 
 import {Map} from 'immutable';
 
-import VenuePropertiesParametersBuilder from '../VenuePropertiesParametersBuilder';
+import VenuesPropertiesParametersBuilder from '../VenuesPropertiesParametersBuilder';
 import GeolocationParametersBuilder from '../GeolocationParametersBuilder';
 import PaginationParametersBuilder from '../PaginationParametersBuilder';
 
 import VenuesSearch from './VenuesSearch';
-import VenueProperties from '../VenueProperties';
-import Geolocation from '../Geolocation';
 
 export default class VenuesSearchParametersBuilder {
   static build(search) {
@@ -18,14 +16,14 @@ export default class VenuesSearchParametersBuilder {
 
     let parameters = Map();
     if (search.ids.size > 0) {
-      parameters = parameters.set('ids', search.ids);
+      parameters = parameters.set('id', search.ids);
     }
 
     if (typeof search.queryString !== 'undefined') {
       parameters = parameters.set('q', search.queryString);
     }
 
-    parameters = parameters.merge(VenueParametersBuilder.build(search),
+    parameters = parameters.merge(VenuesPropertiesParametersBuilder.build(search.venues),
                                   GeolocationParametersBuilder.build(search),
                                   PaginationParametersBuilder.build(search));
     return parameters;

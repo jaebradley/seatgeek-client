@@ -9,7 +9,7 @@ import PaginationParametersBuilder from '../PaginationParametersBuilder';
 import PerformersFiltersParametersBuilder from './performer/PerformersFiltersParametersBuilder';
 import SortFilterParametersBuilder from './sort/SortFilterParametersBuilder';
 import TaxonomyFiltersParametersBuilder from '../TaxonomyFiltersParametersBuilder';
-import VenuesFilterParametersBuilder from './venue/VenuesFilterParametersBuilder';
+import VenuesPropertiesParametersBuilder from '../VenuesPropertiesParametersBuilder';
 
 export default class EventsSearchParametersBuilder {
   static build(search) {
@@ -18,15 +18,11 @@ export default class EventsSearchParametersBuilder {
     }
 
     let parameters = Map();
-    if (search.ids instanceof List) {
+    if (search.ids.size > 0) {
       parameters = parameters.set('id', search.ids);
     }
 
-    if (search.venueIds instanceof List) {
-      parameters = parameters.set('venue.id', search.venueIds);
-    }
-
-    parameters = parameters.merge(VenuesParametersBuilder.build(search),
+    parameters = parameters.merge(VenuesPropertiesParametersBuilder.build(search),
                                   PerformersFiltersParametersBuilder.build(search.performers),
                                   TaxonomyFiltersParametersBuilder.build(search.taxonomies),
                                   GeolocationParametersBuilder.build(search),

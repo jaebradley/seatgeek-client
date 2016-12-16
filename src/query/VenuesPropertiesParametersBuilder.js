@@ -2,27 +2,31 @@
 
 import {Map} from 'immutable';
 
-export default class VenuesParametersBuilder {
-  static build(search) {
+export default class VenuesPropertiesParametersBuilder {
+  static build(venues) {
     let parameters = Map();
 
+    if (venues.ids.size > 0) {
+      parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(search, 'id'));
+    }
+
     if (typeof venues.cityName !== 'undefined') {
-      parameters = parameters.set(VenuesParametersBuilder.buildSearchTypeName(search, VenuesParametersBuilder.getCityNamePropertyName()),
+      parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(search, VenuesPropertiesParametersBuilder.getCityNamePropertyName()),
                                   venues.cityName);
     }
 
     if (typeof filter.stateCode !== 'undefined') {
-      parameters = parameters.set(VenuesParametersBuilder.buildSearchTypeName(search, VenuesParametersBuilder.getStateCodePropertyName()),
+      parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(search, VenuesPropertiesParametersBuilder.getStateCodePropertyName()),
                                   venues.stateCode);
     }
 
     if (typeof filter.countryCode !== 'undefined') {
-      parameters = parameters.set(VenuesParametersBuilder.buildSearchTypeName(search, VenuesParametersBuilder.getCountryCodePropertyName()),
+      parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(search, VenuesPropertiesParametersBuilder.getCountryCodePropertyName()),
                                   venues.countryCode);
     }
 
     if (typeof filter.postalCode !== 'undefined') {
-      parameters = parameters.set(VenuesParametersBuilder.buildSearchTypeName(search, VenuesParametersBuilder.getPostalCodePropertyName()),
+      parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(search, VenuesPropertiesParametersBuilder.getPostalCodePropertyName()),
                                   venues.postalCode);
     }
 
