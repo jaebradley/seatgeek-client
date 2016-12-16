@@ -17,7 +17,7 @@ import PerformerSpecificity from '../src/query/events/performer/PerformerSpecifi
 import SortFilter from '../src/query/events/sort/SortFilter';
 import SortOption from '../src/query/events/sort/SortOption';
 import SortDirection from '../src/query/events/sort/SortDirection';
-import VenuesFilter from '../src/query/events/venue/VenuesFilter';
+import VenuesProperties from '../src/query/VenuesProperties';
 
 import EventsSearchBuilder from '../src/query/events/EventsSearchBuilder';
 

@@ -29,7 +29,7 @@ export default class EventsSearchBuilder {
       args = args.set('ids', Utilities.buildIds(json['ids']));
     }
 
-    args = args.merge(EventsSearchBuilder.buildVenueProperties(json));
+    args = args.merge(EventsSearchBuilder.buildVenuesProperties(json));
 
     if ('performers' in json) {
       args = args.set('performers', EventsSearchBuilder.buildPerformerFilters(json['performers']));
@@ -60,13 +60,13 @@ export default class EventsSearchBuilder {
     return new EventsSearch(args);
   }
 
-  static buildVenueProperties(json) {
+  static buildVenuesProperties(json) {
     if ('venueIds' in json) {
       args = args.set('id', Utilities.buildIds(json['venueIds']));
     }
 
     args = args.merge(Utilities.buildVenueParameters(json));
-    return new VenueProperties(args);
+    return new VenuesProperties(args);
   }
 
   static buildPerformerFilters(filters) {

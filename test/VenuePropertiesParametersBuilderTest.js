@@ -2,8 +2,8 @@
 
 import {expect} from 'chai';
 
-import VenueProperties from '../src/query/VenueProperties';
-import VenuePropertiesParametersBuilder from '../src/query/VenuePropertiesParametersBuilder';
+import VenuesProperties from '../src/query/VenuesProperties';
+import VenuesPropertiesParametersBuilder from '../src/query/VenuesPropertiesParametersBuilder';
 
 describe('Tests Venue Properties Parameters Builder', function() {
   let cityName = 'Boston';
@@ -12,14 +12,14 @@ describe('Tests Venue Properties Parameters Builder', function() {
   let postalCode = '02112';
 
   it('tests static property names fetcher', function() {
-    expect(VenuePropertiesParametersBuilder.getCityNamePropertyName()).to.equal('city');
-    expect(VenuePropertiesParametersBuilder.getStateCodePropertyName()).to.equal('state');
-    expect(VenuePropertiesParametersBuilder.getCountryCodePropertyName()).to.equal('country');
-    expect(VenuePropertiesParametersBuilder.getPostalCodePropertyName()).to.equal('postal_code');
+    expect(VenuesPropertiesParametersBuilder.getCityNamePropertyName()).to.equal('city');
+    expect(VenuesPropertiesParametersBuilder.getStateCodePropertyName()).to.equal('state');
+    expect(VenuesPropertiesParametersBuilder.getCountryCodePropertyName()).to.equal('country');
+    expect(VenuesPropertiesParametersBuilder.getPostalCodePropertyName()).to.equal('postal_code');
   });
 
   it('tests expected behavior', function() {
-    let properties = new VenueProperties({
+    let properties = new VenuesProperties({
       cityName: cityName,
       stateCode: stateCode,
       countryCode: countryCode,
@@ -31,12 +31,12 @@ describe('Tests Venue Properties Parameters Builder', function() {
       country: countryCode,
       postal_code: postalCode,
     };
-    let parameters = VenuePropertiesParametersBuilder.build(properties);
+    let parameters = VenuesPropertiesParametersBuilder.build(properties);
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests undefined cityName', function() {
-    let properties = new VenueProperties({
+    let properties = new VenuesProperties({
       cityName: undefined,
       stateCode: stateCode,
       countryCode: countryCode,
@@ -47,12 +47,12 @@ describe('Tests Venue Properties Parameters Builder', function() {
       country: countryCode,
       postal_code: postalCode,
     };
-    let parameters = VenuePropertiesParametersBuilder.build(properties);
+    let parameters = VenuesPropertiesParametersBuilder.build(properties);
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests undefined stateCode', function() {
-    let properties = new VenueProperties({
+    let properties = new VenuesProperties({
       cityName: cityName,
       stateCode: undefined,
       countryCode: countryCode,
@@ -63,12 +63,12 @@ describe('Tests Venue Properties Parameters Builder', function() {
       country: countryCode,
       postal_code: postalCode,
     };
-    let parameters = VenuePropertiesParametersBuilder.build(properties);
+    let parameters = VenuesPropertiesParametersBuilder.build(properties);
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests undefined countryCode', function() {
-    let properties = new VenueProperties({
+    let properties = new VenuesProperties({
       cityName: cityName,
       stateCode: stateCode,
       countryCode: undefined,
@@ -79,12 +79,12 @@ describe('Tests Venue Properties Parameters Builder', function() {
       state: stateCode,
       postal_code: postalCode,
     };
-    let parameters = VenuePropertiesParametersBuilder.build(properties);
+    let parameters = VenuesPropertiesParametersBuilder.build(properties);
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
 
   it('tests undefined postalCode', function() {
-    let properties = new VenueProperties({
+    let properties = new VenuesProperties({
       cityName: cityName,
       stateCode: stateCode,
       countryCode: countryCode,
@@ -95,7 +95,7 @@ describe('Tests Venue Properties Parameters Builder', function() {
       state: stateCode,
       country: countryCode,
     };
-    let parameters = VenuePropertiesParametersBuilder.build(properties);
+    let parameters = VenuesPropertiesParametersBuilder.build(properties);
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
 });
