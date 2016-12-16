@@ -34,7 +34,7 @@ export default class EventsSearchParametersBuilder {
                                   GeolocationParametersBuilder.build(search),
                                   SortFilterParametersBuilder.build(search.sort),
                                   FiltersParametersBuilder.build(search.filters),
-                                  PaginationParametersBuilder.build(search);
+                                  PaginationParametersBuilder.build(search));
 
     return parameters;
   }
@@ -44,6 +44,6 @@ export default class EventsSearchParametersBuilder {
   }
 
   static getVenueIdsParameterName() {
-
+    return 'venue.id';
   }
 }

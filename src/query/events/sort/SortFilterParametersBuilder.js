@@ -10,9 +10,7 @@ export default class SortFilterParametersBuilder {
       throw new TypeError('expected a sort filter');
     }
 
-    return Map({
-      SortFilterParametersBuilder.getSortParameterName(): SortFilterParametersBuilder.buildSortParameterValue(filter)
-    });
+    return Map({ sort: SortFilterParametersBuilder.buildSortParameterValue(filter) });
   }
 
   static buildSortParameterValue(filter) {
@@ -21,9 +19,5 @@ export default class SortFilterParametersBuilder {
     }
 
     return `${filter.option.value}.${filter.direction.value}`;
-  }
-
-  static getSortParameterName() {
-    return 'sort';
   }
 }

@@ -21,7 +21,7 @@ import EventsSearchParametersBuilder from './query/events/EventsSearchParameters
 
 export default class SeatGeekClient {
   constructor(clientId) {
-    this.clientId = clientId,
+    this.clientId = clientId;
   }
 
   getGenres(search) {
