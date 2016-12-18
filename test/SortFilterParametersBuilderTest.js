@@ -22,24 +22,4 @@ describe('Tests Sort Filter Parameters Builder', function() {
     let parameters = SortFilterParametersBuilder.build(filter);
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
-
-  it('tests undefined option', function() {
-    let filter = new SortFilter({
-      option: undefined,
-      direction: direction,
-    });
-    let expectedParameters = {};
-    let parameters = SortFilterParametersBuilder.build(filter);
-    expect(parameters.toJS()).to.eql(expectedParameters);
-  });
-
-  it('tests undefined direction', function() {
-    let filter = new SortFilter({
-      option: option,
-      direction: undefined,
-    });
-    let expectedParameters = {};
-    let parameters = SortFilterParametersBuilder.build(filter);
-    expect(parameters.toJS()).to.eql(expectedParameters);
-  });
 });

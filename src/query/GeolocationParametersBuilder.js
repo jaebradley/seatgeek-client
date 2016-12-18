@@ -7,25 +7,21 @@ import Unit from '../data/Unit';
 export default class GeolocationParametersBuilder {
   static build(search) {
     let parameters = Map();
-    
+
     if (search.useIpAddress) {
-      parameters = parameters.set(GeolocationParametersBuilder.getUseIpAddressParameterName(),
-                                  search.useIpAddress);
+      parameters = parameters.set('geoip', search.useIpAddress);
     }
 
     if (typeof search.latitude !== 'undefined') {
-      parameters = parameters.set(GeolocationParametersBuilder.getLatitudeParameterName(),
-                                  search.latitude);
+      parameters = parameters.set('lat', search.latitude);
     }
 
     if (typeof search.longitude !== 'undefined') {
-      parameters = parameters.set(GeolocationParametersBuilder.getLongitudeParameterName(),
-                                  search.longitude);
+      parameters = parameters.set('lon', search.longitude);
     }
 
     if (typeof search.range !== 'undefined') {
-      parameters = parameters.set(GeolocationParametersBuilder.getRangeParameterName(),
-                                  GeolocationParametersBuilder.buildRangeParameterValue(search));
+      parameters = parameters.set('range', GeolocationParametersBuilder.buildRangeParameterValue(search));
     }
 
     return parameters;
@@ -33,21 +29,5 @@ export default class GeolocationParametersBuilder {
 
   static buildRangeParameterValue(search) {
     return String(search.range) + search.unit.value;
-  }
-
-  static getUseIpAddressParameterName() {
-    return 'geoip';
-  }
-
-  static getLatitudeParameterName() {
-    return 'lat';
-  }
-
-  static getLongitudeParameterName() {
-    return 'lon';
-  }
-
-  static getRangeParameterName() {
-    return 'range';
   }
 }
