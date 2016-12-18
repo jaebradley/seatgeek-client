@@ -17,7 +17,7 @@ import PerformerSpecificity from '../src/query/events/performer/PerformerSpecifi
 import SortFilter from '../src/query/events/sort/SortFilter';
 import SortOption from '../src/query/events/sort/SortOption';
 import SortDirection from '../src/query/events/sort/SortDirection';
-import VenuesFilter from '../src/query/events/venue/VenuesFilter';
+import VenuesProperties from '../src/query/VenuesProperties';
 
 import EventsSearchBuilder from '../src/query/events/EventsSearchBuilder';
 
@@ -28,28 +28,6 @@ describe('Test Event Search Builder', function() {
   let ids = [id1, id2, id3];
   let value1 = 1;
   let value2 = 2;
-  it('tests venues filter building', function() {
-    let cityName = 'Boston';
-    let stateCode = 'MA';
-    let countryCode = 'USA';
-    let postalCode = '1234';
-    let venuesFilterJson = {
-      ids: ids,
-      cityName: cityName,
-      stateCode: stateCode,
-      countryCode: countryCode,
-      postalCode: postalCode
-    };
-    let expectedVenuesFilter = new VenuesFilter({
-      ids: List(ids),
-      cityName: cityName,
-      stateCode: stateCode,
-      countryCode: countryCode,
-      postalCode: postalCode
-    });
-    let createdVenuesFilter = EventsSearchBuilder.buildVenuesFilter(venuesFilterJson);
-    chai.expect(createdVenuesFilter).to.eql(expectedVenuesFilter);
-  });
 
   it('tests performers filter building', function() {
     let performerFiltersJson = [

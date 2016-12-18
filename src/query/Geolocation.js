@@ -1,11 +1,11 @@
 'use es6';
 
-import {Record} from 'immutable';
+import {List, Record} from 'immutable';
 
 import Constants from '../data/Constants';
 
 let defaults = {
-  useIpAddress: undefined,
+  useIpAddress: false,
   latitude: undefined,
   longitude: undefined,
   range: Constants.getDefaultRange(),
@@ -13,4 +13,4 @@ let defaults = {
 };
 
 export default class Geolocation extends Record(defaults) {
-};
+}

@@ -8,7 +8,6 @@ import Unit from '../src/data/Unit';
 import Taxonomy from '../src/data/Taxonomy';
 import TaxonomyField from '../src/query/TaxonomyField';
 import Pagination from '../src/query/Pagination';
-import VenuesFilter from '../src/query/events/venue/VenuesFilter';
 import PerformerFilter from '../src/query/events/performer/PerformerFilter';
 import PerformerField from '../src/query/events/performer/PerformerField';
 import PerformerSpecificity from '../src/query/events/performer/PerformerSpecificity';
@@ -19,7 +18,7 @@ import SortFilter from '../src/query/events/sort/SortFilter';
 import Operator from '../src/query/events/filter/Operator';
 import FilterOption from '../src/query/events/filter/FilterOption';
 import Filter from '../src/query/events/filter/Filter';
-import VenueProperties from '../src/query/VenueProperties';
+import EventsVenuesProperties from '../src/query/events/EventsVenuesProperties';
 import EventsSearch from '../src/query/events/EventsSearch';
 import TaxonomyFilter from '../src/query/TaxonomyFilter';
 import EventsSearchParametersBuilder from '../src/query/events/EventsSearchParametersBuilder';
@@ -37,7 +36,7 @@ describe('Tests Events Search Parameters Builder', function() {
   let stateCode = 'MA';
   let countryCode = 'US';
   let postalCode = '12345';
-  let venues = new VenuesFilter({
+  let venues = new EventsVenuesProperties({
     ids: venueIds,
     cityName: cityName,
     stateCode: stateCode,
@@ -129,8 +128,10 @@ describe('Tests Events Search Parameters Builder', function() {
     geolocation: geolocation,
     sort: sort,
     filters: filters,
-    perPage: perPage,
-    page: page,
+    pagination: new Pagination({
+      perPage: perPage,
+      page: page
+    })
   });
 
   it('tests events search parameter building', function() {

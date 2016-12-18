@@ -12,7 +12,7 @@ import TaxonomyFiltersParametersBuilder from '../src/query/TaxonomyFiltersParame
 describe('Test Taxonomy Filters Parameter Builder', function() {
   it('tests parameter building', function() {
     let filter = new TaxonomyFilter({taxonomy: Taxonomy.SPORTS, field: TaxonomyField.ID});
-    let parameters = TaxonomyFiltersParametersBuilder.build([filter]);
+    let parameters = TaxonomyFiltersParametersBuilder.build(List.of(filter));
     expect(parameters.get('taxonomies.id').toJS()).to.eql([Taxonomy.SPORTS.id]);
   });
 });

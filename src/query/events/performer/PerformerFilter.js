@@ -6,7 +6,7 @@ import PerformerField from './PerformerField';
 import PerformerSpecificity from './PerformerSpecificity';
 
 let defaults = {
-  value: 1,
+  value: undefined,
   field: PerformerField.ID,
   specificity: PerformerSpecificity.ANY,
 };

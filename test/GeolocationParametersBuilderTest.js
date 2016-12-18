@@ -87,45 +87,4 @@ describe('Test Geolocation Parameter Builder', function() {
     let parameters = GeolocationParametersBuilder.build(test);
     expect(parameters.toJS()).to.eql(expectedParameters);
   });
-
-  it('tests undefined range', function() {
-    let test = new Geolocation({
-      useIpAddress: useIpAddress,
-      latitude: latitude,
-      longitude: longitude,
-      range: undefined,
-      unit: unit,
-    });
-    let expectedParameters = {
-      geoip: useIpAddress,
-      lat: latitude,
-      lon: longitude,
-    };
-    let parameters = GeolocationParametersBuilder.build(test);
-    expect(parameters.toJS()).to.eql(expectedParameters);
-  });
-
-  it('tests undefined unit', function() {
-    let test = new Geolocation({
-      useIpAddress: useIpAddress,
-      latitude: latitude,
-      longitude: longitude,
-      range: range,
-      unit: undefined,
-    });
-    let expectedParameters = {
-      geoip: useIpAddress,
-      lat: latitude,
-      lon: longitude,
-    };
-    let parameters = GeolocationParametersBuilder.build(test);
-    expect(parameters.toJS()).to.eql(expectedParameters);
-  });
-
-  it('tests static parameter names', function() {
-    expect(GeolocationParametersBuilder.getUseIpAddressParameterName()).to.equal('geoip');
-    expect(GeolocationParametersBuilder.getLatitudeParameterName()).to.equal('lat');
-    expect(GeolocationParametersBuilder.getLongitudeParameterName()).to.equal('lon');
-    expect(GeolocationParametersBuilder.getRangeParameterName()).to.equal('range');
-  });
 });

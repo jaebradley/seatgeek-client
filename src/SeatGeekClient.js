@@ -1,5 +1,7 @@
 'use es6';
 
+import base64 from 'base-64';
+import utf8 from 'utf8';
 import rp from 'request-promise';
 
 import Subpath from './data/Subpath';
@@ -20,61 +22,72 @@ import VenuesSearchParametersBuilder from './query/venues/VenuesSearchParameters
 import EventsSearchParametersBuilder from './query/events/EventsSearchParametersBuilder';
 
 export default class SeatGeekClient {
-  static getGenres(search) {
-    let pagination = PaginationBuilder.build(search);
-    let parameters = PaginationParametersBuilder.build(pagination);
-    return SeatGeekClient.fetch(parameters, Subpath.GENRES.value);
+  constructor(clientId) {
+    this.clientId = clientId;
   }
 
-  static getTaxonomies(search) {
+  getGenres(search) {
     let pagination = PaginationBuilder.build(search);
     let parameters = PaginationParametersBuilder.build(pagination);
-    return SeatGeekClient.fetch(parameters, Subpath.TAXONOMIES.value);
+    return this.fetch(parameters, Subpath.GENRES);
   }
 
-  static getPerformers(search) {
+  getTaxonomies(search) {
+    let pagination = PaginationBuilder.build(search);
+    let parameters = PaginationParametersBuilder.build(pagination);
+    return this.fetch(parameters, Subpath.TAXONOMIES);
+  }
+
+  getPerformers(search) {
     let query = PerformersSearchBuilder.build(search);
     let parameters = PerformersSearchParametersBuilder.build(query);
-    return SeatGeekClient.fetch(parameters, Subpath.PERFORMERS.value);
+    return this.fetch(parameters, Subpath.PERFORMERS);
   }
 
-  static getVenues(search) {
+  getVenues(search) {
     let query = VenuesSearchBuilder.build(search);
     let parameters = VenuesSearchParametersBuilder.build(query);
-    return SeatGeekClient.fetch(parameters, Subpath.VENUES.value);
+    return this.fetch(parameters, Subpath.VENUES);
   }
 
-  static getEvents(search) {
+  getEvents(search) {
     let query = EventsSearchBuilder.build(search);
     let parameters = EventsSearchParametersBuilder.build(query);
-    return SeatGeekClient.fetch(parameters, Subpath.EVENTS.value);
+    return this.fetch(parameters, Subpath.EVENTS);
   }
 
-  static buildRequest(parameters, subpath) {
+  buildRequest(parameters, subpath) {
     return {
-      uri: SeatGeekClient.getBaseUrl() + subpath,
+      uri: `${SeatGeekClient.getBaseUrl()}${subpath.value}`,
       qs: parameters.toJS(),
-      headers: SeatGeekClient.getHeaders(),
-      json: true,
-      resolveWithFullResponse: false,
-      useQuerystring: true,
+      headers: this.getHeaders(),
+      json: SeatGeekClient.getIsJson(),
+      useQuerystring: SeatGeekClient.getUseQueryString,
     }
   }
 
-  static fetch(parameters, subpath) {
-    return rp(SeatGeekClient.buildRequest(parameters, subpath))
+  fetch(parameters, subpath) {
+    return rp(this.buildRequest(parameters, subpath))
       .then(response => response)
       .catch(err => console.log(err));
   }
 
-  static getBaseUrl() {
-    return 'https://api.seatgeek.com/2/';
-  }
-
-  static getHeaders() {
+  getHeaders() {
     return {
       'User-Agent': 'Request-Promise',
-      'Authorization': 'Basic TXpVd05ERTFObnd4TkRneE5qQTFPRE0yOg=='
+      'Authorization': `Basic ${base64.encode(utf8.encode(this.clientId))}`
     };
+  }
+
+  static getIsJson() {
+    return true;
+  }
+
+  static getUseQueryString() {
+    return true;
+  }
+
+  static getBaseUrl() {
+    return 'https://api.seatgeek.com/2/';
   }
 }

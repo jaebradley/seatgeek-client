@@ -7,6 +7,7 @@ import Filter from './filter/Filter';
 import FilterOption from './filter/FilterOption';
 import Operator from './filter/Operator';
 import Geolocation from '../Geolocation';
+import PaginationBuilder from '../PaginationBuilder';
 import PerformerSpecificity from './performer/PerformerSpecificity';
 import PerformerField from './performer/PerformerField';
 import PerformerFilter from './performer/PerformerFilter';
@@ -16,7 +17,7 @@ import SortOption from './sort/SortOption';
 import Taxonomy from '../../data/Taxonomy';
 import TaxonomyField from '../TaxonomyField';
 import TaxonomyFilter from '../TaxonomyFilter';
-import VenuesFilter from './venue/VenuesFilter';
+import EventsVenuesProperties from './EventsVenuesProperties';
 import Unit from '../../data/Unit';
 
 import Utilities from '../Utilities';
@@ -29,9 +30,7 @@ export default class EventsSearchBuilder {
       args = args.set('ids', Utilities.buildIds(json['ids']));
     }
 
-    if ('venues' in json) {
-      args = args.set('venues', EventsSearchBuilder.buildVenuesFilter(json['venues']));
-    }
+    args = args.set('venues', EventsSearchBuilder.buildVenuesProperties(json));
 
     if ('performers' in json) {
       args = args.set('performers', EventsSearchBuilder.buildPerformerFilters(json['performers']));
@@ -45,34 +44,25 @@ export default class EventsSearchBuilder {
       args = args.set('filters', EventsSearchBuilder.buildFilters(json['filters']))
     }
 
-    if ('geolocation' in json) {
-      args = args.set('geolocation', new Geolocation(Utilities.buildGeolocationParameters(json['geolocation'])));
-    }
+    args = args.set('geolocation', new Geolocation(Utilities.buildGeolocationParameters(json)));
 
     if ('sort' in json) {
       args = args.set('sort', new SortFilter(EventsSearchBuilder.buildSortFilter(json['sort'])));
     }
 
-    if ('page' in json) {
-      args = args.set('page', Utilities.isInteger(json['page']));
-    }
-
-    if ('perPage' in json)  {
-      args = args.set('perPage', Utilities.isInteger(json['perPage']));
-    }
+    args = args.set('pagination', PaginationBuilder.build(json));
 
     return new EventsSearch(args);
   }
 
-  static buildVenuesFilter(venues) {
-    let args = Map();
-    if ('ids' in venues) {
-      args = args.set('ids', Utilities.buildIds(venues['ids']));
+  static buildVenuesProperties(json) {
+    let args = new Map();
+    if ('venueIds' in json) {
+      args = args.set('ids', Utilities.buildIds(json['venueIds']));
     }
 
-    args = args.merge(Utilities.buildVenueParameters(venues));
-
-    return new VenuesFilter(args);
+    args = args.merge(Utilities.buildVenueParameters(json));
+    return new EventsVenuesProperties(args);
   }
 
   static buildPerformerFilters(filters) {

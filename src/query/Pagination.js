@@ -4,10 +4,10 @@ import {Map, Record} from 'immutable';
 
 import Constants from '../data/Constants';
 
-let DEFAULTS = Map({
+let defaults = {
   perPage: Constants.getDefaultPerPage(),
   page: Constants.getDefaultPage(),
-});
+};
 
-export default class Pagination extends Record(DEFAULTS.toJS()) {
+export default class Pagination extends Record(defaults) {
 };

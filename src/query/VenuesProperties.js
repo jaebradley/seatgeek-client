@@ -7,8 +7,8 @@ let defaults = {
   cityName: undefined,
   stateCode: undefined,
   countryCode: undefined,
-  postalCode: undefined,
+  postalCode: undefined
 };
 
-export default class VenuesFilter extends Record(defaults) {
-};
+export default class VenuesProperties extends Record(defaults) {
+}
