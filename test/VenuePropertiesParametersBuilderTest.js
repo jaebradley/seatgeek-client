@@ -11,13 +11,6 @@ describe('Tests Venue Properties Parameters Builder', function() {
   let countryCode = 'USA';
   let postalCode = '02112';
 
-  it('tests static property names fetcher', function() {
-    expect(VenuesPropertiesParametersBuilder.getCityNamePropertyName()).to.equal('city');
-    expect(VenuesPropertiesParametersBuilder.getStateCodePropertyName()).to.equal('state');
-    expect(VenuesPropertiesParametersBuilder.getCountryCodePropertyName()).to.equal('country');
-    expect(VenuesPropertiesParametersBuilder.getPostalCodePropertyName()).to.equal('postal_code');
-  });
-
   it('tests expected behavior', function() {
     let properties = new VenuesProperties({
       cityName: cityName,

@@ -17,17 +17,17 @@ export default class VenuesPropertiesParametersBuilder {
                                   venues.cityName);
     }
 
-    if (typeof filter.stateCode !== 'undefined') {
+    if (typeof venues.stateCode !== 'undefined') {
       parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(venues, 'state'),
                                   venues.stateCode);
     }
 
-    if (typeof filter.countryCode !== 'undefined') {
+    if (typeof venues.countryCode !== 'undefined') {
       parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(venues, 'country'),
                                   venues.countryCode);
     }
 
-    if (typeof filter.postalCode !== 'undefined') {
+    if (typeof venues.postalCode !== 'undefined') {
       parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(venues, 'postal_code'),
                                   venues.postalCode);
     }

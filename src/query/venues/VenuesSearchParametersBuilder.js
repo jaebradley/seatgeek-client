@@ -15,17 +15,14 @@ export default class VenuesSearchParametersBuilder {
     }
 
     let parameters = Map();
-    if (search.ids.size > 0) {
-      parameters = parameters.set('id', search.ids);
-    }
 
     if (typeof search.queryString !== 'undefined') {
       parameters = parameters.set('q', search.queryString);
     }
 
-    parameters = parameters.merge(VenuesPropertiesParametersBuilder.build(search.venues),
-                                  GeolocationParametersBuilder.build(search),
-                                  PaginationParametersBuilder.build(search));
+    parameters = parameters.merge(VenuesPropertiesParametersBuilder.build(search.properties),
+                                  GeolocationParametersBuilder.build(search.geolocation),
+                                  PaginationParametersBuilder.build(search.pagination));
     return parameters;
   }
 }

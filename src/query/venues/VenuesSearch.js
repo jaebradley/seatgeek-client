@@ -10,6 +10,7 @@ import VenuesProperties from '../VenuesProperties';
 let defaults = {
   properties: new VenuesProperties(),
   geolocation: new Geolocation(),
+  queryString: undefined,
   pagination: new Pagination(),
 };
 

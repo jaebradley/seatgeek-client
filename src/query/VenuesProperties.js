@@ -7,8 +7,7 @@ let defaults = {
   cityName: undefined,
   stateCode: undefined,
   countryCode: undefined,
-  postalCode: undefined,
-  queryString: undefined
+  postalCode: undefined
 };
 
 export default class VenuesProperties extends Record(defaults) {
