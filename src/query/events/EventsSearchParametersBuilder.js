@@ -13,7 +13,6 @@ import VenuesPropertiesParametersBuilder from '../VenuesPropertiesParametersBuil
 
 export default class EventsSearchParametersBuilder {
   static build(search) {
-    console.log(search);
     if (!(search instanceof EventsSearch)) {
       throw new TypeError('expected EventsSearch');
     }
