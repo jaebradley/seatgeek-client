@@ -5,29 +5,29 @@ import {Map} from 'immutable';
 import Unit from '../data/Unit';
 
 export default class GeolocationParametersBuilder {
-  static build(search) {
+  static build(geolocation) {
     let parameters = Map();
 
-    if (search.useIpAddress) {
-      parameters = parameters.set('geoip', search.useIpAddress);
+    if (geolocation.useIpAddress) {
+      parameters = parameters.set('geoip', geolocation.useIpAddress);
     }
 
-    if (typeof search.latitude !== 'undefined') {
-      parameters = parameters.set('lat', search.latitude);
+    if (typeof geolocation.latitude !== 'undefined') {
+      parameters = parameters.set('lat', geolocation.latitude);
     }
 
-    if (typeof search.longitude !== 'undefined') {
-      parameters = parameters.set('lon', search.longitude);
+    if (typeof geolocation.longitude !== 'undefined') {
+      parameters = parameters.set('lon', geolocation.longitude);
     }
 
-    if (typeof search.range !== 'undefined') {
-      parameters = parameters.set('range', GeolocationParametersBuilder.buildRangeParameterValue(search));
+    if (typeof geolocation.range !== 'undefined') {
+      parameters = parameters.set('range', GeolocationParametersBuilder.buildRangeParameterValue(geolocation));
     }
 
     return parameters;
   }
 
-  static buildRangeParameterValue(search) {
-    return String(search.range) + search.unit.value;
+  static buildRangeParameterValue(geolocation) {
+    return String(geolocation.range) + geolocation.unit.value;
   }
 }

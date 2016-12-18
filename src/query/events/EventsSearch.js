@@ -5,11 +5,11 @@ import {List, Record} from 'immutable';
 import Geolocation from '../Geolocation';
 import Pagination from '../Pagination';
 import SortFilter from './sort/SortFilter';
-import VenuesProperties from '../VenuesProperties';
+import EventsVenuesProperties from './EventsVenuesProperties';
 
 let defaults = {
   ids: List(),
-  venues: new VenuesProperties(),
+  venues: new EventsVenuesProperties(),
   performers: List(),
   taxonomies: List(),
   filters: List(),

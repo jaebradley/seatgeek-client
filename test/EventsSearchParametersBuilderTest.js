@@ -18,7 +18,7 @@ import SortFilter from '../src/query/events/sort/SortFilter';
 import Operator from '../src/query/events/filter/Operator';
 import FilterOption from '../src/query/events/filter/FilterOption';
 import Filter from '../src/query/events/filter/Filter';
-import VenuesProperties from '../src/query/VenuesProperties';
+import EventsVenuesProperties from '../src/query/events/EventsVenuesProperties';
 import EventsSearch from '../src/query/events/EventsSearch';
 import TaxonomyFilter from '../src/query/TaxonomyFilter';
 import EventsSearchParametersBuilder from '../src/query/events/EventsSearchParametersBuilder';
@@ -36,7 +36,7 @@ describe('Tests Events Search Parameters Builder', function() {
   let stateCode = 'MA';
   let countryCode = 'US';
   let postalCode = '12345';
-  let venues = new VenuesProperties({
+  let venues = new EventsVenuesProperties({
     ids: venueIds,
     cityName: cityName,
     stateCode: stateCode,
@@ -128,8 +128,10 @@ describe('Tests Events Search Parameters Builder', function() {
     geolocation: geolocation,
     sort: sort,
     filters: filters,
-    perPage: perPage,
-    page: page,
+    pagination: new Pagination({
+      perPage: perPage,
+      page: page
+    })
   });
 
   it('tests events search parameter building', function() {

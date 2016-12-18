@@ -30,7 +30,7 @@ export default class EventsSearchBuilder {
       args = args.set('ids', Utilities.buildIds(json['ids']));
     }
 
-    args = args.merge(EventsSearchBuilder.buildVenuesProperties(json));
+    args = args.set('venues', EventsSearchBuilder.buildVenuesProperties(json));
 
     if ('performers' in json) {
       args = args.set('performers', EventsSearchBuilder.buildPerformerFilters(json['performers']));
@@ -44,13 +44,13 @@ export default class EventsSearchBuilder {
       args = args.set('filters', EventsSearchBuilder.buildFilters(json['filters']))
     }
 
-    args = args.merge(Utilities.buildGeolocationParameters(json));
+    args = args.set('geolocation', new Geolocation(Utilities.buildGeolocationParameters(json)));
 
     if ('sort' in json) {
       args = args.set('sort', new SortFilter(EventsSearchBuilder.buildSortFilter(json['sort'])));
     }
 
-    args = args.merge(PaginationBuilder.build(json));
+    args = args.set('pagination', PaginationBuilder.build(json));
 
     return new EventsSearch(args);
   }
@@ -58,7 +58,7 @@ export default class EventsSearchBuilder {
   static buildVenuesProperties(json) {
     let args = new Map();
     if ('venueIds' in json) {
-      args = args.set('id', Utilities.buildIds(json['venueIds']));
+      args = args.set('ids', Utilities.buildIds(json['venueIds']));
     }
 
     args = args.merge(Utilities.buildVenueParameters(json));

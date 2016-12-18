@@ -1,5 +1,14 @@
 'use es6';
 
-import VenuesProperties from '../VenuesProperties';
+import {List, Record} from 'immutable';
 
-export default class EventsVenuesProperties extends VenuesProperties {}
+let defaults = {
+  ids: List(),
+  cityName: undefined,
+  stateCode: undefined,
+  countryCode: undefined,
+  postalCode: undefined
+};
+
+export default class EventsVenuesProperties extends Record(defaults) {
+}
