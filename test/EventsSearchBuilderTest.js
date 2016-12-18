@@ -147,9 +147,21 @@ describe('Test Event Search Builder', function() {
   });
 
   it('tests complete events search building', function() {
+    let venueIds = [4, 5, 6];
+    let cityName = 'Boston';
+    let stateCode = 'MA';
+    let countryCode = 'USA';
+    let postalCode = '02112';
+    let useIpAddress = false;
+    let latitude = 6789;
+    let longitude = 9876;
+    let range = 11;
+    let unit = Unit.MILE;
+    let perPage = 12;
+    let page = 13;
     let json = {
       ids: ids,
-      venueIds: [4, 5, 6],
+      venueIds: venueIds,
       performers: performerFiltersJson,
       taxonomies: [
         {
@@ -159,17 +171,17 @@ describe('Test Event Search Builder', function() {
       ],
       filters: filtersJson,
       sort: sortJson,
-      cityName: 'Boston',
-      stateCode: 'MA',
-      countryCode: 'US',
-      postalCode: '12345',
-      useIpAddress: false,
-      latitude: 6789,
-      longitude: 1234,
-      range: 15,
+      cityName: cityName,
+      stateCode: stateCode,
+      countryCode: countryCode,
+      postalCode: postalCode,
+      useIpAddress: useIpAddress,
+      latitude: latitude,
+      longitude: longitude,
+      range: range,
       unit: Unit.MILE,
-      perPage: 11,
-      page: 12
+      perPage: perPage,
+      page: page
     };
     let expectedSearch = new EventsSearch({
       ids: ids,
@@ -183,22 +195,22 @@ describe('Test Event Search Builder', function() {
       filters: expectedFilters,
       sort: expectedSort,
       venues: new EventsVenuesProperties({
-        ids: [4, 5, 6],
-        cityName: 'Boston',
-        stateCode: 'MA',
-        countryCode: 'US',
-        postalCode: '12345'
+        ids: venueIds,
+        cityName: cityName,
+        stateCode: stateCode,
+        countryCode: countryCode,
+        postalCode: postalCode,
       }),
       geolocation: new Geolocation({
-        useIpAddress: false,
-        latitude: 6789,
-        longitude: 1234,
-        range: 15,
-        unit: Unit.MILE
+        useIpAddress: useIpAddress,
+        latitude: latitude,
+        longitude: longitude,
+        range: range,
+        unit: Unit.MILE,
       }),
       pagination: new Pagination({
-        perPage: 11,
-        page: 12
+        perPage: perPage,
+        page: page
       })
     })
     chai.expect(EventsSearchBuilder.build(json))
