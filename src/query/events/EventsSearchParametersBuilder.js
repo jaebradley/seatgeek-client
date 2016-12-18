@@ -22,13 +22,13 @@ export default class EventsSearchParametersBuilder {
       parameters = parameters.set('id', search.ids);
     }
 
-    parameters = parameters.merge(VenuesPropertiesParametersBuilder.build(search),
+    parameters = parameters.merge(VenuesPropertiesParametersBuilder.build(search.venues),
                                   PerformersFiltersParametersBuilder.build(search.performers),
                                   TaxonomyFiltersParametersBuilder.build(search.taxonomies),
-                                  GeolocationParametersBuilder.build(search),
+                                  GeolocationParametersBuilder.build(search.geolocation),
                                   SortFilterParametersBuilder.build(search.sort),
                                   FiltersParametersBuilder.build(search.filters),
-                                  PaginationParametersBuilder.build(search));
+                                  PaginationParametersBuilder.build(search.pagination));
 
     return parameters;
   }

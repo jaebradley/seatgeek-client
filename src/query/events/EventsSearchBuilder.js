@@ -56,6 +56,7 @@ export default class EventsSearchBuilder {
   }
 
   static buildVenuesProperties(json) {
+    let args = new Map();
     if ('venueIds' in json) {
       args = args.set('id', Utilities.buildIds(json['venueIds']));
     }

@@ -4,8 +4,10 @@ import {expect} from 'chai';
 
 import {List} from 'immutable';
 
+import Geolocation from '../src/query/Geolocation';
 import Unit from '../src/data/Unit';
 import Pagination from '../src/query/Pagination';
+import VenuesProperties from '../src/query/VenuesProperties';
 import VenuesSearch from '../src/query/venues/VenuesSearch';
 import VenuesSearchParametersBuilder from '../src/query/venues/VenuesSearchParametersBuilder';
 
@@ -27,19 +29,25 @@ describe('Tests Venue Search Parameters Builder', function() {
   let perPage = 7;
   let page = 8;
   let search = new VenuesSearch({
-    ids: ids,
-    cityName: cityName,
-    stateCode: stateCode,
-    countryCode: countryCode,
-    postalCode: postalCode,
-    queryString: queryString,
-    useIpAddress: useIpAddress,
-    latitude: latitude,
-    longitude: longitude,
-    range: range,
-    unit: unit,
-    perPage: perPage,
-    page: page,
+    properties: new VenuesProperties({
+      ids: ids,
+      cityName: cityName,
+      stateCode: stateCode,
+      countryCode: countryCode,
+      postalCode: postalCode
+    }),
+    geolocation: new Geolocation({
+      useIpAddress: useIpAddress,
+      latitude: latitude,
+      longitude: longitude,
+      range: range,
+      unit: unit
+    }),
+    pagination: new Pagination({
+      perPage: perPage,
+      page: page
+    }),
+    queryString: queryString
   });
 
   it('tests expected behavior for parameter building', function() {
