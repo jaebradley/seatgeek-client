@@ -30,8 +30,6 @@ export default class EventsSearchBuilder {
       args = args.set('ids', Utilities.buildIds(json['ids']));
     }
 
-    args = args.set('venues', EventsSearchBuilder.buildVenuesProperties(json));
-
     if ('performers' in json) {
       args = args.set('performers', EventsSearchBuilder.buildPerformerFilters(json['performers']));
     }
@@ -44,12 +42,12 @@ export default class EventsSearchBuilder {
       args = args.set('filters', EventsSearchBuilder.buildFilters(json['filters']))
     }
 
-    args = args.set('geolocation', new Geolocation(Utilities.buildGeolocationParameters(json)));
-
     if ('sort' in json) {
       args = args.set('sort', new SortFilter(EventsSearchBuilder.buildSortFilter(json['sort'])));
     }
 
+    args = args.set('geolocation', new Geolocation(Utilities.buildGeolocationParameters(json)));
+    args = args.set('venues', EventsSearchBuilder.buildVenuesProperties(json));
     args = args.set('pagination', PaginationBuilder.build(json));
 
     return new EventsSearch(args);
