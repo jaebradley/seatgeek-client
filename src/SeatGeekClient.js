@@ -1,5 +1,7 @@
 'use es6';
 
+import base64 from 'base-64';
+import utf8 from 'utf8';
 import rp from 'request-promise';
 
 import Subpath from './data/Subpath';
@@ -73,7 +75,7 @@ export default class SeatGeekClient {
   getHeaders() {
     return {
       'User-Agent': 'Request-Promise',
-      'Authorization': `Basic ${this.clientId}`
+      'Authorization': `Basic ${base64.encode(utf8.encode(this.clientId))}`
     };
   }
 

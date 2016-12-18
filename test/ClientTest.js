@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.load();
+
 import {expect} from 'chai';
 
 import {SeatGeekClient} from '../src/index';
@@ -5,7 +8,7 @@ import {Genre} from '../src/index';
 import {Taxonomy, TaxonomyField} from '../src/index';
 
 describe('Test Client', function() {
-  let client = new SeatGeekClient();
+  let client = new SeatGeekClient(process.env.CLIENT_ID);
   it('tests genres fetch', function() {
     return client.getGenres({perPage: 150})
                  .then(response => expect(response.genres.length).to.equal(Genre.enumValues.length));

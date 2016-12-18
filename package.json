@@ -2,7 +2,6 @@
   "name": "seatgeek-client",
   "version": "0.1.4",
   "description": "Client for the SeatGeek API",
-  "files": "./build",
   "scripts": {
     "test": "npm run build && mocha --compilers js:babel-core/register",
     "coverage": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/.bin/_mocha -- --compilers js:babel-register ",
@@ -19,7 +18,10 @@
     "immutable": "^3.8.1",
     "request": "latest",
     "request-promise": "^4.0.2",
-    "enumify": "^1.0.4"
+    "enumify": "^1.0.4",
+    "dotenv": "2.0.0 ",
+    "base-64": "0.1.0",
+    "utf8": "2.1.2"
   },
   "devDependencies": {
     "chai": "3.5.0",
