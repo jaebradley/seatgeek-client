@@ -41,9 +41,4 @@ describe('Test pagination parameters builder', function() {
     expect(PaginationParametersBuilder.build(undefinedPage).toJS())
           .to.eql(expectedUndefinedPageResult);
   });
-
-  it('tests parameter names', function() {
-    expect(PaginationParametersBuilder.getPerPageParameterName()).to.equal('per_page');
-    expect(PaginationParametersBuilder.getPageParameterName()).to.equal('page');
-  });
 });
