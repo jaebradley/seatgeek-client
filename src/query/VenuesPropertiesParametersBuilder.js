@@ -2,14 +2,14 @@
 
 import {Map} from 'immutable';
 
-import EventsSearch from './events/EventsSearch';
+import EventsVenuesProperties from './events/EventsVenuesProperties';
 
 export default class VenuesPropertiesParametersBuilder {
   static build(venues) {
     let parameters = Map();
 
     if (venues.ids.size > 0) {
-      parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(venues, 'id'));
+      parameters = parameters.set(VenuesPropertiesParametersBuilder.buildSearchTypeName(venues, 'id'), venues.ids);
     }
 
     if (typeof venues.cityName !== 'undefined') {
@@ -36,7 +36,7 @@ export default class VenuesPropertiesParametersBuilder {
   }
 
   static buildSearchTypeName(search, name) {
-    if (search instanceof EventsSearch) {
+    if (search instanceof EventsVenuesProperties) {
       return `venue.${name}`;
     }
 

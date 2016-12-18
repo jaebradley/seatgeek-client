@@ -19,7 +19,7 @@ export default class PerformersSearchParametersBuilder {
                                   search.ids);
     }
 
-    if (search.slugs > 0) {
+    if (search.slugs.size > 0) {
       parameters = parameters.set(PerformersSearchParametersBuilder.getSlugsParameterName(),
                                   search.slugs);
     }

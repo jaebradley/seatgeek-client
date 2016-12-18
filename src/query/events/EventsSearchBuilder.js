@@ -17,7 +17,7 @@ import SortOption from './sort/SortOption';
 import Taxonomy from '../../data/Taxonomy';
 import TaxonomyField from '../TaxonomyField';
 import TaxonomyFilter from '../TaxonomyFilter';
-import VenuesProperties from '../VenuesProperties';
+import EventsVenuesProperties from './EventsVenuesProperties';
 import Unit from '../../data/Unit';
 
 import Utilities from '../Utilities';
@@ -62,7 +62,7 @@ export default class EventsSearchBuilder {
     }
 
     args = args.merge(Utilities.buildVenueParameters(json));
-    return new VenuesProperties(args);
+    return new EventsVenuesProperties(args);
   }
 
   static buildPerformerFilters(filters) {
