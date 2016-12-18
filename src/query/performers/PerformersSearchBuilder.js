@@ -2,6 +2,7 @@
 
 import {List, Map} from 'immutable';
 
+import PaginationBuilder from '../PaginationBuilder';
 import PerformersSearch from './PerformersSearch';
 import Genre from '../../data/Genre';
 import GenreFilter from './genre/GenreFilter';
@@ -31,13 +32,7 @@ export default class PerformersSearchBuilder {
       args = args.set('queryString', Utilities.isString(json['queryString']));
     }
 
-    if ('page' in json) {
-      args = args.set('page', Utilities.isInteger(json['page']));
-    }
-
-    if ('perPage' in json)  {
-      args = args.set('perPage', Utilities.isInteger(json['perPage']));
-    }
+    args = args.merge(PaginationBuilder.build(json));
 
     return new PerformersSearch(args);
   }
