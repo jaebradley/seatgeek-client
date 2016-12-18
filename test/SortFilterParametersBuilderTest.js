@@ -10,9 +10,6 @@ import SortFilterParametersBuilder from '../src/query/events/sort/SortFilterPara
 describe('Tests Sort Filter Parameters Builder', function() {
   let option = SortOption.SCORE;
   let direction = SortDirection.ASCENDING;
-  it('tests static sort parameter name', function() {
-    expect(SortFilterParametersBuilder.getSortParameterName()).to.equal('sort');
-  });
 
   it('tests expected behavior', function() {
     let filter = new SortFilter({

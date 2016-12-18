@@ -7,6 +7,7 @@ import Filter from './filter/Filter';
 import FilterOption from './filter/FilterOption';
 import Operator from './filter/Operator';
 import Geolocation from '../Geolocation';
+import PaginationBuilder from '../PaginationBuilder';
 import PerformerSpecificity from './performer/PerformerSpecificity';
 import PerformerField from './performer/PerformerField';
 import PerformerFilter from './performer/PerformerFilter';
@@ -49,13 +50,7 @@ export default class EventsSearchBuilder {
       args = args.set('sort', new SortFilter(EventsSearchBuilder.buildSortFilter(json['sort'])));
     }
 
-    if ('page' in json) {
-      args = args.set('page', Utilities.isInteger(json['page']));
-    }
-
-    if ('perPage' in json)  {
-      args = args.set('perPage', Utilities.isInteger(json['perPage']));
-    }
+    args = args.merge(PaginationBuilder.build(json));
 
     return new EventsSearch(args);
   }
