@@ -6,7 +6,10 @@ chai.use(chaiImmutable);
 
 import {List} from 'immutable';
 
+import Geolocation from '../src/query/Geolocation'
+import Pagination from '../src/query/Pagination';
 import Unit from '../src/data/Unit';
+import VenuesProperties from '../src/query/VenuesProperties';
 import VenuesSearch from '../src/query/venues/VenuesSearch';
 
 import VenuesSearchBuilder from '../src/query/venues/VenuesSearchBuilder';
@@ -45,19 +48,25 @@ describe('Test Venue Search Builder', function() {
       page: page,
     };
     let expected = new VenuesSearch({
-      ids: List.of(id1, id2, id3),
-      cityName: cityName,
-      stateCode: stateCode,
-      countryCode: countryCode,
-      postalCode: postalCode,
+      properties: new VenuesProperties({
+        ids: List.of(id1, id2, id3),
+        cityName: cityName,
+        stateCode: stateCode,
+        countryCode: countryCode,
+        postalCode: postalCode,
+      }),
       queryString: queryString,
-      useIpAddress: useIpAddress,
-      latitude: latitude,
-      longitude: longitude,
-      range: range,
-      unit: unit,
-      perPage: perPage,
-      page: page,
+      geolocation: new Geolocation({
+        useIpAddress: useIpAddress,
+        latitude: latitude,
+        longitude: longitude,
+        range: range,
+        unit: unit,
+      }),
+      pagination: new Pagination({
+        perPage: perPage,
+        page: page,
+      })
     });
     let createdVenuesSearch = VenuesSearchBuilder.build(VenuesSearchJson);
     chai.expect(createdVenuesSearch).to.eql(expected);
