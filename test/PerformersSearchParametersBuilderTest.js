@@ -43,8 +43,10 @@ describe('Tests Performers Search Parameters Builder', function() {
     slugs: slugs,
     taxonomies: taxonomyFilters,
     genres: genreFilters,
-    perPage: perPage,
-    page: page,
+    pagination: new Pagination({
+      perPage: perPage,
+      page: page
+    }),
     queryString: query,
   });
   it('tests expected parameter building', function() {

@@ -37,7 +37,7 @@ export default class PerformersSearchParametersBuilder {
       parameters = parameters.merge(TaxonomyFiltersParametersBuilder.build(search.taxonomies));
     }
 
-    parameters = parameters.merge(PaginationParametersBuilder.build(search));
+    parameters = parameters.merge(PaginationParametersBuilder.build(search.pagination));
 
     return parameters;
   }
